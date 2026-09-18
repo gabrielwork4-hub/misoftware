@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/consts';
 
 export async function getStaticPaths() {
   const tools = await getCollection('ferramentas', ({ data }) => !data.draft);
@@ -13,6 +14,27 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
+
+// Schema SoftwareApplication + review editorial (ARQUITETURA §9). A nota é a
+// avaliação da própria redação (Review único, não AggregateRating fabricado).
+const toolSchema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: data.name,
+  description: data.description,
+  applicationCategory: data.category,
+  url: new URL(`/ferramentas/${entry.id}/`, Astro.site ?? SITE.url).toString(),
+};
+if (data.vendor) toolSchema.author = { '@type': 'Organization', name: data.vendor };
+if (data.platforms.length > 0) toolSchema.operatingSystem = data.platforms.join(', ');
+if (data.url) toolSchema.sameAs = data.url;
+if (typeof data.rating === 'number') {
+  toolSchema.review = {
+    '@type': 'Review',
+    author: { '@type': 'Organization', name: SITE.name },
+    reviewRating: { '@type': 'Rating', ratingValue: data.rating, bestRating: 10, worstRating: 0 },
+  };
+}
 ---
 
 <BaseLayout title={data.name} description={data.description}>
@@ -69,4 +91,6 @@ const { Content } = await render(entry);
       <Content />
     </div>
   </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(toolSchema)} is:inline />
 </BaseLayout>

@@ -79,6 +79,47 @@ if (type === 'article') {
     },
   });
 }
+
+// BreadcrumbList a partir do path da URL (ARQUITETURA §9) — cobre todas as
+// rotas sem tocar página por página. Rótulos amigáveis para os segmentos-pai;
+// o último item usa o título da própria página.
+const crumbLabels: Record<string, string> = {
+  artigos: 'Artigos',
+  tutoriais: 'Tutoriais',
+  ferramentas: 'Ferramentas',
+  comparativos: 'Comparativos',
+  'estudos-de-caso': 'Estudos de caso',
+  autores: 'Autores',
+  arquivo: 'Arquivo',
+  ia: 'IA',
+  automacao: 'Automação',
+  desenvolvimento: 'Desenvolvimento',
+  sobre: 'Sobre',
+  contato: 'Contato',
+  privacidade: 'Privacidade',
+  'politica-editorial': 'Política Editorial',
+};
+const segments = canonicalURL.pathname.split('/').filter(Boolean);
+if (segments.length > 0) {
+  const crumbs = [{ name: 'Início', path: '/' }];
+  let acc = '';
+  segments.forEach((seg, i) => {
+    acc += `/${seg}`;
+    const isLast = i === segments.length - 1;
+    const name = isLast ? (title ?? crumbLabels[seg] ?? seg) : (crumbLabels[seg] ?? seg);
+    crumbs.push({ name, path: `${acc}/` });
+  });
+  schema.push({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.name,
+      item: new URL(c.path, Astro.site ?? SITE.url).toString(),
+    })),
+  });
+}
 ---
 
 <meta charset="utf-8" />

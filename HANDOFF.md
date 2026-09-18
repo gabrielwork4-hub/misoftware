@@ -123,6 +123,8 @@ canonicalização de raiz, cobertos pela regra genérica).
 | `npm run build` (17 páginas, sitemap, RSS, Pagefind) | ✅ passa |
 | Home + rotas renderizam (dev server, 200) | ✅ conferido no navegador |
 | `build-redirects.mjs` gera JSON correto (139× 410) | ✅ |
+| JSON-LD completo: WebSite, Organization, BlogPosting, Person, **BreadcrumbList** (todo o site) e **SoftwareApplication**+Review (ferramentas) | ✅ auditado no HTML de `dist/` (2026-09-18) |
+| SEO on-page: title/description únicos, canonical absoluto, OG/Twitter, sitemap, robots, 1×H1, 404 noindex | ✅ auditado no HTML de `dist/` |
 | Middleware **compila** no wrangler | ✅ ("Compiled Worker successfully") |
 | Middleware **executa** localmente (workerd) | ❌ bloqueado por VC++ no Windows — validar no preview Cloudflare |
 | `check:status` contra a borda | ⏳ pendente (depende do item acima) |
