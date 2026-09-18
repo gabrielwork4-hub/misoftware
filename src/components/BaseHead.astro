@@ -1,0 +1,124 @@
+---
+import { SITE } from '@/consts';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  /** article | website — controla schema e OG type */
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  /** URL do perfil do autor (ex.: /autores/gabriel-barboza/) */
+  authorUrl?: string;
+  /** Perfis externos do autor para o `sameAs` do schema Person */
+  authorSameAs?: string[];
+  /** Tipo de entidade do autor no schema */
+  authorEntity?: 'Person' | 'Organization';
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = SITE.description,
+  image = SITE.defaultOgImage,
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  author = SITE.author,
+  authorUrl,
+  authorSameAs = [],
+  authorEntity = 'Person',
+  noindex = false,
+} = Astro.props;
+
+const pageTitle = title ? `${title} — ${SITE.name}` : SITE.title;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? SITE.url);
+const ogImage = new URL(image, Astro.site ?? SITE.url);
+
+// JSON-LD: WebSite + Organization sempre; Article quando aplicável.
+const schema: Record<string, unknown>[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE.name,
+    url: SITE.url,
+    inLanguage: SITE.locale,
+    description: SITE.description,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: SITE.name,
+    url: SITE.url,
+    slogan: SITE.tagline,
+  },
+];
+
+if (type === 'article') {
+  const authorNode: Record<string, unknown> = { '@type': authorEntity, name: author };
+  if (authorUrl) authorNode.url = new URL(authorUrl, Astro.site ?? SITE.url).toString();
+  if (authorSameAs.length > 0) authorNode.sameAs = authorSameAs;
+
+  schema.push({
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    description,
+    image: ogImage.toString(),
+    url: canonicalURL.toString(),
+    inLanguage: SITE.locale,
+    datePublished: publishedTime,
+    dateModified: modifiedTime ?? publishedTime,
+    author: authorNode,
+    publisher: {
+      '@type': 'Organization',
+      name: SITE.name,
+      url: SITE.url,
+    },
+  });
+}
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{pageTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Ícones -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<!-- Open Graph -->
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:locale" content={SITE.locale} />
+<meta property="og:title" content={title ?? SITE.title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:image" content={ogImage} />
+{publishedTime && <meta property="article:published_time" content={publishedTime} />}
+{modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title ?? SITE.title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<!-- RSS -->
+<link rel="alternate" type="application/rss+xml" title={SITE.name} href="/rss.xml" />
+
+<!-- Fontes: Newsreader (serif), Inter (sans), JetBrains Mono (mono) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap"
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

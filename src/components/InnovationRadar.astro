@@ -1,0 +1,59 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  tools: CollectionEntry<'ferramentas'>[];
+}
+
+const { tools } = Astro.props;
+---
+
+<section class="bg-gradient-to-b from-brand-50/50 via-white to-white py-16 border-t border-slate-200/80" id="ferramentas">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+      <div>
+        <div class="flex items-center gap-1.5 text-xs font-mono font-bold text-brand-700 uppercase tracking-wider mb-1">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          Radar de Inovação
+        </div>
+        <h2 class="text-3xl font-serif text-slate-950 tracking-tight">
+          Ferramentas de IA <span class="italic-serif text-brand-600">em Alta</span>
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">Curadoria criteriosa de plataformas testadas, validadas e recomendadas pela nossa bancada.</p>
+      </div>
+      <a class="text-xs font-mono font-semibold text-brand-600 hover:text-brand-800 inline-flex items-center gap-1 transition-colors" href="/ferramentas/">
+        Ver diretório completo <span>→</span>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {
+        tools.map((tool) => (
+          <a
+            href={`/ferramentas/${tool.id}/`}
+            class="relative p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-brand-300 transition-all flex flex-col justify-between group"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center border border-brand-100 font-mono font-bold">
+                  {tool.data.name.slice(0, 1)}
+                </div>
+                {tool.data.rating && (
+                  <span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-brand-50 text-brand-700 border border-brand-100/60">
+                    Nota {tool.data.rating}
+                  </span>
+                )}
+              </div>
+              <h3 class="font-serif font-bold text-lg text-slate-900 group-hover:text-brand-600 transition-colors">{tool.data.name}</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed line-clamp-3">{tool.data.description}</p>
+            </div>
+            <div class="mt-6 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-400">
+              <span>{tool.data.pricing} • {tool.data.platforms.slice(0, 2).join('/')}</span>
+              <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

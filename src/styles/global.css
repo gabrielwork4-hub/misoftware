@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+/*
+  misoftware — design system
+  Estética editorial: tipografia suíça + long-form journalism.
+  Tokens derivados de stitch/home-misoftware-sintese-visual/DESIGN.md
+*/
+
+@theme {
+  /* Marca — azul editorial (voz interativa única do sistema) */
+  --color-brand-50: #eef6ff;
+  --color-brand-100: #d9ecff;
+  --color-brand-200: #bcdfff;
+  --color-brand-300: #8fc7ff;
+  --color-brand-400: #53a8ff;
+  --color-brand-500: #1d82f5;
+  --color-brand-600: #0062d2;
+  --color-brand-700: #004ca8;
+  --color-brand-800: #033f85;
+  --color-brand-900: #08356f;
+
+  /* Superfícies editoriais */
+  --color-paper: #fafbfc;
+  --color-charcoal: #0d1117;
+
+  /* Famílias tipográficas */
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+}
+
+/* Refinamentos tipográficos para estética de publicação */
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+.font-editorial {
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  text-rendering: optimizeLegibility;
+}
+
+.italic-serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Foco acessível consistente */
+:focus-visible {
+  outline: 2px solid var(--color-brand-600);
+  outline-offset: 2px;
+}
+
+/* Estilo base para conteúdo editorial (corpo de artigos) */
+.prose-editorial {
+  max-width: 42rem;
+}
+.prose-editorial p {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: var(--color-slate-700, #334155);
+  margin-bottom: 1.25rem;
+}

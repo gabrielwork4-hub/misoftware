@@ -1,0 +1,33 @@
+{
+  "name": "misoftware",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "misoftware.com.br — publicação editorial de tecnologia aplicada",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build:redirects": "node scripts/build-redirects.mjs",
+    "build:og": "node scripts/build-og.mjs",
+    "prebuild": "node scripts/build-redirects.mjs",
+    "build": "astro build",
+    "postbuild": "pagefind --site dist",
+    "preview": "astro preview",
+    "preview:edge": "npm run build && wrangler pages dev dist --port 8788",
+    "check:status": "node scripts/check-status.mjs",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.11",
+    "@astrojs/sitemap": "^3.4.1",
+    "@tailwindcss/vite": "^4.1.13",
+    "astro": "^5.14.1",
+    "tailwindcss": "^4.1.13"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260918.1",
+    "pagefind": "^1.4.0",
+    "sharp": "^0.34.5",
+    "wrangler": "^4.42.0"
+  }
+}

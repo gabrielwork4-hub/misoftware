@@ -1,0 +1,14 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Página não encontrada" noindex={true}>
+  <section class="max-w-2xl mx-auto px-4 py-32 text-center">
+    <div class="font-mono text-brand-600 text-sm font-bold uppercase tracking-widest mb-4">Erro 404</div>
+    <h1 class="text-4xl sm:text-5xl font-serif text-slate-950 tracking-tight">Página não encontrada</h1>
+    <p class="text-lg text-slate-600 font-serif mt-4">O conteúdo que você procura pode ter sido movido ou arquivado.</p>
+    <a href="/" class="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full bg-brand-600 text-white font-medium text-sm hover:bg-brand-700 transition-all">
+      Voltar ao início
+    </a>
+  </section>
+</BaseLayout>

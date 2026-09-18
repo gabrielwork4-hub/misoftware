@@ -1,0 +1,62 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import { SITE } from '@/consts';
+---
+
+<PageLayout
+  title="Sobre a misoftware"
+  description="Quem somos, o que publicamos e os princípios que orientam a nossa cobertura de tecnologia aplicada."
+  updated="18 de setembro de 2026"
+>
+  <p>
+    A <strong>misoftware</strong> é uma publicação editorial de tecnologia aplicada. Cobrimos
+    inteligência artificial, automação, desenvolvimento de software e as ferramentas que
+    tornam o trabalho técnico mais produtivo — sempre com foco no que é útil, verificável e
+    aplicável no dia a dia de quem constrói.
+  </p>
+
+  <h2>O que fazemos</h2>
+  <p>
+    Organizamos o conteúdo por tópicos, e não por data, para que cada assunto forme um corpo
+    de conhecimento coerente e navegável. Publicamos:
+  </p>
+  <ul>
+    <li><strong>Artigos</strong> — análises e explicações sobre IA, automação e engenharia.</li>
+    <li><strong>Tutoriais</strong> — guias práticos, passo a passo, com código reproduzível.</li>
+    <li><strong>Ferramentas</strong> — um diretório analisado de soluções para trabalho técnico.</li>
+    <li><strong>Comparativos e estudos de caso</strong> — decisões técnicas com critérios claros.</li>
+  </ul>
+
+  <h2>No que acreditamos</h2>
+  <ul>
+    <li>Conteúdo técnico precisa ser <strong>verificável</strong>: citamos fontes e mostramos como chegamos às conclusões.</li>
+    <li>A inteligência artificial é ferramenta de apoio, não substituta do julgamento humano — <strong>IA não publica nada sozinha</strong> nesta casa.</li>
+    <li>Independência editorial: recomendações partem de mérito técnico, e conteúdo patrocinado é sempre identificado.</li>
+  </ul>
+  <p>
+    Para os detalhes de como apuramos, revisamos e corrigimos o que publicamos, veja a nossa
+    <a href="/politica-editorial/">Política Editorial</a>.
+  </p>
+
+  <h2>Quem edita</h2>
+  <p>
+    A misoftware é mantida pela <strong>IdealTrends</strong>. Nossa cobertura é assinada por
+    autores identificados, com especialidade declarada e histórico de publicações.
+  </p>
+
+  <h2>Um esclarecimento sobre o nome</h2>
+  <p>
+    Esta misoftware é um projeto editorial independente e <strong>não tem relação</strong> com a
+    antiga "MI Software" de Ramon Mendes, autora de projetos técnicos como Omni, OmniCode,
+    OmniLite, OmniView, TheLibrary e Bootstrap. Esses projetos seguem ativos e mantidos por seus
+    autores originais em canais como GitHub, o Visual Studio Marketplace e sciter.com — não somos
+    seus responsáveis nem detemos qualquer titularidade sobre eles.
+  </p>
+
+  <h2>Fale com a gente</h2>
+  <p>
+    Sugestões de pauta, correções e parcerias são bem-vindas na página de
+    <a href="/contato/">Contato</a>. Você também pode acompanhar as publicações pelo
+    <a href={SITE.url + '/rss.xml'}>RSS</a>.
+  </p>
+</PageLayout>

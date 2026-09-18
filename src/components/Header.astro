@@ -1,0 +1,77 @@
+---
+import { NAV, SITE } from '@/consts';
+
+const current = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? current === '/' : current.startsWith(href);
+---
+
+<header
+  class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80"
+>
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4"
+  >
+    <!-- Marca -->
+    <div class="flex items-center gap-8">
+      <a aria-label={`${SITE.name} — Início`} class="flex items-center gap-2.5 group" href="/">
+        <div
+          class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-mono font-bold text-lg shadow-sm group-hover:bg-brand-700 transition-colors"
+        >
+          m/
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold tracking-tight text-slate-900 text-lg leading-tight">{SITE.name}</span>
+          <span class="text-[9.5px] uppercase tracking-wider font-mono text-slate-400 font-medium -mt-0.5">{SITE.tagline}</span>
+        </div>
+      </a>
+
+      <!-- Navegação primária -->
+      <nav class="hidden md:flex items-center space-x-1 text-sm font-medium text-slate-600">
+        {
+          NAV.map((item) => (
+            <a
+              class:list={[
+                'px-3 py-1.5 rounded-md transition-colors',
+                isActive(item.href)
+                  ? 'text-brand-600 font-semibold bg-brand-50/60'
+                  : 'hover:text-slate-900 hover:bg-slate-100/70',
+              ]}
+              href={item.href}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+
+    <!-- Ações -->
+    <div class="flex items-center gap-3">
+      <div class="relative hidden sm:block w-56 lg:w-64">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+        </div>
+        <input
+          class="w-full pl-9 pr-12 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-full text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all"
+          placeholder="Buscar artigos e IA..."
+          type="search"
+          aria-label="Buscar no site"
+        />
+        <div class="absolute inset-y-0 right-0 pr-2 flex items-center pointer-events-none">
+          <kbd class="px-1.5 py-0.5 text-[10px] font-mono text-slate-400 bg-white border border-slate-200 rounded">Ctrl+K</kbd>
+        </div>
+      </div>
+
+      <a
+        class="px-4 py-2 text-xs font-semibold rounded-full bg-brand-600 text-white hover:bg-brand-700 shadow-sm transition-all inline-flex items-center gap-1.5"
+        href="#newsletter"
+      >
+        <span>Newsletter</span>
+      </a>
+    </div>
+  </div>
+</header>

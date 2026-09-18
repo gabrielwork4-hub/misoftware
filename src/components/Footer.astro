@@ -1,0 +1,84 @@
+---
+import { SITE, SOCIAL } from '@/consts';
+
+const year = new Date().getFullYear();
+
+const columns = [
+  {
+    title: 'Editorial',
+    links: [
+      { label: 'Artigos Recentes', href: '/artigos/' },
+      { label: 'Tutoriais', href: '/tutoriais/' },
+      { label: 'Diretório de IA', href: '/ferramentas/' },
+      { label: 'Comparativos', href: '/comparativos/' },
+    ],
+  },
+  {
+    title: 'Tópicos & IA',
+    links: [
+      { label: 'Modelos de Linguagem', href: '/ia/modelos-linguagem/' },
+      { label: 'Engenharia de Prompt', href: '/ia/engenharia-de-prompt/' },
+      { label: 'Automação & Agentes', href: '/automacao/' },
+      { label: 'Desenvolvimento', href: '/desenvolvimento/' },
+    ],
+  },
+  {
+    title: 'Portal',
+    links: [
+      { label: 'Sobre Nós', href: '/sobre/' },
+      { label: 'Política Editorial', href: '/politica-editorial/' },
+      { label: 'Privacidade', href: '/privacidade/' },
+      { label: 'Contato & Dicas', href: '/contato/' },
+    ],
+  },
+];
+---
+
+<footer class="bg-white border-t border-slate-200/90 pt-16 pb-12 text-slate-600 font-sans">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-200/70">
+      <!-- Marca & manifesto -->
+      <div class="lg:col-span-2 space-y-4">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-md bg-brand-600 flex items-center justify-center text-white font-mono font-bold text-sm">m/</div>
+          <span class="font-bold tracking-tight text-slate-900 text-lg">{SITE.name}</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-sm">
+          Tecnologia aplicada de um jeito prático e verificável. Inteligência artificial,
+          engenharia moderna e ferramentas de produtividade para trabalho técnico.
+        </p>
+        <div class="flex items-center gap-3 pt-2 text-slate-400">
+          <a aria-label="X / Twitter" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center hover:text-brand-600 hover:border-brand-300 transition-colors" href={SOCIAL.twitter}>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+          </a>
+          <a aria-label="GitHub" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center hover:text-brand-600 hover:border-brand-300 transition-colors" href={SOCIAL.github}>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+          </a>
+          <a aria-label="RSS Feed" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center hover:text-brand-600 hover:border-brand-300 transition-colors" href={SOCIAL.rss}>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 110-2 1 1 0 010 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      {
+        columns.map((col) => (
+          <div>
+            <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 mb-4">{col.title}</h4>
+            <ul class="space-y-2.5 text-xs text-slate-600">
+              {col.links.map((link) => (
+                <li>
+                  <a class="hover:text-brand-600 transition-colors" href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 font-mono gap-4">
+      <div>© {year} {SITE.name}. {SITE.tagline} Todos os direitos reservados.</div>
+      <div>Feito para mentes técnicas e desenvolvedores criativos.</div>
+    </div>
+  </div>
+</footer>

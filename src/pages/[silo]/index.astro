@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ArticleCard from '@/components/ArticleCard.astro';
+import { SILOS } from '@/consts';
+
+export async function getStaticPaths() {
+  // /ferramentas/ é servida por uma rota dedicada (diretório de ferramentas).
+  return SILOS.filter((silo) => silo.slug !== 'ferramentas').map((silo) => ({
+    params: { silo: silo.slug },
+    props: { silo },
+  }));
+}
+
+const { silo } = Astro.props;
+
+const articles = (
+  await getCollection('artigos', ({ data }) => !data.draft && data.silo === silo.slug)
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title={silo.label} description={silo.description}>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <nav class="text-xs font-mono text-slate-400 mb-6" aria-label="Trilha de navegação">
+      <a href="/" class="hover:text-brand-600">Início</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-slate-600 capitalize">{silo.slug}</span>
+    </nav>
+
+    <header class="max-w-3xl mb-12">
+      <div class="text-xs font-mono text-brand-700 font-bold uppercase tracking-wider mb-2">Página-pilar</div>
+      <h1 class="text-4xl sm:text-5xl font-serif text-slate-950 tracking-tight leading-tight">{silo.label}</h1>
+      <p class="text-lg text-slate-600 font-serif leading-relaxed mt-4">{silo.description}</p>
+    </header>
+
+    {
+      articles.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+          {articles.map((entry) => <ArticleCard entry={entry} />)}
+        </div>
+      ) : (
+        <p class="text-slate-500 font-serif text-lg">Conteúdo em produção para este silo. Volte em breve.</p>
+      )
+    }
+  </section>
+</BaseLayout>

@@ -1,0 +1,45 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import { SITE, SOCIAL } from '@/consts';
+---
+
+<PageLayout
+  title="Contato & Dicas"
+  description="Fale com a redação da misoftware: sugestões de pauta, correções, parcerias e imprensa."
+  updated="18 de setembro de 2026"
+>
+  <p>
+    Quer sugerir uma pauta, apontar um erro ou propor uma parceria? Ficamos felizes em ouvir.
+    O caminho mais direto é o e-mail:
+  </p>
+  <p>
+    <a href={`mailto:${SITE.email}`}><strong>{SITE.email}</strong></a>
+  </p>
+
+  <h2>Sugestões de pauta e dicas</h2>
+  <p>
+    Se você tem uma história técnica, um caso de uso interessante de IA ou automação, ou uma
+    ferramenta que merece análise, conte pra gente. Quanto mais contexto e fontes você incluir,
+    mais rápido conseguimos avaliar.
+  </p>
+
+  <h2>Correções</h2>
+  <p>
+    Encontrou uma imprecisão em algo que publicamos? Escreva com o link do conteúdo e o ponto a
+    corrigir. Levamos correções a sério — veja como funciona na nossa
+    <a href="/politica-editorial/">Política Editorial</a>.
+  </p>
+
+  <h2>Parcerias e imprensa</h2>
+  <p>
+    Para propostas de parceria, conteúdo patrocinado (sempre identificado) ou solicitações de
+    imprensa, use o mesmo e-mail e identifique o assunto no título da mensagem.
+  </p>
+
+  <h2>Acompanhe</h2>
+  <ul>
+    <li><a href={SOCIAL.twitter} rel="me">X / Twitter</a></li>
+    <li><a href={SOCIAL.github} rel="me">GitHub</a></li>
+    <li><a href={SOCIAL.rss}>RSS</a> — todas as publicações no seu leitor.</li>
+  </ul>
+</PageLayout>

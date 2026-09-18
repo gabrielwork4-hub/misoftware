@@ -1,0 +1,49 @@
+---
+/**
+ * Layout para páginas institucionais e de texto corrido (Sobre, Política
+ * editorial, Privacidade, Contato). Reaproveita o BaseLayout e aplica o mesmo
+ * estilo de prosa editorial usado nas páginas de artigo.
+ */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Rótulo do "olho" acima do título (ex.: "Institucional") */
+  kicker?: string;
+  /** Data de atualização exibida no cabeçalho (formato pt-BR já pronto) */
+  updated?: string;
+}
+
+const { title, description, kicker = 'Institucional', updated } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <nav class="text-xs font-mono text-slate-400 mb-6" aria-label="Trilha de navegação">
+      <a href="/" class="hover:text-brand-600">Início</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-slate-600">{title}</span>
+    </nav>
+
+    <header class="mb-10">
+      <div class="text-xs font-mono text-brand-700 font-bold uppercase tracking-wider mb-2">{kicker}</div>
+      <h1 class="text-4xl sm:text-5xl font-serif text-slate-950 tracking-tight leading-tight">{title}</h1>
+      {description && <p class="text-lg text-slate-600 font-serif leading-relaxed mt-4">{description}</p>}
+      {updated && <p class="text-[11px] font-mono text-slate-400 mt-4">Atualizado em {updated}</p>}
+    </header>
+
+    <div
+      class="prose-editorial font-serif text-slate-800 text-lg leading-relaxed
+             [&_h2]:font-sans [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-slate-900 [&_h2]:mt-10 [&_h2]:mb-4
+             [&_h3]:font-sans [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-slate-900 [&_h3]:mt-8 [&_h3]:mb-3
+             [&_p]:mb-5
+             [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-5 [&_ul]:space-y-2
+             [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-5 [&_ol]:space-y-2
+             [&_a]:text-brand-600 [&_a]:underline [&_a]:underline-offset-4
+             [&_strong]:text-slate-900 [&_strong]:font-semibold"
+    >
+      <slot />
+    </div>
+  </section>
+</BaseLayout>

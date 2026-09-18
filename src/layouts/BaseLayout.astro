@@ -1,0 +1,39 @@
+---
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { SITE } from '@/consts';
+import '@/styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  authorUrl?: string;
+  authorSameAs?: string[];
+  authorEntity?: 'Person' | 'Organization';
+  noindex?: boolean;
+}
+
+const props = Astro.props;
+---
+
+<!doctype html>
+<html lang={SITE.locale} class="scroll-smooth">
+  <head>
+    <BaseHead {...props} />
+  </head>
+  <body
+    class="bg-paper text-slate-800 font-sans antialiased selection:bg-brand-100 selection:text-brand-900 border-t-2 border-brand-600"
+  >
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>misoftware — Engenharia de Software, Modelos &amp; Prática Técnica</title>
+<!-- Google Fonts: Newsreader (editorial serif), Inter (corpo límpido) e JetBrains Mono (código & metadados) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 com plugins oficiais -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eef6ff',
+              100: '#d9ecff',
+              200: '#bcdfff',
+              400: '#53a8ff',
+              500: '#1d82f5',
+              600: '#0062d2',
+              700: '#004ca8',
+              800: '#033f85',
+              900: '#08356f',
+            },
+            paper: '#fafafa',
+            charcoal: '#0d1117',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="typography">
+    /* Refinamentos tipográficos para estética de publicação premium */
+    h1, h2, h3, .font-editorial {
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      text-rendering: optimizeLegibility;
+    }
+    .italic-serif {
+      font-family: 'Newsreader', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body class="bg-[#fafbfc] text-slate-800 font-sans antialiased selection:bg-brand-100 selection:text-brand-900 border-t-2 border-brand-600">
+<!-- BEGIN: MainHeader -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+<!-- Lado Esquerdo: Identidade / Marca -->
+<div class="flex items-center gap-8">
+<a aria-label="misoftware Início" class="flex items-center gap-2.5 group" href="#">
+<div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-mono font-bold text-lg shadow-sm shadow-brand-500/20 group-hover:bg-brand-700 transition-colors">
+            m/
+          </div>
+<div class="flex flex-col">
+<span class="font-bold tracking-tight text-slate-900 text-lg leading-tight font-sans">misoftware</span>
+<span class="text-[9.5px] uppercase tracking-wider font-mono text-slate-400 font-medium -mt-0.5">Ideias. Ferramentas. Resultados.</span>
+</div>
+</a>
+<!-- Navegação Primária -->
+<nav class="hidden md:flex items-center space-x-1 text-sm font-medium text-slate-600">
+<a class="px-3 py-1.5 rounded-md text-brand-600 font-semibold bg-brand-50/60 transition-colors" href="#">Início</a>
+<a class="px-3 py-1.5 rounded-md hover:text-slate-900 hover:bg-slate-100/70 transition-colors" href="#artigos">Artigos</a>
+<a class="px-3 py-1.5 rounded-md hover:text-slate-900 hover:bg-slate-100/70 transition-colors" href="#trilhas">Tutoriais</a>
+<a class="px-3 py-1.5 rounded-md hover:text-slate-900 hover:bg-slate-100/70 transition-colors" href="#ferramentas">Ferramentas de IA</a>
+<a class="px-3 py-1.5 rounded-md hover:text-slate-900 hover:bg-slate-100/70 transition-colors" href="#">Reviews</a>
+</nav>
+</div>
+<!-- Lado Direito: Busca rápida, Assinatura e Perfil -->
+<div class="flex items-center gap-3">
+<!-- Campo de Busca Estilizado com atalho Ctrl+K -->
+<div class="relative hidden sm:block w-56 lg:w-64">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<input class="w-full pl-9 pr-12 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-full text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all" placeholder="Buscar artigos e IA..." type="text"/>
+<div class="absolute inset-y-0 right-0 pr-2 flex items-center pointer-events-none">
+<kbd class="px-1.5 py-0.5 text-[10px] font-mono text-slate-400 bg-white border border-slate-200 rounded shadow-2xs">Ctrl+K</kbd>
+</div>
+</div>
+<!-- Botão Primário de Conversão -->
+<a class="px-4 py-2 text-xs font-semibold rounded-full bg-brand-600 text-white hover:bg-brand-700 shadow-sm shadow-brand-600/20 transition-all inline-flex items-center gap-1.5" href="#newsletter">
+<span>Newsletter</span>
+</a>
+<!-- Miniatura de Perfil / Usuário -->
+<button aria-label="Perfil do usuário" class="relative w-8 h-8 rounded-full ring-2 ring-slate-100 overflow-hidden ml-1 hover:ring-brand-400 transition-all focus:outline-none">
+<img alt="Avatar do leitor" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuJpQobRNJbwaQqQmvYNVpPVJGavQO4UCQVqSPn47eJGJfaz5XXYFxcdpvMW6Rx7SnUBMcJ9ImIQqfTv-FcLHplkI-FXT5dm3WiacwfiGIS5cz1RnD4LFTzZAM9oS7Jx3k8VxCmQtjsXWtuHeryLncvtv6gefsQAwBr76mUvmkl2_3areJc0ZBa8CCDKzpsT_JK1_hAYFlnPZAfr-2LXN_SPpF_579VIZ3BwAvYcdFP7PwqyxiVsUwnQ"/>
+</button>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<main>
+<!-- BEGIN: HeroSection -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-12 lg:py-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+<!-- Coluna Esquerda: Declaração Editorial & Estatísticas -->
+<div class="lg:col-span-6 space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-brand-700 text-xs font-semibold tracking-wide uppercase font-mono">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse"></span>
+            Portal Oficial de Tecnologia
+          </div>
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight text-slate-950 font-normal leading-[1.08]">
+            Tecnologia <br/>
+<span class="italic-serif text-brand-600 font-normal">na prática rigorosa.</span>
+</h1>
+<p class="text-base sm:text-lg text-slate-600 leading-relaxed font-sans max-w-xl font-normal">
+            Tutoriais minuciosos, novas ferramentas de IA e estratégias práticas de engenharia de software para transformar sua produtividade técnica diária com profundidade analítica.
+          </p>
+<!-- Ações Primárias -->
+<div class="flex flex-wrap items-center gap-3 pt-2">
+<a class="px-6 py-3 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm transition-all shadow-md shadow-brand-500/20 flex items-center gap-2 group" href="#artigos">
+<span>Explorar Artigos</span>
+<svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<a class="px-6 py-3 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-medium text-sm transition-all shadow-xs flex items-center gap-2" href="#ferramentas">
+<svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Hub de Ferramentas</span>
+</a>
+</div>
+<!-- Métricas e Autoridade -->
+<div class="pt-8 border-t border-slate-200/70 grid grid-cols-3 gap-6">
+<div>
+<div class="text-2xl lg:text-3xl font-serif font-bold text-slate-900 tracking-tight">120+</div>
+<div class="text-xs text-slate-500 font-mono mt-0.5">Guias Práticos</div>
+</div>
+<div>
+<div class="text-2xl lg:text-3xl font-serif font-bold text-slate-900 tracking-tight">45k</div>
+<div class="text-xs text-slate-500 font-mono mt-0.5">Leitores Ativos</div>
+</div>
+<div>
+<div class="text-2xl lg:text-3xl font-serif font-bold text-slate-900 tracking-tight">100%</div>
+<div class="text-xs text-slate-500 font-mono mt-0.5">Conteúdo Real</div>
+</div>
+</div>
+</div>
+<!-- Coluna Direita: Artigo de Capa / Destaque da Semana -->
+<div class="lg:col-span-6">
+<article class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
+<!-- Imagem de Destaque com Overlays -->
+<div class="relative h-64 sm:h-72 w-full overflow-hidden bg-slate-900">
+<img alt="IA Generativa no Fluxo de Trabalho" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9MU6tl_DdhdU9Qd9o9cvAuMEbUN5mPn-sckmUEsbSRxKkfPP2rgAB7b-jccuxaEBe25QDZX7xv6EC0cEIfYK69U4V4JIR5aL03KANP0lRKmxYPhH1xB0lZ-GMVSULosaCBCH31IM5ILIRi49avBU5-tZgQttGkdUQjO4YXHa-u5ljLEK-TlcvCZhFForxD4sDegeMgVCNBD2atXLsMEi4rtC5bJzKDncLxFckyi5X_3lL2OB6S8wRkA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<!-- Badges Superiores -->
+<div class="absolute top-4 left-4 flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[11px] font-mono font-semibold uppercase tracking-wider shadow-sm">
+<span class="w-2 h-2 rounded-full bg-brand-600 animate-ping"></span>
+                  Destaque da Semana
+                </span>
+</div>
+<!-- Badge de Leitura Inferior Direito -->
+<div class="absolute bottom-3 right-4">
+<span class="text-[11px] font-mono bg-black/60 backdrop-blur-md text-slate-200 px-2.5 py-1 rounded-md">
+                  8 min de leitura
+                </span>
+</div>
+</div>
+<!-- Conteúdo Editorial do Card -->
+<div class="p-6 sm:p-7 space-y-3">
+<div class="flex items-center gap-3 text-xs font-mono text-slate-500">
+<span class="text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded font-semibold uppercase">IA &amp; Desenvolvimento</span>
+<span>•</span>
+<span>Atualizado hoje</span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-serif text-slate-950 font-normal leading-snug group-hover:text-brand-600 transition-colors">
+                IA Generativa no Fluxo de Trabalho: <span class="italic-serif text-slate-900">O Guia Definitivo para 2026</span>
+</h2>
+<p class="text-sm text-slate-600 leading-relaxed font-sans line-clamp-2">
+                Como integrar modelos locais, agentes autônomos e automação de código no dia a dia sem abrir mão da segurança de dados e da consistência de produção.
+              </p>
+<!-- Rodapé do Card com Autor e Link -->
+<div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center font-mono text-[11px] font-bold text-slate-600">
+                    MS
+                  </div>
+<div>
+<p class="text-xs font-semibold text-slate-900 leading-none">Redação misoftware</p>
+<p class="text-[10px] font-mono text-slate-400 mt-0.5">Equipe Técnica</p>
+</div>
+</div>
+<a class="text-xs font-semibold text-brand-600 group-hover:text-brand-700 inline-flex items-center gap-1 font-mono hover:underline" href="#">
+                  Ler artigo <span>→</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: QuickTracks -->
+<section class="bg-white border-y border-slate-200/70 py-10" id="trilhas">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-6">
+<div>
+<span class="text-xs font-mono font-bold tracking-wider text-brand-700 uppercase">Trilhas Rápidas</span>
+<h2 class="text-2xl font-serif text-slate-900 tracking-tight mt-0.5">Comece pelo essencial</h2>
+</div>
+<p class="text-xs font-mono text-slate-400 mt-1 sm:mt-0">Categorias com maior densidade prática</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Card Trilha 1 -->
+<a class="p-4 rounded-xl border border-slate-200/90 bg-slate-50/50 hover:bg-white hover:border-brand-200 hover:shadow-md transition-all flex items-center gap-3.5 group" href="#">
+<div class="w-12 h-12 rounded-lg bg-slate-900 flex-shrink-0 flex items-center justify-center text-white overflow-hidden shadow-xs">
+<img alt="Ícone Notion" class="w-full h-full object-cover group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9BQXIbDlLt_PL3EGlGTKPQWRpwWbwjTo1Nf8RoQq_QMSYU9Roi9pxnBNic3UhFHcBjP56CiIHz3WnjxRW2o0qib2xpMssfiF4vuZarv31-7CNYiLLDVtaNHh9htHxritoe5okPA-NM71d2UMG4MGLEvlJOW7_nuZKzTFqmXKhRcLNVaL32wMT5DkRRI_7SgVCWsum1OHEf-VtBqoQQrdZxvpSKreWGe9lR_Aquk3quJ6Elna3TU0Wqg"/>
+</div>
+<div class="min-w-0">
+<span class="text-[10px] font-mono font-semibold text-brand-600 uppercase tracking-wide">Tutoriais</span>
+<h3 class="text-sm font-semibold text-slate-900 truncate group-hover:text-brand-600 transition-colors">Como usar o Notion para organizar s...</h3>
+<p class="text-xs text-slate-500 truncate">Sistemas e automações eficientes</p>
+</div>
+</a>
+<!-- Card Trilha 2 -->
+<a class="p-4 rounded-xl border border-slate-200/90 bg-slate-50/50 hover:bg-white hover:border-brand-200 hover:shadow-md transition-all flex items-center gap-3.5 group" href="#">
+<div class="w-12 h-12 rounded-lg bg-slate-900 flex-shrink-0 flex items-center justify-center text-white overflow-hidden shadow-xs">
+<img alt="Extensões do Navegador" class="w-full h-full object-cover group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO0Pav0SaJBwS4Op3mmuCdAqnioXDDAMuKVF1N6qhud0XEcUWeeLKa1HTFKAOrceH4Q2u_4FYoHTShCuRVivQfx4ELw6U03jRtkK1P9gbqqiYDPAkryL_DUM2ph753_X42WeoNTUhk9NPoyEuC6_arFuI6dHo7TmRd3dIX-TzOm-dR9aFkth0yAkf5QTnKhf3O4T1-98vASAhHRccqylb3A2NF6_ImBXFLMNkDjncFmslNZ9GcsUQaXw"/>
+</div>
+<div class="min-w-0">
+<span class="text-[10px] font-mono font-semibold text-brand-600 uppercase tracking-wide">Ferramentas</span>
+<h3 class="text-sm font-semibold text-slate-900 truncate group-hover:text-brand-600 transition-colors">As melhores extensões para seu nav...</h3>
+<p class="text-xs text-slate-500 truncate">Produtividade no browser diário</p>
+</div>
+</a>
+<!-- Card Trilha 3 -->
+<a class="p-4 rounded-xl border border-slate-200/90 bg-slate-50/50 hover:bg-white hover:border-brand-200 hover:shadow-md transition-all flex items-center gap-3.5 group" href="#">
+<div class="w-12 h-12 rounded-lg bg-slate-900 flex-shrink-0 flex items-center justify-center text-white overflow-hidden shadow-xs">
+<img alt="Inteligência Artificial" class="w-full h-full object-cover group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYQUtpyp8pAr3ZSB8ejwAdYsA2Kt9Hgy64aQRl1sBVJDGEodSvMEDi6CZCUhcOWJ94DmWF1r_nPCUEE_-Is9bPlXamsfl7wpqX6-1KGgXZnKAtUBqpuf81j1qmotxrsMI2Q5QOe_LME6s9otIG0I_DDy-AvSYJ4bIIzXJ0fRvfR5yVxFd54jPhjTbrNI7WcrLsMH9ZBoC8EJcu9zLnR5ULkwhwlDfkG_mTleABofx4P_P5jzz_Y8hLGA"/>
+</div>
+<div class="min-w-0">
+<span class="text-[10px] font-mono font-semibold text-brand-600 uppercase tracking-wide">Inteligência Artificial</span>
+<h3 class="text-sm font-semibold text-slate-900 truncate group-hover:text-brand-600 transition-colors">O que esperar dos agentes em 2026</h3>
+<p class="text-xs text-slate-500 truncate">Previsões e modelos de ponta</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- END: QuickTracks -->
+<!-- BEGIN: LatestArticlesSection -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="artigos">
+<!-- Cabeçalho com Filtros por Abas -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+<div>
+<div class="flex items-center gap-1.5 text-xs font-mono text-brand-700 font-bold uppercase tracking-wider mb-1">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            Publicações Recentes
+          </div>
+<h2 class="text-3xl sm:text-4xl font-serif text-slate-950 font-normal tracking-tight">
+            Últimos Artigos &amp; <span class="italic-serif">Análises</span>
+</h2>
+</div>
+<!-- Abas de Filtros -->
+<div class="flex flex-wrap items-center gap-1.5 p-1 bg-slate-100/80 rounded-xl border border-slate-200/70 text-xs font-medium text-slate-600">
+<button class="px-3.5 py-1.5 rounded-lg bg-brand-600 text-white font-semibold shadow-xs">Todos</button>
+<button class="px-3.5 py-1.5 rounded-lg hover:text-slate-900 hover:bg-white/80 transition-all">Inteligência Artificial</button>
+<button class="px-3.5 py-1.5 rounded-lg hover:text-slate-900 hover:bg-white/80 transition-all">Ferramentas</button>
+<button class="px-3.5 py-1.5 rounded-lg hover:text-slate-900 hover:bg-white/80 transition-all">Tutoriais Dev</button>
+</div>
+</div>
+<!-- Grid 3x2 de Artigos -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+<!-- Card 1 -->
+<article class="bg-white rounded-xl border border-slate-200/90 overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col group">
+<div class="relative h-48 w-full overflow-hidden bg-slate-900">
+<img alt="DeepSeek e Llama 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwnLOEqWac4SOs-zoZnRNe6dh9ivedV7LKJZT36xvfBPBdZP2RS3v73lB_DuQ0HrIcFjLCfjQZH97BGXwTyDoZExynh1T-JpDMJ-8qe_yIbI_YVG_MKR4PM8upWt9Fug1-3lVqnzaude4CS3-xU70OY_g0zLAcCLWnEtFnKHXxPYUntUMGyCX4APO4MJsb7BSds788NhzFJ9N1lFPifgZcwKrYXdRDLBqn0dzS07oabPr1Bm2Zu6P7nQ"/>
+<div class="absolute top-3 left-3">
+<span class="text-[10px] font-mono font-semibold bg-brand-600/90 backdrop-blur-xs text-white px-2.5 py-0.5 rounded-md uppercase">IA &amp; Modelos</span>
+</div>
+<div class="absolute bottom-2.5 right-3">
+<span class="text-[11px] font-mono bg-black/70 text-slate-200 px-2 py-0.5 rounded">6 min</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div class="text-[11px] font-mono text-slate-400 mb-1.5">24 de Fevereiro, 2026</div>
+<h3 class="text-lg font-serif font-semibold text-slate-900 group-hover:text-brand-600 transition-colors leading-snug">
+                Como rodar modelos DeepSeek e Llama 3 localmente com Ollama
+              </h3>
+<p class="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed">
+                Instalação passo a passo, otimização de VRAM e integração de APIs locais sem custos de nuvem recorrentes e total privacidade de código.
+              </p>
+</div>
+<div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-slate-100 text-slate-600 font-mono text-[10px] flex items-center justify-center font-bold">MS</span>
+<span class="text-xs text-slate-600">Marcos Silva</span>
+</div>
+<span class="text-brand-600 group-hover:translate-x-1 transition-transform">→</span>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-white rounded-xl border border-slate-200/90 overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col group">
+<div class="relative h-48 w-full overflow-hidden bg-slate-900">
+<img alt="Editores de código IA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjby79luoRUMnGIOS9YHOy92I8C1ro8-72OeUH2JPp0fBDpFmzSHLUYftdNlrswWTVmzgNp4pu5TLxTynL28nmsnu8P_ez2zOR0aGkTc8L6hhw7-SCzuNypzqAS0ucI4bw57fXG1fLnOe2kIjNDYuulPvmTcCEyoRd15ogOFBV4lCI-FVghXfFsVWrGT_rMSngbsdR7CjwBtj-CEp2_xjkAP0zBTkz5CdWBcY_H6YJ7q8k6uN69Mx5NQ"/>
+<div class="absolute top-3 left-3">
+<span class="text-[10px] font-mono font-semibold bg-brand-600/90 backdrop-blur-xs text-white px-2.5 py-0.5 rounded-md uppercase">Ferramentas</span>
+</div>
+<div class="absolute bottom-2.5 right-3">
+<span class="text-[11px] font-mono bg-black/70 text-slate-200 px-2 py-0.5 rounded">10 min</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div class="text-[11px] font-mono text-slate-400 mb-1.5">22 de Fevereiro, 2026</div>
+<h3 class="text-lg font-serif font-semibold text-slate-900 group-hover:text-brand-600 transition-colors leading-snug">
+                Os 7 melhores editores de código orientados a IA comparados
+              </h3>
+<p class="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed">
+                Cursor, Windsurf, Zed e extensões para VS Code: testamos performance em monorepos reais, latência de autocompletion e precisão de refatoração.
+              </p>
+</div>
+<div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-slate-100 text-slate-600 font-mono text-[10px] flex items-center justify-center font-bold">AL</span>
+<span class="text-xs text-slate-600">Ana Luiza</span>
+</div>
+<span class="text-brand-600 group-hover:translate-x-1 transition-transform">→</span>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-white rounded-xl border border-slate-200/90 overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col group">
+<div class="relative h-48 w-full overflow-hidden bg-slate-900">
+<img alt="Pipelines CI/CD" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPoUxs-X_of5EggEtTwDCd9HAvoyT06tb6ySbuiee-uMJVtzY5CAcJgVtNYRudbbKjeYRAQnaFBJm1Dwxy2HR98Ki0wCtXgtotxWVXDbdFaR1mjgD3EOGGvc6NBf7Rx_cyU1SHY5k8Y9c23hA93J739Bxlm0sv-SG3GpnU_w_AJ4JjdFmbpbzkgOMFdVApa4pu3JUyN8d43Xdx0gcyUQ98W6P1EtRiQ8BCnR7rP2EJiTsTJfjsXUSOAA"/>
+<div class="absolute top-3 left-3">
+<span class="text-[10px] font-mono font-semibold bg-brand-600/90 backdrop-blur-xs text-white px-2.5 py-0.5 rounded-md uppercase">Tutorial Dev</span>
+</div>
+<div class="absolute bottom-2.5 right-3">
+<span class="text-[11px] font-mono bg-black/70 text-slate-200 px-2 py-0.5 rounded">12 min</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div class="text-[11px] font-mono text-slate-400 mb-1.5">19 de Fevereiro, 2026</div>
+<h3 class="text-lg font-serif font-semibold text-slate-900 group-hover:text-brand-600 transition-colors leading-snug">
+                Construindo Pipelines CI/CD com GitHub Actions e Docker
+              </h3>
+<p class="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed">
+                Guia completo de automação desde o lint até o deploy com cache de camadas, testes paralelos e gerenciamento seguro de secrets.
+              </p>
+</div>
+<div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-slate-100 text-slate-600 font-mono text-[10px] flex items-center justify-center font-bold">GF</span>
+<span class="text-xs text-slate-600">Gabriel Fontes</span>
+</div>
+<span class="text-brand-600 group-hover:translate-x-1 transition-transform">→</span>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="bg-white rounded-xl border border-slate-200/90 overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col group">
+<div class="relative h-48 w-full overflow-hidden bg-slate-900">
+<img alt="Segundo Cérebro Obsidian vs Notion" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaWzGj9jl_bWgPOskayoRlkfhx5xxq2Ix6r_4TuZSDR6e0WbgwFnPEJb1zj2MXIkOK6AIOnLtQTGfBj-jv-uymU462mo4tvUFXGS2_pJTxiRQ0_hIbMtbDn2PyD4Cm_klLwjxAs0uFNreID62PRD-Mzpm4H8i-vZ4PMS05IzoSX36XD3cFxkjTeUw2DXJ918hoSRVOQ_IK71ymBsxbtj6YsDYMuqcFRl5gSGt3lCSE_alkAPRDj1L5eg"/>
+<div class="absolute top-3 left-3">
+<span class="text-[10px] font-mono font-semibold bg-brand-600/90 backdrop-blur-xs text-white px-2.5 py-0.5 rounded-md uppercase">Produtividade</span>
+</div>
+<div class="absolute bottom-2.5 right-3">
+<span class="text-[11px] font-mono bg-black/70 text-slate-200 px-2 py-0.5 rounded">7 min</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div class="text-[11px] font-mono text-slate-400 mb-1.5">17 de Fevereiro, 2026</div>
+<h3 class="text-lg font-serif font-semibold text-slate-900 group-hover:text-brand-600 transition-colors leading-snug">
+                Construindo seu Segundo Cérebro: Obsidian vs Notion
+              </h3>
+<p class="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed">
+                Uma análise aprofundada sobre privacidade de dados, links bidirecionais e qual solução funciona melhor para mentes analíticas.
+              </p>
+</div>
+<div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-slate-100 text-slate-600 font-mono text-[10px] flex items-center justify-center font-bold">MS</span>
+<span class="text-xs text-slate-600">Redação misoftware</span>
+</div>
+<span class="text-brand-600 group-hover:translate-x-1 transition-transform">→</span>
+</div>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="bg-white rounded-xl border border-slate-200/90 overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col group">
+<div class="relative h-48 w-full overflow-hidden bg-slate-900">
+<img alt="Engenharia de Prompt e CoT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDZNMyv3JvlweT_ZDTZphTFRwlMmjG2osmA8uKDibhrDiuSlNRmQKyVnG82bRayhF2zsZwSOHptzQCcHsSL-B-cEpmeJofi9CUwLnaG_UPT9cwPSWQ2al4hKzgZZKZgppRjh9SN8XjK3R8EYqZsOVULpC05QqIyvokiwpvo39J6dNXx-D3Gm3f4g-MT0bf0VYlVRgxHiuB7dNObjMcSD23Ho8pd5z2kaqEpt-ivq9NdbPZBuv3-eHN2Q"/>
+<div class="absolute top-3 left-3">
+<span class="text-[10px] font-mono font-semibold bg-brand-600/90 backdrop-blur-xs text-white px-2.5 py-0.5 rounded-md uppercase">Engenharia de Prompt</span>
+</div>
+<div class="absolute bottom-2.5 right-3">
+<span class="text-[11px] font-mono bg-black/70 text-slate-200 px-2 py-0.5 rounded">9 min</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div class="text-[11px] font-mono text-slate-400 mb-1.5">14 de Fevereiro, 2026</div>
+<h3 class="text-lg font-serif font-semibold text-slate-900 group-hover:text-brand-600 transition-colors leading-snug">
+                Padrões de Raciocínio Estruturado com Chain-of-Thought
+              </h3>
+<p class="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed">
+                Aumente a precisão das respostas de LLMs em problemas matemáticos e lógica de programação usando metacognição estruturada.
+              </p>
+</div>
+<div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-slate-100 text-slate-600 font-mono text-[10px] flex items-center justify-center font-bold">TC</span>
+<span class="text-xs text-slate-600">Thiago Cruz</span>
+</div>
+<span class="text-brand-600 group-hover:translate-x-1 transition-transform">→</span>
+</div>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="bg-white rounded-xl border border-slate-200/90 overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col group">
+<div class="relative h-48 w-full overflow-hidden bg-slate-900">
+<img alt="Hardware e NPU Dedicados" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpRCGHkUt9jEjQwliUBIwmHo3Cr2piyDSJs5SPxrLDGFSeKrGkCykFylr50JTWMaNNLvAjGIVOkbwHGFy8NLw8ZpTdrhoxR9p8_ZTUas9JxmnOFHo5YkKhz8KkTPibPMr8T0QvKJDhbo4hH5tCeTC4tIt85POFnD0ii4uPm-2alXlyXYFg2PXxu7z0jF3K8GwJ06o61go5ReFA7om-omNJ2V53uuQUg4ZRnekox9taKE6qYN3FyBD0kg"/>
+<div class="absolute top-3 left-3">
+<span class="text-[10px] font-mono font-semibold bg-brand-600/90 backdrop-blur-xs text-white px-2.5 py-0.5 rounded-md uppercase">Reviews &amp; Hardware</span>
+</div>
+<div class="absolute bottom-2.5 right-3">
+<span class="text-[11px] font-mono bg-black/70 text-slate-200 px-2 py-0.5 rounded">11 min</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div class="text-[11px] font-mono text-slate-400 mb-1.5">10 de Fevereiro, 2026</div>
+<h3 class="text-lg font-serif font-semibold text-slate-900 group-hover:text-brand-600 transition-colors leading-snug">
+                NPU e Chips Dedicados: Vale a pena investir em 2026?
+              </h3>
+<p class="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed">
+                Métricas de eficiência térmica, benchmarks de inferência de modelos compactos e a real utilidade prática em laptops para desenvolvedores.
+              </p>
+</div>
+<div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-slate-100 text-slate-600 font-mono text-[10px] flex items-center justify-center font-bold">MS</span>
+<span class="text-xs text-slate-600">Redação misoftware</span>
+</div>
+<span class="text-brand-600 group-hover:translate-x-1 transition-transform">→</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Botão Carregar Mais Publicações -->
+<div class="mt-12 text-center">
+<button class="px-6 py-2.5 text-xs font-semibold font-mono tracking-wide rounded-full border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 hover:border-slate-400 transition-all inline-flex items-center gap-2 shadow-2xs">
+<span>Carregar Mais Publicações</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</section>
+<!-- END: LatestArticlesSection -->
+<!-- BEGIN: InnovationRadarSection -->
+<section class="bg-gradient-to-b from-blue-50/50 via-white to-white py-16 border-t border-slate-200/80" id="ferramentas">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Cabeçalho da Seção -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+<div>
+<div class="flex items-center gap-1.5 text-xs font-mono font-bold text-brand-700 uppercase tracking-wider mb-1">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              Radar de Inovação
+            </div>
+<h2 class="text-3xl font-serif text-slate-950 tracking-tight">
+              Ferramentas de IA <span class="italic-serif text-brand-600">em Alta</span>
+</h2>
+<p class="text-xs sm:text-sm text-slate-500 mt-1">Curadoria criteriosa de plataformas testadas, validadas e recomendadas pela nossa bancada.</p>
+</div>
+<a class="text-xs font-mono font-semibold text-brand-600 hover:text-brand-800 inline-flex items-center gap-1 transition-colors" href="#">
+            Ver diretório completo (60+) <span>→</span>
+</a>
+</div>
+<!-- Grid de Cards de Ferramentas -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- Ferramenta 1: Cursor IDE -->
+<div class="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-brand-300 transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="w-10 h-10 rounded-xl bg-blue-50 text-brand-600 flex items-center justify-center border border-blue-100">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-brand-700 border border-blue-100/60">
+                  Nota 9.8
+                </span>
+</div>
+<h3 class="font-serif font-bold text-lg text-slate-900 group-hover:text-brand-600 transition-colors">Cursor IDE</h3>
+<p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Editor inteligente com fork do VS Code e agentes integrados em multi-arquivos com raciocínio contextual veloz.
+              </p>
+</div>
+<div class="mt-6 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-400">
+<span>Freemium • Mac/Win/Linux</span>
+<svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+</div>
+<!-- Ferramenta 2: Ollama -->
+<div class="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-brand-300 transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="w-10 h-10 rounded-xl bg-blue-50 text-brand-600 flex items-center justify-center border border-blue-100">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-brand-700 border border-blue-100/60">
+                  Nota 9.5
+                </span>
+</div>
+<h3 class="font-serif font-bold text-lg text-slate-900 group-hover:text-brand-600 transition-colors">Ollama</h3>
+<p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Execução de modelos de código aberto direto no terminal com consumo otimizado de VRAM e suporte local.
+              </p>
+</div>
+<div class="mt-6 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-400">
+<span>Open Source • Grátis</span>
+<svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+</div>
+<!-- Ferramenta 3: LangChain -->
+<div class="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-brand-300 transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="w-10 h-10 rounded-xl bg-blue-50 text-brand-600 flex items-center justify-center border border-blue-100">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-brand-700 border border-blue-100/60">
+                  Nota 9.4
+                </span>
+</div>
+<h3 class="font-serif font-bold text-lg text-slate-900 group-hover:text-brand-600 transition-colors">LangChain</h3>
+<p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Framework definitivo para encadeamento e orquestração de agentes autônomos com pipelines auditáveis.
+              </p>
+</div>
+<div class="mt-6 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-400">
+<span>Dev Kit • Python/TS</span>
+<svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+</div>
+<!-- Ferramenta 4: v0 by Vercel -->
+<div class="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-brand-300 transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="w-10 h-10 rounded-xl bg-blue-50 text-brand-600 flex items-center justify-center border border-blue-100">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-brand-700 border border-blue-100/60">
+                  Nota 9.2
+                </span>
+</div>
+<h3 class="font-serif font-bold text-lg text-slate-900 group-hover:text-brand-600 transition-colors">v0 by Vercel</h3>
+<p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                Geração instantânea de interfaces reativas em Tailwind e React a partir de prompts naturais bem construídos.
+              </p>
+</div>
+<div class="mt-6 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-400">
+<span>Web • Freemium</span>
+<svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: InnovationRadarSection -->
+<!-- BEGIN: NewsletterSection -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="newsletter">
+<div class="rounded-3xl bg-gradient-to-b from-blue-50/70 via-blue-50/30 to-white border border-blue-100/80 p-8 sm:p-12 lg:p-16 text-center max-w-4xl mx-auto shadow-sm">
+<!-- Ícone Envelope Minimalista -->
+<div class="w-12 h-12 rounded-2xl bg-white border border-blue-200 text-brand-600 flex items-center justify-center mx-auto mb-5 shadow-xs">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</div>
+<span class="text-xs font-mono font-semibold tracking-widest text-brand-700 uppercase">Newsletter Semanal</span>
+<h2 class="text-3xl sm:text-4xl font-serif text-slate-950 font-normal tracking-tight mt-2 mb-3">
+          Novos artigos <span class="italic-serif text-brand-600">toda semana.</span>
+</h2>
+<p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+          Junte-se a mais de 45.000 profissionais de tecnologia. Receba resumos práticos, testes de novas IAs e scripts direto na sua caixa de entrada, sem spam.
+        </p>
+<!-- Formulário de Captura -->
+<form class="mt-8 max-w-lg mx-auto flex flex-col sm:flex-row gap-2.5" onsubmit="event.preventDefault();">
+<div class="relative flex-1">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 text-xs">
+              @
+            </div>
+<input class="w-full pl-8 pr-4 py-3 text-sm rounded-xl sm:rounded-full bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 shadow-2xs" placeholder="Digite seu melhor e-mail profissional..." required="" type="email"/>
+</div>
+<button class="px-7 py-3 rounded-xl sm:rounded-full bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm transition-all shadow-md shadow-brand-500/20 flex-shrink-0" type="submit">
+            Inscrever-se
+          </button>
+</form>
+<!-- Garantias de Privacidade -->
+<div class="mt-4 flex items-center justify-center gap-6 text-xs text-slate-500 font-mono">
+<span class="flex items-center gap-1.5">
+<svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            Zero spam
+          </span>
+<span class="flex items-center gap-1.5">
+<svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            Cancele quando quiser
+          </span>
+</div>
+</div>
+</section>
+<!-- END: NewsletterSection -->
+</main>
+<!-- BEGIN: MainFooter -->
+<footer class="bg-white border-t border-slate-200/90 pt-16 pb-12 text-slate-600 font-sans">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Grid de Conteúdo e Links -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-200/70">
+<!-- Coluna de Marca & Manifesto -->
+<div class="lg:col-span-2 space-y-4">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-md bg-brand-600 flex items-center justify-center text-white font-mono font-bold text-sm">
+              m/
+            </div>
+<span class="font-bold tracking-tight text-slate-900 text-lg font-sans">misoftware</span>
+</div>
+<p class="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-sm">
+            Tecnologia, conteúdo e possibilidades de um jeito prático e real. Explorando inteligência artificial, engenharia moderna e ferramentas de produtividade.
+          </p>
+<!-- Ícones de Redes / Feeds -->
+<div class="flex items-center gap-3 pt-2 text-slate-400">
+<a aria-label="X / Twitter" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center hover:text-brand-600 hover:border-brand-300 transition-colors" href="#">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+<a aria-label="GitHub" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center hover:text-brand-600 hover:border-brand-300 transition-colors" href="#">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+</a>
+<a aria-label="RSS Feed" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center hover:text-brand-600 hover:border-brand-300 transition-colors" href="#">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 110-2 1 1 0 010 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+<!-- Coluna 1: Editorial -->
+<div>
+<h4 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 mb-4">Editorial</h4>
+<ul class="space-y-2.5 text-xs text-slate-600">
+<li><a class="hover:text-brand-600 transition-colors" href="#">Artigos Recentes</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">Guias Práticos</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">Diretório de IA</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">Análises de Hardware</a></li>
+</ul>
+</div>
+<!-- Coluna 2: Tópicos & IA -->
+<div>
+<h4 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 mb-4">Tópicos &amp; IA</h4>
+<ul class="space-y-2.5 text-xs text-slate-600">
+<li><a class="hover:text-brand-600 transition-colors" href="#">Modelos de Linguagem</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">Engenharia de Prompt</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">Automação &amp; Agentes</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">Desenvolvimento Web</a></li>
+</ul>
+</div>
+<!-- Coluna 3: Portal & Contato -->
+<div>
+<h4 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 mb-4">Portal</h4>
+<ul class="space-y-2.5 text-xs text-slate-600">
+<li><a class="hover:text-brand-600 transition-colors" href="#">Sobre Nós</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">Assinar Newsletter</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">Privacidade</a></li>
+<li><a class="hover:text-brand-600 transition-colors" href="#">Contato &amp; Dicas</a></li>
+</ul>
+</div>
+</div>
+<!-- Barra de Direitos e Créditos -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 font-mono gap-4">
+<div>
+          © 2026 misoftware. Ideias. Ferramentas. Resultados. Todos os direitos reservados.
+        </div>
+<div>
+          Feito para mentes técnicas e desenvolvedores criativos.
+        </div>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+</body></html>

@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const autores = (await getCollection('autores', ({ data }) => !data.draft)).sort((a, b) =>
+  a.data.name.localeCompare(b.data.name, 'pt-BR')
+);
+
+const initialsOf = (name: string) =>
+  name.split(' ').map((w) => w[0]).slice(0, 2).join('').toUpperCase();
+---
+
+<BaseLayout title="Autores" description="Quem assina o conteúdo da misoftware: especialidade, perfil e artigos publicados.">
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <nav class="text-xs font-mono text-slate-400 mb-6" aria-label="Trilha de navegação">
+      <a href="/" class="hover:text-brand-600">Início</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-slate-600">Autores</span>
+    </nav>
+
+    <header class="mb-10">
+      <div class="text-xs font-mono text-brand-700 font-bold uppercase tracking-wider mb-2">Institucional</div>
+      <h1 class="text-4xl sm:text-5xl font-serif text-slate-950 tracking-tight leading-tight">Autores</h1>
+      <p class="text-lg text-slate-600 font-serif leading-relaxed mt-4">
+        Conteúdo assinado, com especialidade declarada e histórico de publicações.
+      </p>
+    </header>
+
+    <ul class="space-y-4">
+      {
+        autores.map((autor) => (
+          <li>
+            <a
+              href={`/autores/${autor.id}/`}
+              class="flex items-center gap-4 p-4 rounded-xl border border-slate-200/90 bg-white hover:shadow-md hover:border-brand-200 transition-all"
+            >
+              {autor.data.avatar ? (
+                <Image src={autor.data.avatar} alt={autor.data.name} width={56} height={56} class="w-14 h-14 rounded-full object-cover border border-slate-200" />
+              ) : (
+                <span class="w-14 h-14 rounded-full bg-brand-50 text-brand-700 font-mono font-bold flex items-center justify-center border border-brand-100 shrink-0">
+                  {initialsOf(autor.data.name)}
+                </span>
+              )}
+              <div>
+                <div class="font-serif text-lg font-semibold text-slate-900">{autor.data.name}</div>
+                <div class="text-xs font-mono text-slate-500">{autor.data.role}</div>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>

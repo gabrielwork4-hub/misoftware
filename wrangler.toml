@@ -1,0 +1,5 @@
+# Cloudflare Pages — configuração mínima para deploy do Astro + Functions.
+# O middleware de borda vive em functions/_middleware.ts.
+name = "misoftware"
+compatibility_date = "2026-09-17"
+pages_build_output_dir = "dist"

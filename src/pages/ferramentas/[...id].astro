@@ -1,0 +1,72 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const tools = await getCollection('ferramentas', ({ data }) => !data.draft);
+  return tools.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+---
+
+<BaseLayout title={data.name} description={data.description}>
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <nav class="text-xs font-mono text-slate-400 mb-6" aria-label="Trilha de navegação">
+      <a href="/" class="hover:text-brand-600">Início</a>
+      <span class="mx-1.5">/</span>
+      <a href="/ferramentas/" class="hover:text-brand-600">Ferramentas</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-slate-600">{data.name}</span>
+    </nav>
+
+    <header class="space-y-4">
+      <div class="flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center border border-brand-100 font-mono font-bold text-2xl">
+          {data.name.slice(0, 1)}
+        </div>
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-serif text-slate-950 tracking-tight">{data.name}</h1>
+          {data.vendor && <p class="text-sm font-mono text-slate-400 mt-1">{data.vendor}</p>}
+        </div>
+      </div>
+      <p class="text-lg text-slate-600 font-serif leading-relaxed">{data.description}</p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-200">
+        <div>
+          <div class="text-[10px] font-mono uppercase text-slate-400">Nota</div>
+          <div class="text-lg font-serif font-bold text-slate-900">{data.rating ?? '—'}</div>
+        </div>
+        <div>
+          <div class="text-[10px] font-mono uppercase text-slate-400">Preço</div>
+          <div class="text-sm font-medium text-slate-900 mt-1">{data.pricing}</div>
+        </div>
+        <div>
+          <div class="text-[10px] font-mono uppercase text-slate-400">Categoria</div>
+          <div class="text-sm font-medium text-slate-900 mt-1">{data.category}</div>
+        </div>
+        <div>
+          <div class="text-[10px] font-mono uppercase text-slate-400">Plataformas</div>
+          <div class="text-sm font-medium text-slate-900 mt-1">{data.platforms.join(', ')}</div>
+        </div>
+      </div>
+
+      {
+        data.url && (
+          <a href={data.url} rel="nofollow noopener" target="_blank" class="inline-flex items-center gap-2 mt-2 px-5 py-2.5 rounded-full bg-brand-600 text-white font-medium text-sm hover:bg-brand-700 transition-all">
+            Visitar site oficial →
+          </a>
+        )
+      }
+    </header>
+
+    <div class="prose-editorial mt-10 font-serif text-slate-800 text-lg leading-relaxed [&_a]:text-brand-600 [&_a]:underline [&_a]:underline-offset-4">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

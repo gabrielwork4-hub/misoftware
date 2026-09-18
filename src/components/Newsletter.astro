@@ -1,0 +1,43 @@
+---
+// Formulário de captação de newsletter (endpoint conectado na Fase 3 / n8n).
+---
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="newsletter">
+  <div class="rounded-3xl bg-gradient-to-b from-brand-50/70 via-brand-50/30 to-white border border-brand-100/80 p-8 sm:p-12 lg:p-16 text-center max-w-4xl mx-auto shadow-sm">
+    <div class="w-12 h-12 rounded-2xl bg-white border border-brand-200 text-brand-600 flex items-center justify-center mx-auto mb-5 shadow-xs">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+    </div>
+    <span class="text-xs font-mono font-semibold tracking-widest text-brand-700 uppercase">Newsletter Semanal</span>
+    <h2 class="text-3xl sm:text-4xl font-serif text-slate-950 font-normal tracking-tight mt-2 mb-3">
+      Novos artigos <span class="italic-serif text-brand-600">toda semana.</span>
+    </h2>
+    <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+      Resumos práticos, testes de novas IAs e scripts direto na sua caixa de entrada, sem spam.
+    </p>
+    <form class="mt-8 max-w-lg mx-auto flex flex-col sm:flex-row gap-2.5" onsubmit="event.preventDefault();">
+      <div class="relative flex-1">
+        <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 text-xs">@</div>
+        <input
+          class="w-full pl-8 pr-4 py-3 text-sm rounded-xl sm:rounded-full bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500"
+          placeholder="Digite seu melhor e-mail profissional..."
+          required
+          type="email"
+          aria-label="E-mail para newsletter"
+        />
+      </div>
+      <button class="px-7 py-3 rounded-xl sm:rounded-full bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm transition-all shadow-md flex-shrink-0" type="submit">
+        Inscrever-se
+      </button>
+    </form>
+    <div class="mt-4 flex items-center justify-center gap-6 text-xs text-slate-500 font-mono">
+      <span class="flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Zero spam
+      </span>
+      <span class="flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Cancele quando quiser
+      </span>
+    </div>
+  </div>
+</section>

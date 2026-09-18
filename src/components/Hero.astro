@@ -1,0 +1,115 @@
+---
+import { Image } from 'astro:assets';
+import { getEntry, type CollectionEntry } from 'astro:content';
+
+interface Props {
+  featured?: CollectionEntry<'artigos'>;
+}
+
+const { featured } = Astro.props;
+const href = featured ? `/artigos/${featured.id}/` : '#artigos';
+const featuredAuthor = featured ? await getEntry(featured.data.author) : undefined;
+const featuredAuthorName = featuredAuthor?.data.name ?? 'Redação misoftware';
+---
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-12 lg:py-16">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <!-- Declaração editorial + estatísticas -->
+    <div class="lg:col-span-6 space-y-6">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-100 text-brand-700 text-xs font-semibold tracking-wide uppercase font-mono">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse"></span>
+        Publicação de Tecnologia Aplicada
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight text-slate-950 font-normal leading-[1.08]">
+        Tecnologia <br />
+        <span class="italic-serif text-brand-600 font-normal">na prática rigorosa.</span>
+      </h1>
+      <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl">
+        Tutoriais minuciosos, novas ferramentas de IA e estratégias práticas de engenharia
+        de software para transformar sua produtividade técnica diária com profundidade analítica.
+      </p>
+      <div class="flex flex-wrap items-center gap-3 pt-2">
+        <a class="px-6 py-3 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm transition-all shadow-md flex items-center gap-2 group" href="#artigos">
+          <span>Explorar Artigos</span>
+          <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </a>
+        <a class="px-6 py-3 rounded-full bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-medium text-sm transition-all flex items-center gap-2" href="/ferramentas/">
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          <span>Hub de Ferramentas</span>
+        </a>
+      </div>
+      <div class="pt-8 border-t border-slate-200/70 grid grid-cols-3 gap-6">
+        <div>
+          <div class="text-2xl lg:text-3xl font-serif font-bold text-slate-900 tracking-tight">120+</div>
+          <div class="text-xs text-slate-500 font-mono mt-0.5">Guias Práticos</div>
+        </div>
+        <div>
+          <div class="text-2xl lg:text-3xl font-serif font-bold text-slate-900 tracking-tight">4</div>
+          <div class="text-xs text-slate-500 font-mono mt-0.5">Silos Editoriais</div>
+        </div>
+        <div>
+          <div class="text-2xl lg:text-3xl font-serif font-bold text-slate-900 tracking-tight">100%</div>
+          <div class="text-xs text-slate-500 font-mono mt-0.5">Conteúdo Verificável</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Artigo de capa -->
+    {
+      featured && (
+        <div class="lg:col-span-6">
+          <article class="relative bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
+            <div class="relative h-64 sm:h-72 w-full overflow-hidden bg-slate-900">
+              {featured.data.cover ? (
+                <Image
+                  src={featured.data.cover}
+                  alt={featured.data.coverAlt ?? featured.data.title}
+                  width={880}
+                  height={576}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                />
+              ) : (
+                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-brand-800 via-brand-700 to-charcoal">
+                  <span class="font-mono text-white/30 text-6xl font-bold">m/</span>
+                </div>
+              )}
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div class="absolute top-4 left-4">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[11px] font-mono font-semibold uppercase tracking-wider shadow-sm">
+                  <span class="w-2 h-2 rounded-full bg-brand-600 animate-pulse" />
+                  Destaque
+                </span>
+              </div>
+              {featured.data.readingTime && (
+                <div class="absolute bottom-3 right-4">
+                  <span class="text-[11px] font-mono bg-black/60 backdrop-blur-md text-slate-200 px-2.5 py-1 rounded-md">
+                    {featured.data.readingTime} min de leitura
+                  </span>
+                </div>
+              )}
+            </div>
+            <div class="p-6 sm:p-7 space-y-3">
+              <div class="flex items-center gap-3 text-xs font-mono text-slate-500">
+                <span class="text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded font-semibold uppercase">{featured.data.category}</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-serif text-slate-950 font-normal leading-snug group-hover:text-brand-600 transition-colors">
+                <a href={href} class="after:absolute after:inset-0">{featured.data.title}</a>
+              </h2>
+              <p class="text-sm text-slate-600 leading-relaxed line-clamp-2">{featured.data.description}</p>
+              <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center font-mono text-[11px] font-bold text-slate-600">MS</div>
+                  <div>
+                    <p class="text-xs font-semibold text-slate-900 leading-none">{featuredAuthorName}</p>
+                    <p class="text-[10px] font-mono text-slate-400 mt-0.5">Equipe Técnica</p>
+                  </div>
+                </div>
+                <span class="text-xs font-semibold text-brand-600 inline-flex items-center gap-1 font-mono">Ler artigo <span>→</span></span>
+              </div>
+            </div>
+          </article>
+        </div>
+      )
+    }
+  </div>
+</section>

@@ -1,0 +1,74 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import { SITE } from '@/consts';
+---
+
+<PageLayout
+  title="Política de Privacidade"
+  description="Quais dados a misoftware coleta, por que, com quem compartilha e como você exerce seus direitos sob a LGPD."
+  updated="18 de setembro de 2026"
+>
+  <p>
+    Esta política explica como a <strong>misoftware</strong>, mantida pela {SITE.publisher},
+    trata dados pessoais quando você visita <a href={SITE.url}>{SITE.url}</a>. Levamos a sério a
+    Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).
+  </p>
+
+  <h2>Dados que coletamos</h2>
+  <ul>
+    <li><strong>Dados de navegação e uso</strong> — páginas visitadas, tempo de leitura, tipo de dispositivo e origem do acesso, coletados de forma agregada por ferramentas de analytics.</li>
+    <li><strong>Dados técnicos</strong> — endereço IP, agente de usuário e informações de segurança processadas pela nossa hospedagem para entregar o site e protegê-lo contra abuso.</li>
+    <li><strong>Dados que você fornece</strong> — quando você nos escreve (por e-mail ou pela newsletter, quando disponível), tratamos as informações que você mesmo enviar.</li>
+  </ul>
+
+  <h2>Como usamos esses dados</h2>
+  <ul>
+    <li>Entregar e manter o funcionamento do site.</li>
+    <li>Entender, de forma agregada, quais conteúdos são úteis, para melhorar a publicação.</li>
+    <li>Responder mensagens e, quando você autorizar, enviar novidades editoriais.</li>
+    <li>Proteger o site contra fraude, abuso e ameaças de segurança.</li>
+  </ul>
+
+  <h2>Cookies</h2>
+  <p>
+    Utilizamos cookies e tecnologias semelhantes para o funcionamento do site e para medição de
+    audiência de forma agregada. Você pode gerenciar ou bloquear cookies nas configurações do
+    seu navegador — parte das funções pode deixar de operar como esperado se eles forem
+    desativados.
+  </p>
+
+  <h2>Compartilhamento com terceiros</h2>
+  <p>
+    Não vendemos seus dados. Utilizamos prestadores de serviço que atuam como operadores em nosso
+    nome, entre eles:
+  </p>
+  <ul>
+    <li><strong>Cloudflare</strong> — hospedagem, cache e segurança na borda.</li>
+    <li><strong>Google Analytics / Search Console</strong> — medição de audiência e desempenho de busca.</li>
+  </ul>
+  <p>
+    Esses serviços podem tratar dados em servidores fora do Brasil, sempre observando as
+    salvaguardas exigidas pela legislação aplicável.
+  </p>
+
+  <h2>Seus direitos</h2>
+  <p>
+    Sob a LGPD, você pode solicitar confirmação de tratamento, acesso, correção, anonimização,
+    portabilidade ou eliminação dos seus dados, bem como revogar consentimentos. Para exercer
+    qualquer desses direitos, escreva para
+    <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+  </p>
+
+  <h2>Alterações</h2>
+  <p>
+    Podemos atualizar esta política para refletir mudanças no site ou na legislação. A data de
+    atualização acima indica a versão vigente.
+  </p>
+
+  <h2>Contato</h2>
+  <p>
+    Dúvidas sobre privacidade e dados pessoais:
+    <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. Veja também a nossa página de
+    <a href="/contato/">Contato</a>.
+  </p>
+</PageLayout>

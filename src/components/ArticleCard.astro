@@ -1,0 +1,81 @@
+---
+import { Image } from 'astro:assets';
+import { getEntry, type CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'artigos'>;
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const href = `/artigos/${entry.id}/`;
+
+const author = await getEntry(data.author);
+const authorName = author?.data.name ?? 'Redação misoftware';
+
+const dateLabel = new Intl.DateTimeFormat('pt-BR', {
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric',
+}).format(data.pubDate);
+
+const initials = authorName
+  .split(' ')
+  .map((w) => w[0])
+  .slice(0, 2)
+  .join('')
+  .toUpperCase();
+---
+
+<article
+  class="relative bg-white rounded-xl border border-slate-200/90 overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col group"
+>
+  <div class="relative h-48 w-full overflow-hidden bg-slate-900">
+    {
+      data.cover ? (
+        <Image
+          src={data.cover}
+          alt={data.coverAlt ?? data.title}
+          width={640}
+          height={384}
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+      ) : (
+        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-brand-800 via-brand-700 to-charcoal">
+          <span class="font-mono text-white/40 text-4xl font-bold tracking-tight">m/</span>
+        </div>
+      )
+    }
+    <div class="absolute top-3 left-3">
+      <span class="text-[10px] font-mono font-semibold bg-brand-600/90 backdrop-blur-xs text-white px-2.5 py-0.5 rounded-md uppercase">
+        {data.category}
+      </span>
+    </div>
+    {
+      data.readingTime && (
+        <div class="absolute bottom-2.5 right-3">
+          <span class="text-[11px] font-mono bg-black/70 text-slate-200 px-2 py-0.5 rounded">
+            {data.readingTime} min
+          </span>
+        </div>
+      )
+    }
+  </div>
+
+  <div class="p-5 flex-1 flex flex-col justify-between">
+    <div>
+      <div class="text-[11px] font-mono text-slate-400 mb-1.5">{dateLabel}</div>
+      <h3 class="text-lg font-serif font-semibold text-slate-900 group-hover:text-brand-600 transition-colors leading-snug">
+        <a href={href} class="after:absolute after:inset-0">{data.title}</a>
+      </h3>
+      <p class="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed">{data.description}</p>
+    </div>
+    <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-slate-100 text-slate-600 font-mono text-[10px] flex items-center justify-center font-bold">{initials}</span>
+        <span class="text-xs text-slate-600">{authorName}</span>
+      </div>
+      <span class="text-brand-600 group-hover:translate-x-1 transition-transform">→</span>
+    </div>
+  </div>
+</article>

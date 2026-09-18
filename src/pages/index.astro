@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/Hero.astro';
+import QuickTracks from '@/components/QuickTracks.astro';
+import LatestArticles from '@/components/LatestArticles.astro';
+import InnovationRadar from '@/components/InnovationRadar.astro';
+import Newsletter from '@/components/Newsletter.astro';
+
+const allArticles = (await getCollection('artigos', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const featured = allArticles.find((a) => a.data.featured) ?? allArticles[0];
+const latest = allArticles.filter((a) => a.id !== featured?.id).slice(0, 6);
+
+const tools = (await getCollection('ferramentas', ({ data }) => !data.draft))
+  .filter((t) => t.data.featured)
+  .sort((a, b) => (b.data.rating ?? 0) - (a.data.rating ?? 0))
+  .slice(0, 4);
+---
+
+<BaseLayout>
+  <Hero featured={featured} />
+  <QuickTracks />
+  <LatestArticles articles={latest} />
+  <InnovationRadar tools={tools} />
+  <Newsletter />
+</BaseLayout>
