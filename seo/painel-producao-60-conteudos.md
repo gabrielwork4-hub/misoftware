@@ -45,9 +45,9 @@ Apuração de 2026-09-20 (`npm run inbox:check`):
 |---|---:|---:|
 | Conteúdos no projeto | 60 | 60 |
 | Ligados ao slug-registry | 60 | 60 |
-| Publicados em `src/content/` | 5 | 60 |
-| Na fila (`inbox/`) | 55 | 0 |
-| Aprofundados + revisados | 5 | 60 |
+| Publicados em `src/content/` | 7 | 60 |
+| Na fila (`inbox/`) | 53 | 0 |
+| Aprofundados + revisados | 7 | 60 |
 
 **Piloto concluído — cluster Agentes (2026-09-20).** As 5 peças do cluster
 (`/ia/agentes/` + `o-que-sao-agentes-de-ia`, `tipos-de-agentes-de-ia-e-casos-de-uso`,
@@ -59,10 +59,17 @@ o status virou `approved` e todas foram promovidas para `src/content/`. O hub
 link interno quebrado exceto `/automacao/agentes-operacionais/` — hub vizinho ainda
 na fila, que resolve quando aquele cluster for promovido.
 
-Os 55 restantes seguem bloqueados só por editorial: carregam `Revisão pendente` e
+**Cluster Agentes operacionais publicado (2026-09-20).** O hub
+`/automacao/agentes-operacionais/` e o comparativo
+`/artigos/automacao-assistida-por-ia-vs-agentes-autonomos/` foram aprofundados
+(matriz de risco, matriz comparativa e cenários reais), aprovados e promovidos.
+Isso zerou o único link interno pendente do piloto Agentes: **build sem nenhum
+link interno quebrado** (36 páginas).
+
+Os 53 restantes seguem bloqueados só por editorial: carregam `Revisão pendente` e
 estão abaixo de 600 palavras. A infraestrutura de rotas está completa desde
-2026-09-20 (6 famílias de página; "aguardando rota" = 0). O piloto validou o
-processo por conteúdo: aprofundar → remover marcador → `status: approved` →
+2026-09-20 (6 famílias de página; "aguardando rota" = 0). O processo por conteúdo
+está validado: aprofundar → remover marcador → `status: approved` →
 `npm run inbox:promote`.
 
 ## Fases de execução

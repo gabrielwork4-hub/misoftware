@@ -152,9 +152,9 @@ canonicalização de raiz, cobertos pela regra genérica).
    na fila, todos abaixo de 600 palavras e com `Revisão pendente`. Não há bloqueio
    de infraestrutura. Fluxo por conteúdo, validado pelo piloto: aprofundar → remover
    `Revisão pendente` → `status: approved` → `npm run inbox:promote`. Próximos
-   clusters sugeridos, para fechar as pontas soltas do piloto: **Agentes
-   operacionais** (`/automacao/agentes-operacionais/`, hoje o único link interno
-   sem destino) e o restante da onda 1 (pilares e hubs de IA, Automação, Dev).
+   clusters sugeridos: o restante da **onda 1** (pilares e hubs de IA, Automação e
+   Desenvolvimento) e os spokes de maior intenção. Os clusters **Agentes** e
+   **Agentes operacionais** já estão publicados (7 peças no total).
 3. **Fase 0 — infra:** criar projeto no Cloudflare Pages, conectar repo, configurar
    DNS/SSL para `www.misoftware.com.br` (canônico), fazer 1º preview deploy.
 4. **Validar a borda no preview:** `npm run check:status -- --base https://<preview>.pages.dev`
@@ -234,7 +234,12 @@ palavras, ou tipo cuja rota ainda não existe no site.
   (`hubs/ia-agentes.md`, 3 artigos e 1 tutorial). `inbox:check` agora reporta
   `5/60 publicados` e trata conteúdo já em `src/content/` como coberto — promover
   tira o arquivo da inbox de propósito, então isso deixou de ser "arquivo faltando".
-- Restam 55 na fila, bloqueados só por editorial (marcador + profundidade).
+- **Cluster Agentes operacionais publicado (2026-09-20):** hub
+  `/automacao/agentes-operacionais/` + comparativo
+  `/artigos/automacao-assistida-por-ia-vs-agentes-autonomos/`. Zerou o link
+  interno pendente do piloto: build **sem nenhum link interno quebrado** (36 páginas),
+  `7/60 publicados`.
+- Restam 53 na fila, bloqueados só por editorial (marcador + profundidade).
   O que segura a fila agora é só isso (§7 passo 1).
 - **Corrigido no registry:** `/ia/rag/` estava com a keyword primária
   `RAG com fontes verificáveis`, a mesma do tutorial `/tutoriais/rag-com-fontes-verificaveis/`
