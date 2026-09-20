@@ -152,11 +152,12 @@ canonicalização de raiz, cobertos pela regra genérica).
    na fila, todos abaixo de 600 palavras e com `Revisão pendente`. Não há bloqueio
    de infraestrutura. Fluxo por conteúdo, validado pelo piloto: aprofundar → remover
    `Revisão pendente` → `status: approved` → `npm run inbox:promote`. Próximos
-   **onda 1 (fundação) está completa**: 4 pilares + 17 hubs + os clusters
-   Agentes e Agentes operacionais = 28/60 publicados. O que resta são os
-   **spokes** (onda 2/3): artigos, tutoriais, comparativos, o estudo de caso e o
-   review do n8n — 32 na fila. Os hubs já linkam para eles; publicar cada spoke
-   ativa o link automaticamente (ver plugin em §9).
+   **ondas 1 e 2 completas**: 4 pilares + 17 hubs + todos os tutoriais e guias
+   práticos = 51/60 publicados. Restam **9 spokes**: onda 3 (6 comparativos, 1
+   review do n8n, 1 metodologia de review) e onda 4 (1 estudo de caso). Os hubs
+   já linkam para eles; publicar cada um ativa o link (plugin em §9). Comparativos
+   e o estudo de caso são as duas coleções que ainda estão vazias — publicá-los
+   também remove os avisos de coleção vazia no build.
 3. **Fase 0 — infra:** criar projeto no Cloudflare Pages, conectar repo, configurar
    DNS/SSL para `www.misoftware.com.br` (canônico), fazer 1º preview deploy.
 4. **Validar a borda no preview:** `npm run check:status -- --base https://<preview>.pages.dev`
@@ -250,8 +251,13 @@ palavras, ou tipo cuja rota ainda não existe no site.
   válidos; `npm run check:links` audita o dist/ (rede de segurança).
 - **Profundidade mínima por tipo:** 600 palavras para spokes, 350 para páginas
   de navegação (hub/pilar). Documentado no normalize-inbox.
-- Restam 32 na fila (só spokes), bloqueados por editorial (marcador +
-  profundidade). O que segura a fila agora é só isso (§7 passo 1).
+- **Onda 2 (resolução de problemas) publicada (2026-09-20):** 23 spokes (5
+  tutoriais + 18 guias/artigos) em 4 lotes. Um caso especial: o artigo
+  `pipelines-cicd-github-actions-docker` era do tipo "artigo existente" (um stub
+  de 75 palavras do scaffold); foi substituído pela versão aprofundada,
+  preservando o `pubDate` original e marcando `updatedDate`.
+- Restam 9 na fila: onda 3 (6 comparativos, 1 review, 1 metodologia) e onda 4
+  (1 estudo de caso). 51/60 publicados, 73 páginas, zero link quebrado.
 - **Corrigido no registry:** `/ia/rag/` estava com a keyword primária
   `RAG com fontes verificáveis`, a mesma do tutorial `/tutoriais/rag-com-fontes-verificaveis/`
   — canibalização hub–spoke igual à que já havia sido resolvida em agentes e prompt.

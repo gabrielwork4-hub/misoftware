@@ -45,9 +45,9 @@ Apuração de 2026-09-20 (`npm run inbox:check`):
 |---|---:|---:|
 | Conteúdos no projeto | 60 | 60 |
 | Ligados ao slug-registry | 60 | 60 |
-| Publicados em `src/content/` | 28 | 60 |
-| Na fila (`inbox/`) | 32 | 0 |
-| Aprofundados + revisados | 28 | 60 |
+| Publicados em `src/content/` | 51 | 60 |
+| Na fila (`inbox/`) | 9 | 0 |
+| Aprofundados + revisados | 51 | 60 |
 
 **Piloto concluído — cluster Agentes (2026-09-20).** As 5 peças do cluster
 (`/ia/agentes/` + `o-que-sao-agentes-de-ia`, `tipos-de-agentes-de-ia-e-casos-de-uso`,
@@ -58,6 +58,15 @@ o status virou `approved` e todas foram promovidas para `src/content/`. O hub
 `/ia/agentes/` lista automaticamente os 4 spokes. Build limpo (34 páginas), sem
 link interno quebrado exceto `/automacao/agentes-operacionais/` — hub vizinho ainda
 na fila, que resolve quando aquele cluster for promovido.
+
+**Onda 2 (resolução de problemas) concluída (2026-09-20).** Os 23 spokes da onda
+— 5 tutoriais (n8n, Astro, RAG) e 18 guias/artigos (integrações, back-end, dev,
+DevOps, qualidade, arquitetura, prompt, IA local, produtividade) — foram
+aprofundados para ≥600 palavras com exemplos, tabelas, casos de teste e erros
+comuns, e publicados em 4 lotes. Cada spoke publicado acendeu os links que os
+hubs já apontavam. 51/60 publicados, 73 páginas, zero link interno quebrado.
+Restam 9: onda 3 (6 comparativos + 1 review + 1 metodologia) e onda 4 (1 estudo
+de caso).
 
 **Onda 1 (fundação) concluída (2026-09-20).** As 4 páginas-pilar (`/ia/`,
 `/automacao/`, `/desenvolvimento/`, `/ferramentas/`) e os 17 hubs de todos os
