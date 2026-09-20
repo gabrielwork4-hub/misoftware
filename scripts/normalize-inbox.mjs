@@ -195,6 +195,21 @@ function slugFinal(slug) {
   return partes[partes.length - 1];
 }
 
+/**
+ * Caminho do arquivo em src/content/ que corresponde a uma linha do registry,
+ * se já tiver sido promovido. Retorna null quando o tipo não vai para coleção
+ * (pilares) ou não tem destino mapeado. Espelha a nomenclatura de `promover`.
+ */
+function caminhoPublicado(linha) {
+  const destino = DESTINOS.get(linha.tipo);
+  if (!destino?.collection) return null;
+  const segmentos = linha.slug.split('/').filter(Boolean);
+  const clusterSlug = segmentos[segmentos.length - 1];
+  const silo = segmentos[0];
+  const nome = destino.collection === 'hubs' ? `${silo}-${clusterSlug}` : clusterSlug;
+  return join(CONTENT_DIR, destino.collection, `${nome}.md`);
+}
+
 // ------------------------------------------------------------------- análise
 
 function contarPalavras(body) {
@@ -319,12 +334,21 @@ function analisar() {
     for (const a of item.avisos) avisos.push(`${arquivo}: ${a}`);
   }
 
-  // Cobertura: toda linha do registry precisa de um arquivo na fila.
-  const semArquivo = registry.linhas.filter((l) => !slugsVistas.has(l.slug));
-  for (const linha of semArquivo) erros.push(`registry sem arquivo na inbox: ${linha.slug}`);
+  // Cobertura: toda linha do registry precisa de um arquivo na fila OU já ter
+  // sido promovida para src/content/. Um item promovido sai da inbox de
+  // propósito, então só é erro quando não está em lugar nenhum.
+  const publicados = [];
+  const semArquivo = [];
+  for (const linha of registry.linhas) {
+    if (slugsVistas.has(linha.slug)) continue; // ainda na fila
+    const caminho = caminhoPublicado(linha);
+    if (caminho && existsSync(caminho)) publicados.push(linha);
+    else semArquivo.push(linha);
+  }
+  for (const linha of semArquivo) erros.push(`registry sem arquivo (nem inbox nem src/content): ${linha.slug}`);
   for (const kw of registry.duplicadas) erros.push(`registry com keyword duplicada: ${kw}`);
 
-  return { registry, itens, erros, avisos, semArquivo };
+  return { registry, itens, erros, avisos, semArquivo, publicados };
 }
 
 // ---------------------------------------------------------------------- --fix
@@ -519,14 +543,16 @@ function promover(itens, dataPub) {
 
 // ------------------------------------------------------------------ relatório
 
-function relatorio({ itens, erros, avisos }) {
+function relatorio({ itens, erros, avisos, publicados, registry }) {
   const porTipo = new Map();
   for (const item of itens) {
     const chave = item.tipo ?? '(sem tipo)';
     porTipo.set(chave, (porTipo.get(chave) ?? 0) + 1);
   }
 
-  console.log(`\nFila editorial — ${itens.length} arquivos em inbox/\n`);
+  console.log(
+    `\nFila editorial — ${itens.length} na inbox, ${publicados.length}/${registry.linhas.length} publicados em src/content/\n`,
+  );
   console.log('Tipo                     Qtd  Destino');
   console.log('-----------------------  ---  ----------------------------------------');
   for (const [tipo, qtd] of [...porTipo].sort()) {
@@ -544,6 +570,7 @@ function relatorio({ itens, erros, avisos }) {
 
   console.log('\nGates');
   console.log(`  ligados ao registry ....... ${itens.filter((i) => i.slug).length}/${itens.length}`);
+  console.log(`  já publicados ............. ${publicados.length}/${registry.linhas.length}`);
   console.log(`  com marcador de revisão ... ${comMarcador.length}`);
   console.log(`  abaixo de ${MIN_PALAVRAS} palavras .... ${rasos.length}`);
   console.log(`  aguardando rota no site ... ${semRota.length}`);

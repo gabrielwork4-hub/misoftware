@@ -43,21 +43,27 @@ Apuração de 2026-09-20 (`npm run inbox:check`):
 
 | Indicador | Hoje | Meta |
 |---|---:|---:|
-| Conteúdos na fila | 60 | 60 |
+| Conteúdos no projeto | 60 | 60 |
 | Ligados ao slug-registry | 60 | 60 |
-| Com fontes verificadas | 0 | 60 |
-| Com dados atualizados | 0 | 60 |
-| Com exemplos/testes | 0 | 60 |
-| Revisados editorialmente | 0 | 60 |
-| Revisados em SEO | 0 | 60 |
-| Aprovados | 0 | 60 |
-| Publicados | 0 | 60 |
+| Publicados em `src/content/` | 5 | 60 |
+| Na fila (`inbox/`) | 55 | 0 |
+| Aprofundados + revisados | 5 | 60 |
 
-O único bloqueio que resta é editorial: os 60 arquivos ainda carregam o marcador
-`Revisão pendente` e 59 estão abaixo da profundidade mínima de 600 palavras. A
-infraestrutura de rotas foi concluída em 2026-09-20 — as 6 famílias de página
-(hubs `/[silo]/[cluster]/`, `/tutoriais/`, `/comparativos/`, `/estudos-de-caso/`,
-`/artigos/` e `/ferramentas/`) existem, então "aguardando rota" saiu de 32 para 0.
+**Piloto concluído — cluster Agentes (2026-09-20).** As 5 peças do cluster
+(`/ia/agentes/` + `o-que-sao-agentes-de-ia`, `tipos-de-agentes-de-ia-e-casos-de-uso`,
+`como-avaliar-agentes-de-ia` e o tutorial `como-criar-agente-ia-com-ferramentas`)
+foram aprofundadas para ≥600 palavras com exemplos, tabelas de decisão, modos de
+falha e um caso de avaliação concreto; o marcador `Revisão pendente` foi removido,
+o status virou `approved` e todas foram promovidas para `src/content/`. O hub
+`/ia/agentes/` lista automaticamente os 4 spokes. Build limpo (34 páginas), sem
+link interno quebrado exceto `/automacao/agentes-operacionais/` — hub vizinho ainda
+na fila, que resolve quando aquele cluster for promovido.
+
+Os 55 restantes seguem bloqueados só por editorial: carregam `Revisão pendente` e
+estão abaixo de 600 palavras. A infraestrutura de rotas está completa desde
+2026-09-20 (6 famílias de página; "aguardando rota" = 0). O piloto validou o
+processo por conteúdo: aprofundar → remover marcador → `status: approved` →
+`npm run inbox:promote`.
 
 ## Fases de execução
 

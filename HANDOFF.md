@@ -147,11 +147,14 @@ canonicalização de raiz, cobertos pela regra genérica).
 
 ## 7. Próximos passos sugeridos (em ordem)
 
-1. **Aprofundamento editorial (único bloqueio que resta para os 60):** 59 dos 60
-   rascunhos estão abaixo de 600 palavras e todos carregam `Revisão pendente`. É o
-   gate que separa a fila da publicação — não há mais bloqueio de infraestrutura.
-   Fluxo por conteúdo: aprofundar → trocar `status` para `approved` → `npm run
-   inbox:promote`.
+1. **Aprofundamento editorial (único bloqueio que resta):** o cluster **Agentes**
+   (5 peças) já foi aprofundado, aprovado e publicado como piloto — restam **55**
+   na fila, todos abaixo de 600 palavras e com `Revisão pendente`. Não há bloqueio
+   de infraestrutura. Fluxo por conteúdo, validado pelo piloto: aprofundar → remover
+   `Revisão pendente` → `status: approved` → `npm run inbox:promote`. Próximos
+   clusters sugeridos, para fechar as pontas soltas do piloto: **Agentes
+   operacionais** (`/automacao/agentes-operacionais/`, hoje o único link interno
+   sem destino) e o restante da onda 1 (pilares e hubs de IA, Automação, Dev).
 3. **Fase 0 — infra:** criar projeto no Cloudflare Pages, conectar repo, configurar
    DNS/SSL para `www.misoftware.com.br` (canônico), fazer 1º preview deploy.
 4. **Validar a borda no preview:** `npm run check:status -- --base https://<preview>.pages.dev`
@@ -227,8 +230,12 @@ palavras, ou tipo cuja rota ainda não existe no site.
   `estudos-de-caso` criadas em `content.config.ts`. "aguardando rota" caiu de 32 → 0.
   Pipeline testado ponta a ponta (promote → build) para os quatro tipos novos; o hub
   `/ia/agentes/` lista corretamente os spokes do cluster.
-- 0 prontos para promover: 60 com marcador de revisão, 59 abaixo de 600 palavras.
-  O que segura a fila agora é só editorial (§7 passo 1).
+- **Piloto Agentes publicado (2026-09-20):** 5 peças promovidas para `src/content/`
+  (`hubs/ia-agentes.md`, 3 artigos e 1 tutorial). `inbox:check` agora reporta
+  `5/60 publicados` e trata conteúdo já em `src/content/` como coberto — promover
+  tira o arquivo da inbox de propósito, então isso deixou de ser "arquivo faltando".
+- Restam 55 na fila, bloqueados só por editorial (marcador + profundidade).
+  O que segura a fila agora é só isso (§7 passo 1).
 - **Corrigido no registry:** `/ia/rag/` estava com a keyword primária
   `RAG com fontes verificáveis`, a mesma do tutorial `/tutoriais/rag-com-fontes-verificaveis/`
   — canibalização hub–spoke igual à que já havia sido resolvida em agentes e prompt.
