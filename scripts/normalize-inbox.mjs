@@ -53,8 +53,8 @@ const AUTORES = new Map([
  * infraestrutura ainda não existe — o conteúdo fica na inbox até existir.
  */
 const DESTINOS = new Map([
-  ['pilar', { collection: null, route: 'src/pages/[silo]/index.astro' }],
-  ['pilar/diretório', { collection: null, route: 'src/pages/ferramentas/index.astro' }],
+  ['pilar', { collection: 'pilares', route: 'src/pages/[silo]/index.astro' }],
+  ['pilar/diretório', { collection: 'pilares', route: 'src/pages/ferramentas/index.astro' }],
   ['hub', { collection: 'hubs', route: 'src/pages/[silo]/[cluster]/index.astro' }],
   ['artigo', { collection: 'artigos', route: 'src/pages/artigos/[...id].astro' }],
   ['artigo existente', { collection: 'artigos', route: 'src/pages/artigos/[...id].astro' }],
@@ -98,7 +98,19 @@ const ROTAS_FIXAS = new Set([
 ]);
 
 const MARCADOR_REVISAO = /Revisão pendente/;
+
+/**
+ * Profundidade mínima por tipo de página. Spokes (artigo, guia, tutorial,
+ * comparativo, case, review…) precisam cobrir uma intenção de busca inteira e
+ * competir por ela, então mantêm 600 palavras. Hubs e pilares são páginas de
+ * navegação/orientação: o trabalho delas é rotear, e forçar 600 palavras nelas
+ * enterra os links em texto de enchimento — pior para o leitor e para o SEO.
+ * Por isso têm um piso menor, mas ainda substancial.
+ */
 const MIN_PALAVRAS = 600;
+const MIN_PALAVRAS_NAVEGACAO = 400;
+const TIPOS_NAVEGACAO = new Set(['pilar', 'pilar/diretório', 'hub']);
+const minPalavras = (tipo) => (TIPOS_NAVEGACAO.has(tipo) ? MIN_PALAVRAS_NAVEGACAO : MIN_PALAVRAS);
 
 // ---------------------------------------------------------------- frontmatter
 
@@ -324,9 +336,10 @@ function analisar() {
     }
 
     // Gates editoriais: não bloqueiam o check, bloqueiam a promoção.
+    const minimo = minPalavras(item.tipo);
     if (MARCADOR_REVISAO.test(body)) item.avisos.push('contém marcador "Revisão pendente"');
-    if (item.palavras < MIN_PALAVRAS) {
-      item.avisos.push(`profundidade baixa (${item.palavras} palavras, mínimo ${MIN_PALAVRAS})`);
+    if (item.palavras < minimo) {
+      item.avisos.push(`profundidade baixa (${item.palavras} palavras, mínimo ${minimo})`);
     }
     if (item.status !== 'approved') item.avisos.push(`status "${item.status}" (promoção exige approved)`);
 
@@ -443,6 +456,19 @@ function frontmatterDestino(item, data, dataPub) {
       ['category', data.category],
       ['silo', data.silo],
       ['tags', [item.cluster]],
+      ['draft', false],
+      ['sources', fontes],
+    ];
+  }
+  // Pilar: só corpo editorial; a rota do silo (ou o diretório de ferramentas)
+  // renderiza o resto. O nome do arquivo é o slug do silo.
+  if (item.destino.collection === 'pilares') {
+    return [
+      ['title', data.title],
+      ['description', data.description],
+      ['pubDate', dataPub],
+      ['author', item.autor],
+      ['silo', data.silo],
       ['draft', false],
       ['sources', fontes],
     ];
@@ -566,13 +592,13 @@ function relatorio({ itens, erros, avisos, publicados, registry }) {
   const semRota = itens.filter((i) => i.destino && !i.destino.route);
   const prontos = itens.filter((i) => i.erros.length === 0 && i.avisos.length === 0);
   const comMarcador = itens.filter((i) => i.avisos.some((a) => a.includes('Revisão pendente')));
-  const rasos = itens.filter((i) => i.palavras < MIN_PALAVRAS);
+  const rasos = itens.filter((i) => i.palavras < minPalavras(i.tipo));
 
   console.log('\nGates');
   console.log(`  ligados ao registry ....... ${itens.filter((i) => i.slug).length}/${itens.length}`);
   console.log(`  já publicados ............. ${publicados.length}/${registry.linhas.length}`);
   console.log(`  com marcador de revisão ... ${comMarcador.length}`);
-  console.log(`  abaixo de ${MIN_PALAVRAS} palavras .... ${rasos.length}`);
+  console.log(`  abaixo da profundidade minima ${rasos.length}`);
   console.log(`  aguardando rota no site ... ${semRota.length}`);
   console.log(`  prontos para promover ..... ${prontos.length}`);
 
@@ -586,7 +612,7 @@ function relatorio({ itens, erros, avisos, publicados, registry }) {
   if (avisos.length) {
     console.log(`\n⚠ ${avisos.length} aviso(s) — bloqueiam a promoção, não o check:`);
     console.log(`  - ${comMarcador.length}× marcador "Revisão pendente" no texto`);
-    console.log(`  - ${rasos.length}× abaixo de ${MIN_PALAVRAS} palavras`);
+    console.log(`  - ${rasos.length}× abaixo da profundidade minima (600 spokes / 400 navegacao)`);
     console.log(`  - ${itens.filter((i) => i.status !== 'approved').length}× status diferente de "approved"`);
     console.log(`  - ${semRota.length}× tipo de página sem rota no site`);
   }

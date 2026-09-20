@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry, render } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ArticleCard from '@/components/ArticleCard.astro';
 import { SILOS } from '@/consts';
@@ -14,12 +14,25 @@ export async function getStaticPaths() {
 
 const { silo } = Astro.props;
 
+// Corpo editorial do pilar, quando já publicado (coleção `pilares`). O nome do
+// arquivo é o slug do silo. Se não existir, a página cai no texto de SILOS.
+const pilar = await getEntry('pilares', silo.slug);
+const PilarContent = pilar ? (await render(pilar)).Content : null;
+const pilarAutor = pilar ? await getEntry(pilar.data.author) : null;
+
+const hubs = (await getCollection('hubs', ({ data }) => !data.draft && data.silo === silo.slug)).sort(
+  (a, b) => a.data.cluster.localeCompare(b.data.cluster)
+);
+
 const articles = (
   await getCollection('artigos', ({ data }) => !data.draft && data.silo === silo.slug)
 ).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const title = pilar?.data.title ?? silo.label;
+const description = pilar?.data.description ?? silo.description;
 ---
 
-<BaseLayout title={silo.label} description={silo.description}>
+<BaseLayout title={title} description={description}>
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <nav class="text-xs font-mono text-slate-400 mb-6" aria-label="Trilha de navegação">
       <a href="/" class="hover:text-brand-600">Início</a>
@@ -29,17 +42,58 @@ const articles = (
 
     <header class="max-w-3xl mb-12">
       <div class="text-xs font-mono text-brand-700 font-bold uppercase tracking-wider mb-2">Página-pilar</div>
-      <h1 class="text-4xl sm:text-5xl font-serif text-slate-950 tracking-tight leading-tight">{silo.label}</h1>
-      <p class="text-lg text-slate-600 font-serif leading-relaxed mt-4">{silo.description}</p>
+      <h1 class="text-4xl sm:text-5xl font-serif text-slate-950 tracking-tight leading-tight">{title}</h1>
+      <p class="text-lg text-slate-600 font-serif leading-relaxed mt-4">{description}</p>
+      {
+        pilarAutor && (
+          <div class="flex items-center gap-3 text-xs font-mono text-slate-500 pt-4">
+            <a href={`/autores/${pilarAutor.id}/`} rel="author" class="hover:text-brand-600 transition-colors">
+              {pilarAutor.data.name}
+            </a>
+          </div>
+        )
+      }
     </header>
 
     {
+      PilarContent && (
+        <div class="prose-editorial max-w-3xl font-serif text-slate-800 text-lg leading-relaxed [&_h2]:font-sans [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-slate-900 [&_h2]:mt-10 [&_h2]:mb-4 [&_a]:text-brand-600 [&_a]:underline [&_a]:underline-offset-4 mb-16">
+          <PilarContent />
+        </div>
+      )
+    }
+
+    {
+      hubs.length > 0 && (
+        <div class="mb-16">
+          <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 mb-6">Hubs deste silo</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+            {hubs.map((hub) => (
+              <a
+                href={`/${hub.data.silo}/${hub.data.clusterSlug}/`}
+                class="relative p-6 rounded-xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-lg hover:border-brand-300 transition-all flex flex-col group"
+              >
+                <span class="text-[10px] font-mono font-semibold text-brand-700 uppercase tracking-wider">Hub</span>
+                <h3 class="text-lg font-serif font-semibold text-slate-900 group-hover:text-brand-600 transition-colors leading-snug mt-2">{hub.data.title}</h3>
+                <p class="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed flex-1">{hub.data.description}</p>
+                <span class="text-brand-600 group-hover:translate-x-1 transition-transform mt-4">→</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    {
       articles.length > 0 ? (
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-          {articles.map((entry) => <ArticleCard entry={entry} />)}
+        <div>
+          <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 mb-6">Artigos recentes</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+            {articles.map((entry) => <ArticleCard entry={entry} />)}
+          </div>
         </div>
       ) : (
-        <p class="text-slate-500 font-serif text-lg">Conteúdo em produção para este silo. Volte em breve.</p>
+        hubs.length === 0 && <p class="text-slate-500 font-serif text-lg">Conteúdo em produção para este silo. Volte em breve.</p>
       )
     }
   </section>

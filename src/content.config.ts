@@ -121,6 +121,27 @@ const estudosDeCaso = defineCollection({
 });
 
 /**
+ * Pilares — o corpo editorial das páginas-pilar (`/ia/`, `/automacao/`,
+ * `/desenvolvimento/`, `/ferramentas/`). A rota do silo (e o diretório de
+ * ferramentas) renderiza este corpo acima da lista de hubs e artigos. O nome
+ * do arquivo é o slug do silo (ia.md, automacao.md…).
+ */
+const pilares = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/pilares' }),
+  schema: () =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      pubDate: z.coerce.date(),
+      updatedDate: z.coerce.date().optional(),
+      author: reference('autores'),
+      silo: z.enum(['ia', 'automacao', 'desenvolvimento', 'ferramentas']),
+      draft: z.boolean().default(false),
+      sources: z.array(z.object({ label: z.string(), url: z.string().url() })).default([]),
+    }),
+});
+
+/**
  * Hubs temáticos — páginas de cluster em `/[silo]/[cluster]/`. Cada hub é a
  * entrada de uma trilha e lista os spokes do próprio cluster (ARQUITETURA §5).
  * `silo` + `clusterSlug` formam a URL; `cluster` é o rótulo humano que casa
@@ -172,6 +193,7 @@ export const collections = {
   tutoriais,
   comparativos,
   'estudos-de-caso': estudosDeCaso,
+  pilares,
   hubs,
   ferramentas,
 };
