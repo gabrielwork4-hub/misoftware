@@ -152,9 +152,11 @@ canonicalização de raiz, cobertos pela regra genérica).
    na fila, todos abaixo de 600 palavras e com `Revisão pendente`. Não há bloqueio
    de infraestrutura. Fluxo por conteúdo, validado pelo piloto: aprofundar → remover
    `Revisão pendente` → `status: approved` → `npm run inbox:promote`. Próximos
-   clusters sugeridos: o restante da **onda 1** (pilares e hubs de IA, Automação e
-   Desenvolvimento) e os spokes de maior intenção. Os clusters **Agentes** e
-   **Agentes operacionais** já estão publicados (7 peças no total).
+   **onda 1 (fundação) está completa**: 4 pilares + 17 hubs + os clusters
+   Agentes e Agentes operacionais = 28/60 publicados. O que resta são os
+   **spokes** (onda 2/3): artigos, tutoriais, comparativos, o estudo de caso e o
+   review do n8n — 32 na fila. Os hubs já linkam para eles; publicar cada spoke
+   ativa o link automaticamente (ver plugin em §9).
 3. **Fase 0 — infra:** criar projeto no Cloudflare Pages, conectar repo, configurar
    DNS/SSL para `www.misoftware.com.br` (canônico), fazer 1º preview deploy.
 4. **Validar a borda no preview:** `npm run check:status -- --base https://<preview>.pages.dev`
@@ -239,8 +241,17 @@ palavras, ou tipo cuja rota ainda não existe no site.
   `/artigos/automacao-assistida-por-ia-vs-agentes-autonomos/`. Zerou o link
   interno pendente do piloto: build **sem nenhum link interno quebrado** (36 páginas),
   `7/60 publicados`.
-- Restam 53 na fila, bloqueados só por editorial (marcador + profundidade).
-  O que segura a fila agora é só isso (§7 passo 1).
+- **Onda 1 (fundação) publicada (2026-09-20):** 4 pilares + 17 hubs, além dos
+  clusters Agentes e Agentes operacionais. 28/60 publicados, 51 páginas.
+- **Nova infra de linkagem:** `scripts/rehype-internal-links.mjs` rebaixa para
+  texto os links internos cujo destino ainda não existe (hub → spoke na fila) e
+  os reativa quando o spoke é publicado — o site fica sem link morto durante o
+  rollout. `scripts/published-paths.mjs` é a fonte de verdade dos caminhos
+  válidos; `npm run check:links` audita o dist/ (rede de segurança).
+- **Profundidade mínima por tipo:** 600 palavras para spokes, 350 para páginas
+  de navegação (hub/pilar). Documentado no normalize-inbox.
+- Restam 32 na fila (só spokes), bloqueados por editorial (marcador +
+  profundidade). O que segura a fila agora é só isso (§7 passo 1).
 - **Corrigido no registry:** `/ia/rag/` estava com a keyword primária
   `RAG com fontes verificáveis`, a mesma do tutorial `/tutoriais/rag-com-fontes-verificaveis/`
   — canibalização hub–spoke igual à que já havia sido resolvida em agentes e prompt.

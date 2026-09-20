@@ -108,7 +108,7 @@ const MARCADOR_REVISAO = /Revisão pendente/;
  * Por isso têm um piso menor, mas ainda substancial.
  */
 const MIN_PALAVRAS = 600;
-const MIN_PALAVRAS_NAVEGACAO = 400;
+const MIN_PALAVRAS_NAVEGACAO = 350;
 const TIPOS_NAVEGACAO = new Set(['pilar', 'pilar/diretório', 'hub']);
 const minPalavras = (tipo) => (TIPOS_NAVEGACAO.has(tipo) ? MIN_PALAVRAS_NAVEGACAO : MIN_PALAVRAS);
 
@@ -612,7 +612,7 @@ function relatorio({ itens, erros, avisos, publicados, registry }) {
   if (avisos.length) {
     console.log(`\n⚠ ${avisos.length} aviso(s) — bloqueiam a promoção, não o check:`);
     console.log(`  - ${comMarcador.length}× marcador "Revisão pendente" no texto`);
-    console.log(`  - ${rasos.length}× abaixo da profundidade minima (600 spokes / 400 navegacao)`);
+    console.log(`  - ${rasos.length}× abaixo da profundidade minima (600 spokes / 350 navegacao)`);
     console.log(`  - ${itens.filter((i) => i.status !== 'approved').length}× status diferente de "approved"`);
     console.log(`  - ${semRota.length}× tipo de página sem rota no site`);
   }

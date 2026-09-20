@@ -45,9 +45,9 @@ Apuração de 2026-09-20 (`npm run inbox:check`):
 |---|---:|---:|
 | Conteúdos no projeto | 60 | 60 |
 | Ligados ao slug-registry | 60 | 60 |
-| Publicados em `src/content/` | 7 | 60 |
-| Na fila (`inbox/`) | 53 | 0 |
-| Aprofundados + revisados | 7 | 60 |
+| Publicados em `src/content/` | 28 | 60 |
+| Na fila (`inbox/`) | 32 | 0 |
+| Aprofundados + revisados | 28 | 60 |
 
 **Piloto concluído — cluster Agentes (2026-09-20).** As 5 peças do cluster
 (`/ia/agentes/` + `o-que-sao-agentes-de-ia`, `tipos-de-agentes-de-ia-e-casos-de-uso`,
@@ -58,6 +58,17 @@ o status virou `approved` e todas foram promovidas para `src/content/`. O hub
 `/ia/agentes/` lista automaticamente os 4 spokes. Build limpo (34 páginas), sem
 link interno quebrado exceto `/automacao/agentes-operacionais/` — hub vizinho ainda
 na fila, que resolve quando aquele cluster for promovido.
+
+**Onda 1 (fundação) concluída (2026-09-20).** As 4 páginas-pilar (`/ia/`,
+`/automacao/`, `/desenvolvimento/`, `/ferramentas/`) e os 17 hubs de todos os
+silos foram aprofundados, aprovados e publicados — a malha de navegação de topo
+do site está completa. Cada pilar lista automaticamente os hubs do silo; cada
+hub lista os spokes do cluster. Com 28/60 publicados, o site tem 51 páginas e
+**zero link interno quebrado**: um plugin de build rebaixa para texto os links de
+hub → spoke ainda na fila e os reativa sozinho quando o spoke é publicado
+(`npm run check:links` é a rede de segurança). Profundidade mínima passou a ser
+por tipo — 600 palavras para spokes, 350 para páginas de navegação, cujo trabalho
+é rotear.
 
 **Cluster Agentes operacionais publicado (2026-09-20).** O hub
 `/automacao/agentes-operacionais/` e o comparativo

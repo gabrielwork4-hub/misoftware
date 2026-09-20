@@ -18,6 +18,7 @@
     "inbox:check": "node scripts/normalize-inbox.mjs",
     "inbox:fix": "node scripts/normalize-inbox.mjs --fix",
     "inbox:promote": "node scripts/normalize-inbox.mjs --promote",
+    "check:links": "node scripts/check-links.mjs",
     "astro": "astro"
   },
   "dependencies": {

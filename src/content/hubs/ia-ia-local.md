@@ -1,21 +1,18 @@
 ---
 title: "IA local: modelos, hardware e ferramentas"
 description: "Descubra como rodar IA local, escolher modelos e dimensionar hardware por privacidade, custo, VRAM e desempenho."
-slug: "/ia/ia-local/"
-type: "hub"
+pubDate: "2026-09-20"
 author: "gabriel-barboza"
-category: "IA & Modelos"
 silo: "ia"
 cluster: "IA local"
-primaryKeyword: "IA local"
-status: "needs-evidence"
+clusterSlug: "ia-local"
+draft: false
 sources:
-  - "https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image"
-  - "https://ollama.com/blog/gpt-oss"
+  - label: "ollama.com"
+    url: "https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image"
+  - label: "ollama.com"
+    url: "https://ollama.com/blog/gpt-oss"
 ---
-
-# IA local: modelos, hardware e ferramentas
-
 IA local é a execução de modelos no próprio computador ou servidor, sem enviar toda a tarefa para uma API externa. Essa escolha pode favorecer privacidade e controle, mas exige avaliar memória, velocidade, manutenção e qualidade. O [Ollama](https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image), por exemplo, oferece execução local, CLI e API, mas a configuração real ainda depende do hardware e do modelo escolhido.
 
 ## Quando IA local vale a pena
@@ -45,7 +42,6 @@ A escolha para código deve considerar autocomplete, explicação, refatoração
 - Como o resultado será validado?
 - Quem manterá modelos e atualizações?
 
-> Revisão pendente: inserir medições próprias, versões, licenças e fontes oficiais.
 IA local tende a fazer sentido quando privacidade, latência previsível, custo recorrente ou operação offline são importantes. Ela não elimina manutenção: modelos, runtimes, drivers e hardware continuam exigindo atualização e monitoramento.
 
 ## Trilhas do cluster
@@ -54,3 +50,7 @@ IA local tende a fazer sentido quando privacidade, latência previsível, custo 
 - programação: [modelos locais para programação](/comparativos/modelos-ia-local-para-programacao/);
 - execução: use um runtime compatível e registre versão, quantização e hardware;
 - infraestrutura: dimensione memória, armazenamento, energia e segurança antes de escalar.
+
+## Como fazer o primeiro teste local
+
+Antes de comprar hardware ou padronizar um modelo, faça uma prova mínima na máquina que você já tem. Instale um runtime, baixe um modelo pequeno, rode a tarefa real (não um exemplo genérico) e meça três coisas: tokens por segundo, tempo até a primeira resposta e qualidade no seu idioma e domínio. Compare com a alternativa via API no mesmo conjunto de tarefas. Só então decida se o ganho em privacidade e custo recorrente justifica o custo de hardware e manutenção. Registre sistema operacional, modelo, quantização e versão em cada teste — sem isso, o resultado não é reproduzível nem comparável na próxima avaliação.

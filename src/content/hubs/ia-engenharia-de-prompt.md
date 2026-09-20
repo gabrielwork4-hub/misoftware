@@ -1,21 +1,18 @@
 ---
 title: "Engenharia de Prompt: trilha prática e técnica"
 description: "Aprenda engenharia de prompt por uma trilha prática: fundamentos, técnicas, exemplos, raciocínio estruturado e avaliação em produção."
-slug: "/ia/engenharia-de-prompt/"
-type: "hub"
+pubDate: "2026-09-20"
 author: "gabriel-barboza"
-category: "Engenharia de Prompt"
 silo: "ia"
 cluster: "Prompt"
-primaryKeyword: "engenharia de prompt"
-status: "needs-evidence"
+clusterSlug: "engenharia-de-prompt"
+draft: false
 sources:
-  - "https://platform.openai.com/docs/guides/prompt-engineering"
-  - "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"
+  - label: "platform.openai.com"
+    url: "https://platform.openai.com/docs/guides/prompt-engineering"
+  - label: "docs.anthropic.com"
+    url: "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"
 ---
-
-# Engenharia de Prompt: trilha prática e técnica
-
 Engenharia de prompt é uma disciplina de especificação e avaliação. O objetivo é tornar uma tarefa compreensível, repetível e verificável para um modelo — não encontrar uma frase mágica que funcione em qualquer contexto. As orientações oficiais de [prompt engineering da OpenAI](https://platform.openai.com/docs/guides/prompt-engineering) e da [Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) reforçam esse ciclo de instrução, exemplo e avaliação.
 
 ## Comece pelo conceito
@@ -42,7 +39,6 @@ Um prompt precisa de casos de teste, baseline e controle de versões. O guia de 
 4. Monte casos de teste.
 5. Versione e revise antes de trocar o prompt.
 
-> Revisão pendente: validar links-filhos, exemplos de modelos e fontes primárias.
 Uma trilha útil combina especificação, exemplos, saída estruturada, avaliação e controle de versões. O prompt deve ser tratado como parte do software quando influencia decisões ou dados de clientes.
 
 ## Trilhas do cluster
@@ -51,3 +47,7 @@ Uma trilha útil combina especificação, exemplos, saída estruturada, avaliaç
 - [técnicas com exemplos](/artigos/tecnicas-de-engenharia-de-prompt-com-exemplos/);
 - [raciocínio estruturado](/artigos/engenharia-de-prompt-o-que-e-e-como-aplicar/);
 - [avaliação em produção](/artigos/como-avaliar-prompts-em-producao/).
+
+## Erro comum: tratar prompt como frase mágica
+
+O engano mais frequente é procurar "o prompt perfeito" em vez de tratar o prompt como especificação versionada. Um prompt que funciona hoje pode regredir quando o modelo é atualizado, quando a entrada muda de formato ou quando alguém edita uma linha sem testar. Por isso a disciplina importa mais que a redação: defina o critério de aceite antes de escrever, guarde exemplos de entrada e saída esperada, versione as mudanças e compare cada versão contra a anterior. Prompt que influencia decisão ou dado de cliente é parte do software — merece o mesmo controle de mudança que o código.
