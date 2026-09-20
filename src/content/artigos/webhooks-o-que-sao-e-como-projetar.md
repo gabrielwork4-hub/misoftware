@@ -1,21 +1,19 @@
 ---
 title: "Webhooks: o que são e como projetar integrações confiáveis"
 description: "Entenda webhooks e projete integrações com contrato de evento, autenticação, idempotência, retries e observabilidade."
-slug: "/artigos/webhooks-o-que-sao-e-como-projetar/"
-type: "artigo"
+pubDate: "2026-09-20"
 author: "gabriel-barboza"
 category: "Automação"
 silo: "automacao"
-cluster: "Integrações"
-primaryKeyword: "webhooks"
-status: "needs-evidence"
+tags:
+  - "Integrações"
+draft: false
 sources:
-  - "https://docs.stripe.com/webhooks"
-  - "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST"
+  - label: "docs.stripe.com"
+    url: "https://docs.stripe.com/webhooks"
+  - label: "developer.mozilla.org"
+    url: "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST"
 ---
-
-# Webhooks: o que são e como projetar integrações confiáveis
-
 Um webhook é uma notificação enviada por um sistema quando um evento acontece. Em vez de perguntar repetidamente se algo mudou, o consumidor fornece um endpoint e recebe uma requisição quando há uma atualização. A documentação de [webhooks da Stripe](https://docs.stripe.com/webhooks) é uma referência prática para tratar assinaturas, reentrega e validação de eventos.
 
 Essa simplicidade aparente esconde decisões importantes: como autenticar, como validar o payload, o que fazer quando a entrega se repete e como reprocessar um evento que falhou.
@@ -68,6 +66,10 @@ Um evento de pagamento pode carregar um identificador único, o tipo do evento, 
 
 O exemplo é ilustrativo: o formato real deve seguir o contrato do provedor. O ponto central é separar metadados de evento, dados de negócio e mecanismo de autenticação.
 
+## Segurança e versionamento
+
+Duas decisões separam um webhook amador de um confiável. A primeira é a autenticação: valide a assinatura de todo evento antes de processá-lo. A maioria dos provedores assina o payload com um segredo compartilhado; o consumidor recalcula a assinatura e compara. Sem isso, qualquer um que descubra a URL do endpoint pode injetar eventos falsos. A segunda é o versionamento: o formato de um evento muda com o tempo, e um consumidor que assume o formato de hoje quebra quando o provedor adiciona ou renomeia um campo. Inclua a versão no contrato, decida explicitamente o que fazer com campos desconhecidos (ignorar de forma segura, em vez de falhar) e documente por quanto tempo a versão anterior continua sendo enviada. Tratar o evento como um contrato versionado é o que permite evoluir a integração sem quebrar quem depende dela.
+
 ## Checklist antes da produção
 
 1. O endpoint valida assinatura e schema?
@@ -79,4 +81,3 @@ O exemplo é ilustrativo: o formato real deve seguir o contrato do provedor. O p
 
 Para implementar o fluxo, veja o [tutorial de webhook e API no n8n](/tutoriais/automacao-n8n-webhook-api/). Para escolher o transporte, consulte [webhook, polling ou fila](/artigos/como-escolher-entre-webhook-polling-e-fila/).
 
-> Revisão pendente: executar exemplo com endpoint de teste e adicionar fontes oficiais de cada protocolo/ferramenta.

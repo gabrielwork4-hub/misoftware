@@ -1,21 +1,19 @@
 ---
 title: "Como mapear um processo antes de automatizar"
 description: "Mapeie entradas, responsáveis, exceções e métricas antes de criar um workflow para evitar automatizar um processo instável."
-slug: "/artigos/como-mapear-processo-antes-de-automatizar/"
-type: "guia"
+pubDate: "2026-09-20"
 author: "redacao"
 category: "Automação"
 silo: "automacao"
-cluster: "Workflows"
-primaryKeyword: "mapeamento de processos"
-status: "needs-evidence"
+tags:
+  - "Workflows"
+draft: false
 sources:
-  - "https://www.omg.org/bpmn/"
-  - "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+  - label: "omg.org"
+    url: "https://www.omg.org/bpmn/"
+  - label: "developers.google.com"
+    url: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
 ---
-
-# Como mapear um processo antes de automatizar
-
 Automatizar um processo mal compreendido apenas faz os erros acontecerem mais rápido. Antes de escolher uma ferramenta, é preciso saber onde o processo começa, qual resultado deve produzir, quem toma decisões e quais exceções aparecem no caminho.
 
 ## O que deve estar no mapa
@@ -73,8 +71,11 @@ Converta cada evento em trigger, cada decisão em regra ou etapa de revisão, ca
 
 No caso editorial, o fluxo pode começar com uma pauta aprovada, gerar um brief, criar um rascunho e encaminhar o material para revisão humana. A IA pode acelerar etapas, mas não deve aprovar uma publicação sozinha.
 
+## O erro mais comum: mapear o ideal, não o real
+
+A armadilha que arruína a maioria dos projetos de automação é desenhar o processo como ele deveria ser, e não como ele é. O mapa do ideal é limpo, linear e sem exceções — justamente por isso é inútil, porque a operação real vive das exceções. Quem executa o trabalho sabe dos atalhos, das correções manuais e dos casos que "sempre dão problema"; é esse conhecimento que precisa entrar no mapa. Um teste simples de honestidade do mapa: mostre-o para quem faz o trabalho todo dia. Se a reação for "mas não é bem assim que acontece", o mapa ainda é uma hipótese, não uma descrição. Automatizar sobre um mapa idealizado só transfere o improviso manual para dentro do código, onde ele fica mais difícil de ver e de corrigir. Mapeie primeiro o que existe; melhorar o processo é um passo seguinte, e consciente, não um efeito colateral da automação.
+
 ## Próximo passo
 
 Use o hub de [workflows operacionais](/automacao/workflows/) e depois implemente um [primeiro workflow no n8n](/tutoriais/n8n-primeiro-workflow/).
 
-> Revisão pendente: adicionar modelo de mapa preenchido, fonte metodológica e evidência do processo editorial usado como exemplo.
