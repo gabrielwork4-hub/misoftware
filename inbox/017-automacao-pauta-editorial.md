@@ -1,12 +1,14 @@
 ---
 title: "Estudo de caso: automação de pauta editorial"
 description: "Como estruturar pauta, briefing, geração, revisão e publicação com automação e intervenção humana."
-author: redacao
+slug: "/estudos-de-caso/automacao-de-pauta-editorial/"
+type: "case"
+author: "redacao"
 category: "Automação"
-silo: automacao
-cluster: workflows
+silo: "automacao"
+cluster: "Workflows"
 primaryKeyword: "automação de pauta editorial"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
   - "https://docs.n8n.io/"

@@ -24,11 +24,27 @@ PUBLICAÇÃO
 MONITORAMENTO E ATUALIZAÇÃO
 ```
 
+## Como o painel é apurado
+
+O estado da fila não é preenchido à mão. `npm run inbox:check` lê cada arquivo de
+`inbox/`, liga com a linha correspondente de `seo/briefs/slug-registry.md` pela
+keyword primária e devolve os números abaixo. Um arquivo só é promovido para o
+site quando passa em todos os gates:
+
+```bash
+npm run inbox:check     # relatório e gates (não altera nada)
+npm run inbox:fix       # grava slug/tipo/cluster/autor no frontmatter
+npm run inbox:promote   # move os `approved` para src/content/
+```
+
 ## Status do projeto
 
-| Indicador | Estado inicial | Meta |
+Apuração de 2026-09-20 (`npm run inbox:check`):
+
+| Indicador | Hoje | Meta |
 |---|---:|---:|
 | Conteúdos na fila | 60 | 60 |
+| Ligados ao slug-registry | 60 | 60 |
 | Com fontes verificadas | 0 | 60 |
 | Com dados atualizados | 0 | 60 |
 | Com exemplos/testes | 0 | 60 |
@@ -37,11 +53,16 @@ MONITORAMENTO E ATUALIZAÇÃO
 | Aprovados | 0 | 60 |
 | Publicados | 0 | 60 |
 
+Dois bloqueios seguram a fila inteira hoje: os 60 arquivos ainda carregam o
+marcador `Revisão pendente` e 59 estão abaixo da profundidade mínima de 600
+palavras. Além disso, 32 conteúdos (hubs, tutoriais, comparativos e o estudo de
+caso) não têm rota no site — mesmo aprovados, não teriam onde ser publicados.
+
 ## Fases de execução
 
 | Fase | Entrega | Gate de passagem | Status |
 |---|---|---|---|
-| 1. Inventário | mapa dos 60 arquivos, slugs e clusters | nenhum conteúdo fora do registro | ⬜ |
+| 1. Inventário | mapa dos 60 arquivos, slugs e clusters | nenhum conteúdo fora do registro | ✅ |
 | 2. Fontes | fontes primárias e afirmações associadas | toda afirmação relevante sustentada | ⬜ |
 | 3. Atualização | versões, preços, limites e datas | dados variáveis com data de corte | ⬜ |
 | 4. Exemplos | exemplos, snippets, tabelas ou casos | exemplo executado ou identificado como ilustrativo | ⬜ |

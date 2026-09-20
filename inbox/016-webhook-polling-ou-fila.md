@@ -1,12 +1,14 @@
 ---
 title: "Webhook, polling ou fila: como escolher"
 description: "Compare webhook, polling e fila por latência, volume, falhas, reprocessamento e custo."
-author: gabriel-barboza
+slug: "/artigos/como-escolher-entre-webhook-polling-e-fila/"
+type: "guia"
+author: "gabriel-barboza"
 category: "Automação"
-silo: automacao
-cluster: integracoes
+silo: "automacao"
+cluster: "Integrações"
 primaryKeyword: "webhook, polling ou fila"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview"
   - "https://opentelemetry.io/docs/concepts/signals/"

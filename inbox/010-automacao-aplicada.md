@@ -1,12 +1,14 @@
 ---
 title: "Automação Aplicada: workflows, integrações e IA"
 description: "Explore automação aplicada com n8n, APIs, webhooks, workflows e agentes de IA para reduzir trabalho manual com segurança e controle."
-author: redacao
+slug: "/automacao/"
+type: "pilar"
+author: "redacao"
 category: "Automação"
-silo: automacao
-cluster: pilar
+silo: "automacao"
+cluster: "Automação"
 primaryKeyword: "automação aplicada"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://docs.n8n.io/"
   - "https://developers.google.com/workspace/workspace-integrations"

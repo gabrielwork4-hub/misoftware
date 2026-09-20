@@ -1,7 +1,9 @@
 ---
 title: "Como criar um agente de IA com ferramentas"
 description: "Guia para projetar um agente com objetivo, ferramentas, memória, limites e validação."
-author: "Redação"
+slug: "/tutoriais/como-criar-agente-ia-com-ferramentas/"
+type: "tutorial"
+author: "redacao"
 category: "IA & Modelos"
 silo: "ia"
 cluster: "Agentes"

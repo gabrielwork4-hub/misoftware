@@ -1,7 +1,9 @@
 ---
 title: "RAG: recuperação aumentada por geração com fontes confiáveis"
 description: "Hub sobre RAG, arquitetura de recuperação, qualidade de contexto, citações e operação."
-author: "Redação"
+slug: "/ia/rag/"
+type: "hub"
+author: "redacao"
 category: "IA & Modelos"
 silo: "ia"
 cluster: "RAG"

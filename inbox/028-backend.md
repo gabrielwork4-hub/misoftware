@@ -1,12 +1,14 @@
 ---
 title: "Desenvolvimento Back-end: APIs e serviços confiáveis"
 description: "Aprenda back-end com foco em APIs, contratos, validação, autenticação, idempotência, integrações e observabilidade."
-author: gabriel-barboza
+slug: "/desenvolvimento/backend/"
+type: "hub"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
-silo: desenvolvimento
-cluster: backend
+silo: "desenvolvimento"
+cluster: "Back-end"
 primaryKeyword: "desenvolvimento back-end"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://developer.mozilla.org/en-US/docs/Learn/Server-side"
   - "https://12factor.net/"

@@ -1,12 +1,14 @@
 ---
 title: "CI/CD com GitHub Actions e Docker: guia"
 description: "Construa pipelines CI/CD com GitHub Actions e Docker usando cache, testes paralelos, secrets, deploy e rollback seguro."
-author: gabriel-barboza
+slug: "/artigos/pipelines-cicd-github-actions-docker/"
+type: "artigo existente"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
-silo: desenvolvimento
-cluster: devops
+silo: "desenvolvimento"
+cluster: "DevOps"
 primaryKeyword: "pipelines CI/CD GitHub Actions Docker"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://docs.github.com/en/actions"
   - "https://docs.docker.com/build/"

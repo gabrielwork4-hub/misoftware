@@ -1,12 +1,14 @@
 ---
 title: "Engenharia de Prompt: trilha prática e técnica"
 description: "Aprenda engenharia de prompt por uma trilha prática: fundamentos, técnicas, exemplos, raciocínio estruturado e avaliação em produção."
-author: gabriel-barboza
+slug: "/ia/engenharia-de-prompt/"
+type: "hub"
+author: "gabriel-barboza"
 category: "Engenharia de Prompt"
-silo: ia
-cluster: engenharia-de-prompt
+silo: "ia"
+cluster: "Prompt"
 primaryKeyword: "engenharia de prompt"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://platform.openai.com/docs/guides/prompt-engineering"
   - "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"

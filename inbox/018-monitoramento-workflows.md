@@ -1,12 +1,14 @@
 ---
 title: "Monitoramento de Workflows: métricas e alertas"
 description: "Monitore workflows com métricas, logs, alertas, SLOs, retries e runbooks de diagnóstico."
-author: gabriel-barboza
+slug: "/artigos/monitoramento-de-workflows-e-alertas/"
+type: "artigo"
+author: "gabriel-barboza"
 category: "Automação"
-silo: automacao
-cluster: workflows
+silo: "automacao"
+cluster: "Workflows"
 primaryKeyword: "monitoramento de workflows"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://opentelemetry.io/docs/"
   - "https://sre.google/sre-book/monitoring-distributed-systems/"

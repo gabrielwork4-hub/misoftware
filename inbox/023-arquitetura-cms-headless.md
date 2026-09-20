@@ -1,12 +1,14 @@
 ---
 title: "Arquitetura CMS Headless para Site Editorial"
 description: "Planeje CMS headless para sites editoriais com modelo de conteúdo, preview, revisão, webhooks, rebuild, cache e governança."
-author: gabriel-barboza
+slug: "/artigos/arquitetura-cms-headless-para-site-editorial/"
+type: "guia"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
-silo: desenvolvimento
-cluster: arquitetura
+silo: "desenvolvimento"
+cluster: "Arquitetura"
 primaryKeyword: "CMS headless para site editorial"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://www.w3.org/standards/webdesign/"
   - "https://developer.mozilla.org/en-US/docs/Learn"

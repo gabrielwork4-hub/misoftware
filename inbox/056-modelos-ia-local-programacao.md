@@ -1,7 +1,9 @@
 ---
 title: "Modelos de IA local para programação: como comparar"
 description: "Compare modelos locais para programação por completude, contexto, hardware, licença e qualidade de código."
-author: "Redação"
+slug: "/comparativos/modelos-ia-local-para-programacao/"
+type: "comparativo"
+author: "redacao"
 category: "IA & Modelos"
 silo: "ia"
 cluster: "IA local"

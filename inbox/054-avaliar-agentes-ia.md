@@ -1,7 +1,9 @@
 ---
 title: "Como avaliar agentes de IA antes de colocar em produção"
 description: "Framework para testar agentes por qualidade, segurança, custo, observabilidade e intervenção humana."
-author: "Redação"
+slug: "/artigos/como-avaliar-agentes-de-ia/"
+type: "guia"
+author: "redacao"
 category: "IA & Modelos"
 silo: "ia"
 cluster: "Agentes"

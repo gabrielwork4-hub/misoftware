@@ -1,12 +1,14 @@
 ---
 title: "Inteligência artificial aplicada: guias para trabalho técnico"
 description: "Explore agentes, IA local, RAG e engenharia de prompt com guias práticos para aplicar inteligência artificial com método e segurança."
-author: redacao
+slug: "/ia/"
+type: "pilar"
+author: "redacao"
 category: "IA & Modelos"
-silo: ia
-cluster: pilar
+silo: "ia"
+cluster: "IA & Modelos"
 primaryKeyword: "inteligência artificial aplicada"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
   - "https://platform.openai.com/docs/guides/function-calling"

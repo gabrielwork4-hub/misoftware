@@ -1,7 +1,7 @@
 # HANDOFF — misoftware.com.br
 
 > Estado do desenvolvimento para continuar em outra sessão/conta.
-> **Última atualização:** 2026-09-18.
+> **Última atualização:** 2026-09-20.
 > Leia junto: `ARQUITETURA_MISOFTWARE.md` (fonte de verdade do produto) e
 > `seo/misoftware-legacy-url-audit.md` (auditoria de URLs legadas).
 
@@ -20,6 +20,9 @@
   TheLibrary/Bootstrap) vão para `410` — são de terceiros (antiga MI Software /
   Ramon Mendes) e seguem vivas no VS Marketplace / GitHub / sciter.com. **Não há
   Fase 2b de `301` condicional.** Ver nota em `ARQUITETURA §8`.
+- **Fase 1b (fila editorial): fila fechada e validada por script.** 60 rascunhos em
+  `inbox/`, todos ligados ao `slug-registry.md`, com `npm run inbox:check` como gate
+  entre rascunho e site. Nenhum está liberado para publicação ainda — ver §9.
 
 ---
 
@@ -47,6 +50,7 @@ scripts/
   build-redirects.mjs          → CSV → redirects.generated.json
   build-og.mjs                 → SVG da marca → public/og-default.png (sharp)
   check-status.mjs             → valida status HTTP contra o CSV
+  normalize-inbox.mjs          → inbox/ × slug-registry: valida, normaliza e promove (§9)
 src/
   consts.ts                    → SITE, NAV, SILOS, SOCIAL (fonte única)
   content.config.ts            → coleções: artigos, tutoriais, ferramentas
@@ -80,6 +84,9 @@ npm run build:redirects     # regenera functions/redirects.generated.json do CSV
 npm run build:og            # regenera public/og-default.png a partir do SVG da marca
 npm run preview:edge        # build + wrangler pages dev (testa o middleware) *ver aviso*
 npm run check:status -- --base http://localhost:8788   # valida os 410/301
+npm run inbox:check         # gates da fila editorial (ver §9)
+npm run inbox:fix           # normaliza o frontmatter da inbox
+npm run inbox:promote       # move os aprovados para src/content/
 ```
 
 ### ⚠️ Aviso de ambiente (Windows)
@@ -128,20 +135,29 @@ canonicalização de raiz, cobertos pela regra genérica).
 | Middleware **compila** no wrangler | ✅ ("Compiled Worker successfully") |
 | Middleware **executa** localmente (workerd) | ❌ bloqueado por VC++ no Windows — validar no preview Cloudflare |
 | `check:status` contra a borda | ⏳ pendente (depende do item acima) |
+| `inbox:check`: 60/60 ligados ao registry, 0 erros bloqueantes | ✅ (2026-09-20) |
+| `inbox:promote`: ciclo completo testado em cópia de trabalho (frontmatter → build → JSON-LD do artigo) | ✅ (2026-09-20) |
 
 ---
 
 ## 7. Próximos passos sugeridos (em ordem)
 
-1. **Fase 0 — infra:** criar projeto no Cloudflare Pages, conectar repo, configurar
+1. **Rotas que faltam para a fila editorial (bloqueio de 32 dos 60 conteúdos):**
+   hubs `/[silo]/[cluster]/`, `/tutoriais/`, `/comparativos/` e `/estudos-de-caso/`.
+   As coleções `comparativos` e `estudos-de-caso` ainda não existem em
+   `src/content.config.ts`; `tutoriais` existe sem rota. Rodar `npm run inbox:check`
+   mostra a lista atualizada.
+2. **Aprofundamento editorial:** 59 dos 60 rascunhos estão abaixo de 600 palavras e
+   todos carregam `Revisão pendente`. É o gate que separa a fila da publicação.
+3. **Fase 0 — infra:** criar projeto no Cloudflare Pages, conectar repo, configurar
    DNS/SSL para `www.misoftware.com.br` (canônico), fazer 1º preview deploy.
-2. **Validar a borda no preview:** `npm run check:status -- --base https://<preview>.pages.dev`
+4. **Validar a borda no preview:** `npm run check:status -- --base https://<preview>.pages.dev`
    — deve dar 0 falhas.
-3. **Go-live da migração:** apontar o domínio; conferir no Search Console os 410/301.
-4. **Fase 1 restante:** Directus + PostgreSQL como CMS; migrar o loader das content
+5. **Go-live da migração:** apontar o domínio; conferir no Search Console os 410/301.
+6. **Fase 1 restante:** Directus + PostgreSQL como CMS; migrar o loader das content
    collections para a API do Directus (o schema já está compatível).
-5. **Busca:** ligar o Pagefind na UI (o `Ctrl+K` do header ainda é decorativo).
-6. **Fase 3:** endpoint da newsletter + pipeline n8n (pauta → rascunho → revisão).
+7. **Busca:** ligar o Pagefind na UI (o `Ctrl+K` do header ainda é decorativo).
+8. **Fase 3:** endpoint da newsletter + pipeline n8n (pauta → rascunho → revisão).
 
 ---
 
@@ -169,3 +185,46 @@ canonicalização de raiz, cobertos pela regra genérica).
 - **Git:** repositório ainda **sem commit inicial** (branch `master`, 0 commits).
   Sugestão: primeiro commit com todo o scaffold desta fase.
 ```
+
+---
+
+## 9. Fila editorial: da inbox para o site
+
+**Fonte única:** `seo/briefs/slug-registry.md` decide slug canônica, tipo de página,
+cluster e keyword primária. `inbox/` é fila de rascunho, não conteúdo publicável.
+
+```
+seo/briefs/slug-registry.md   ← fonte da verdade (slug, tipo, cluster, keyword)
+   ↓ ligação pela keyword primária
+inbox/NNN-*.md                ← rascunho + frontmatter
+   ↓ scripts/normalize-inbox.mjs
+src/content/<colecao>/<slug>.md
+```
+
+| Comando | O que faz |
+|---|---|
+| `npm run inbox:check` | Relatório e gates. Não altera arquivos. Sai com código 1 se houver erro bloqueante. |
+| `npm run inbox:fix` | Grava `slug`, `type`, `cluster` e autor normalizado no frontmatter da inbox. Não toca no corpo do texto. |
+| `npm run inbox:promote` | Move para `src/content/` só o que passou em todos os gates, convertendo o frontmatter para o schema da coleção. |
+
+**Erros bloqueantes** (impedem o check): keyword fora do registry, slug ou keyword
+duplicada, campo obrigatório ausente, autor que não resolve para `src/content/autores/`,
+link interno para URL que não existe no registry, linha do registry sem arquivo na fila.
+
+**Gates de promoção** (não quebram o check, mas seguram o arquivo na inbox):
+`status` diferente de `approved`, marcador `Revisão pendente` no texto, menos de 600
+palavras, ou tipo cuja rota ainda não existe no site.
+
+### Estado em 2026-09-20
+
+- 60/60 arquivos ligados ao registry, 0 erros bloqueantes.
+- 0 prontos para promover: 60 com marcador de revisão, 59 abaixo de 600 palavras,
+  32 esperando rota.
+- **Corrigido no registry:** `/ia/rag/` estava com a keyword primária
+  `RAG com fontes verificáveis`, a mesma do tutorial `/tutoriais/rag-com-fontes-verificaveis/`
+  — canibalização hub–spoke igual à que já havia sido resolvida em agentes e prompt.
+  O hub passou para a entidade ampla (`RAG`); o tutorial mantém a intenção específica.
+- **Divergência conhecida e aceita:** o rascunho 040 usa
+  `ferramentas de IA para desenvolvimento de software` e o registry,
+  `ferramentas de IA para desenvolvimento`. É variação da mesma intenção; está
+  registrada em `ALIASES` no script, e o registry continua mandando na slug.

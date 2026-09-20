@@ -1,12 +1,14 @@
 ---
 title: "Automação com IA ou agente autônomo: qual escolher?"
 description: "Compare automação assistida por IA e agentes autônomos por risco, custo, supervisão, observabilidade e reversibilidade."
-author: gabriel-barboza
+slug: "/artigos/automacao-assistida-por-ia-vs-agentes-autonomos/"
+type: "comparativo conceitual"
+author: "gabriel-barboza"
 category: "Automação"
-silo: automacao
-cluster: agentes-operacionais
+silo: "automacao"
+cluster: "Agentes operacionais"
 primaryKeyword: "automação assistida por IA vs agentes autônomos"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://platform.openai.com/docs/guides/function-calling"
   - "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"

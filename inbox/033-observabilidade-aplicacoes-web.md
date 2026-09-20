@@ -1,12 +1,14 @@
 ---
 title: "Observabilidade para Aplicações Web: guia prático"
 description: "Implemente observabilidade em aplicações web com logs, métricas, traces, SLOs, alertas acionáveis e runbooks."
-author: gabriel-barboza
+slug: "/artigos/observabilidade-para-aplicacoes-web/"
+type: "guia"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
-silo: desenvolvimento
-cluster: devops
+silo: "desenvolvimento"
+cluster: "DevOps"
 primaryKeyword: "observabilidade para aplicações web"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://opentelemetry.io/docs/"
   - "https://web.dev/articles/vitals"

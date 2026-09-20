@@ -1,12 +1,14 @@
 ---
 title: "Agentes de IA: guia para entender e construir"
 description: "Aprenda como agentes de IA funcionam, quais componentes possuem e quais guias seguir para construir, avaliar e operar agentes confiáveis."
-author: gabriel-barboza
+slug: "/ia/agentes/"
+type: "hub"
+author: "gabriel-barboza"
 category: "IA & Modelos"
-silo: ia
-cluster: agentes
+silo: "ia"
+cluster: "Agentes"
 primaryKeyword: "agentes de IA"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://platform.openai.com/docs/guides/function-calling"
   - "https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview"

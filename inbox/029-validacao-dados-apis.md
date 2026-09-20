@@ -1,12 +1,14 @@
 ---
 title: "Validação de Dados em APIs: schemas e erros"
 description: "Projete validação de dados em APIs com schemas, erros consistentes, limites, segurança, versionamento e testes reproduzíveis."
-author: gabriel-barboza
+slug: "/artigos/validacao-de-dados-em-apis/"
+type: "guia"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
-silo: desenvolvimento
-cluster: backend
+silo: "desenvolvimento"
+cluster: "Back-end"
 primaryKeyword: "validação de dados em APIs"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://spec.openapis.org/oas/latest.html"
   - "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"

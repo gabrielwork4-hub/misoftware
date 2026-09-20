@@ -1,12 +1,14 @@
 ---
 title: "Como mapear um processo antes de automatizar"
 description: "Mapeie entradas, responsáveis, exceções e métricas antes de criar um workflow para evitar automatizar um processo instável."
-author: redacao
+slug: "/artigos/como-mapear-processo-antes-de-automatizar/"
+type: "guia"
+author: "redacao"
 category: "Automação"
-silo: automacao
-cluster: workflows
+silo: "automacao"
+cluster: "Workflows"
 primaryKeyword: "mapeamento de processos"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://www.omg.org/bpmn/"
   - "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"

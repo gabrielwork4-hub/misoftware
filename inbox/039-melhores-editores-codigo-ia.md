@@ -1,7 +1,9 @@
 ---
 title: "Melhores editores de código com IA: como comparar"
 description: "Critérios para avaliar editores de código com IA por contexto, controle, segurança e produtividade."
-author: "Redação"
+slug: "/comparativos/melhores-editores-codigo-ia/"
+type: "comparativo"
+author: "redacao"
 category: "Reviews & Hardware"
 silo: "ferramentas"
 cluster: "Ferramentas de IA"

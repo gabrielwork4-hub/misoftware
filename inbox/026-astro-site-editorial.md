@@ -1,12 +1,14 @@
 ---
 title: "Astro para Site Editorial: tutorial completo"
 description: "Construa um site editorial com Astro, collections, layouts, SEO, sitemap, RSS, busca, imagens, deploy e cache."
-author: gabriel-barboza
+slug: "/tutoriais/astro-para-site-editorial/"
+type: "tutorial"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
-silo: desenvolvimento
-cluster: frontend
+silo: "desenvolvimento"
+cluster: "Front-end"
 primaryKeyword: "Astro para site editorial"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://docs.astro.build/en/getting-started/"
   - "https://docs.astro.build/en/concepts/why-astro/"

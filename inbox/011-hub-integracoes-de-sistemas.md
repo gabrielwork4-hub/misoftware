@@ -1,12 +1,14 @@
 ---
 title: "Integrações de Sistemas: APIs, eventos e webhooks"
 description: "Aprenda a projetar integrações de sistemas com APIs, webhooks, filas, autenticação, retries, idempotência e observabilidade."
-author: gabriel-barboza
+slug: "/automacao/integracoes/"
+type: "hub"
+author: "gabriel-barboza"
 category: "Automação"
-silo: automacao
-cluster: integracoes
+silo: "automacao"
+cluster: "Integrações"
 primaryKeyword: "integrações de sistemas"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview"
   - "https://docs.stripe.com/webhooks"

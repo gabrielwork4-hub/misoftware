@@ -1,12 +1,14 @@
 ---
 title: "IA local: modelos, hardware e ferramentas"
 description: "Descubra como rodar IA local, escolher modelos e dimensionar hardware por privacidade, custo, VRAM e desempenho."
-author: gabriel-barboza
+slug: "/ia/ia-local/"
+type: "hub"
+author: "gabriel-barboza"
 category: "IA & Modelos"
-silo: ia
-cluster: ia-local
+silo: "ia"
+cluster: "IA local"
 primaryKeyword: "IA local"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image"
   - "https://ollama.com/blog/gpt-oss"

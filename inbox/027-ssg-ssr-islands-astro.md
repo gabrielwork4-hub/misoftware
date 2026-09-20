@@ -1,12 +1,14 @@
 ---
 title: "SSG, SSR e Islands no Astro: como escolher"
 description: "Compare SSG, SSR e Islands no Astro por performance, SEO, cache e interatividade para escolher a arquitetura certa."
-author: gabriel-barboza
+slug: "/artigos/renderizacao-estatica-ssr-e-ilhas-no-astro/"
+type: "guia"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
-silo: desenvolvimento
-cluster: frontend
+silo: "desenvolvimento"
+cluster: "Front-end"
 primaryKeyword: "SSG, SSR e Islands no Astro"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://docs.astro.build/en/concepts/islands/"
   - "https://docs.astro.build/en/guides/server-side-rendering/"

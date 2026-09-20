@@ -1,7 +1,9 @@
 ---
 title: "Ferramentas de IA generativa: categorias, usos e critérios de escolha"
 description: "Entenda quais ferramentas de IA generativa atendem texto, código, imagem, pesquisa e automação."
-author: "Redação"
+slug: "/ferramentas/ia-generativa/"
+type: "hub"
+author: "redacao"
 category: "IA & Modelos"
 silo: "ferramentas"
 cluster: "Ferramentas de IA"

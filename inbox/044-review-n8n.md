@@ -1,7 +1,9 @@
 ---
 title: "n8n: review da plataforma de automação"
 description: "Análise do n8n para workflows, integrações, execução self-hosted, governança e manutenção."
-author: "Redação"
+slug: "/ferramentas/n8n/"
+type: "review"
+author: "redacao"
 category: "Reviews & Hardware"
 silo: "ferramentas"
 cluster: "Ferramentas de automação"

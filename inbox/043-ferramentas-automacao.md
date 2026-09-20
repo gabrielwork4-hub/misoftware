@@ -1,7 +1,9 @@
 ---
 title: "Ferramentas de automação: como escolher a plataforma certa"
 description: "Critérios para selecionar ferramentas de automação por complexidade, integrações, governança e custo."
-author: "Redação"
+slug: "/ferramentas/automacao/"
+type: "hub"
+author: "redacao"
 category: "Automação"
 silo: "ferramentas"
 cluster: "Ferramentas de automação"

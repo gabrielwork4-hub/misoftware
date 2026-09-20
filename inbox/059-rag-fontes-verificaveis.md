@@ -1,7 +1,9 @@
 ---
 title: "RAG com fontes verificáveis: como construir respostas auditáveis"
 description: "Tutorial para recuperar documentos, citar evidências e reduzir respostas sem suporte em aplicações com RAG."
-author: "Redação"
+slug: "/tutoriais/rag-com-fontes-verificaveis/"
+type: "tutorial"
+author: "redacao"
 category: "IA & Modelos"
 silo: "ia"
 cluster: "RAG"

@@ -1,7 +1,9 @@
 ---
 title: "Ferramentas de pesquisa técnica: encontre fontes confiáveis"
 description: "Organize ferramentas e práticas para pesquisar documentação, artigos, código e evidências técnicas."
-author: "Redação"
+slug: "/ferramentas/pesquisa/"
+type: "hub"
+author: "redacao"
 category: "Ferramentas"
 silo: "ferramentas"
 cluster: "Pesquisa"

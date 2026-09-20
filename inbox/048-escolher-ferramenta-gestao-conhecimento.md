@@ -1,7 +1,9 @@
 ---
 title: "Como escolher uma ferramenta de gestão de conhecimento"
 description: "Framework para escolher uma ferramenta de gestão do conhecimento com critérios de uso, governança e portabilidade."
-author: "Redação"
+slug: "/artigos/como-escolher-ferramenta-de-gestao-de-conhecimento/"
+type: "guia"
+author: "redacao"
 category: "Produtividade"
 silo: "ferramentas"
 cluster: "Produtividade"

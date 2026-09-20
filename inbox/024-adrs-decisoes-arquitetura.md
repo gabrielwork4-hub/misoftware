@@ -1,12 +1,14 @@
 ---
 title: "ADR: como documentar decisões de arquitetura"
 description: "Aprenda a criar ADRs com contexto, alternativas, decisão, consequências, status e exemplos aplicados a projetos reais."
-author: gabriel-barboza
+slug: "/artigos/como-documentar-decisoes-de-arquitetura-adr/"
+type: "artigo"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
-silo: desenvolvimento
-cluster: arquitetura
+silo: "desenvolvimento"
+cluster: "Arquitetura"
 primaryKeyword: "decisões de arquitetura ADR"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://adr.github.io/"
   - "https://martinfowler.com/articles/architectural-decision-records.html"

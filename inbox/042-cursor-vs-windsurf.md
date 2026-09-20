@@ -1,7 +1,9 @@
 ---
 title: "Cursor vs Windsurf: qual editor de código com IA escolher"
 description: "Comparação orientada a tarefas entre Cursor e Windsurf, com critérios de contexto, agentes, custo e controle."
-author: "Redação"
+slug: "/comparativos/cursor-vs-windsurf/"
+type: "comparativo"
+author: "redacao"
 category: "Reviews & Hardware"
 silo: "ferramentas"
 cluster: "Ferramentas de dev"

@@ -1,12 +1,14 @@
 ---
 title: "Agentes Operacionais: IA em workflows com controle"
 description: "Entenda quando usar agentes operacionais, como limitar permissões e medir resultados em workflows com supervisão humana."
-author: gabriel-barboza
+slug: "/automacao/agentes-operacionais/"
+type: "hub"
+author: "gabriel-barboza"
 category: "Automação"
-silo: automacao
-cluster: agentes-operacionais
+silo: "automacao"
+cluster: "Agentes operacionais"
 primaryKeyword: "agentes operacionais"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://platform.openai.com/docs/guides/function-calling"
   - "https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview"

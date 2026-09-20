@@ -1,12 +1,14 @@
 ---
 title: "Desenvolvimento de Software: arquitetura e entrega prática"
 description: "Explore arquitetura, front-end, back-end, DevOps e qualidade para construir e entregar software confiável."
-author: redacao
+slug: "/desenvolvimento/"
+type: "pilar"
+author: "redacao"
 category: "Desenvolvimento"
-silo: desenvolvimento
-cluster: pilar
+silo: "desenvolvimento"
+cluster: "Desenvolvimento"
 primaryKeyword: "desenvolvimento de software"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://12factor.net/"
   - "https://martinfowler.com/articles/practical-test-pyramid.html"

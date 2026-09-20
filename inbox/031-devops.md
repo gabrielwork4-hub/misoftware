@@ -1,12 +1,14 @@
 ---
 title: "DevOps: CI/CD, deploy e observabilidade"
 description: "Aprenda DevOps com CI/CD, ambientes, secrets, cache, deploy, rollback e observabilidade para entregar software com segurança."
-author: gabriel-barboza
+slug: "/desenvolvimento/devops/"
+type: "hub"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
-silo: desenvolvimento
-cluster: devops
+silo: "desenvolvimento"
+cluster: "DevOps"
 primaryKeyword: "DevOps e entrega contínua"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://docs.github.com/en/actions"
   - "https://docs.docker.com/"

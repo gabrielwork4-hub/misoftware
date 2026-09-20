@@ -1,12 +1,14 @@
 ---
 title: "Arquitetura de Software: decisões, padrões e trade-offs"
 description: "Entenda decisões de arquitetura para CMS, dados, cache, publicação, observabilidade e evolução de produtos digitais."
-author: gabriel-barboza
+slug: "/desenvolvimento/arquitetura/"
+type: "hub"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
-silo: desenvolvimento
-cluster: arquitetura
+silo: "desenvolvimento"
+cluster: "Arquitetura"
 primaryKeyword: "arquitetura de software"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://www.iso.org/standard/50508.html"
   - "https://c4model.com/"

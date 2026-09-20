@@ -1,12 +1,14 @@
 ---
 title: "Pirâmide de Testes na Prática: guia completo"
 description: "Entenda testes unitários, integração e E2E e monte uma estratégia equilibrada por risco, velocidade e custo de manutenção."
-author: gabriel-barboza
+slug: "/artigos/piramide-de-testes-pratica/"
+type: "guia"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
-silo: desenvolvimento
-cluster: qualidade
+silo: "desenvolvimento"
+cluster: "Qualidade"
 primaryKeyword: "pirâmide de testes"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://martinfowler.com/articles/practical-test-pyramid.html"
 ---

@@ -1,12 +1,14 @@
 ---
 title: "Qualidade de Software: testes e revisão prática"
 description: "Organize qualidade de software com testes, revisão de código, critérios de aceite, segurança e integração contínua."
-author: redacao
+slug: "/desenvolvimento/qualidade/"
+type: "hub"
+author: "redacao"
 category: "Desenvolvimento"
-silo: desenvolvimento
-cluster: qualidade
+silo: "desenvolvimento"
+cluster: "Qualidade"
 primaryKeyword: "qualidade de software"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://martinfowler.com/articles/practical-test-pyramid.html"
   - "https://www.iso.org/standard/62085.html"

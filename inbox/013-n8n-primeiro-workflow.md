@@ -1,12 +1,14 @@
 ---
 title: "Primeiro workflow no n8n: tutorial do zero"
 description: "Crie um workflow no n8n com trigger, dados, validação, credenciais, erros e publicação."
-author: gabriel-barboza
+slug: "/tutoriais/n8n-primeiro-workflow/"
+type: "tutorial"
+author: "gabriel-barboza"
 category: "Automação"
-silo: automacao
-cluster: n8n
+silo: "automacao"
+cluster: "n8n"
 primaryKeyword: "primeiro workflow n8n"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://docs.n8n.io/getting-started/"
 ---

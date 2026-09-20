@@ -1,12 +1,14 @@
 ---
 title: "Idempotência em APIs e Webhooks: guia prático"
 description: "Evite efeitos duplicados em APIs e webhooks com idempotency keys, retries, concorrência, replay e logs rastreáveis."
-author: gabriel-barboza
+slug: "/artigos/idempotencia-em-apis-e-webhooks/"
+type: "guia"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
-silo: desenvolvimento
-cluster: backend
+silo: "desenvolvimento"
+cluster: "Back-end"
 primaryKeyword: "idempotência em APIs e webhooks"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://docs.stripe.com/api/idempotent_requests"
   - "https://www.rfc-editor.org/rfc/rfc9110"

@@ -1,7 +1,9 @@
 ---
 title: "Tipos de agentes de IA e casos de uso"
 description: "Entenda agentes reativos, planejadores, cooperativos e operacionais para escolher a arquitetura adequada."
-author: "Redação"
+slug: "/artigos/tipos-de-agentes-de-ia-e-casos-de-uso/"
+type: "artigo"
+author: "redacao"
 category: "IA & Modelos"
 silo: "ia"
 cluster: "Agentes"

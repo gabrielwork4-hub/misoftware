@@ -1,12 +1,14 @@
 ---
 title: "Revisão de Código com IA sem Perder Controle"
 description: "Use IA em code review com contexto, rubrica, segurança, validação humana e métricas para acelerar sem aceitar sugestões frágeis."
-author: gabriel-barboza
+slug: "/artigos/revisao-de-codigo-com-ia-sem-perder-controle/"
+type: "artigo"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
-silo: desenvolvimento
-cluster: qualidade
+silo: "desenvolvimento"
+cluster: "Qualidade"
 primaryKeyword: "revisão de código com IA"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://docs.github.com/en/copilot"
   - "https://google.github.io/eng-practices/review/"

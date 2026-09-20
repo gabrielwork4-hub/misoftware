@@ -1,12 +1,14 @@
 ---
 title: "Automação com n8n: workflows e integrações"
 description: "Aprenda automação com n8n por casos de uso: workflows, webhooks, IA, segurança, hospedagem e critérios para escolher a plataforma."
-author: gabriel-barboza
+slug: "/automacao/n8n/"
+type: "hub"
+author: "gabriel-barboza"
 category: "Automação"
-silo: automacao
-cluster: n8n
+silo: "automacao"
+cluster: "n8n"
 primaryKeyword: "automação com n8n"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://docs.n8n.io/"
   - "https://docs.n8n.io/hosting/"

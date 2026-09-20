@@ -1,12 +1,14 @@
 ---
 title: "Desenvolvimento Front-end: performance e arquitetura"
 description: "Aprenda front-end com foco em renderização, componentes, acessibilidade, performance, SEO e arquitetura de sites editoriais."
-author: gabriel-barboza
+slug: "/desenvolvimento/frontend/"
+type: "hub"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
-silo: desenvolvimento
-cluster: frontend
+silo: "desenvolvimento"
+cluster: "Front-end"
 primaryKeyword: "desenvolvimento front-end"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://developer.mozilla.org/en-US/docs/Learn"
   - "https://web.dev/learn/"

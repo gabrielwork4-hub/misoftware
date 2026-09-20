@@ -1,7 +1,9 @@
 ---
 title: "Ferramentas de IA para desenvolvimento de software"
 description: "Guia para montar uma stack de IA que ajude planejamento, código, testes, documentação e operação."
-author: "Redação"
+slug: "/comparativos/ferramentas-ia-para-desenvolvimento-de-software/"
+type: "comparativo"
+author: "redacao"
 category: "IA & Modelos"
 silo: "ferramentas"
 cluster: "Ferramentas de IA"

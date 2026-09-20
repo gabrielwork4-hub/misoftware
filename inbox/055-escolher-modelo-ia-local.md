@@ -1,7 +1,9 @@
 ---
 title: "Como escolher um modelo de IA local"
 description: "Critérios para escolher modelo local por tarefa, memória, licença, desempenho e privacidade."
-author: "Redação"
+slug: "/artigos/como-escolher-modelo-ia-local/"
+type: "guia"
+author: "redacao"
 category: "IA & Modelos"
 silo: "ia"
 cluster: "IA local"

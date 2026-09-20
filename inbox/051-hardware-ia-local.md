@@ -1,7 +1,9 @@
 ---
 title: "Hardware para IA local: como dimensionar sua máquina"
 description: "Guia de CPU, GPU, memória, armazenamento e energia para executar modelos de IA localmente."
-author: "Redação"
+slug: "/ferramentas/hardware/"
+type: "hub"
+author: "redacao"
 category: "Reviews & Hardware"
 silo: "ferramentas"
 cluster: "Hardware"

@@ -1,7 +1,9 @@
 ---
 title: "Ferramentas para trabalho técnico: como escolher sem criar complexidade"
 description: "Mapa prático de ferramentas para organizar desenvolvimento, automação, documentação e colaboração."
-author: "Redação"
+slug: "/ferramentas/"
+type: "pilar/diretório"
+author: "redacao"
 category: "Ferramentas"
 silo: "ferramentas"
 cluster: "Ferramentas"

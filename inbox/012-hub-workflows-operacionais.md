@@ -1,12 +1,14 @@
 ---
 title: "Workflows Operacionais: desenho, automação e controle"
 description: "Aprenda a desenhar workflows operacionais com triggers, decisões, aprovações, retries, alertas, métricas e manutenção contínua."
-author: redacao
+slug: "/automacao/workflows/"
+type: "hub"
+author: "redacao"
 category: "Automação"
-silo: automacao
-cluster: workflows
+silo: "automacao"
+cluster: "Workflows"
 primaryKeyword: "workflows operacionais"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://docs.n8n.io/"
   - "https://opentelemetry.io/docs/"

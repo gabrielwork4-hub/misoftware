@@ -1,7 +1,9 @@
 ---
 title: "Como avaliar prompts em produção"
 description: "Método para medir prompts com casos reais, critérios de qualidade, regressão e observabilidade."
-author: "Redação"
+slug: "/artigos/como-avaliar-prompts-em-producao/"
+type: "artigo"
+author: "redacao"
 category: "Engenharia de Prompt"
 silo: "ia"
 cluster: "Prompt"

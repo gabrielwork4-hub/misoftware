@@ -1,7 +1,9 @@
 ---
 title: "n8n vs Make vs Zapier: comparação para automação"
 description: "Compare n8n, Make e Zapier por facilidade, flexibilidade, integrações, governança e custo total."
-author: "Redação"
+slug: "/comparativos/n8n-vs-make-vs-zapier/"
+type: "comparativo"
+author: "redacao"
 category: "Reviews & Hardware"
 silo: "ferramentas"
 cluster: "Ferramentas de automação"

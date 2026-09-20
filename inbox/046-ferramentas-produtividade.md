@@ -1,7 +1,9 @@
 ---
 title: "Ferramentas de produtividade: escolha por fluxo, não por moda"
 description: "Como selecionar ferramentas de produtividade para tarefas, projetos, notas, calendário e foco."
-author: "Redação"
+slug: "/ferramentas/produtividade/"
+type: "hub"
+author: "redacao"
 category: "Produtividade"
 silo: "ferramentas"
 cluster: "Produtividade"

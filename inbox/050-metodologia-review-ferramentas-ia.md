@@ -1,7 +1,9 @@
 ---
 title: "Como avaliamos ferramentas de IA: metodologia de review"
 description: "Metodologia transparente para testar ferramentas de IA com tarefas, critérios, evidências e limites."
-author: "Redação"
+slug: "/artigos/como-avaliamos-ferramentas-de-ia/"
+type: "metodologia"
+author: "redacao"
 category: "Reviews & Hardware"
 silo: "ferramentas"
 cluster: "Reviews"

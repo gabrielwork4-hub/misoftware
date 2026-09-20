@@ -1,12 +1,14 @@
 ---
 title: "Automação n8n com webhook e API: tutorial completo"
 description: "Integre webhook e API no n8n com validação, autenticação, idempotência, retries e testes de falha."
-author: gabriel-barboza
+slug: "/tutoriais/automacao-n8n-webhook-api/"
+type: "tutorial"
+author: "gabriel-barboza"
 category: "Automação"
-silo: automacao
-cluster: n8n
+silo: "automacao"
+cluster: "n8n"
 primaryKeyword: "automação n8n com webhook e API"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/"
   - "https://docs.n8n.io/integrations/"

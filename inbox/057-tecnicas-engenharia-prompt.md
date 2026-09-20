@@ -1,7 +1,9 @@
 ---
 title: "Técnicas de engenharia de prompt com exemplos"
 description: "Técnicas práticas para instruções mais claras, contexto controlado, exemplos e saídas verificáveis."
-author: "Redação"
+slug: "/artigos/tecnicas-de-engenharia-de-prompt-com-exemplos/"
+type: "guia"
+author: "redacao"
 category: "Engenharia de Prompt"
 silo: "ia"
 cluster: "Prompt"

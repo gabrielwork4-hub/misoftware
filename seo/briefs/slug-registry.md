@@ -41,7 +41,7 @@ Este arquivo é a fonte única para os briefs. Nenhuma pauta deve receber slug d
 | `/artigos/engenharia-de-prompt-o-que-e-e-como-aplicar/` | guia | Prompt | o que é engenharia de prompt | brief pronto |
 | `/artigos/tecnicas-de-engenharia-de-prompt-com-exemplos/` | guia | Prompt | técnicas de engenharia de prompt | brief pronto |
 | `/artigos/como-avaliar-prompts-em-producao/` | artigo | Prompt | avaliar prompts em produção | brief pronto |
-| `/ia/rag/` | hub | RAG | RAG com fontes verificáveis | brief pronto |
+| `/ia/rag/` | hub | RAG | RAG | brief pronto |
 | `/tutoriais/rag-com-fontes-verificaveis/` | tutorial | RAG | RAG com fontes verificáveis | brief pronto |
 | `/automacao/` | pilar | Automação | automação aplicada | brief pronto |
 | `/automacao/n8n/` | hub | n8n | automação com n8n | brief pronto |

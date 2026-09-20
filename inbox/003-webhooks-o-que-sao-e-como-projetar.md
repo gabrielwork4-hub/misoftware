@@ -1,12 +1,14 @@
 ---
 title: "Webhooks: o que são e como projetar integrações confiáveis"
 description: "Entenda webhooks e projete integrações com contrato de evento, autenticação, idempotência, retries e observabilidade."
-author: gabriel-barboza
+slug: "/artigos/webhooks-o-que-sao-e-como-projetar/"
+type: "artigo"
+author: "gabriel-barboza"
 category: "Automação"
-silo: automacao
-cluster: integracoes
+silo: "automacao"
+cluster: "Integrações"
 primaryKeyword: "webhooks"
-status: needs-evidence
+status: "needs-evidence"
 sources:
   - "https://docs.stripe.com/webhooks"
   - "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST"

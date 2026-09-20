@@ -1,7 +1,9 @@
 ---
 title: "Ferramentas para desenvolvimento: stack essencial por etapa"
 description: "Organize ferramentas de desenvolvimento por planejamento, código, colaboração, entrega e operação."
-author: "Redação"
+slug: "/ferramentas/desenvolvimento/"
+type: "hub"
+author: "redacao"
 category: "Desenvolvimento"
 silo: "ferramentas"
 cluster: "Ferramentas de dev"
