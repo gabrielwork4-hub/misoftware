@@ -58,12 +58,17 @@ src/
   layouts/BaseLayout.astro · PageLayout.astro  → PageLayout = prosa institucional
   components/                   → BaseHead, Header, Footer, Hero, QuickTracks,
                                  LatestArticles, ArticleCard, InnovationRadar, Newsletter
-  content/artigos/ (6) · ferramentas/ (4) · autores/ (2: gabriel-barboza, redacao)
+  content/artigos/ (6) · ferramentas/ (4) · autores/ (2) ·
+    hubs/ · comparativos/ · estudos-de-caso/ · tutoriais/ (vazias: preenchidas por --promote)
   pages/
     index.astro · 404.astro · rss.xml.ts
     artigos/[...id].astro · artigos/index.astro
     ferramentas/[...id].astro · ferramentas/index.astro
     [silo]/index.astro         → páginas-pilar (ia, automacao, desenvolvimento)
+    [silo]/[cluster]/index.astro → hubs temáticos (lista os spokes do cluster)
+    tutoriais/[...id].astro · tutoriais/index.astro
+    comparativos/[...id].astro · comparativos/index.astro
+    estudos-de-caso/[...id].astro · estudos-de-caso/index.astro
     autores/index.astro · autores/[slug]/index.astro   → índice + perfil de autor (schema Person)
     sobre/ · politica-editorial/ · privacidade/ · contato/   → institucionais (PageLayout)
 public/ robots.txt · favicon.svg
@@ -142,13 +147,11 @@ canonicalização de raiz, cobertos pela regra genérica).
 
 ## 7. Próximos passos sugeridos (em ordem)
 
-1. **Rotas que faltam para a fila editorial (bloqueio de 32 dos 60 conteúdos):**
-   hubs `/[silo]/[cluster]/`, `/tutoriais/`, `/comparativos/` e `/estudos-de-caso/`.
-   As coleções `comparativos` e `estudos-de-caso` ainda não existem em
-   `src/content.config.ts`; `tutoriais` existe sem rota. Rodar `npm run inbox:check`
-   mostra a lista atualizada.
-2. **Aprofundamento editorial:** 59 dos 60 rascunhos estão abaixo de 600 palavras e
-   todos carregam `Revisão pendente`. É o gate que separa a fila da publicação.
+1. **Aprofundamento editorial (único bloqueio que resta para os 60):** 59 dos 60
+   rascunhos estão abaixo de 600 palavras e todos carregam `Revisão pendente`. É o
+   gate que separa a fila da publicação — não há mais bloqueio de infraestrutura.
+   Fluxo por conteúdo: aprofundar → trocar `status` para `approved` → `npm run
+   inbox:promote`.
 3. **Fase 0 — infra:** criar projeto no Cloudflare Pages, conectar repo, configurar
    DNS/SSL para `www.misoftware.com.br` (canônico), fazer 1º preview deploy.
 4. **Validar a borda no preview:** `npm run check:status -- --base https://<preview>.pages.dev`
@@ -218,8 +221,14 @@ palavras, ou tipo cuja rota ainda não existe no site.
 ### Estado em 2026-09-20
 
 - 60/60 arquivos ligados ao registry, 0 erros bloqueantes.
-- 0 prontos para promover: 60 com marcador de revisão, 59 abaixo de 600 palavras,
-  32 esperando rota.
+- **Rotas completas (2026-09-20):** todas as 6 famílias de página existem —
+  `/[silo]/[cluster]/` (hubs), `/tutoriais/`, `/comparativos/`, `/estudos-de-caso/`,
+  além de `/artigos/` e `/ferramentas/`. Coleções `hubs`, `comparativos` e
+  `estudos-de-caso` criadas em `content.config.ts`. "aguardando rota" caiu de 32 → 0.
+  Pipeline testado ponta a ponta (promote → build) para os quatro tipos novos; o hub
+  `/ia/agentes/` lista corretamente os spokes do cluster.
+- 0 prontos para promover: 60 com marcador de revisão, 59 abaixo de 600 palavras.
+  O que segura a fila agora é só editorial (§7 passo 1).
 - **Corrigido no registry:** `/ia/rag/` estava com a keyword primária
   `RAG com fontes verificáveis`, a mesma do tutorial `/tutoriais/rag-com-fontes-verificaveis/`
   — canibalização hub–spoke igual à que já havia sido resolvida em agentes e prompt.

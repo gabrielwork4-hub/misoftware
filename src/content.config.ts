@@ -75,6 +75,74 @@ const tutoriais = defineCollection({
     }),
 });
 
+/**
+ * Comparativos — decisão entre entidades (Cursor vs Windsurf, n8n vs Make…).
+ * Mesmo shape editorial dos artigos; a intenção é comercial/decisão.
+ */
+const comparativos = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/comparativos' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      pubDate: z.coerce.date(),
+      updatedDate: z.coerce.date().optional(),
+      author: reference('autores'),
+      category: z.string(),
+      silo: z.enum(['ia', 'automacao', 'desenvolvimento', 'ferramentas']),
+      tags: z.array(z.string()).default([]),
+      cover: image().optional(),
+      coverAlt: z.string().optional(),
+      featured: z.boolean().default(false),
+      draft: z.boolean().default(false),
+      sources: z.array(z.object({ label: z.string(), url: z.string().url() })).default([]),
+    }),
+});
+
+/** Estudos de caso — prova e resultado de uma aplicação real. */
+const estudosDeCaso = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/estudos-de-caso' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      pubDate: z.coerce.date(),
+      updatedDate: z.coerce.date().optional(),
+      author: reference('autores'),
+      category: z.string(),
+      silo: z.enum(['ia', 'automacao', 'desenvolvimento', 'ferramentas']),
+      tags: z.array(z.string()).default([]),
+      cover: image().optional(),
+      coverAlt: z.string().optional(),
+      featured: z.boolean().default(false),
+      draft: z.boolean().default(false),
+      sources: z.array(z.object({ label: z.string(), url: z.string().url() })).default([]),
+    }),
+});
+
+/**
+ * Hubs temáticos — páginas de cluster em `/[silo]/[cluster]/`. Cada hub é a
+ * entrada de uma trilha e lista os spokes do próprio cluster (ARQUITETURA §5).
+ * `silo` + `clusterSlug` formam a URL; `cluster` é o rótulo humano que casa
+ * com a `tag` dos spokes.
+ */
+const hubs = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/hubs' }),
+  schema: () =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      pubDate: z.coerce.date(),
+      updatedDate: z.coerce.date().optional(),
+      author: reference('autores'),
+      silo: z.enum(['ia', 'automacao', 'desenvolvimento', 'ferramentas']),
+      cluster: z.string(),
+      clusterSlug: z.string(),
+      draft: z.boolean().default(false),
+      sources: z.array(z.object({ label: z.string(), url: z.string().url() })).default([]),
+    }),
+});
+
 const ferramentas = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/ferramentas' }),
   schema: ({ image }) =>
@@ -95,4 +163,15 @@ const ferramentas = defineCollection({
     }),
 });
 
-export const collections = { autores, artigos, tutoriais, ferramentas };
+// As chaves são os nomes usados em getCollection(...) e, no pipeline de
+// promoção, também o nome do diretório em src/content/. Por isso 'estudos-de-caso'
+// usa a forma com hífen (igual à pasta), não camelCase.
+export const collections = {
+  autores,
+  artigos,
+  tutoriais,
+  comparativos,
+  'estudos-de-caso': estudosDeCaso,
+  hubs,
+  ferramentas,
+};

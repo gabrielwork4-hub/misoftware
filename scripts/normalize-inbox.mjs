@@ -55,15 +55,15 @@ const AUTORES = new Map([
 const DESTINOS = new Map([
   ['pilar', { collection: null, route: 'src/pages/[silo]/index.astro' }],
   ['pilar/diretório', { collection: null, route: 'src/pages/ferramentas/index.astro' }],
-  ['hub', { collection: null, route: null }],
+  ['hub', { collection: 'hubs', route: 'src/pages/[silo]/[cluster]/index.astro' }],
   ['artigo', { collection: 'artigos', route: 'src/pages/artigos/[...id].astro' }],
   ['artigo existente', { collection: 'artigos', route: 'src/pages/artigos/[...id].astro' }],
   ['guia', { collection: 'artigos', route: 'src/pages/artigos/[...id].astro' }],
   ['metodologia', { collection: 'artigos', route: 'src/pages/artigos/[...id].astro' }],
   ['comparativo conceitual', { collection: 'artigos', route: 'src/pages/artigos/[...id].astro' }],
-  ['tutorial', { collection: 'tutoriais', route: null }],
-  ['comparativo', { collection: 'comparativos', route: null }],
-  ['case', { collection: 'estudos-de-caso', route: null }],
+  ['tutorial', { collection: 'tutoriais', route: 'src/pages/tutoriais/[...id].astro' }],
+  ['comparativo', { collection: 'comparativos', route: 'src/pages/comparativos/[...id].astro' }],
+  ['case', { collection: 'estudos-de-caso', route: 'src/pages/estudos-de-caso/[...id].astro' }],
   ['review', { collection: 'ferramentas', route: 'src/pages/ferramentas/[...id].astro' }],
 ]);
 
@@ -408,6 +408,36 @@ function frontmatterDestino(item, data, dataPub) {
       ['draft', false],
     ];
   }
+  // Comparativos e estudos de caso têm o mesmo shape editorial dos artigos,
+  // com `category` livre (string, não o enum de artigos).
+  if (item.destino.collection === 'comparativos' || item.destino.collection === 'estudos-de-caso') {
+    return [
+      ['title', data.title],
+      ['description', data.description],
+      ['pubDate', dataPub],
+      ['author', item.autor],
+      ['category', data.category],
+      ['silo', data.silo],
+      ['tags', [item.cluster]],
+      ['draft', false],
+      ['sources', fontes],
+    ];
+  }
+  // Hub: a URL vem de `silo` + `clusterSlug`; `cluster` é o rótulo que casa com
+  // a tag dos spokes. clusterSlug = último segmento da slug canônica do registry.
+  if (item.destino.collection === 'hubs') {
+    return [
+      ['title', data.title],
+      ['description', data.description],
+      ['pubDate', dataPub],
+      ['author', item.autor],
+      ['silo', data.silo],
+      ['cluster', item.cluster],
+      ['clusterSlug', slugFinal(item.slug)],
+      ['draft', false],
+      ['sources', fontes],
+    ];
+  }
   return null;
 }
 
@@ -463,8 +493,15 @@ function promover(itens, dataPub) {
       continue;
     }
 
+    // Hub tem dois segmentos na URL (silo/cluster); o nome do arquivo carrega
+    // os dois para não colidir e deixar claro que é um hub. Os demais tipos
+    // usam o último segmento da slug canônica.
     const destinoDir = join(CONTENT_DIR, item.destino.collection);
-    const destino = join(destinoDir, `${slugFinal(item.slug)}.md`);
+    const nomeArquivo =
+      item.destino.collection === 'hubs'
+        ? `${data.silo}-${slugFinal(item.slug)}`
+        : slugFinal(item.slug);
+    const destino = join(destinoDir, `${nomeArquivo}.md`);
     if (existsSync(destino)) {
       retidos.push({ arquivo: item.arquivo, motivo: `destino já existe: ${destino}` });
       continue;

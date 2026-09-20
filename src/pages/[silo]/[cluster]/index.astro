@@ -1,0 +1,128 @@
+---
+import { getCollection, getEntry, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const hubs = await getCollection('hubs', ({ data }) => !data.draft);
+  return hubs.map((entry) => ({
+    params: { silo: entry.data.silo, cluster: entry.data.clusterSlug },
+    props: { entry },
+  }));
+}
+
+type Spoke = {
+  href: string;
+  title: string;
+  description: string;
+  kind: string;
+};
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const author = await getEntry(data.author);
+const authorName = author?.data.name ?? 'Redação misoftware';
+const authorHref = author ? `/autores/${author.id}/` : undefined;
+
+// Spokes do cluster: qualquer conteúdo com a mesma tag do hub, no mesmo silo.
+// A tag é gravada na promoção a partir do cluster do slug-registry, então o
+// casamento hub↔spoke é o mesmo em toda a arquitetura.
+const noCluster = (d: { silo: string; tags: string[] }) =>
+  d.silo === data.silo && d.tags.includes(data.cluster);
+
+const artigos = await getCollection('artigos', ({ data: d }) => !d.draft && noCluster(d));
+const tutoriais = await getCollection('tutoriais', ({ data: d }) => !d.draft && noCluster(d));
+const comparativos = await getCollection('comparativos', ({ data: d }) => !d.draft && noCluster(d));
+const casos = await getCollection('estudos-de-caso', ({ data: d }) => !d.draft && noCluster(d));
+
+const spokes: Spoke[] = [
+  ...artigos.map((e: CollectionEntry<'artigos'>) => ({
+    href: `/artigos/${e.id}/`,
+    title: e.data.title,
+    description: e.data.description,
+    kind: 'Artigo',
+  })),
+  ...tutoriais.map((e: CollectionEntry<'tutoriais'>) => ({
+    href: `/tutoriais/${e.id}/`,
+    title: e.data.title,
+    description: e.data.description,
+    kind: 'Tutorial',
+  })),
+  ...comparativos.map((e: CollectionEntry<'comparativos'>) => ({
+    href: `/comparativos/${e.id}/`,
+    title: e.data.title,
+    description: e.data.description,
+    kind: 'Comparativo',
+  })),
+  ...casos.map((e: CollectionEntry<'estudos-de-caso'>) => ({
+    href: `/estudos-de-caso/${e.id}/`,
+    title: e.data.title,
+    description: e.data.description,
+    kind: 'Estudo de caso',
+  })),
+];
+---
+
+<BaseLayout title={data.title} description={data.description}>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <nav class="text-xs font-mono text-slate-400 mb-6" aria-label="Trilha de navegação">
+      <a href="/" class="hover:text-brand-600">Início</a>
+      <span class="mx-1.5">/</span>
+      <a href={`/${data.silo}/`} class="hover:text-brand-600 capitalize">{data.silo}</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-slate-600">{data.cluster}</span>
+    </nav>
+
+    <header class="max-w-3xl mb-12">
+      <div class="text-xs font-mono text-brand-700 font-bold uppercase tracking-wider mb-2">Hub · {data.cluster}</div>
+      <h1 class="text-4xl sm:text-5xl font-serif text-slate-950 tracking-tight leading-tight">{data.title}</h1>
+      <p class="text-lg text-slate-600 font-serif leading-relaxed mt-4">{data.description}</p>
+      <div class="flex items-center gap-3 text-xs font-mono text-slate-500 pt-4">
+        {authorHref ? (
+          <a href={authorHref} rel="author" class="hover:text-brand-600 transition-colors">{authorName}</a>
+        ) : (
+          <span>{authorName}</span>
+        )}
+      </div>
+    </header>
+
+    <div class="prose-editorial max-w-3xl font-serif text-slate-800 text-lg leading-relaxed [&_h2]:font-sans [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-slate-900 [&_h2]:mt-10 [&_h2]:mb-4 [&_a]:text-brand-600 [&_a]:underline [&_a]:underline-offset-4">
+      <Content />
+    </div>
+
+    {
+      spokes.length > 0 && (
+        <div class="mt-16 pt-10 border-t border-slate-200">
+          <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 mb-6">Nesta trilha</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+            {spokes.map((s) => (
+              <a
+                href={s.href}
+                class="relative p-6 rounded-xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-lg hover:border-brand-300 transition-all flex flex-col group"
+              >
+                <span class="text-[10px] font-mono font-semibold text-brand-700 uppercase tracking-wider">{s.kind}</span>
+                <h3 class="text-lg font-serif font-semibold text-slate-900 group-hover:text-brand-600 transition-colors leading-snug mt-2">{s.title}</h3>
+                <p class="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed flex-1">{s.description}</p>
+                <span class="text-brand-600 group-hover:translate-x-1 transition-transform mt-4">→</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    {
+      data.sources.length > 0 && (
+        <aside class="max-w-3xl mt-14 pt-6 border-t border-slate-200">
+          <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 mb-3">Fontes</h2>
+          <ul class="space-y-1.5 text-sm">
+            {data.sources.map((s) => (
+              <li><a href={s.url} class="text-brand-600 underline underline-offset-4" rel="nofollow noopener" target="_blank">{s.label}</a></li>
+            ))}
+          </ul>
+        </aside>
+      )
+    }
+  </section>
+</BaseLayout>

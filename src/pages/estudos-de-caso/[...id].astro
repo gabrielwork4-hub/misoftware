@@ -1,0 +1,93 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const casos = await getCollection('estudos-de-caso', ({ data }) => !data.draft);
+  return casos.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const author = await getEntry(data.author);
+const authorName = author?.data.name ?? 'Redação misoftware';
+const authorHref = author ? `/autores/${author.id}/` : undefined;
+
+const dateLabel = new Intl.DateTimeFormat('pt-BR', {
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric',
+}).format(data.pubDate);
+const updatedLabel = data.updatedDate
+  ? new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' }).format(data.updatedDate)
+  : null;
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  type="article"
+  author={authorName}
+  authorUrl={authorHref}
+  authorSameAs={author?.data.sameAs}
+  authorEntity={author?.data.entity}
+  publishedTime={data.pubDate.toISOString()}
+  modifiedTime={data.updatedDate?.toISOString()}
+>
+  <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <nav class="text-xs font-mono text-slate-400 mb-6" aria-label="Trilha de navegação">
+      <a href="/" class="hover:text-brand-600">Início</a>
+      <span class="mx-1.5">/</span>
+      <a href={`/${data.silo}/`} class="hover:text-brand-600 capitalize">{data.silo}</a>
+      <span class="mx-1.5">/</span>
+      <a href="/estudos-de-caso/" class="hover:text-brand-600">Estudos de caso</a>
+    </nav>
+
+    <header class="max-w-3xl mx-auto text-center space-y-5">
+      <span class="text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded font-mono text-xs font-semibold uppercase">Estudo de caso · {data.category}</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal tracking-tight text-slate-950 leading-tight">{data.title}</h1>
+      <p class="text-lg sm:text-xl text-slate-600 font-serif leading-relaxed">{data.description}</p>
+      <div class="flex items-center justify-center gap-3 text-xs font-mono text-slate-500 pt-2">
+        {authorHref ? (
+          <a href={authorHref} rel="author" class="hover:text-brand-600 transition-colors">{authorName}</a>
+        ) : (
+          <span>{authorName}</span>
+        )}
+        <span>•</span>
+        <time datetime={data.pubDate.toISOString()}>{dateLabel}</time>
+      </div>
+      {updatedLabel && <p class="text-[11px] font-mono text-slate-400">Atualizado em {updatedLabel}</p>}
+    </header>
+
+    {
+      data.cover && (
+        <div class="max-w-4xl mx-auto mt-10 rounded-2xl overflow-hidden border border-slate-200">
+          <Image src={data.cover} alt={data.coverAlt ?? data.title} width={1280} height={720} class="w-full h-auto" />
+        </div>
+      )
+    }
+
+    <div class="prose-editorial mx-auto mt-12 font-serif text-slate-800 text-lg leading-relaxed [&_h2]:font-sans [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-slate-900 [&_h2]:mt-10 [&_h2]:mb-4 [&_a]:text-brand-600 [&_a]:underline [&_a]:underline-offset-4 [&_table]:w-full [&_table]:text-base [&_th]:text-left [&_th]:font-sans [&_th]:font-semibold [&_td]:border-t [&_td]:border-slate-200 [&_td]:py-2 [&_th]:py-2">
+      <Content />
+    </div>
+
+    {
+      data.sources.length > 0 && (
+        <aside class="max-w-3xl mx-auto mt-12 pt-6 border-t border-slate-200">
+          <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 mb-3">Fontes</h2>
+          <ul class="space-y-1.5 text-sm">
+            {data.sources.map((s) => (
+              <li><a href={s.url} class="text-brand-600 underline underline-offset-4" rel="nofollow noopener" target="_blank">{s.label}</a></li>
+            ))}
+          </ul>
+        </aside>
+      )
+    }
+  </article>
+</BaseLayout>

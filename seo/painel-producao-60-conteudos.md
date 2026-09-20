@@ -53,10 +53,11 @@ Apuração de 2026-09-20 (`npm run inbox:check`):
 | Aprovados | 0 | 60 |
 | Publicados | 0 | 60 |
 
-Dois bloqueios seguram a fila inteira hoje: os 60 arquivos ainda carregam o
-marcador `Revisão pendente` e 59 estão abaixo da profundidade mínima de 600
-palavras. Além disso, 32 conteúdos (hubs, tutoriais, comparativos e o estudo de
-caso) não têm rota no site — mesmo aprovados, não teriam onde ser publicados.
+O único bloqueio que resta é editorial: os 60 arquivos ainda carregam o marcador
+`Revisão pendente` e 59 estão abaixo da profundidade mínima de 600 palavras. A
+infraestrutura de rotas foi concluída em 2026-09-20 — as 6 famílias de página
+(hubs `/[silo]/[cluster]/`, `/tutoriais/`, `/comparativos/`, `/estudos-de-caso/`,
+`/artigos/` e `/ferramentas/`) existem, então "aguardando rota" saiu de 32 para 0.
 
 ## Fases de execução
 
