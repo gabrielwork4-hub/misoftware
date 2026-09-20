@@ -1,21 +1,19 @@
 ---
 title: "Engenharia de prompt: o que é e como aplicar no trabalho técnico"
 description: "Aprenda a estruturar prompts com contexto, restrições, exemplos, formato de saída e critérios de avaliação para tarefas técnicas."
-slug: "/artigos/engenharia-de-prompt-o-que-e-e-como-aplicar/"
-type: "guia"
+pubDate: "2026-09-20"
 author: "gabriel-barboza"
 category: "Engenharia de Prompt"
 silo: "ia"
-cluster: "Prompt"
-primaryKeyword: "o que é engenharia de prompt"
-status: "needs-evidence"
+tags:
+  - "Prompt"
+draft: false
 sources:
-  - "https://platform.openai.com/docs/guides/prompt-engineering"
-  - "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"
+  - label: "platform.openai.com"
+    url: "https://platform.openai.com/docs/guides/prompt-engineering"
+  - label: "docs.anthropic.com"
+    url: "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"
 ---
-
-# Engenharia de prompt: o que é e como aplicar no trabalho técnico
-
 Engenharia de prompt é o processo de transformar uma tarefa em uma instrução clara, testável e adequada ao modelo usado. Um prompt melhor não garante uma resposta verdadeira; ele reduz ambiguidades, define o formato esperado e facilita a avaliação do resultado. As orientações oficiais da [OpenAI](https://platform.openai.com/docs/guides/prompt-engineering) e da [Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) tratam prompts como parte de um processo de especificação e avaliação, não como uma fórmula mágica.
 
 ## O que um prompt bem projetado resolve
@@ -92,8 +90,11 @@ Esse formato torna a saída mais fácil de comparar e revisar. Ainda assim, o re
 - existem exemplos representativos;
 - o prompt foi testado com entradas normais e difíceis.
 
+## Prompt é especificação, não conversa
+
+A mudança de mentalidade que separa quem domina engenharia de prompt é parar de "conversar" com o modelo e passar a tratá-lo como especificação. Uma conversa é irrepetível e depende de você estar presente para corrigir; uma especificação é escrita uma vez, testada e reutilizada por qualquer pessoa ou sistema. Quando o prompt influencia uma decisão ou toca dados de clientes, ele é software: merece versão, teste e revisão como qualquer outra parte do código. É essa disciplina — não a redação inspirada — que torna o resultado confiável ao longo do tempo.
+
 ## Próximo passo
 
 Veja a [trilha de Engenharia de Prompt](/ia/engenharia-de-prompt/), pratique com [técnicas e exemplos](/artigos/tecnicas-de-engenharia-de-prompt-com-exemplos/) e aprenda a [avaliar prompts em produção](/artigos/como-avaliar-prompts-em-producao/).
 
-> Revisão pendente: validar exemplos com modelos identificados e adicionar fontes primárias.
