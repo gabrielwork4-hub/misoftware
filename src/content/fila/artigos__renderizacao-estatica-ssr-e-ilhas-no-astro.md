@@ -2,19 +2,17 @@
 title: "SSG, SSR e Islands no Astro: como escolher"
 description: "Compare SSG, SSR e Islands no Astro por performance, SEO, cache e interatividade para escolher a arquitetura certa."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
 silo: desenvolvimento
 kind: "artigo"
 canonicalPath: "/artigos/renderizacao-estatica-ssr-e-ilhas-no-astro/"
 primaryKeyword: "SSG, SSR e islands no Astro"
-draft: true
+draft: false
 sources:
   - "https://docs.astro.build/en/concepts/islands/"
   - "https://docs.astro.build/en/guides/server-side-rendering/"
 ---
-
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
 
 No Astro, SSG gera HTML no build, SSR gera a resposta sob demanda e Islands adiciona JavaScript apenas aos componentes interativos. Eles não são escolhas excludentes: um site pode usar SSG para o conteúdo editorial, SSR em uma área personalizada e islands para busca ou filtros.
 

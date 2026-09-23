@@ -1,34 +1,42 @@
 ---
 title: "n8n vs Make vs Zapier: comparação para automação"
-description: "Compare n8n, Make e Zapier por facilidade, flexibilidade, integrações, governança e custo total."
+description: "Compare n8n, Make e Zapier por perfil de uso, flexibilidade, controle de dados e custo total — três plataformas para três perfis diferentes de equipe e fluxo."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Ferramentas"
-silo: desenvolvimento
+silo: ferramentas
 kind: "comparativo"
 canonicalPath: "/comparativos/n8n-vs-make-vs-zapier/"
 primaryKeyword: "n8n vs Make vs Zapier"
-draft: true
+draft: false
 sources:
   - "https://docs.n8n.io/"
   - "https://www.make.com/en/help"
   - "https://zapier.com/help"
 ---
 
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
+n8n, Make e Zapier automatizam tarefas, mas atendem perfis diferentes de equipe e de fluxo. A escolha certa depende de quatro variáveis: a complexidade do que você automatiza, o volume, o nível técnico de quem mantém e o quanto você precisa de controle sobre onde os dados passam. Comparar só pela contagem de integrações leva à decisão errada.
 
-As três plataformas automatizam tarefas, mas atendem perfis diferentes. A escolha depende da complexidade do fluxo, do volume, do nível técnico da equipe e da exigência de controle sobre dados.
+## O posicionamento de cada uma
 
-## Diferenças de perfil
-
-Zapier tende a privilegiar rapidez e amplitude de integrações. Make oferece construção visual detalhada para cenários com ramificações. n8n favorece flexibilidade, código e opções de execução gerenciada ou própria.
+- **Zapier** privilegia rapidez e amplitude: o maior catálogo de aplicativos e o caminho mais curto para ligar dois serviços. É a escolha natural para automações simples e diretas, especialmente para quem não é técnico.
+- **Make** oferece um construtor visual detalhado, forte em cenários com ramificações, iterações e transformações de dados. Fica entre a simplicidade do Zapier e a flexibilidade do n8n.
+- **n8n** favorece flexibilidade e controle: nós de código, execução gerenciada ou **self-hosted** (você processa os dados na sua infraestrutura) e um modelo mais próximo de software. Pede mais capacidade técnica em troca de mais poder — veja a [review dedicada do n8n](/ferramentas/n8n/).
 
 ## Matriz de decisão
 
-Compare tempo para publicar, tratamento de erros, observabilidade, colaboração, permissões, exportação, limites e custo por operação. Faça o teste com uma automação representativa, não com um exemplo trivial.
+| Critério | Zapier | Make | n8n |
+|---|---|---|---|
+| Facilidade inicial | alta | média | menor |
+| Flexibilidade / código | limitada | média | alta |
+| Controle de dados (self-host) | não | não | sim |
+| Perfil ideal | não técnico | intermediário | técnico |
+| Fluxos complexos | simples | ramificados | arbitrários |
 
-## Recomendação responsável
+## Como decidir na prática
 
-Documente premissas e inclua custo de manutenção. A plataforma mais simples hoje pode ser a mais cara quando o processo cresce ou precisa de auditoria.
+Não compare com um exemplo trivial — qualquer plataforma liga duas caixas. Teste com **uma automação representativa** do seu trabalho real e observe tempo para publicar, tratamento de erros, observabilidade, colaboração, permissões e limites. Inclua o **custo de manutenção**, não só o preço de lista: a plataforma mais simples hoje pode ser a mais cara quando o processo cresce ou precisa de auditoria. Preços e limites mudam com frequência — confirme no site oficial de cada uma.
 
-> Revisão pendente: preencher preços, limites e resultados de um piloto reproduzível.
+## Próximo passo
+
+Antes de escolher, revise os critérios no hub de [ferramentas de automação](/ferramentas/automacao/); depois de escolher, comece pelo [primeiro workflow no n8n](/tutoriais/n8n-primeiro-workflow/) e desenhe [workflows operacionais](/automacao/workflows/) sólidos.

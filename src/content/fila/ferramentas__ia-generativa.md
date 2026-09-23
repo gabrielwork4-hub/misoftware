@@ -1,6 +1,6 @@
 ---
 title: "Ferramentas de IA generativa: categorias, usos e critérios de escolha"
-description: "Entenda quais ferramentas de IA generativa atendem texto, código, imagem, pesquisa e automação."
+description: "Um mapa das categorias de ferramentas de IA generativa — texto, código, multimodal, pesquisa e automação — com os critérios que realmente separam uma boa escolha de uma moda."
 pubDate: "2026-09-22"
 author: "redacao"
 category: "Ferramentas"
@@ -8,28 +8,44 @@ silo: ferramentas
 kind: "hub"
 canonicalPath: "/ferramentas/ia-generativa/"
 primaryKeyword: "ferramentas de IA generativa"
-draft: true
+draft: false
 sources:
   - "https://platform.openai.com/docs/overview"
   - "https://developers.google.com/machine-learning/resources/intro-llms"
 ---
 
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
+Uma ferramenta de IA generativa só entrega valor quando está ligada a um trabalho real. A pergunta certa não é "qual é a melhor?", e sim "qual tarefa preciso resolver — criar, pesquisar, programar, transformar informação ou executar uma rotina?". Definido isso, a categoria certa se revela e a comparação fica objetiva.
 
-Ferramenta de IA generativa só entrega valor quando está ligada a um trabalho real. O primeiro passo é definir se o objetivo é criar, pesquisar, programar, transformar informação ou executar uma rotina.
+## As categorias que importam
 
-## Principais categorias
+| Categoria | Para quê | Exemplo de uso |
+|---|---|---|
+| Assistentes conversacionais | ideação, síntese, rascunho | resumir, reescrever, explorar |
+| Copilotos de código | apoio na programação | autocomplete, chat sobre o repo |
+| Geradores multimodais | imagem, áudio, vídeo | protótipos visuais, mídia |
+| Plataformas de pesquisa | respostas com fonte | levantamento com citações |
+| IA em automação | modelo dentro de workflow | classificação, extração |
 
-Assistentes conversacionais ajudam na ideação e síntese; copilotos apoiam o código; geradores multimodais produzem imagens, áudio e vídeo; plataformas de pesquisa conectam respostas a fontes; e ferramentas de automação usam modelos dentro de workflows.
+Exemplos que definem cada categoria hoje incluem assistentes como ChatGPT, Claude e Gemini; copilotos de código como o GitHub Copilot; geradores de imagem como Midjourney e DALL·E; e plataformas de pesquisa como o Perplexity. O mercado muda rápido — trate os nomes como pontos de partida da categoria, não como ranking definitivo.
 
-## O que comparar
+Essas categorias não competem entre si — uma operação madura combina várias, cada uma na etapa certa. Para código especificamente, veja o comparativo de [ferramentas de IA para desenvolvimento de software](/comparativos/ferramentas-ia-para-desenvolvimento-de-software/) e [melhores editores de código com IA](/comparativos/melhores-editores-codigo-ia/).
 
-Observe qualidade no seu idioma, contexto disponível, controles de privacidade, retenção de dados, integração via API, limites, latência e previsibilidade de custo. Para equipes, permissões, auditoria e administração são tão importantes quanto a resposta do modelo.
+## O que comparar (além da resposta do modelo)
 
-## Como começar
+A qualidade da resposta é só uma parte. Avalie também:
 
-Escolha um caso de uso mensurável, crie exemplos de teste e registre erros aceitáveis. Depois, compare duas ou três opções com o mesmo conjunto de tarefas e critérios.
+- **qualidade no seu idioma** e no seu domínio;
+- **contexto disponível** (quanto a ferramenta enxerga por vez);
+- **privacidade e retenção** de dados enviados;
+- **integração via API**, limites e latência;
+- **previsibilidade de custo** sob uso real.
 
-Explore o guia de [IA generativa aplicada](/ia/) e a metodologia de [avaliação de ferramentas de IA](/artigos/como-avaliamos-ferramentas-de-ia/).
+Para times, permissões, auditoria e administração pesam tanto quanto a resposta do modelo. Uma ferramenta melhor no papel pode ser inviável se não respeita a política de dados da empresa.
 
-> Revisão pendente: atualizar catálogo de produtos, planos, recursos e evidências de desempenho.
+## Como começar sem virar refém do hype
+
+Escolha um caso de uso mensurável, monte exemplos de teste e defina o erro aceitável antes de comparar. Rode duas ou três opções com o mesmo conjunto de tarefas e critérios — é a base da nossa [metodologia de avaliação de ferramentas de IA](/artigos/como-avaliamos-ferramentas-de-ia/).
+
+## Trilha deste cluster
+
+Entenda os fundamentos em [IA aplicada](/ia/), rode modelos na sua máquina com [Ollama](/ferramentas/ollama/) e [como escolher um modelo de IA local](/artigos/como-escolher-modelo-ia-local/), e gere interfaces com [v0 by Vercel](/ferramentas/v0-vercel/). Volte ao [diretório de ferramentas](/ferramentas/).

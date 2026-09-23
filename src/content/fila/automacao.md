@@ -8,7 +8,7 @@ silo: automacao
 kind: "pilar"
 canonicalPath: "/automacao/"
 primaryKeyword: "automação aplicada"
-draft: true
+draft: false
 sources:
   - "https://docs.n8n.io/"
   - "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods"
@@ -49,17 +49,16 @@ Um workflow de produção precisa tratar:
 
 Webhooks são notificações, não garantia de processamento. Registre o evento recebido, valide a assinatura quando disponível e defina o que acontece se o consumidor estiver indisponível. APIs também exigem limites, autorização e tratamento explícito de erros. A referência de [segurança de APIs da OWASP](https://owasp.org/www-project-api-security/) ajuda a lembrar que integração funcional não é integração segura.
 
-## Como usar n8n sem esconder o processo
+## Onde cada frente se aprofunda
 
-O [n8n](https://docs.n8n.io/) pode acelerar integrações e protótipos, mas o workflow ainda precisa de dono, documentação, ambientes e política de credenciais. Para o primeiro teste:
+Ferramentas como o n8n aceleram integrações e protótipos, mas o workflow ainda precisa de dono, documentação, ambientes e política de credenciais — a ferramenta não substitui o desenho. Cada hub deste silo cobre uma parte, sem repetir as outras:
 
-1. escolha um evento que possa ser repetido sem dano;
-2. salve uma entrada de exemplo sanitizada;
-3. valide dados antes de chamar serviços externos;
-4. registre sucesso e falha com um identificador de correlação;
-5. provoque uma falha e confirme o caminho de recuperação.
+- escolher e operar a plataforma → [automação com n8n](/automacao/n8n/);
+- projetar as conexões entre sistemas → [integrações](/automacao/integracoes/);
+- estruturar o fluxo, erros e recuperação → [workflows operacionais](/automacao/workflows/);
+- decidir o papel da IA e da autonomia → [agentes operacionais](/automacao/agentes-operacionais/).
 
-Não considere o fluxo pronto porque uma execução manual terminou. Teste entrada incompleta, timeout, resposta inválida, duplicação e indisponibilidade.
+O princípio atravessa todas as frentes: um fluxo só está pronto quando você **provocou uma falha** — entrada incompleta, timeout, resposta inválida, duplicação, indisponibilidade — e confirmou o caminho de recuperação. Uma execução manual bem-sucedida não é prova de robustez.
 
 ## Como medir resultado
 

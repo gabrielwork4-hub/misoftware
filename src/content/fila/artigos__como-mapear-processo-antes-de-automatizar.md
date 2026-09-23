@@ -2,19 +2,17 @@
 title: "Como mapear um processo antes de automatizar"
 description: "Mapeie entradas, responsáveis, exceções e métricas antes de criar um workflow para evitar automatizar um processo instável."
 pubDate: "2026-09-22"
-author: "redacao"
-category: "Desenvolvimento"
-silo: desenvolvimento
+author: "gabriel-barboza"
+category: "Automação"
+silo: automacao
 kind: "artigo"
 canonicalPath: "/artigos/como-mapear-processo-antes-de-automatizar/"
 primaryKeyword: "mapeamento de processos"
-draft: true
+draft: false
 sources:
   - "https://www.omg.org/bpmn/"
   - "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
 ---
-
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
 
 Automatizar um processo mal compreendido apenas faz os erros acontecerem mais rápido. Antes de escolher uma ferramenta, é preciso saber onde o processo começa, qual resultado deve produzir, quem toma decisões e quais exceções aparecem no caminho.
 
@@ -76,5 +74,3 @@ No caso editorial, o fluxo pode começar com uma pauta aprovada, gerar um brief,
 ## Próximo passo
 
 Use o hub de [workflows operacionais](/automacao/workflows/) e depois implemente um [primeiro workflow no n8n](/tutoriais/n8n-primeiro-workflow/).
-
-> Revisão pendente: adicionar modelo de mapa preenchido, fonte metodológica e evidência do processo editorial usado como exemplo.

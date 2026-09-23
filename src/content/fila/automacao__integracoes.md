@@ -8,7 +8,7 @@ silo: automacao
 kind: "hub"
 canonicalPath: "/automacao/integracoes/"
 primaryKeyword: "integrações de sistemas"
-draft: true
+draft: false
 sources:
   - "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview"
   - "https://docs.stripe.com/webhooks"
@@ -19,7 +19,7 @@ Uma integração confiável é um contrato entre sistemas, com entrada conhecida
 
 ## Escolha o transporte
 
-Webhooks notificam quando um evento acontece e reduzem consultas desnecessárias, mas o consumidor precisa responder rápido, validar a origem e registrar o evento. Polling é mais simples quando o produtor não oferece eventos, mas exige intervalo, paginação e controle de duplicação. Filas ajudam a desacoplar produtores e consumidores e absorver picos, ao custo de mais operação e consistência eventual.
+Webhooks notificam quando um evento acontece e reduzem consultas desnecessárias, mas o consumidor precisa responder rápido, validar a origem e registrar o evento. Polling é mais simples quando o produtor não oferece eventos, mas exige intervalo, paginação e controle de duplicação. Filas e brokers de mensagem (como RabbitMQ, Amazon SQS ou Apache Kafka) ajudam a desacoplar produtores e consumidores e absorver picos, ao custo de mais operação e consistência eventual.
 
 O guia de [webhook, polling ou fila](/artigos/como-escolher-entre-webhook-polling-e-fila/) detalha a decisão por latência, volume, disponibilidade e necessidade de replay.
 

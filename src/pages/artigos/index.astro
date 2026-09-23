@@ -1,11 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ArticleCard from '@/components/ArticleCard.astro';
+import { getPublishedArticles } from '@/lib/articles';
 
-const articles = (await getCollection('artigos', ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const articles = await getPublishedArticles();
 ---
 
 <BaseLayout

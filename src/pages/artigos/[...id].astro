@@ -3,16 +3,11 @@ import { getCollection } from 'astro:content';
 import EditorialQueuePage from '@/components/EditorialQueuePage.astro';
 
 export async function getStaticPaths() {
-  const published = await getCollection('artigos', ({ data }) => !data.draft);
   const queued = await getCollection('fila', ({ data }) => data.kind === 'artigo');
-  const existing = new Set(published.map((entry) => entry.id));
-  return [
-    ...published.map((entry) => ({ params: { id: entry.id }, props: { entry } })),
-    ...queued.filter((entry) => !existing.has(entry.data.canonicalPath.replace(/^\/artigos\//, '').replace(/\/$/, ''))).map((entry) => ({
-      params: { id: entry.data.canonicalPath.replace(/^\/artigos\//, '').replace(/\/$/, '') },
-      props: { entry },
-    })),
-  ];
+  return queued.map((entry) => ({
+    params: { id: entry.data.canonicalPath.replace(/^\/artigos\//, '').replace(/\/$/, '') },
+    props: { entry },
+  }));
 }
 
 const { entry } = Astro.props;

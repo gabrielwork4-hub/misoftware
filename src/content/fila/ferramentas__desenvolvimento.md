@@ -1,6 +1,6 @@
 ---
 title: "Ferramentas para desenvolvimento: stack essencial por etapa"
-description: "Organize ferramentas de desenvolvimento por planejamento, código, colaboração, entrega e operação."
+description: "Como montar uma stack de desenvolvimento por etapa — planejamento, código, entrega e operação — conectando ferramentas especializadas sem acumular produtos redundantes."
 pubDate: "2026-09-22"
 author: "redacao"
 category: "Ferramentas"
@@ -8,28 +8,36 @@ silo: ferramentas
 kind: "hub"
 canonicalPath: "/ferramentas/desenvolvimento/"
 primaryKeyword: "ferramentas para desenvolvimento"
-draft: true
+draft: false
 sources:
   - "https://docs.github.com/en"
   - "https://developer.mozilla.org/en-US/docs/Learn"
 ---
 
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
+Uma stack de desenvolvimento saudável reduz troca de contexto e torna o trabalho repetível. O objetivo não é encontrar uma ferramenta universal — ela não existe — mas conectar soluções especializadas por contratos claros, de modo que cada etapa do ciclo tenha o instrumento certo e nenhuma etapa dependa de improviso.
 
-Uma stack saudável reduz troca de contexto e torna o trabalho repetível. Em vez de buscar uma ferramenta universal, conecte soluções especializadas por contratos claros.
+## A stack por etapa do ciclo
 
-## Componentes essenciais
+| Etapa | Função da ferramenta |
+|---|---|
+| Planejamento | organizar demandas e prioridades |
+| Versionamento | registrar mudanças (Git) |
+| Implementação | editor e terminal ágeis |
+| Qualidade | testes que protegem comportamento |
+| Entrega | CI que valida cada alteração |
+| Operação | observabilidade após o deploy |
+| Conhecimento | documentação e decisões acessíveis |
 
-Planejamento organiza demandas; Git registra mudanças; editor e terminal aceleram implementação; testes protegem comportamento; CI valida cada alteração; observabilidade mostra o que acontece depois do deploy. Documentação mantém decisões acessíveis.
+Cada uma dessas etapas tem conteúdo próprio no silo de [desenvolvimento](/desenvolvimento/): [qualidade](/desenvolvimento/qualidade/), [DevOps](/desenvolvimento/devops/) e [observabilidade](/artigos/observabilidade-para-aplicacoes-web/).
 
-## Como evitar excesso
+## Onde a IA entra
 
-Mapeie o fluxo atual antes de adicionar produtos. Elimine duplicidade, prefira integrações nativas e defina um responsável por cada ferramenta. Custos de licença, migração e treinamento entram na conta.
+Copilotos e editores com IA aceleram a implementação e a revisão, mas não substituem testes nem julgamento. Veja [melhores editores de código com IA](/comparativos/melhores-editores-codigo-ia/), o comparativo [Cursor vs Windsurf](/comparativos/cursor-vs-windsurf/) e como manter o controle em [revisão de código com IA](/artigos/revisao-de-codigo-com-ia-sem-perder-controle/).
 
-## Checklist de adoção
+## Como evitar o excesso de ferramentas
 
-Defina problema, usuário, indicador de sucesso, dados envolvidos, integração necessária e plano de saída. Rode um piloto com prazo e revise a decisão com evidências.
+Mapeie o fluxo atual antes de adicionar qualquer produto. Elimine duplicidade, prefira integrações nativas e defina um responsável por cada ferramenta — custo de licença, migração e treinamento entram na conta. Um bom filtro de adoção responde: qual problema, qual usuário, qual indicador de sucesso, quais dados envolvidos, qual integração necessária e qual o plano de saída se não funcionar. Rode um piloto com prazo e revise a decisão com evidências.
 
-Consulte o hub de [desenvolvimento](/desenvolvimento/) e a análise de [ferramentas de IA para software](/comparativos/ferramentas-ia-para-desenvolvimento-de-software/).
+## Trilha deste cluster
 
-> Revisão pendente: atualizar recomendações e compatibilidade das ferramentas citadas.
+Aprofunde no pilar de [desenvolvimento de software](/desenvolvimento/), compare a stack de IA em [ferramentas de IA para desenvolvimento de software](/comparativos/ferramentas-ia-para-desenvolvimento-de-software/) e volte ao [diretório de ferramentas](/ferramentas/).

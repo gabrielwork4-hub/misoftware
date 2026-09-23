@@ -8,7 +8,7 @@ silo: ia
 kind: "hub"
 canonicalPath: "/ia/agentes/"
 primaryKeyword: "agentes de IA"
-draft: true
+draft: false
 sources:
   - "https://platform.openai.com/docs/guides/function-calling"
   - "https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview"
@@ -70,6 +70,19 @@ Não avalie apenas o texto final. Uma resposta bem escrita pode esconder uma fer
 Use permissões mínimas, credenciais separadas e aprovação para ações externas ou irreversíveis. Defina limite de passos, tempo, custo e tamanho de contexto. Registre dados suficientes para investigar sem armazenar informação sensível sem necessidade.
 
 O [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) pode ajudar a organizar riscos, mas o controle precisa ser traduzido para o processo concreto. Antes de aumentar autonomia, prove que o agente pode ser interrompido, corrigido e revertido.
+
+## Padrões e ferramentas de agentes
+
+Alguns conceitos aparecem repetidamente quando se sai do protótipo:
+
+- **Chamada de ferramentas (function/tool calling):** o mecanismo pelo qual o modelo aciona uma função com argumentos estruturados — a base de qualquer agente.
+- **MCP (Model Context Protocol):** um padrão para conectar modelos a ferramentas e fontes de dados de forma interoperável, reduzindo integração sob medida.
+- **Padrões de raciocínio (ReAct, planejar-e-executar):** alternar entre pensar, agir e observar; útil quando a tarefa tem etapas dependentes.
+- **Memória:** o que o agente conserva entre passos e entre sessões — e por quanto tempo.
+- **Orquestração multiagente:** dividir um problema entre papéis com contexto e permissões próprios, quando um único agente fica ambíguo demais.
+- **Human-in-the-loop e guardrails:** aprovação humana e limites explícitos nas ações irreversíveis.
+
+Frameworks como o [LangChain](/ferramentas/langchain/) oferecem blocos para orquestrar esses padrões, mas a decisão de arquitetura — e os testes no seu domínio — continuam sendo seu trabalho.
 
 ## Trilha deste cluster
 

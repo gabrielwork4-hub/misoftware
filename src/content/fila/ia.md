@@ -8,7 +8,7 @@ silo: ia
 kind: "pilar"
 canonicalPath: "/ia/"
 primaryKeyword: "inteligência artificial aplicada"
-draft: true
+draft: false
 sources:
   - "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
   - "https://platform.openai.com/docs/guides/function-calling"
@@ -18,6 +18,18 @@ sources:
 Aplicar inteligência artificial no trabalho técnico não começa pela escolha de um modelo. Começa pela tarefa: qual entrada chega, que saída é considerada boa, qual erro é aceitável e quem responde quando a saída estiver errada. A partir daí, você escolhe o menor nível de automação capaz de entregar o resultado.
 
 Uma boa aplicação de IA reduz incerteza ou trabalho repetitivo sem esconder o processo de decisão. Ela registra contexto, versão, custo e resultado. Isso permite comparar uma mudança de prompt, modelo ou fluxo com o que existia antes, em vez de confundir uma demonstração convincente com melhoria comprovada.
+
+## Onde a IA aplicada gera valor
+
+Antes do "como", vale reconhecer os padrões de aplicação que mais aparecem no trabalho técnico — cada um com uma trilha própria neste silo:
+
+- **Classificação e triagem:** rotular e encaminhar solicitações, tickets ou documentos. Costuma ser resolvido com uma etapa de modelo bem especificada, não com um agente.
+- **Extração de dados:** transformar texto livre (contratos, e-mails, notas) em campos estruturados e validáveis — onde [engenharia de prompt](/ia/engenharia-de-prompt/) e saída estruturada fazem diferença.
+- **Geração assistida:** rascunhar código, resposta ou conteúdo para revisão humana, nunca para publicação automática.
+- **Respostas sobre conhecimento próprio:** consultar uma base interna com atribuição a fontes — o domínio do [RAG](/ia/rag/).
+- **Execução com decisão entre ações:** quando o sistema precisa escolher ferramentas e próximos passos, entram os [agentes de IA](/ia/agentes/).
+
+O denominador comum não é o modelo, e sim a tarefa bem definida. É por isso que a escolha da técnica vem depois de descrever o problema.
 
 ## Comece pela tarefa, não pela ferramenta
 

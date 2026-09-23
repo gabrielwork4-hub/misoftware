@@ -2,20 +2,18 @@
 title: "Como avaliar agentes de IA antes de colocar em produção"
 description: "Crie uma avaliação reproduzível para agentes de IA com tarefas, critérios de sucesso, segurança, custo e observabilidade."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "IA & Modelos"
 silo: ia
 kind: "artigo"
 canonicalPath: "/artigos/como-avaliar-agentes-de-ia/"
 primaryKeyword: "como avaliar agentes de IA"
-draft: true
+draft: false
 sources:
   - "https://platform.openai.com/docs/guides/function-calling"
   - "https://www.nist.gov/itl/ai-risk-management-framework"
   - "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
 ---
-
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
 
 Um agente não deve ser avaliado apenas pela resposta final. Ele pode chegar a uma resposta correta usando uma ferramenta indevida, vazar dados ou gastar um orçamento inteiro. Uma avaliação útil mede resultado, trajetória, segurança e custo em tarefas representativas.
 
@@ -49,3 +47,8 @@ Repita tarefas com pequenas variações de linguagem e ordem de documentos. Um a
 Rode a suíte a cada mudança de modelo, prompt, ferramenta ou política. Compare baseline, versão candidata e uma execução humana quando existir. Defina um limiar de liberação e um critério de rollback; uma média melhor não compensa uma regressão grave em segurança.
 
 Publique a metodologia junto dos resultados: conjunto de tarefas, datas, versões, orçamento, limitações e exemplos de falha. Isso torna a avaliação auditável e evita prometer capacidade que o teste nunca mediu.
+
+## Trilha deste cluster
+
+A avaliação faz mais sentido depois de entender [o que são agentes de IA](/artigos/o-que-sao-agentes-de-ia/) e escolher entre os [tipos de agentes e casos de uso](/artigos/tipos-de-agentes-de-ia-e-casos-de-uso/). Para construir o agente que será avaliado, siga o [tutorial de criação com ferramentas](/tutoriais/como-criar-agente-ia-com-ferramentas/); para o panorama completo, volte ao hub de [agentes de IA](/ia/agentes/). Muitos dos critérios de segurança e recusa aqui também valem para [como avaliar prompts em produção](/artigos/como-avaliar-prompts-em-producao/).
+

@@ -1,34 +1,53 @@
 ---
 title: "Validação de Dados em APIs: schemas e erros"
-description: "Projete validação de dados em APIs com schemas, erros consistentes, limites, segurança, versionamento e testes reproduzíveis."
+description: "Como projetar validação de dados em APIs: onde validar cada regra, schemas explícitos, erros consistentes e seguros, e testes para entradas ausentes, extremas e maliciosas."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
 silo: desenvolvimento
 kind: "artigo"
 canonicalPath: "/artigos/validacao-de-dados-em-apis/"
 primaryKeyword: "validação de dados em APIs"
-draft: true
+draft: false
 sources:
   - "https://spec.openapis.org/oas/latest.html"
   - "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"
 ---
 
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
+Validação é a fronteira entre a entrada externa e a lógica interna. Todo dado que cruza essa fronteira é suspeito até prova em contrário — e o endpoint deve rejeitar o que é inválido de forma previsível, segura e explicável. Validação frouxa não causa só bugs; causa vulnerabilidades, dados corrompidos e falhas que só aparecem semanas depois, longe da causa.
 
-Validação é a fronteira entre entrada externa e lógica interna. O endpoint deve rejeitar dados inválidos de forma previsível, segura e explicável.
+## Valide em camadas, cada regra no seu lugar
 
-## Schema
-Defina tipos, obrigatoriedade, limites, formatos e valores permitidos. Normalize apenas quando a regra for explícita.
+Nem toda validação pertence ao mesmo lugar. Distribua as verificações pela camada certa:
 
-## Erros
-Retorne status e mensagem consistentes sem expor detalhes internos. Diferencie entrada inválida, não autorizado, não encontrado e falha do servidor.
+| Camada | O que valida | Exemplo |
+|---|---|---|
+| Borda | formato e tipo | "idade" é um inteiro? |
+| Domínio | regra de negócio | idade permite este cadastro? |
+| Armazenamento | invariantes | unicidade, integridade referencial |
 
-## Evolução
-Versione mudanças incompatíveis e teste entradas válidas, inválidas e maliciosas.
+Validar formato no domínio espalha regras; validar negócio na borda acopla a API à lógica. Cada camada tem sua responsabilidade.
 
-## Ordem recomendada
+## Schema explícito é a base
 
-Valide formato na borda, regras de negócio no domínio e invariantes no armazenamento. Retorne erros consistentes, sem expor detalhes internos, e mantenha testes para entradas ausentes, extremas, duplicadas e maliciosas.
+Defina tipos, obrigatoriedade, limites, formatos e valores permitidos — e rejeite o que não bate. Especificações como a [OpenAPI](https://spec.openapis.org/oas/latest.html) permitem descrever esse contrato de forma legível por humanos e máquinas. Normalize a entrada (aparar espaços, padronizar caixa) apenas quando a regra for explícita; normalização implícita esconde erros do cliente.
 
-> Revisão pendente: adicionar implementação em stack definida e suíte de testes.
+## Erros consistentes, sem vazar detalhes
+
+Um bom erro ajuda o cliente a corrigir sem revelar o interior do sistema. Use [status HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) coerentes e diferencie os casos:
+
+- **400** entrada inválida — diga qual campo e por quê;
+- **401 / 403** não autenticado / não autorizado — sem revelar se o recurso existe;
+- **404** não encontrado;
+- **422** entendido, mas viola regra de negócio;
+- **500** falha interna — mensagem genérica, detalhe no log, não na resposta.
+
+Mensagens que expõem stack trace, query ou caminho de arquivo são presente para um atacante.
+
+## Evolua sem quebrar quem consome
+
+Versione mudanças incompatíveis e mantenha uma suíte que teste entradas **válidas, inválidas, ausentes, extremas, duplicadas e maliciosas**. É essa suíte que dá confiança para evoluir. Quando a operação pode se repetir, a validação anda junto da [idempotência](/artigos/idempotencia-em-apis-e-webhooks/).
+
+## Próximo passo
+
+Contrato validado, torne as integrações seguras contra repetição com [idempotência em APIs e webhooks](/artigos/idempotencia-em-apis-e-webhooks/) e instrumente o serviço com [observabilidade](/artigos/observabilidade-para-aplicacoes-web/). Volte ao hub de [back-end](/desenvolvimento/backend/).

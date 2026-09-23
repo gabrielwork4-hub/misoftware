@@ -1,12 +1,11 @@
 import rss from '@astrojs/rss';
-import { getCollection, getEntries } from 'astro:content';
+import { getEntries } from 'astro:content';
+import { getPublishedArticles, articleHref } from '@/lib/articles';
 import { SITE } from '@/consts';
 import type { APIContext } from 'astro';
 
 export async function GET(context: APIContext) {
-  const articles = (await getCollection('artigos', ({ data }) => !data.draft)).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-  );
+  const articles = await getPublishedArticles();
 
   // Resolve as referências de autor em lote para expor o nome no feed.
   const authors = await getEntries(articles.map((a) => a.data.author));
@@ -21,8 +20,8 @@ export async function GET(context: APIContext) {
       description: entry.data.description,
       pubDate: entry.data.pubDate,
       author: authorName.get(entry.data.author.id) ?? 'Redação misoftware',
-      categories: [entry.data.category, ...entry.data.tags],
-      link: `/artigos/${entry.id}/`,
+      categories: [entry.data.category],
+      link: articleHref(entry),
     })),
     customData: `<language>${SITE.locale}</language>`,
   });

@@ -1,6 +1,6 @@
 ---
 title: "DevOps: CI/CD, deploy e observabilidade"
-description: "Aprenda DevOps com CI/CD, ambientes, secrets, cache, deploy, rollback e observabilidade para entregar software com segurança."
+description: "DevOps na prática: pipeline com etapas claras, ambientes e secrets separados, deploy com rollback e observabilidade — para entregar com segurança e recuperar rápido."
 pubDate: "2026-09-22"
 author: "redacao"
 category: "Desenvolvimento"
@@ -8,27 +8,37 @@ silo: desenvolvimento
 kind: "hub"
 canonicalPath: "/desenvolvimento/devops/"
 primaryKeyword: "DevOps e entrega contínua"
-draft: true
+draft: false
 sources:
   - "https://docs.github.com/en/actions"
   - "https://docs.docker.com/"
 ---
 
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
+DevOps conecta desenvolvimento e operação por automação, feedback rápido e responsabilidade compartilhada. O objetivo não é ter muitas ferramentas — é reduzir o tempo entre escrever código e vê-lo funcionando em produção com segurança, e o tempo entre uma falha e a recuperação. Duas métricas resumem a saúde: frequência de entrega e tempo de recuperação.
 
-DevOps conecta desenvolvimento e operação por automação, feedback e responsabilidade compartilhada. O objetivo é entregar com segurança e recuperar rápido.
+## O pipeline como porta de qualidade
 
-## Pipeline
-Lint, testes, build, artefatos e deploy devem ter etapas claras. Veja [CI/CD com GitHub Actions e Docker](/artigos/pipelines-cicd-github-actions-docker/).
+Um pipeline confiável executa validações antes do deploy e deixa rastros do que foi publicado. As etapas mínimas — lint, testes, build, artefato e deploy — devem ter fronteiras claras e feedback rápido primeiro. Veja [CI/CD com GitHub Actions e Docker](/artigos/pipelines-cicd-github-actions-docker/) para a implementação, e conecte com a [pirâmide de testes](/artigos/piramide-de-testes-pratica/) para decidir o que roda em cada etapa.
 
-## Ambientes
-Separe desenvolvimento, teste e produção; trate secrets por mecanismo seguro e use permissões mínimas.
+## Ambientes e secrets
 
-## Observabilidade
-Monitore logs, métricas, traces e SLOs. Consulte [observabilidade web](/artigos/observabilidade-para-aplicacoes-web/).
+Separe desenvolvimento, teste e produção com configuração isolada. Trate segredos por mecanismo seguro (nunca no código ou no log), aplique permissões mínimas e prefira identidade de curta duração quando disponível. Um vazamento de secret raramente vem de um ataque sofisticado — vem de um token com permissão demais impresso num log.
 
-## Entrega segura
+## Deploy seguro e reversível
 
-Automatize build, testes, validações e publicação. Use ambientes separados, segredos protegidos, artefatos versionados e uma condição clara para interromper ou reverter o deploy.
+| Elemento | Pergunta que responde |
+|---|---|
+| Artefato imutável | o que exatamente foi publicado? |
+| Condição de rollback | quando voltar atrás automaticamente? |
+| Artefato anterior | para onde voltar? |
+| Responsável | quem decide e executa? |
 
-> Revisão pendente: adicionar pipeline e procedimento de rollback reproduzíveis.
+Estratégias como **blue-green** (dois ambientes idênticos, com troca instantânea) e **canary** (liberar para uma fração dos usuários antes de todos) reduzem o risco de cada publicação. Tratar a infraestrutura como código (IaC) — com ferramentas como Terraform — torna os ambientes reprodutíveis e versionados. Deploy sem rollback definido é aposta: antes de automatizar a entrega, saiba como desfazê-la.
+
+## Observabilidade fecha o ciclo
+
+Automação de entrega sem observabilidade é entregar às cegas. Monitore logs, métricas, traces e SLOs para saber se o deploy melhorou ou piorou o sistema — o tema é aprofundado em [observabilidade para aplicações web](/artigos/observabilidade-para-aplicacoes-web/). As referências do [GitHub Actions](https://docs.github.com/en/actions) e do [Docker](https://docs.docker.com/) cobrem a parte de automação e empacotamento.
+
+## Trilha deste cluster
+
+Implemente o pipeline em [CI/CD com GitHub Actions e Docker](/artigos/pipelines-cicd-github-actions-docker/), decida a cobertura com a [pirâmide de testes](/artigos/piramide-de-testes-pratica/) e instrumente com [observabilidade](/artigos/observabilidade-para-aplicacoes-web/). Volte ao pilar de [desenvolvimento de software](/desenvolvimento/).

@@ -8,7 +8,7 @@ silo: automacao
 kind: "tutorial"
 canonicalPath: "/tutoriais/automacao-n8n-webhook-api/"
 primaryKeyword: "automação n8n com webhook e API"
-draft: true
+draft: false
 sources:
   - "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/"
   - "https://docs.n8n.io/integrations/"

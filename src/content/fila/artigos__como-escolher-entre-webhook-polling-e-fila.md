@@ -1,34 +1,52 @@
 ---
 title: "Webhook, polling ou fila: como escolher"
-description: "Compare webhook, polling e fila por latência, volume, falhas, reprocessamento e custo."
+description: "Compare webhook, polling e fila por latência, volume, tolerância a falhas, ordenação e reprocessamento — e escolha o transporte pelo comportamento do processo."
 pubDate: "2026-09-22"
-author: "redacao"
-category: "Desenvolvimento"
-silo: desenvolvimento
+author: "gabriel-barboza"
+category: "Automação"
+silo: automacao
 kind: "artigo"
 canonicalPath: "/artigos/como-escolher-entre-webhook-polling-e-fila/"
 primaryKeyword: "webhook, polling ou fila"
-draft: true
+draft: false
 sources:
   - "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview"
-  - "https://opentelemetry.io/docs/concepts/signals/"
+  - "https://docs.stripe.com/webhooks"
 ---
 
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
+Webhook, polling e fila resolvem a mesma pergunta — "como um sistema descobre que algo aconteceu em outro?" — de três formas diferentes. A escolha errada aparece cedo: polling que sobrecarrega uma API, webhooks que se perdem quando o endpoint cai, ou uma fila adicionada onde uma simples chamada bastava. Escolha pelo comportamento do processo, não pela moda.
 
-Escolha o transporte a partir do comportamento do processo. Webhook reduz consultas quando o produtor pode emitir eventos; polling é simples quando só existe consulta; fila desacopla sistemas e absorve picos.
+Se o assunto é novo, o conceito de evento está bem explicado em [webhooks: o que são e como projetar](/artigos/webhooks-o-que-sao-e-como-projetar/).
 
-## Critérios
-Compare latência, volume, disponibilidade, ordenação, replay, custo e capacidade da equipe.
+## Os três transportes, em uma frase cada
 
-## Decisão
-Use webhook para eventos claros, polling para fontes sem notificações confiáveis e fila para processamento assíncrono, picos ou múltiplos consumidores.
+- **Webhook:** o produtor **empurra** um evento para o seu endpoint quando algo muda. Baixa latência, zero consulta ociosa — mas você precisa aguentar reentregas e tratar o endpoint indisponível.
+- **Polling:** você **pergunta** de tempos em tempos se algo mudou. Simples e robusto contra indisponibilidade, mas gasta chamadas e adiciona atraso.
+- **Fila:** o produtor deposita mensagens e os consumidores processam no seu ritmo. **Desacopla** os sistemas, absorve picos e permite reprocessamento — ao custo de mais infraestrutura.
 
-## Operação
-Qualquer escolha precisa de timeout, retry, idempotência, logs e alerta. Veja o [hub de integrações](/automacao/integracoes/).
+## Matriz de decisão
 
-## Matriz rápida
+| Critério | Webhook | Polling | Fila |
+|---|---|---|---|
+| Latência | baixa | média/alta | baixa a média |
+| Custo em repouso | baixo | alto (consulta ociosa) | médio |
+| Tolerância a pico | limitada | boa | excelente |
+| Ordenação garantida | não | não | depende (FIFO) |
+| Reprocessamento | precisa de replay | trivial (reconsulta) | nativo |
+| Complexidade | média | baixa | alta |
 
-Use webhook quando o produtor pode emitir eventos e a latência importa. Use polling quando só existe consulta ou quando a simplicidade é prioridade. Use fila para absorver picos, desacoplar consumidores e permitir reprocessamento.
+## Como decidir na prática
 
-> Revisão pendente: validar exemplos e inserir tabela comparativa.
+- Use **webhook** quando o produtor consegue emitir eventos confiáveis e a latência importa (ex.: confirmação de pagamento — a [Stripe](https://docs.stripe.com/webhooks) é a referência de como tratar assinatura e reentrega).
+- Use **polling** quando a fonte não oferece notificação confiável, o volume é baixo ou a simplicidade vale mais que a latência.
+- Use **fila** quando precisa absorver picos, desacoplar múltiplos consumidores ou garantir que nada se perde sob carga.
+
+Esses transportes não são exclusivos: é comum um webhook **alimentar** uma fila — recebe rápido, processa com resiliência.
+
+## O que nenhuma escolha dispensa
+
+Independentemente do transporte, todo fluxo precisa de timeout, retry com limite, **idempotência** (o mesmo evento pode chegar duas vezes — veja [idempotência em APIs e webhooks](/artigos/idempotencia-em-apis-e-webhooks/)), logs correlacionados e alerta acionável. Sem isso, qualquer um dos três falha silenciosamente.
+
+## Próximo passo
+
+Escolhido o transporte, projete o contrato do evento em [webhooks: o que são e como projetar](/artigos/webhooks-o-que-sao-e-como-projetar/), implemente com o [tutorial de webhook e API no n8n](/tutoriais/automacao-n8n-webhook-api/) e ancore no [hub de integrações](/automacao/integracoes/).

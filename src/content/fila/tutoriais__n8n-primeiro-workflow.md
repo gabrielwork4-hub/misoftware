@@ -8,7 +8,7 @@ silo: automacao
 kind: "tutorial"
 canonicalPath: "/tutoriais/n8n-primeiro-workflow/"
 primaryKeyword: "primeiro workflow n8n"
-draft: true
+draft: false
 sources:
   - "https://docs.n8n.io/getting-started/"
   - "https://docs.n8n.io/flow-logic/error-handling/"

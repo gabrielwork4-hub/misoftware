@@ -8,7 +8,7 @@ silo: ia
 kind: "artigo"
 canonicalPath: "/artigos/como-avaliar-prompts-em-producao/"
 primaryKeyword: "avaliar prompts em produção"
-draft: true
+draft: false
 sources:
   - "https://platform.openai.com/docs/guides/evals"
   - "https://platform.openai.com/docs/guides/prompt-engineering"

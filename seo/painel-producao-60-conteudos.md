@@ -1,90 +1,57 @@
 # Painel visual — produção dos 60 conteúdos
 
-## Fluxo geral
-
-```text
-INBOX
-  ↓
-01. INVENTÁRIO E PRIORIZAÇÃO
-  ↓
-02. PESQUISA E FONTES
-  ↓
-03. DADOS ATUALIZADOS
-  ↓
-04. EXEMPLOS E TESTES
-  ↓
-05. REVISÃO EDITORIAL / E-E-A-T
-  ↓
-06. SEO E LINKS INTERNOS
-  ↓
-07. APROVAÇÃO
-  ↓
-PUBLICAÇÃO
-  ↓
-MONITORAMENTO E ATUALIZAÇÃO
-```
+> **Atualizado:** execução por **silo**, publicando cluster completo. Fonte única
+> de verdade do conteúdo: `src/content/fila/`. O `inbox/` foi arquivado em
+> `seo/_arquivo-inbox/`. Listagens (home, `/artigos/`, silos, RSS) leem da `fila`
+> via `src/lib/articles.ts`.
 
 ## Status do projeto
 
-| Indicador | Estado inicial | Meta |
+| Indicador | Estado atual | Meta |
 |---|---:|---:|
 | Conteúdos na fila | 60 | 60 |
-| Com fontes verificadas | 0 | 60 |
-| Com dados atualizados | 0 | 60 |
-| Com exemplos/testes | 0 | 60 |
-| Revisados editorialmente | 0 | 60 |
-| Revisados em SEO | 0 | 60 |
-| Aprovados | 0 | 60 |
-| Publicados | 0 | 60 |
+| Com estrutura correta (silo/cluster/URL) | 60 | 60 |
+| Redigidos em profundidade publicável | **60** | 60 |
+| Publicados (`draft:false`, indexáveis no build) | **60** | 60 |
+| Reviews de entidade de ferramenta | 4 | 4 |
+| Revisados editorialmente por humano | 0 | 60 |
+| Deployados em produção | 0 | 60 |
 
-## Fases de execução
+> ⚠️ "Publicado" = `draft:false` no build (sai do `noindex`). **Nada foi
+> deployado ainda.** Revisão editorial humana (hub a hub) e deploy são os
+> próximos gates.
 
-| Fase | Entrega | Gate de passagem | Status |
-|---|---|---|---|
-| 1. Inventário | mapa dos 60 arquivos, slugs e clusters | nenhum conteúdo fora do registro | ⬜ |
-| 2. Fontes | fontes primárias e afirmações associadas | toda afirmação relevante sustentada | ⬜ |
-| 3. Atualização | versões, preços, limites e datas | dados variáveis com data de corte | ⬜ |
-| 4. Exemplos | exemplos, snippets, tabelas ou casos | exemplo executado ou identificado como ilustrativo | ⬜ |
-| 5. Testes | validação técnica e fact-checking | sem falhas críticas abertas | ⬜ |
-| 6. Editorial | clareza, voz, E-E-A-T e intenção | revisão humana concluída | ⬜ |
-| 7. SEO | links, metadata, canonical e estrutura | URL e arquitetura aprovadas | ⬜ |
-| 8. Publicação | CMS, schema e pós-publicação | página acessível e monitorada | ⬜ |
+## Progresso por silo — ✅ todos completos
 
-## Fila por lote
+| Silo | Peças | Faixa (palavras) | Publicação |
+|---|---:|---|---|
+| IA & Modelos | 15 | 400–738w | ✅ publicado |
+| Automação | 14 | 389–595w | ✅ publicado |
+| Desenvolvimento | 16 | 309–585w | ✅ publicado |
+| Ferramentas | 15 + 4 entidades | 244–535w | ✅ publicado |
 
-| Lote | Escopo | Arquivos | Prioridade | Status |
-|---|---|---:|---|---|
-| 1 | IA, agentes e fundamentos | 10 | alta | ⬜ |
-| 2 | IA local, prompts e RAG | 10 | alta | ⬜ |
-| 3 | Automação, n8n e integrações | 10 | alta | ⬜ |
-| 4 | Desenvolvimento, arquitetura e front/back-end | 10 | média | ⬜ |
-| 5 | DevOps e qualidade | 10 | média | ⬜ |
-| 6 | Ferramentas, comparativos, produtividade e hardware | 10 | média | ⬜ |
+## Trabalho estrutural concluído
 
-## Cartão de acompanhamento por conteúdo
+- **Bug de silo corrigido:** 15 spokes vinham com `silo` errado (fallback do
+  gerador). Reconciliado a partir do `inbox/` antes de arquivá-lo.
+- **Arquitetura de publicação (Opção A):** coleção `artigos` (stubs) removida;
+  listagens unificadas na `fila`; 5 URLs legado off-plan eliminadas.
+- **4 reviews de entidade** (cursor, ollama, langchain, v0) transformadas de
+  stubs (11–17w) em reviews reais (244–265w).
+- **Upgrade de segurança:** astro 5→7, sharp e esbuild (0 vulnerabilidades).
+- **Backlog de enriquecimento:** ver `seo/backlog-enriquecimento.md`.
 
-```text
-Slug:
-Lote:
-Responsável:
-Status atual:
-Fonte primária:
-Data de corte:
-Exemplo/teste:
-Pendência principal:
-Revisor:
-Próxima revisão:
-```
+## Próxima fase — revisão hub a hub
+
+Revisão editorial humana por cluster, começando pelos hubs. Ajustes de tom,
+fontes, dados e posicionamento. Ao final de cada revisão, considerar o deploy.
 
 ## Legenda
 
-- ⬜ Não iniciado
-- 🔵 Em pesquisa
-- 🟡 Em revisão
-- 🟢 Aprovado
-- ✅ Publicado
-- 🔴 Bloqueado
+- ⬜ Não iniciado · 🔵 Em produção · 🟡 Publicado, aguardando revisão humana
+- ✅ Publicado no build · 🚀 Deployado
 
 ## Regra de avanço
 
-O lote só avança quando os conteúdos do lote anterior estiverem, no mínimo, em `seo-reviewed`. Conteúdos bloqueados permanecem visíveis no painel e recebem uma pendência objetiva, responsável e prazo.
+Peças publicadas que merecem aprofundamento vão para o backlog de enriquecimento
+(`seo/backlog-enriquecimento.md`), sem bloquear a revisão dos demais clusters.

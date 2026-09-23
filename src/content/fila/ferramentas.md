@@ -8,7 +8,7 @@ silo: ferramentas
 kind: "pilar"
 canonicalPath: "/ferramentas/"
 primaryKeyword: "ferramentas para trabalho técnico"
-draft: true
+draft: false
 sources:
   - "https://docs.github.com/en/get-started/using-git/about-git"
   - "https://12factor.net/"
@@ -73,4 +73,4 @@ Separe descrição do fornecedor, resultado do teste e opinião editorial. Preç
 
 ## Próximo passo
 
-Escolha um problema e um piloto, não uma lista de ferramentas. Depois avance pelos hubs de [desenvolvimento](/ferramentas/desenvolvimento/), [automação](/ferramentas/automacao/), [IA generativa](/ferramentas/ia-generativa/), [produtividade](/ferramentas/produtividade/) e [pesquisa](/ferramentas/pesquisa/).
+Escolha um problema e um piloto, não uma lista de ferramentas. Depois avance pelos hubs de [desenvolvimento](/ferramentas/desenvolvimento/), [automação](/ferramentas/automacao/), [IA generativa](/ferramentas/ia-generativa/), [produtividade](/ferramentas/produtividade/), [pesquisa](/ferramentas/pesquisa/) e [hardware para IA local](/ferramentas/hardware/).
