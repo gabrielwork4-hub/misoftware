@@ -1,0 +1,8 @@
+---
+import { getCollection } from 'astro:content';
+import EditorialQueuePage from '@/components/EditorialQueuePage.astro';
+const entries = await getCollection('fila', ({ data }) => data.canonicalPath === '/ferramentas/ia-generativa/');
+const entry = entries[0];
+if (!entry) throw new Error('Página editorial não encontrada: /ferramentas/ia-generativa/');
+---
+<EditorialQueuePage entry={entry} />

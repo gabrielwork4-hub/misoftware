@@ -56,25 +56,6 @@ const artigos = defineCollection({
     }),
 });
 
-const tutoriais = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/tutoriais' }),
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      description: z.string(),
-      pubDate: z.coerce.date(),
-      updatedDate: z.coerce.date().optional(),
-      author: reference('autores'),
-      difficulty: z.enum(['Iniciante', 'Intermediário', 'Avançado']),
-      prerequisites: z.array(z.string()).default([]),
-      silo: z.enum(['ia', 'automacao', 'desenvolvimento', 'ferramentas']),
-      tags: z.array(z.string()).default([]),
-      cover: image().optional(),
-      coverAlt: z.string().optional(),
-      draft: z.boolean().default(false),
-    }),
-});
-
 const ferramentas = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/ferramentas' }),
   schema: ({ image }) =>
@@ -95,4 +76,21 @@ const ferramentas = defineCollection({
     }),
 });
 
-export const collections = { autores, artigos, tutoriais, ferramentas };
+const fila = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/fila' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.coerce.date(),
+    author: reference('autores'),
+    category: z.string(),
+    silo: z.enum(['ia', 'automacao', 'desenvolvimento', 'ferramentas']),
+    kind: z.enum(['artigo', 'hub', 'tutorial', 'comparativo', 'estudo-de-caso', 'ferramenta', 'pilar']),
+    canonicalPath: z.string(),
+    primaryKeyword: z.string(),
+    sources: z.array(z.string()).default([]),
+    draft: z.boolean().default(true),
+  }),
+});
+
+export const collections = { autores, artigos, ferramentas, fila };

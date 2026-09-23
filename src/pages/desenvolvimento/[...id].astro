@@ -1,0 +1,10 @@
+---
+import { getCollection } from 'astro:content';
+import EditorialQueuePage from '@/components/EditorialQueuePage.astro';
+export async function getStaticPaths() {
+  const entries = await getCollection('fila', ({ data }) => data.canonicalPath.startsWith('/desenvolvimento/') && data.canonicalPath !== '/desenvolvimento/');
+  return entries.map((entry) => ({ params: { id: entry.data.canonicalPath.replace(/^\/desenvolvimento\//, '').replace(/\/$/, '') }, props: { entry } }));
+}
+const { entry } = Astro.props;
+---
+<EditorialQueuePage entry={entry} />

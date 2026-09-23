@@ -1,0 +1,57 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+const dateLabel = new Intl.DateTimeFormat('pt-BR', {
+  day: '2-digit', month: 'long', year: 'numeric',
+}).format(data.pubDate);
+const kindLabel = {
+  hub: 'Hub editorial',
+  tutorial: 'Tutorial',
+  comparativo: 'Comparativo',
+  'estudo-de-caso': 'Estudo de caso',
+  pilar: 'Página-pilar',
+  artigo: 'Artigo',
+  ferramenta: 'Ferramenta',
+}[data.kind ?? 'artigo'] ?? 'Conteúdo';
+const sourceUrls = (data.sources ?? []).map((source) => typeof source === 'string' ? source : source.url);
+---
+
+<BaseLayout title={data.title} description={data.description} type="article" author="Redação misoftware" publishedTime={data.pubDate.toISOString()} noindex={data.draft === true}>
+  <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <nav class="text-xs font-mono text-slate-400 mb-6" aria-label="Trilha de navegação">
+      <a href="/" class="hover:text-brand-600">Início</a>
+      <span class="mx-1.5">/</span>
+      <a href={`/${data.silo}/`} class="hover:text-brand-600 capitalize">{data.silo}</a>
+      <span class="mx-1.5">/</span>
+      <span class="text-slate-600">{kindLabel}</span>
+    </nav>
+
+    <header class="max-w-3xl mx-auto text-center space-y-5">
+      <span class="text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded font-mono text-xs font-semibold uppercase">{kindLabel}</span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal tracking-tight text-slate-950 leading-tight">{data.title}</h1>
+      <p class="text-lg sm:text-xl text-slate-600 font-serif leading-relaxed">{data.description}</p>
+      <div class="flex items-center justify-center gap-3 text-xs font-mono text-slate-500 pt-2">
+        <a href="/autores/redacao/" rel="author" class="hover:text-brand-600">Redação misoftware</a>
+        <span>•</span>
+        <time datetime={data.pubDate.toISOString()}>{dateLabel}</time>
+      </div>
+    </header>
+
+    <div class="prose-editorial mx-auto mt-12 font-serif text-slate-800 text-lg leading-relaxed [&_h2]:font-sans [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-slate-900 [&_h2]:mt-10 [&_h2]:mb-4 [&_a]:text-brand-600 [&_a]:underline [&_a]:underline-offset-4">
+      <Content />
+    </div>
+
+    {sourceUrls.length > 0 && (
+      <aside class="max-w-3xl mx-auto mt-12 pt-6 border-t border-slate-200">
+        <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 mb-3">Fontes</h2>
+        <ul class="space-y-1.5 text-sm">
+          {sourceUrls.map((url) => <li><a href={url} class="text-brand-600 underline underline-offset-4" rel="nofollow noopener" target="_blank">{url}</a></li>)}
+        </ul>
+      </aside>
+    )}
+  </article>
+</BaseLayout>
