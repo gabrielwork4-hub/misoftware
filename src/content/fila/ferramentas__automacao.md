@@ -22,7 +22,7 @@ Nenhuma plataforma conserta um processo mal compreendido — ela só faz o erro 
 
 ## Critérios que separam as opções
 
-Compare integrações, webhooks, filas, agendamento, transformações, gestão de credenciais, logs, retries, limites, versionamento e exportação. E pergunte o que quase nunca aparece na demo: **quem manterá os workflows** e **quanto custa cada execução** no seu volume real.
+As opções mais comuns vão de plataformas no-code/low-code como Zapier e Make a ferramentas com execução self-hosted e código como o n8n — cada uma servindo um perfil diferente de equipe e fluxo. Ao comparar, olhe integrações, webhooks, filas, agendamento, transformações, gestão de credenciais, logs, retries, limites, versionamento e exportação. E pergunte o que quase nunca aparece na demo: **quem manterá os workflows** e **quanto custa cada execução** no seu volume real.
 
 ## Low-code, código ou os dois
 

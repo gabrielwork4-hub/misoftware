@@ -1,13 +1,13 @@
 ---
-title: "Ferramentas para trabalho técnico: escolha pelo fluxo"
-description: "Um método para avaliar ferramentas de desenvolvimento, automação, IA, produtividade e pesquisa sem criar complexidade desnecessária."
+title: "Ferramentas de IA e trabalho técnico: escolha pelo fluxo"
+description: "Como escolher ferramentas de IA e de trabalho técnico — desenvolvimento, automação, produtividade e pesquisa — pelo fluxo real, não pela moda."
 pubDate: "2026-09-22"
 author: "redacao"
 category: "Ferramentas"
 silo: ferramentas
 kind: "pilar"
 canonicalPath: "/ferramentas/"
-primaryKeyword: "ferramentas para trabalho técnico"
+primaryKeyword: "ferramentas de ia"
 draft: false
 sources:
   - "https://docs.github.com/en/get-started/using-git/about-git"
@@ -15,7 +15,7 @@ sources:
   - "https://owasp.org/www-project-top-ten/"
 ---
 
-Escolher ferramentas técnicas não é montar uma coleção de assinaturas. É desenhar um sistema de trabalho em que cada produto resolve uma etapa concreta, conversa com os demais e pode ser substituído sem interromper a operação.
+Escolher ferramentas de IA e de trabalho técnico não é montar uma coleção de assinaturas. É desenhar um sistema de trabalho em que cada produto — do editor com IA ao orquestrador de automação — resolve uma etapa concreta, conversa com os demais e pode ser substituído sem interromper a operação.
 
 ## Comece pelo problema
 
@@ -35,7 +35,7 @@ Avalie gatilhos, conectores, retries, logs, limites, credenciais e reprocessamen
 
 ### IA
 
-Separe chat, API, modelo local, RAG, agente e ferramenta de desenvolvimento. Compare qualidade na sua tarefa, privacidade, latência, custo, controle de versão e possibilidade de exportar dados.
+As ferramentas de IA são a maior categoria deste diretório — mas "ferramenta de IA" é um guarda-chuva. Separe chat, API, modelo local, RAG, agente e copiloto de código, porque cada tipo tem critérios próprios. Compare qualidade na sua tarefa, privacidade, latência, custo, controle de versão e possibilidade de exportar dados. Para o recorte de criação de conteúdo (texto, código, imagem), aprofunde no hub de [ferramentas de IA generativa](/ferramentas/ia-generativa/).
 
 ### Produtividade e pesquisa
 

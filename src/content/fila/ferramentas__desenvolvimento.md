@@ -18,15 +18,17 @@ Uma stack de desenvolvimento saudável reduz troca de contexto e torna o trabalh
 
 ## A stack por etapa do ciclo
 
-| Etapa | Função da ferramenta |
-|---|---|
-| Planejamento | organizar demandas e prioridades |
-| Versionamento | registrar mudanças (Git) |
-| Implementação | editor e terminal ágeis |
-| Qualidade | testes que protegem comportamento |
-| Entrega | CI que valida cada alteração |
-| Operação | observabilidade após o deploy |
-| Conhecimento | documentação e decisões acessíveis |
+| Etapa | Função da ferramenta | Exemplos comuns |
+|---|---|---|
+| Planejamento | organizar demandas e prioridades | Jira, Linear, GitHub Issues |
+| Versionamento | registrar mudanças | Git, GitHub, GitLab |
+| Implementação | editor e terminal ágeis | VS Code, editores com IA |
+| Qualidade | testes que protegem comportamento | frameworks de teste, linters |
+| Entrega | CI que valida cada alteração | GitHub Actions, Docker |
+| Operação | observabilidade após o deploy | OpenTelemetry, Grafana |
+| Conhecimento | documentação e decisões acessíveis | ADRs, wiki, README |
+
+Os nomes são pontos de partida por categoria, não recomendação fechada — a escolha depende do seu fluxo, não da popularidade.
 
 Cada uma dessas etapas tem conteúdo próprio no silo de [desenvolvimento](/desenvolvimento/): [qualidade](/desenvolvimento/qualidade/), [DevOps](/desenvolvimento/devops/) e [observabilidade](/artigos/observabilidade-para-aplicacoes-web/).
 

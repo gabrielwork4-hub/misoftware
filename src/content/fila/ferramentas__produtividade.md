@@ -28,7 +28,7 @@ Liste as funções do seu fluxo pessoal e escolha **uma** ferramenta principal p
 | Registro | preservar decisões e notas |
 | Revisão | fechar ciclos e ajustar rumo |
 
-O problema mais comum não é falta de recurso — é ter cinco ferramentas fazendo a mesma função e nenhuma sendo a fonte de verdade.
+Na prática, cada função tem opções conhecidas — gestores de tarefas como Todoist e TickTick, workspaces como Notion e ferramentas de notas como Obsidian, calendários e apps de foco. O problema mais comum não é falta de recurso — é ter cinco ferramentas fazendo a mesma função e nenhuma sendo a fonte de verdade.
 
 ## Critérios que valem
 

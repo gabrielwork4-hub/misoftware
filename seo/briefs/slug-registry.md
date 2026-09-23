@@ -28,7 +28,7 @@ Este arquivo é a fonte única para os briefs. Nenhuma pauta deve receber slug d
 
 | Slug canônica | Tipo | Cluster | Keyword primária | Status |
 |---|---|---|---|---|
-| `/ia/` | pilar | IA & Modelos | inteligência artificial aplicada | brief pronto |
+| `/ia/` | pilar | IA & Modelos | como usar inteligência artificial | brief pronto |
 | `/ia/agentes/` | hub | Agentes | agentes de IA | brief pronto |
 | `/artigos/o-que-sao-agentes-de-ia/` | artigo | Agentes | o que são agentes de IA | brief pronto |
 | `/tutoriais/como-criar-agente-ia-com-ferramentas/` | tutorial | Agentes | como criar agentes de IA | brief pronto |
@@ -43,7 +43,9 @@ Este arquivo é a fonte única para os briefs. Nenhuma pauta deve receber slug d
 | `/artigos/como-avaliar-prompts-em-producao/` | artigo | Prompt | avaliar prompts em produção | brief pronto |
 | `/ia/rag/` | hub | RAG | RAG | brief pronto |
 | `/tutoriais/rag-com-fontes-verificaveis/` | tutorial | RAG | RAG com fontes verificáveis | brief pronto |
-| `/automacao/` | pilar | Automação | automação aplicada | brief pronto |
+| `/artigos/como-avaliar-sistema-rag/` | artigo | RAG | como avaliar um sistema RAG | brief pronto |
+| `/artigos/estrategias-de-chunking/` | artigo | RAG | estratégias de chunking | brief pronto |
+| `/automacao/` | pilar | Automação | automação de processos | brief pronto |
 | `/automacao/n8n/` | hub | n8n | automação com n8n | brief pronto |
 | `/tutoriais/n8n-primeiro-workflow/` | tutorial | n8n | primeiro workflow n8n | brief pronto |
 | `/tutoriais/automacao-n8n-com-ia/` | tutorial | n8n | automação n8n com IA | brief pronto |
@@ -73,7 +75,7 @@ Este arquivo é a fonte única para os briefs. Nenhuma pauta deve receber slug d
 | `/desenvolvimento/qualidade/` | hub | Qualidade | qualidade de software | brief pronto |
 | `/artigos/piramide-de-testes-pratica/` | guia | Qualidade | pirâmide de testes | brief pronto |
 | `/artigos/revisao-de-codigo-com-ia-sem-perder-controle/` | artigo | Qualidade | revisão de código com IA | brief pronto |
-| `/ferramentas/` | pilar/diretório | Ferramentas | ferramentas para trabalho técnico | brief pronto |
+| `/ferramentas/` | pilar/diretório | Ferramentas | ferramentas de ia | brief pronto |
 | `/ferramentas/ia-generativa/` | hub | Ferramentas de IA | ferramentas de IA generativa | brief pronto |
 | `/comparativos/melhores-editores-codigo-ia/` | comparativo | Ferramentas de IA | editores de código com IA | brief pronto |
 | `/comparativos/ferramentas-ia-para-desenvolvimento-de-software/` | comparativo | Ferramentas de IA | ferramentas de IA para desenvolvimento de software | brief pronto |

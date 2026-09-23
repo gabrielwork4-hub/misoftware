@@ -42,6 +42,16 @@ Um monólito modular costuma ser uma escolha eficiente quando o domínio ainda e
 
 Não use “microserviços” como sinônimo de arquitetura madura. Compare custo de mudança, falha e operação para o cenário concreto. Uma solução mais simples, com módulos bem definidos, pode oferecer melhor reversibilidade.
 
+## Padrões que ajudam a desenhar limites
+
+Alguns padrões consolidados dão vocabulário para separar responsabilidades — use-os como ferramenta, não como obrigação:
+
+- **Domain-Driven Design (DDD):** organiza o sistema em torno do domínio do negócio e de *bounded contexts*, úteis para decidir onde um limite deve ficar.
+- **Arquitetura hexagonal / clean architecture:** isola a lógica de negócio de detalhes de infraestrutura (banco, framework, API) por trás de portas e adaptadores, tornando o núcleo testável e substituível.
+- **Arquitetura orientada a eventos (event-driven):** componentes reagem a eventos em vez de se chamarem diretamente, favorecendo desacoplamento e absorção de picos — ao custo de consistência eventual e observabilidade mais difícil.
+
+Nenhum padrão é gratuito. Adotar DDD ou hexagonal em um CRUD simples adiciona cerimônia sem retorno; ignorá-los num domínio complexo espalha regra de negócio por toda parte. O critério é sempre o custo de mudança e operação no cenário concreto.
+
 ## Registre decisões com ADRs
 
 Use [ADRs](/artigos/como-documentar-decisoes-de-arquitetura-adr/) para registrar contexto, decisão, alternativas e consequências. O documento deve permitir que outra pessoa entenda por que a escolha parecia adequada naquele momento e qual sinal faria o time revisá-la.

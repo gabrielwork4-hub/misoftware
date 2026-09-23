@@ -1,13 +1,13 @@
 ---
-title: "Automação aplicada: workflows, integrações e IA"
-description: "Aprenda a escolher, desenhar e operar automações com n8n, APIs, webhooks, filas e IA sem transformar o processo em uma caixa-preta."
+title: "Automação de processos: workflows, integrações e IA"
+description: "Automação de processos na prática: escolher, desenhar e operar automações com n8n, APIs, webhooks, filas e IA sem transformar o processo em caixa-preta."
 pubDate: "2026-09-22"
 author: "redacao"
 category: "Automação"
 silo: automacao
 kind: "pilar"
 canonicalPath: "/automacao/"
-primaryKeyword: "automação aplicada"
+primaryKeyword: "automação de processos"
 draft: false
 sources:
   - "https://docs.n8n.io/"
@@ -15,7 +15,7 @@ sources:
   - "https://owasp.org/www-project-api-security/"
 ---
 
-Automação aplicada começa pelo processo, não pela ferramenta. Antes de criar um workflow, descreva o evento de entrada, a transformação, a saída, as exceções, o responsável e o que deve acontecer quando uma dependência estiver indisponível. Esse desenho evita automatizar uma etapa isolada e transferir o trabalho manual para a correção de falhas.
+Automação de processos bem-feita começa pelo próprio processo, não pela ferramenta. Antes de criar um workflow, descreva o evento de entrada, a transformação, a saída, as exceções, o responsável e o que deve acontecer quando uma dependência estiver indisponível. Esse desenho evita automatizar uma etapa isolada e transferir o trabalho manual para a correção de falhas.
 
 ## O problema que você está tentando resolver
 
