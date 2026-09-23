@@ -21,11 +21,15 @@
 > deployado ainda.** Revisão editorial humana (hub a hub) e deploy são os
 > próximos gates.
 
+> **Escopo:** o plano nasceu com 60 conteúdos. O cluster RAG foi expandido com 2
+> spokes novos (`/artigos/como-avaliar-sistema-rag/` e `/artigos/estrategias-de-chunking/`),
+> totalizando **62**. Registrados no `slug-registry.md`.
+
 ## Progresso por silo — ✅ todos completos
 
 | Silo | Peças | Faixa (palavras) | Publicação |
 |---|---:|---|---|
-| IA & Modelos | 15 | 400–738w | ✅ publicado |
+| IA & Modelos | 17 | 400–901w | ✅ publicado |
 | Automação | 14 | 389–595w | ✅ publicado |
 | Desenvolvimento | 16 | 309–585w | ✅ publicado |
 | Ferramentas | 15 + 4 entidades | 244–535w | ✅ publicado |

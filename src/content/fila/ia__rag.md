@@ -51,7 +51,8 @@ Frameworks como LangChain e LlamaIndex oferecem blocos prontos para montar esse 
 
 1. entenda o papel do RAG dentro de [IA aplicada](/ia/);
 2. siga o [tutorial de RAG com fontes verificáveis](/tutoriais/rag-com-fontes-verificaveis/) para montar a primeira versão;
-3. se a base roda localmente, veja [como escolher um modelo de IA local](/artigos/como-escolher-modelo-ia-local/) e a ferramenta [Ollama](/ferramentas/ollama/);
-4. para respostas confiáveis, aplique as ideias de [como avaliar prompts em produção](/artigos/como-avaliar-prompts-em-producao/) à etapa de geração.
+3. ajuste o elo mais frequente de falha com [estratégias de chunking para RAG](/artigos/estrategias-de-chunking/);
+4. meça o resultado com [como avaliar um sistema RAG](/artigos/como-avaliar-sistema-rag/);
+5. se a base roda localmente, veja [como escolher um modelo de IA local](/artigos/como-escolher-modelo-ia-local/) e a ferramenta [Ollama](/ferramentas/ollama/).
 
 O próximo passo não é adotar um banco vetorial mais sofisticado. É medir recuperação e resposta em perguntas reais e resolver o elo mais fraco da cadeia.

@@ -1,13 +1,13 @@
 ---
-title: "Inteligência artificial aplicada: guias para trabalho técnico"
-description: "Explore agentes, IA local, RAG e engenharia de prompt com guias práticos para aplicar inteligência artificial com método e segurança."
+title: "Como usar inteligência artificial no trabalho técnico"
+description: "Guia prático de como usar inteligência artificial no trabalho técnico: agentes, IA local, RAG e engenharia de prompt com método, avaliação e segurança."
 pubDate: "2026-09-22"
 author: "redacao"
 category: "IA & Modelos"
 silo: ia
 kind: "pilar"
 canonicalPath: "/ia/"
-primaryKeyword: "inteligência artificial aplicada"
+primaryKeyword: "como usar inteligência artificial"
 draft: false
 sources:
   - "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
@@ -15,7 +15,7 @@ sources:
   - "https://www.nist.gov/itl/ai-risk-management-framework"
 ---
 
-Aplicar inteligência artificial no trabalho técnico não começa pela escolha de um modelo. Começa pela tarefa: qual entrada chega, que saída é considerada boa, qual erro é aceitável e quem responde quando a saída estiver errada. A partir daí, você escolhe o menor nível de automação capaz de entregar o resultado.
+Saber como usar inteligência artificial no trabalho técnico não começa pela escolha de um modelo. Começa pela tarefa: qual entrada chega, que saída é considerada boa, qual erro é aceitável e quem responde quando a saída estiver errada. A partir daí, você escolhe o menor nível de automação capaz de entregar o resultado.
 
 Uma boa aplicação de IA reduz incerteza ou trabalho repetitivo sem esconder o processo de decisão. Ela registra contexto, versão, custo e resultado. Isso permite comparar uma mudança de prompt, modelo ou fluxo com o que existia antes, em vez de confundir uma demonstração convincente com melhoria comprovada.
 
