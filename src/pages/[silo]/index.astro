@@ -1,7 +1,7 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ArticleCard from '@/components/ArticleCard.astro';
+import { getPublishedArticles } from '@/lib/articles';
 import { SILOS } from '@/consts';
 
 export async function getStaticPaths() {
@@ -14,9 +14,7 @@ export async function getStaticPaths() {
 
 const { silo } = Astro.props;
 
-const articles = (
-  await getCollection('artigos', ({ data }) => !data.draft && data.silo === silo.slug)
-).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const articles = (await getPublishedArticles()).filter((a) => a.data.silo === silo.slug);
 ---
 
 <BaseLayout title={silo.label} description={silo.description}>

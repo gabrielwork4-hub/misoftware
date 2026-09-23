@@ -8,7 +8,7 @@ silo: desenvolvimento
 kind: "hub"
 canonicalPath: "/desenvolvimento/arquitetura/"
 primaryKeyword: "arquitetura de software"
-draft: true
+draft: false
 sources:
   - "https://www.iso.org/standard/50508.html"
   - "https://c4model.com/"

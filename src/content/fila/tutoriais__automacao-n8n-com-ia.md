@@ -8,7 +8,7 @@ silo: automacao
 kind: "tutorial"
 canonicalPath: "/tutoriais/automacao-n8n-com-ia/"
 primaryKeyword: "automação n8n com IA"
-draft: true
+draft: false
 sources:
   - "https://docs.n8n.io/advanced-ai/"
   - "https://docs.n8n.io/"

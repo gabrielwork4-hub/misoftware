@@ -8,7 +8,7 @@ silo: desenvolvimento
 kind: "pilar"
 canonicalPath: "/desenvolvimento/"
 primaryKeyword: "desenvolvimento de software"
-draft: true
+draft: false
 sources:
   - "https://12factor.net/"
   - "https://martinfowler.com/articles/practical-test-pyramid.html"

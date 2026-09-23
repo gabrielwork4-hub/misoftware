@@ -27,35 +27,6 @@ const autores = defineCollection({
     }),
 });
 
-const artigos = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/artigos' }),
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      description: z.string(),
-      pubDate: z.coerce.date(),
-      updatedDate: z.coerce.date().optional(),
-      author: reference('autores'),
-      category: z.enum([
-        'IA & Modelos',
-        'Automação',
-        'Desenvolvimento',
-        'Ferramentas',
-        'Engenharia de Prompt',
-        'Produtividade',
-        'Reviews & Hardware',
-      ]),
-      silo: z.enum(['ia', 'automacao', 'desenvolvimento', 'ferramentas']),
-      tags: z.array(z.string()).default([]),
-      cover: image().optional(),
-      coverAlt: z.string().optional(),
-      readingTime: z.number().optional(),
-      featured: z.boolean().default(false),
-      draft: z.boolean().default(false),
-      sources: z.array(z.object({ label: z.string(), url: z.string().url() })).default([]),
-    }),
-});
-
 const ferramentas = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/ferramentas' }),
   schema: ({ image }) =>
@@ -93,4 +64,4 @@ const fila = defineCollection({
   }),
 });
 
-export const collections = { autores, artigos, ferramentas, fila };
+export const collections = { autores, ferramentas, fila };

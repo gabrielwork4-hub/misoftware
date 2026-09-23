@@ -8,7 +8,7 @@ silo: automacao
 kind: "hub"
 canonicalPath: "/automacao/n8n/"
 primaryKeyword: "automação com n8n"
-draft: true
+draft: false
 sources:
   - "https://docs.n8n.io/"
   - "https://docs.n8n.io/hosting/"

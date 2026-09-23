@@ -8,7 +8,7 @@ silo: ia
 kind: "tutorial"
 canonicalPath: "/tutoriais/rag-com-fontes-verificaveis/"
 primaryKeyword: "RAG com fontes verificáveis"
-draft: true
+draft: false
 sources:
   - "https://docs.pinecone.io/guides/get-started/overview"
   - "https://platform.openai.com/docs/guides/retrieval"

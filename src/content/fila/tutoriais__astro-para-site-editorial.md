@@ -2,13 +2,13 @@
 title: "Astro para Site Editorial: tutorial completo"
 description: "Construa um site editorial com Astro, collections, layouts, SEO, sitemap, RSS, busca, imagens, deploy e cache."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
 silo: desenvolvimento
 kind: "tutorial"
 canonicalPath: "/tutoriais/astro-para-site-editorial/"
 primaryKeyword: "Astro para site editorial"
-draft: true
+draft: false
 sources:
   - "https://docs.astro.build/en/getting-started/"
   - "https://docs.astro.build/en/concepts/why-astro/"
@@ -16,8 +16,6 @@ sources:
   - "https://docs.astro.build/en/guides/integrations-guide/sitemap/"
   - "https://docs.astro.build/en/guides/rss/"
 ---
-
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
 
 Um site editorial precisa transformar um arquivo de conteúdo em uma experiência publicável, rastreável e fácil de manter. Neste tutorial, o objetivo não é apenas renderizar Markdown: é criar um pequeno sistema com collections tipadas, layout consistente, SEO técnico, busca e uma rotina de publicação verificável.
 

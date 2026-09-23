@@ -8,7 +8,7 @@ silo: ia
 kind: "hub"
 canonicalPath: "/ia/engenharia-de-prompt/"
 primaryKeyword: "engenharia de prompt"
-draft: true
+draft: false
 sources:
   - "https://platform.openai.com/docs/guides/prompt-engineering"
   - "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"
@@ -38,19 +38,9 @@ Escolha a técnica por problema e meça o efeito. As orientações oficiais de [
 
 ## Avalie com casos reais
 
-Monte um conjunto de casos antes de alterar o prompt. Inclua entradas comuns, ambíguas, incompletas, malformadas e que deveriam ser recusadas. Para cada caso, escreva o resultado esperado ou os critérios de qualidade.
+Nenhuma técnica se sustenta sem avaliação. Antes de alterar um prompt, monte um conjunto de casos — comuns, ambíguos, incompletos, malformados e que deveriam ser recusados — e defina o resultado esperado de cada um. Uma mudança pode melhorar a clareza e piorar a cobertura; por isso preserve as regressões, não apenas os melhores exemplos.
 
-Registre:
-
-1. versão do prompt;
-2. modelo e parâmetros relevantes;
-3. entrada usada;
-4. saída produzida;
-5. avaliação e justificativa;
-6. custo e latência;
-7. necessidade de correção humana.
-
-Uma mudança pode melhorar clareza e piorar cobertura. Preserve as regressões, não apenas os melhores exemplos.
+O protocolo completo — o que registrar a cada execução, como comparar versões e quando bloquear uma liberação — está no guia de [como avaliar prompts em produção](/artigos/como-avaliar-prompts-em-producao/).
 
 ## Raciocínio e saída estruturada
 
@@ -68,7 +58,6 @@ Também revise dados sensíveis, instruções conflitantes e tentativas de injet
 
 1. comece pelo guia de [fundamentos](/artigos/engenharia-de-prompt-o-que-e-e-como-aplicar/);
 2. aplique [técnicas com exemplos](/artigos/tecnicas-de-engenharia-de-prompt-com-exemplos/);
-3. registre [raciocínio estruturado](/artigos/raciocinio-estruturado-chain-of-thought/);
-4. avance para [avaliação em produção](/artigos/como-avaliar-prompts-em-producao/).
+3. avance para [avaliação em produção](/artigos/como-avaliar-prompts-em-producao/).
 
 O resultado esperado não é um prompt maior. É uma tarefa mais bem especificada, com comportamento observável e um processo para detectar regressões.

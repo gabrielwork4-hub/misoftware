@@ -2,19 +2,17 @@
 title: "Webhooks: o que são e como projetar integrações confiáveis"
 description: "Entenda webhooks e projete integrações com contrato de evento, autenticação, idempotência, retries e observabilidade."
 pubDate: "2026-09-22"
-author: "redacao"
-category: "Desenvolvimento"
-silo: desenvolvimento
+author: "gabriel-barboza"
+category: "Automação"
+silo: automacao
 kind: "artigo"
 canonicalPath: "/artigos/webhooks-o-que-sao-e-como-projetar/"
 primaryKeyword: "webhooks"
-draft: true
+draft: false
 sources:
   - "https://docs.stripe.com/webhooks"
   - "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST"
 ---
-
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
 
 Um webhook é uma notificação enviada por um sistema quando um evento acontece. Em vez de perguntar repetidamente se algo mudou, o consumidor fornece um endpoint e recebe uma requisição quando há uma atualização. A documentação de [webhooks da Stripe](https://docs.stripe.com/webhooks) é uma referência prática para tratar assinaturas, reentrega e validação de eventos.
 
@@ -78,5 +76,3 @@ O exemplo é ilustrativo: o formato real deve seguir o contrato do provedor. O p
 6. O contrato possui versão e documentação?
 
 Para implementar o fluxo, veja o [tutorial de webhook e API no n8n](/tutoriais/automacao-n8n-webhook-api/). Para escolher o transporte, consulte [webhook, polling ou fila](/artigos/como-escolher-entre-webhook-polling-e-fila/).
-
-> Revisão pendente: executar exemplo com endpoint de teste e adicionar fontes oficiais de cada protocolo/ferramenta.

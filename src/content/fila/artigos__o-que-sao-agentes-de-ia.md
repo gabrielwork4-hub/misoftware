@@ -3,12 +3,12 @@ title: "Agentes de IA: o que são, como funcionam e quando usar"
 description: "Entenda agentes de IA, seus componentes, limites e critérios para decidir quando usar um agente, um workflow ou uma automação comum."
 pubDate: "2026-09-22"
 author: "redacao"
-category: "Desenvolvimento"
-silo: desenvolvimento
+category: "IA & Modelos"
+silo: ia
 kind: "artigo"
 canonicalPath: "/artigos/o-que-sao-agentes-de-ia/"
 primaryKeyword: "o que são agentes de IA"
-draft: true
+draft: false
 sources:
   - "https://platform.openai.com/docs/guides/function-calling"
   - "https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview"

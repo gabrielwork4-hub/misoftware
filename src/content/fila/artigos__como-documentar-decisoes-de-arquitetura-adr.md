@@ -2,19 +2,17 @@
 title: "ADR: como documentar decisões de arquitetura"
 description: "Aprenda a criar ADRs com contexto, alternativas, decisão, consequências, status e exemplos aplicados a projetos reais."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
 silo: desenvolvimento
 kind: "artigo"
 canonicalPath: "/artigos/como-documentar-decisoes-de-arquitetura-adr/"
 primaryKeyword: "decisões de arquitetura ADR"
-draft: true
+draft: false
 sources:
   - "https://adr.github.io/"
   - "https://martinfowler.com/articles/architectural-decision-records.html"
 ---
-
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
 
 Um Architectural Decision Record (ADR) registra por que uma decisão foi tomada, quais alternativas foram consideradas e que consequências foram aceitas. O documento não tenta prever tudo: ele preserva o contexto que se perde quando pessoas, requisitos ou tecnologias mudam.
 

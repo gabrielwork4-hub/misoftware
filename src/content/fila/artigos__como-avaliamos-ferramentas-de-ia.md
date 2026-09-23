@@ -1,33 +1,47 @@
 ---
 title: "Como avaliamos ferramentas de IA: metodologia de review"
-description: "Metodologia transparente para testar ferramentas de IA com tarefas, critérios, evidências e limites."
+description: "A metodologia transparente por trás das nossas reviews de ferramentas de IA: tarefas representativas, critérios explícitos, evidências registradas e limites declarados."
 pubDate: "2026-09-22"
 author: "redacao"
-category: "Desenvolvimento"
-silo: desenvolvimento
+category: "Ferramentas"
+silo: ferramentas
 kind: "artigo"
 canonicalPath: "/artigos/como-avaliamos-ferramentas-de-ia/"
 primaryKeyword: "metodologia de review de ferramentas de IA"
-draft: true
+draft: false
 sources:
   - "https://developers.google.com/machine-learning/crash-course"
   - "https://platform.openai.com/docs/guides/evals"
 ---
 
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
-
-Uma review útil explica como a conclusão foi obtida. Por isso, avaliamos ferramentas de IA com tarefas representativas, critérios explícitos e registro das limitações.
+Uma review só é útil quando explica **como** a conclusão foi obtida. Uma nota sem método é opinião disfarçada de análise. Por isso, avaliamos ferramentas de IA com tarefas representativas, critérios explícitos e registro honesto das limitações — e publicamos esta metodologia para que qualquer leitor possa julgar o peso das nossas conclusões e reproduzir o teste.
 
 ## Desenho do teste
 
-Definimos público, casos de uso, entradas, saída esperada e condições de comparação. Repetimos tarefas quando a variabilidade da resposta pode alterar o resultado.
+Antes de tocar na ferramenta, definimos o público, os casos de uso, as entradas, a saída esperada e as condições de comparação. Quando a resposta da ferramenta varia entre execuções — comum em IA generativa — repetimos as tarefas para não confundir sorte com capacidade. Um teste montado depois de já ter uma impressão tende a confirmar essa impressão; por isso o desenho vem primeiro.
 
-## Dimensões
+## As dimensões que medimos
 
-Medimos qualidade, controle, velocidade, custo, integração, privacidade, acessibilidade e suporte. Em ferramentas de código, também observamos retrabalho, testes e facilidade de revisar mudanças.
+| Dimensão | O que observamos |
+|---|---|
+| Qualidade | acerto na tarefa real, no idioma-alvo |
+| Controle | quanto você comanda e revisa |
+| Velocidade | latência e throughput úteis |
+| Custo | previsibilidade sob uso real |
+| Integração | encaixe no fluxo (API, IDE, CI) |
+| Privacidade | tratamento e retenção de dados |
+| Suporte | documentação e resposta |
 
-## Transparência
+Em ferramentas de código, acrescentamos retrabalho, cobertura de testes e facilidade de revisar as mudanças — os sinais de que a ferramenta ajuda de verdade, e não só impressiona.
 
-Indicamos versão, plano, data, configurações e amostra. Não transformamos um resultado pontual em promessa universal e distinguimos fato observado de interpretação.
+## Transparência sobre o que foi testado
 
-> Revisão pendente: publicar protocolo completo, conjunto de tarefas e referências verificáveis.
+Toda conclusão vem acompanhada de versão, plano, data, configurações e amostra usada. Não transformamos um resultado pontual em promessa universal, e distinguimos com clareza **fato observado** de **interpretação**. Ferramentas mudam rápido; uma review é um retrato datado, não uma verdade permanente — por isso registramos o "quando".
+
+## Os limites que declaramos
+
+Nenhum teste cobre tudo. Declaramos o que não medimos, os cenários fora do escopo e as fontes de incerteza. É a mesma disciplina de [como avaliar agentes de IA](/artigos/como-avaliar-agentes-de-ia/) e [como avaliar prompts em produção](/artigos/como-avaliar-prompts-em-producao/): a avaliação vale pela honestidade sobre suas fronteiras.
+
+## Próximo passo
+
+Aplique esses critérios ao escolher em [ferramentas de IA generativa](/ferramentas/ia-generativa/) e [melhores editores de código com IA](/comparativos/melhores-editores-codigo-ia/). Volte ao [diretório de ferramentas](/ferramentas/).

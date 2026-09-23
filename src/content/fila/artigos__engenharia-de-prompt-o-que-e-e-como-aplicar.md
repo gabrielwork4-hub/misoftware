@@ -3,12 +3,12 @@ title: "Engenharia de prompt: o que é e como aplicar no trabalho técnico"
 description: "Aprenda a estruturar prompts com contexto, restrições, exemplos, formato de saída e critérios de avaliação para tarefas técnicas."
 pubDate: "2026-09-22"
 author: "redacao"
-category: "Desenvolvimento"
-silo: desenvolvimento
+category: "IA & Modelos"
+silo: ia
 kind: "artigo"
 canonicalPath: "/artigos/engenharia-de-prompt-o-que-e-e-como-aplicar/"
 primaryKeyword: "o que é engenharia de prompt"
-draft: true
+draft: false
 sources:
   - "https://platform.openai.com/docs/guides/prompt-engineering"
   - "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"

@@ -8,7 +8,7 @@ silo: ia
 kind: "tutorial"
 canonicalPath: "/tutoriais/como-criar-agente-ia-com-ferramentas/"
 primaryKeyword: "como criar agentes de IA"
-draft: true
+draft: false
 sources:
   - "https://platform.openai.com/docs/guides/function-calling"
   - "https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview"

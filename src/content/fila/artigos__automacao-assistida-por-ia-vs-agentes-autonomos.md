@@ -2,19 +2,17 @@
 title: "Automação com IA ou agente autônomo: qual escolher?"
 description: "Compare automação assistida por IA e agentes autônomos por risco, custo, supervisão, observabilidade e reversibilidade."
 pubDate: "2026-09-22"
-author: "redacao"
-category: "IA & Modelos"
-silo: ia
+author: "gabriel-barboza"
+category: "Automação"
+silo: automacao
 kind: "artigo"
 canonicalPath: "/artigos/automacao-assistida-por-ia-vs-agentes-autonomos/"
 primaryKeyword: "automação assistida por IA vs agentes autônomos"
-draft: true
+draft: false
 sources:
   - "https://platform.openai.com/docs/guides/function-calling"
   - "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
 ---
-
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
 
 Automação assistida usa IA em uma etapa delimitada; um agente autônomo pode escolher a próxima ação, chamar ferramentas e continuar até atingir uma meta. A diferença decisiva não é o rótulo, mas quem controla o fluxo e o que acontece quando a previsão está errada.
 
