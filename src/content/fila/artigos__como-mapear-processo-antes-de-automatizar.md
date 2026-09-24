@@ -14,7 +14,7 @@ sources:
   - "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
 ---
 
-Automatizar um processo mal compreendido apenas faz os erros acontecerem mais rápido. Antes de escolher uma ferramenta, é preciso saber onde o processo começa, qual resultado deve produzir, quem toma decisões e quais exceções aparecem no caminho.
+Automatizar um processo mal compreendido apenas faz os erros acontecerem mais rápido. Antes de escolher uma ferramenta vem o mapeamento do processo: saber onde ele começa, qual resultado deve produzir, quem toma decisões e quais exceções aparecem no caminho.
 
 ## O que deve estar no mapa
 

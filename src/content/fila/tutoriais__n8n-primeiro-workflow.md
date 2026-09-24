@@ -2,7 +2,7 @@
 title: "Primeiro workflow no n8n: tutorial do zero"
 description: "Crie um workflow pequeno no n8n com trigger, transformação, validação, saída observável e tratamento de falhas."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Automação"
 silo: automacao
 kind: "tutorial"
@@ -14,7 +14,7 @@ sources:
   - "https://docs.n8n.io/flow-logic/error-handling/"
 ---
 
-Este tutorial cria um workflow pequeno para receber uma entrada de teste, validar os campos, transformar um valor e produzir uma saída que possa ser conferida. O objetivo é aprender o ciclo de execução e recuperação; não conectar um processo crítico no primeiro dia.
+Este tutorial cria seu primeiro workflow no n8n: um fluxo pequeno para receber uma entrada de teste, validar os campos, transformar um valor e produzir uma saída que possa ser conferida. O objetivo é aprender o ciclo de execução e recuperação; não conectar um processo crítico no primeiro dia.
 
 Antes de começar, escolha uma instalação de teste, registre a versão que será usada e não coloque credenciais reais em screenshots ou dados de exemplo. O fluxo deve ser repetível sem enviar mensagens, cobrar serviços ou alterar dados de produção.
 

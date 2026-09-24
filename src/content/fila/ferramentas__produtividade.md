@@ -2,7 +2,7 @@
 title: "Ferramentas de produtividade: escolha por fluxo, não por moda"
 description: "Como escolher ferramentas de produtividade a partir do seu sistema pessoal — captura, planejamento, execução e revisão — em vez de acumular aplicativos que geram atrito."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Ferramentas"
 silo: ferramentas
 kind: "hub"

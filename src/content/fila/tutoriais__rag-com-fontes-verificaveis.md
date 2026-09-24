@@ -2,7 +2,7 @@
 title: "RAG com fontes verificáveis: como construir respostas auditáveis"
 description: "Tutorial para recuperar documentos, citar evidências e reduzir respostas sem suporte em aplicações com RAG."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "IA & Modelos"
 silo: ia
 kind: "tutorial"
@@ -14,8 +14,6 @@ sources:
   - "https://platform.openai.com/docs/guides/retrieval"
   - "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
 ---
-
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
 
 RAG combina recuperação de documentos com geração de resposta, mas não transforma automaticamente um modelo em fonte confiável. A aplicação precisa provar de onde veio cada afirmação, controlar documentos desatualizados e responder com uma lacuna explícita quando a busca não sustenta a pergunta.
 

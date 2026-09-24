@@ -2,7 +2,7 @@
 title: "Desenvolvimento de software: arquitetura e entrega prática"
 description: "Organize arquitetura, front-end, back-end, DevOps e qualidade para construir e entregar software confiável."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
 silo: desenvolvimento
 kind: "pilar"

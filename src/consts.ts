@@ -11,9 +11,9 @@ export const SITE = {
     'Publicação editorial de tecnologia aplicada: IA, automação, desenvolvimento e ferramentas para trabalho técnico. Conteúdo útil, verificável e organizado por tópicos.',
   tagline: 'Ideias. Ferramentas. Resultados.',
   locale: 'pt-BR',
-  author: 'Redação misoftware',
+  author: 'Gabriel Barboza',
   defaultOgImage: '/og-default.png',
-  publisher: 'IdealTrends',
+  publisher: 'Gabriel Barboza',
   email: 'contato@misoftware.com.br',
 } as const;
 

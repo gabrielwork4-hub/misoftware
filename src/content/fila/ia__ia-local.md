@@ -2,7 +2,7 @@
 title: "IA local: modelos, hardware e ferramentas"
 description: "Descubra quando rodar IA local faz sentido e como escolher modelo, hardware, runtime e critérios de teste."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "IA & Modelos"
 silo: ia
 kind: "hub"

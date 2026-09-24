@@ -2,7 +2,7 @@
 title: "Estudo de caso: automação de pauta editorial"
 description: "Como estruturamos descoberta, briefing, geração, revisão e publicação com automação assistida por IA — preservando julgamento humano nas decisões que importam."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Automação"
 silo: automacao
 kind: "estudo-de-caso"
@@ -16,7 +16,7 @@ sources:
   - "https://docs.n8n.io/"
 ---
 
-Uma operação editorial que quer escalar sem perder confiabilidade precisa separar claramente as etapas: descoberta, decisão, briefing, redação, checagem, revisão e publicação. Automatizar não significa remover a responsabilidade humana — significa tirar das pessoas o trabalho mecânico e concentrar o julgamento onde ele é insubstituível. Este é o modelo que usamos aqui, descrito como referência, não como promessa de resultado.
+Uma operação editorial que quer escalar sem perder confiabilidade precisa separar claramente as etapas: descoberta, decisão, briefing, redação, checagem, revisão e publicação. Automatizar a pauta editorial não significa remover a responsabilidade humana — significa tirar das pessoas o trabalho mecânico e concentrar o julgamento onde ele é insubstituível. Este é o modelo que usamos aqui, descrito como referência, não como promessa de resultado.
 
 ## O problema
 

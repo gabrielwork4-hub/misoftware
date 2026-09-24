@@ -2,7 +2,7 @@
 title: "Automação de processos: workflows, integrações e IA"
 description: "Automação de processos na prática: escolher, desenhar e operar automações com n8n, APIs, webhooks, filas e IA sem transformar o processo em caixa-preta."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Automação"
 silo: automacao
 kind: "pilar"

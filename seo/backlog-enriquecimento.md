@@ -31,7 +31,8 @@ Levantados na análise de intenção/semântica/canibalização/entidades.
 
 | Frente | Oportunidade | Precisa de |
 |---|---|---|
-| Termos dos pilares — validação de volume | Retarget aplicado com base em SERP + Ahrefs. Reconfirmar volume/KD quando quiser, e considerar spokes de aplicação por domínio para os head terms. | Revisão periódica |
+| Termos dos pilares — validação de volume | **Reconfirmado em 2026-09-24 (Ahrefs BR): os 4 termos vieram idênticos ao baseline** — `/ia/` como usar inteligência artificial 800/KD0; `/automacao/` automação de processos 1.500/KD2; `/desenvolvimento/` desenvolvimento de software 2.600/KD3; `/ferramentas/` ferramentas de ia 900/KD0. Retarget se mantém. Próxima revisão periódica. | Revisão periódica |
+| Spokes por parent topic (head terms) | Oportunidades reveladas na reconfirmação: `/ferramentas/` tem parent **"ia gratuito"** (8.400) → avaliar spoke "ferramentas de IA gratuitas". `/automacao/` já é **auto-parent** (head term próprio, melhor posicionado). `/ia/` parent = variante com acento "como usar a inteligência artificial" (1.800), mesma intenção. `/desenvolvimento/` parent = "software" (77.000) amplo demais/dominado por curso → manter termo específico. | Decisão editorial |
 | `/estudos-de-caso/automacao-de-pauta-editorial/` | Métricas **internas reais** (tempo pauta→publicação, retrabalho) quando autorizadas — hoje usa benchmarks externos. Diagrama visual opcional. | Dados internos autorizados |
 | Hub `/ia/engenharia-de-prompt/` | Seção "Técnicas e seus limites" ainda sobrepõe levemente o spoke — afinar se necessário. | — |
 | Cross-silo idempotência | `/automacao/integracoes/` × `/desenvolvimento/backend/` — delimitar ângulos se crescerem. | monitorar |

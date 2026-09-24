@@ -17,7 +17,7 @@ sources:
   - "https://docs.astro.build/en/guides/rss/"
 ---
 
-Um site editorial precisa transformar um arquivo de conteúdo em uma experiência publicável, rastreável e fácil de manter. Neste tutorial, o objetivo não é apenas renderizar Markdown: é criar um pequeno sistema com collections tipadas, layout consistente, SEO técnico, busca e uma rotina de publicação verificável.
+Um site editorial precisa transformar um arquivo de conteúdo em uma experiência publicável, rastreável e fácil de manter. Neste tutorial, o objetivo não é apenas renderizar Markdown: é usar o Astro para criar um pequeno sistema com collections tipadas, layout consistente, SEO técnico, busca e uma rotina de publicação verificável.
 
 ## 1. Defina o contrato editorial
 

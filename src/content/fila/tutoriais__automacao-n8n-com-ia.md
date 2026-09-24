@@ -2,7 +2,7 @@
 title: "Automação n8n com IA: workflow seguro e rastreável"
 description: "Use IA em um workflow n8n com saída estruturada, validação, aprovação humana, logs e controle de custos."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Automação"
 silo: automacao
 kind: "tutorial"

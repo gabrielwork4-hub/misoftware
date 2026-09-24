@@ -2,7 +2,7 @@
 title: "Automação n8n com webhook e API: tutorial completo"
 description: "Integre webhook e API no n8n com contrato, validação, autenticação, idempotência, retries e testes de falha."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Automação"
 silo: automacao
 kind: "tutorial"
@@ -15,7 +15,7 @@ sources:
   - "https://docs.stripe.com/webhooks"
 ---
 
-Este tutorial desenha um fluxo em que um webhook recebe um evento, valida a entrada, evita duplicação e chama uma API de teste. O exemplo não deve usar um endpoint de produção até que assinatura, autenticação, limites e recuperação tenham sido verificados.
+Este tutorial desenha uma automação no n8n em que um webhook recebe um evento, valida a entrada, evita duplicação e chama uma API de teste. O exemplo não deve usar um endpoint de produção até que assinatura, autenticação, limites e recuperação tenham sido verificados.
 
 ## Contrato do evento
 

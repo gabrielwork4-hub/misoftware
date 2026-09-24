@@ -2,7 +2,7 @@
 title: "Ferramentas para desenvolvimento: stack essencial por etapa"
 description: "Como montar uma stack de desenvolvimento por etapa — planejamento, código, entrega e operação — conectando ferramentas especializadas sem acumular produtos redundantes."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Ferramentas"
 silo: ferramentas
 kind: "hub"

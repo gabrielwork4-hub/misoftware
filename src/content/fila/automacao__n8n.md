@@ -2,7 +2,7 @@
 title: "Automação com n8n: workflows e integrações"
 description: "Aprenda a avaliar e operar workflows no n8n com triggers, APIs, webhooks, IA, credenciais, tratamento de erro e governança."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Automação"
 silo: automacao
 kind: "hub"
@@ -15,7 +15,7 @@ sources:
   - "https://docs.n8n.io/flow-logic/error-handling/"
 ---
 
-O n8n conecta sistemas, transforma dados e executa workflows. Ele acelera o primeiro protótipo, mas não elimina desenho de processo, segurança ou operação. Antes de criar nós, descreva qual evento inicia o fluxo, qual saída é esperada e como uma falha será identificada e recuperada.
+O n8n é uma plataforma de automação: conecta sistemas, transforma dados e executa workflows. Ele acelera o primeiro protótipo, mas não elimina desenho de processo, segurança ou operação. Antes de criar nós, descreva qual evento inicia o fluxo, qual saída é esperada e como uma falha será identificada e recuperada.
 
 ## Comece por um workflow reversível
 

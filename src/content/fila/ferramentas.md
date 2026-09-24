@@ -2,7 +2,7 @@
 title: "Ferramentas de IA e trabalho técnico: escolha pelo fluxo"
 description: "Como escolher ferramentas de IA e de trabalho técnico — desenvolvimento, automação, produtividade e pesquisa — pelo fluxo real, não pela moda."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Ferramentas"
 silo: ferramentas
 kind: "pilar"

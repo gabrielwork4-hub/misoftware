@@ -2,7 +2,7 @@
 title: "Como avaliar prompts de IA em produção"
 description: "Monte uma avaliação contínua de prompts com dataset, métricas, versionamento, custo, segurança e revisão humana."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Engenharia de Prompt"
 silo: ia
 kind: "artigo"
@@ -14,8 +14,6 @@ sources:
   - "https://platform.openai.com/docs/guides/prompt-engineering"
   - "https://www.nist.gov/itl/ai-risk-management-framework"
 ---
-
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
 
 Um prompt que parece bom em três exemplos pode falhar quando muda o idioma, o formato do dado ou a intenção do usuário. Em produção, a avaliação deve comparar versões do prompt contra casos reais, medir a saída e registrar custo, latência e riscos.
 

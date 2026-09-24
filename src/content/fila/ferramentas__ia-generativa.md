@@ -2,7 +2,7 @@
 title: "Ferramentas de IA generativa: categorias, usos e critérios de escolha"
 description: "Um mapa das categorias de ferramentas de IA generativa — texto, código, multimodal, pesquisa e automação — com os critérios que realmente separam uma boa escolha de uma moda."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Ferramentas"
 silo: ferramentas
 kind: "hub"

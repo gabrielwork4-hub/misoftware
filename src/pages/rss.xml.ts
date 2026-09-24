@@ -19,7 +19,7 @@ export async function GET(context: APIContext) {
       title: entry.data.title,
       description: entry.data.description,
       pubDate: entry.data.pubDate,
-      author: authorName.get(entry.data.author.id) ?? 'Redação misoftware',
+      author: authorName.get(entry.data.author.id) ?? 'Gabriel Barboza',
       categories: [entry.data.category],
       link: articleHref(entry),
     })),
