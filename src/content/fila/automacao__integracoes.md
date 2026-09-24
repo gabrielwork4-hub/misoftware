@@ -13,6 +13,38 @@ sources:
   - "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview"
   - "https://docs.stripe.com/webhooks"
   - "https://owasp.org/www-project-api-security/"
+faq:
+  - q: "O que é integração de sistemas?"
+    a: >-
+      É fazer dois ou mais sistemas trocarem dados de forma confiável, seguindo
+      um contrato: entrada conhecida, autenticação, comportamento de erro e
+      forma de recuperação. Conectar dois aplicativos é só o começo — produção
+      exige tratar duplicação, lentidão e credenciais revogadas.
+  - q: "Quais são os tipos de integração de sistemas?"
+    a: >-
+      Os três transportes mais comuns são webhooks (o sistema te notifica
+      quando um evento ocorre), polling (você consulta periodicamente) e filas
+      ou brokers de mensagem (desacoplam produtor e consumidor e absorvem
+      picos). A escolha depende de latência, volume e disponibilidade — veja o
+      guia de webhook, polling ou fila.
+  - q: "Qual a diferença entre API e webhook?"
+    a: >-
+      Numa API, você faz a chamada quando quer o dado (você puxa). Num webhook,
+      o outro sistema chama você automaticamente quando algo acontece (ele
+      empurra). Webhooks evitam consultas desnecessárias, mas exigem responder
+      rápido, validar a origem e registrar o evento.
+  - q: "Como evitar que uma integração duplique dados ou ações?"
+    a: >-
+      Use idempotência: uma chave que identifica a operação ou um registro dos
+      eventos já processados, para que repetir a mesma chamada não gere efeito
+      duplicado. Combine com limite de tentativas, backoff e uma fila de falhas.
+      O guia de idempotência em APIs e webhooks detalha os padrões.
+  - q: "Integração de sistemas é segura?"
+    a: >-
+      É segura quando você trata autenticação e autorização como parte do
+      contrato: HTTPS, credenciais rotacionáveis, permissões mínimas e
+      validação de assinatura nos webhooks. A referência de segurança de APIs
+      da OWASP ajuda a revisar os pontos de exposição.
 ---
 
 Uma integração confiável é um contrato entre sistemas, com entrada conhecida, autenticação, comportamento de erro e forma de recuperação. Conectar dois aplicativos é apenas o começo: produção exige saber o que acontece quando um evento chega duas vezes, um serviço demora ou uma credencial é revogada.

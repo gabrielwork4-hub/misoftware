@@ -13,6 +13,37 @@ sources:
   - "https://platform.openai.com/docs/guides/function-calling"
   - "https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview"
   - "https://www.nist.gov/itl/ai-risk-management-framework"
+faq:
+  - q: "Por onde começar a criar um agente de IA?"
+    a: >-
+      Pelo menor agente útil: um objetivo observável, uma única ferramenta de
+      leitura (reversível), um formato de saída e uma condição de parada clara.
+      Resista a começar com "resolver o atendimento inteiro" — comece com algo
+      como "consultar o status de um pedido e preparar uma resposta".
+  - q: "Preciso saber programar para seguir este tutorial?"
+    a: >-
+      Sim, o básico. O agente usa function/tool calling através de um SDK, e
+      você precisa definir o contrato da ferramenta, validar argumentos e
+      montar o ciclo de execução. Não é preciso ser especialista, mas é um
+      tutorial técnico, não no-code.
+  - q: "Qual ferramenta o agente deve ter primeiro?"
+    a: >-
+      Uma ferramenta de leitura, com efeito reversível — por exemplo, consultar
+      um status. Nunca comece dando ao agente o poder de enviar e-mail, excluir
+      dados ou aprovar pagamento. Ações externas ou irreversíveis ficam fora do
+      primeiro protótipo e, quando entrarem, exigem confirmação humana.
+  - q: "Como sei se o agente está pronto para produção?"
+    a: >-
+      Quando ele passa por uma suíte de casos adversos (pedido sem dados,
+      identificador inexistente, tentativa de acessar outro usuário, ferramenta
+      indisponível) e pode ser interrompido, corrigido e reprocessado. Meça se
+      ele escolheu a ferramenta certa e recusou quando devia — não apenas se o
+      texto final ficou bom.
+  - q: "Posso usar qualquer modelo de IA para criar o agente?"
+    a: >-
+      Qualquer modelo com suporte a function/tool calling serve; o tutorial é
+      independente de fornecedor. O importante é registrar o modelo e a versão
+      usados, porque trocar de modelo exige rodar a suíte de casos de novo.
 ---
 
 Este tutorial projeta um agente que consulta uma informação e prepara uma resposta, sem enviar mensagens ou alterar dados. O objetivo é mostrar o menor agente útil: uma ferramenta, um contrato, logs e uma condição de parada. A implementação final deve ser feita com uma biblioteca e versão registradas; os exemplos de fluxo abaixo são independentes de fornecedor.

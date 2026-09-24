@@ -12,6 +12,37 @@ draft: false
 sources:
   - "https://docs.n8n.io/"
   - "https://opentelemetry.io/docs/"
+faq:
+  - q: "O que é um workflow?"
+    a: >-
+      É a versão executável de um processo: uma sequência de etapas com um
+      evento que a inicia (trigger), decisões, transformações e um caminho
+      claro para quando algo falha. A diferença de um processo "no papel" é que
+      o workflow roda sozinho e pode ser observado e corrigido.
+  - q: "Qual a diferença entre processo e workflow?"
+    a: >-
+      O processo descreve o que precisa acontecer do ponto de vista do negócio;
+      o workflow é como isso é implementado e executado em software — com
+      gatilhos, validações, tratamento de erro e registro. Automatizar antes de
+      entender o processo só faz o erro acontecer mais rápido.
+  - q: "Como criar um workflow do zero?"
+    a: >-
+      Mapeie o processo primeiro (entrada, saída, decisões, exceções), depois
+      monte o fluxo na ordem: trigger, validação, transformação e tratamento de
+      falha. Comece por um recorte pequeno e reversível. O passo a passo prático
+      está no tutorial do primeiro workflow no n8n.
+  - q: "O que torna um workflow confiável?"
+    a: >-
+      Não é acertar o caminho comum, e sim ter resposta para a exceção: timeout,
+      política de retry, idempotência (repetir sem duplicar efeito), fila de
+      falha, alerta acionável e um dono que mantém o fluxo. Um workflow só está
+      pronto quando você provocou uma falha e confirmou a recuperação.
+  - q: "Qual ferramenta usar para criar workflows?"
+    a: >-
+      Plataformas visuais como o n8n aceleram a montagem e os protótipos, mas a
+      ferramenta não substitui o desenho do fluxo, o dono e a política de erro.
+      Em casos de alto volume ou lógica complexa, código e filas podem ser mais
+      adequados.
 ---
 
 Um workflow operacional transforma um processo em uma sequência executável, observável e mantível. Ele precisa funcionar bem no caso comum e — mais importante — ter uma resposta clara para a exceção. A maioria dos workflows quebra não porque a lógica principal falhou, mas porque ninguém decidiu o que acontece quando uma integração cai, um dado chega incompleto ou o mesmo evento chega duas vezes.
