@@ -12,6 +12,23 @@ draft: false
 sources:
   - "https://ollama.com/library"
   - "https://huggingface.co/docs/hub/models-the-hub"
+faq:
+  - q: "Que tamanho de modelo (número de parâmetros) devo escolher?"
+    a: >-
+      O menor que resolve a sua tarefa com qualidade aceitável e cabe na memória
+      com folga — não o maior que a máquina aguenta. Modelo maior tende a ser
+      mais capaz, mas também mais lento e mais pesado, e um modelo menor
+      especializado costuma vencer um gigante genérico no seu domínio. O número
+      de parâmetros é ponto de partida; o veredito vem do teste com os seus
+      dados.
+  - q: "Qual modelo local é bom para começar?"
+    a: >-
+      Não escolha por reputação — comece por uma variante quantizada de um modelo
+      recente que caiba com folga no seu hardware e rode o seu conjunto de
+      exemplos reais nela. Se passar no critério de qualidade, latência e
+      memória, está bom para começar; se não, troque de candidato. O melhor para
+      começar é o que atende a sua tarefa dentro dos seus limites, e isso muda de
+      caso para caso.
 ---
 
 O modelo local adequado não é o maior, o mais recente ou o mais comentado. É o que resolve a sua tarefa dentro dos limites de hardware, licença e qualidade aceitável — e que você consegue operar e atualizar sem surpresa. Escolher por parâmetros de reputação leva a modelos pesados demais para a máquina ou genéricos demais para o problema.

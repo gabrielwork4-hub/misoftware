@@ -12,6 +12,21 @@ draft: false
 sources:
   - "https://platform.openai.com/docs/guides/prompt-engineering"
   - "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"
+faq:
+  - q: "Preciso saber programar para fazer engenharia de prompt?"
+    a: >-
+      Não. Engenharia de prompt é uma habilidade de especificação e teste —
+      descrever a tarefa, o contexto, as restrições e o critério de aceitação com
+      clareza — muito mais próxima de escrever um bom requisito do que de
+      programar. Saber programar ajuda quando a saída alimenta um software e
+      precisa de formato validável, mas o núcleo da prática independe de código.
+  - q: "Engenharia de prompt vai continuar relevante conforme os modelos melhoram?"
+    a: >-
+      Sim. Modelos melhores reduzem alguns truques, mas não eliminam a
+      necessidade de dizer o que precisa ser feito, com quais limites e como o
+      resultado será avaliado — isso é especificação, não gambiarra. Um modelo
+      mais capaz executa melhor uma instrução clara; ele não adivinha o critério
+      de sucesso que você não escreveu.
 ---
 
 Engenharia de prompt é o processo de transformar uma tarefa em uma instrução clara, testável e adequada ao modelo usado. Um prompt melhor não garante uma resposta verdadeira; ele reduz ambiguidades, define o formato esperado e facilita a avaliação do resultado. As orientações oficiais da [OpenAI](https://platform.openai.com/docs/guides/prompt-engineering) e da [Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) tratam prompts como parte de um processo de especificação e avaliação, não como uma fórmula mágica.
