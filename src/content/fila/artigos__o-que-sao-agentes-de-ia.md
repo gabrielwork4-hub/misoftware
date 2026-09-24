@@ -14,8 +14,6 @@ sources:
   - "https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview"
 ---
 
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
-
 Um agente de IA é um sistema que recebe um objetivo, interpreta o contexto, decide quais ações executar e usa ferramentas para chegar a um resultado. A diferença importante não está em parecer inteligente, mas em conseguir operar dentro de um fluxo com limites, observação e critérios de sucesso. Na prática, isso normalmente depende de chamadas de ferramentas estruturadas e de um ciclo explícito de validação, como mostram as documentações de [function calling da OpenAI](https://platform.openai.com/docs/guides/function-calling) e [tool use da Anthropic](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview).
 
 ## Agente de IA não é apenas um chatbot

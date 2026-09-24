@@ -14,8 +14,6 @@ sources:
   - "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"
 ---
 
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
-
 Engenharia de prompt é o processo de transformar uma tarefa em uma instrução clara, testável e adequada ao modelo usado. Um prompt melhor não garante uma resposta verdadeira; ele reduz ambiguidades, define o formato esperado e facilita a avaliação do resultado. As orientações oficiais da [OpenAI](https://platform.openai.com/docs/guides/prompt-engineering) e da [Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) tratam prompts como parte de um processo de especificação e avaliação, não como uma fórmula mágica.
 
 ## O que um prompt bem projetado resolve

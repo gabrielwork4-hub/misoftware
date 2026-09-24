@@ -15,8 +15,6 @@ sources:
   - "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
 ---
 
-> Rascunho gerado da fila editorial. Revisar evidências, fontes e links antes de aprovar.
-
 RAG combina recuperação de documentos com geração de resposta, mas não transforma automaticamente um modelo em fonte confiável. A aplicação precisa provar de onde veio cada afirmação, controlar documentos desatualizados e responder com uma lacuna explícita quando a busca não sustenta a pergunta.
 
 ## 1. Prepare documentos com identidade
