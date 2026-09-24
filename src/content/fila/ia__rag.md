@@ -12,6 +12,37 @@ draft: false
 sources:
   - "https://platform.openai.com/docs/guides/retrieval"
   - "https://docs.anthropic.com/en/docs/build-with-claude/embeddings"
+faq:
+  - q: "RAG ou fine-tuning: qual devo usar?"
+    a: >-
+      Resolvem problemas diferentes. RAG é para quando a resposta precisa
+      refletir conhecimento próprio, que muda ou que exige fonte rastreável —
+      você atualiza a base sem retreinar nada. Fine-tuning ajusta o
+      comportamento do modelo (estilo, formato, um domínio muito específico),
+      mas não é o caminho para injetar fatos que mudam toda semana. Na dúvida,
+      comece por RAG: é mais barato de manter e mais fácil de auditar.
+  - q: "RAG elimina alucinação?"
+    a: >-
+      Reduz, mas não elimina. Ao ancorar a resposta em trechos recuperados, o
+      RAG diminui a invenção — porém o pior caso continua possível: a resposta
+      cita uma fonte que não sustenta a afirmação, criando falsa confiança. Por
+      isso a citação precisa corresponder ao texto de origem, e você mede a
+      fidelidade (faithfulness) da resposta às fontes, não só se ela "parece"
+      certa.
+  - q: "Preciso de um banco vetorial caro como o Pinecone?"
+    a: >-
+      Não para começar. Opções como pgvector (dentro do próprio Postgres) ou
+      Chroma resolvem a maioria dos projetos iniciais sem custo de serviço
+      dedicado. O gargalo de qualidade quase nunca é o banco vetorial — é
+      chunking, busca e metadados. Troque por uma solução gerenciada só quando
+      escala ou operação justificarem, não por padrão.
+  - q: "Quanto custa manter um sistema RAG?"
+    a: >-
+      O custo tem duas partes: gerar embeddings da base (uma vez, e a cada
+      atualização) e, a cada consulta, a recuperação mais a geração da resposta
+      pelo modelo. Ele cresce com o tamanho da base e o volume de perguntas, e
+      contexto em excesso encarece sem melhorar a resposta. Enviar só os trechos
+      certos é tão importante para o custo quanto para a qualidade.
 ---
 
 RAG (recuperação aumentada por geração) permite que um modelo responda usando documentos recuperados no momento da consulta, em vez de depender só do que aprendeu no treinamento. É a abordagem certa quando a resposta precisa refletir conhecimento próprio, atualizado ou auditável — uma base de políticas internas, um catálogo, uma documentação técnica que muda toda semana.

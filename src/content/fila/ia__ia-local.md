@@ -13,6 +13,35 @@ sources:
   - "https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image"
   - "https://ollama.com/blog/gpt-oss"
   - "https://huggingface.co/docs/transformers/index"
+faq:
+  - q: "IA local é gratuita?"
+    a: >-
+      Não confunda "sem mensalidade de API" com "de graça". O custo se desloca
+      para hardware, energia, armazenamento, configuração e manutenção — e é
+      esse custo total que você compara com o de um serviço em nuvem. Local
+      compensa quando o uso é frequente ou os dados não podem sair do ambiente;
+      para uso esporádico, a nuvem costuma sair mais barata.
+  - q: "Dá para rodar IA local sem GPU, só com CPU?"
+    a: >-
+      Dá, com modelos menores em formato GGUF quantizado, aceitando mais
+      latência — funciona para testes e tarefas leves. Para uso frequente,
+      contexto longo ou modelos maiores, a memória de GPU (VRAM) é o que define
+      se roda com folga. Meça memória usada e tokens por segundo na sua tarefa
+      real antes de concluir que a máquina dá conta.
+  - q: "IA local é mais segura e privada que a nuvem?"
+    a: >-
+      Em privacidade, sim: os dados não saem do seu ambiente. Mas a
+      responsabilidade pela segurança passa a ser sua — uma API local exposta
+      sem autenticação é um risco real. Proteja a porta, trate prompts e
+      documentos como dados sensíveis e mantenha runtime e drivers sob controle
+      de versão.
+  - q: "Preciso escolher entre IA local e nuvem?"
+    a: >-
+      Não precisa ser tudo ou nada. Uma arquitetura híbrida é comum: dados
+      sensíveis e tarefas simples ficam locais, enquanto tarefas que exigem
+      modelos grandes ou picos de uso vão para um serviço com os controles
+      adequados. A decisão certa é a que atende sua tarefa com qualidade
+      suficiente e custo operacional que a equipe consegue sustentar.
 ---
 
 IA local é a execução de modelos no próprio computador ou servidor, sem enviar toda a tarefa para uma API externa. Essa escolha pode favorecer controle de dados, operação offline ou previsibilidade de custo, mas transfere para a equipe a responsabilidade por hardware, atualizações, segurança e qualidade.

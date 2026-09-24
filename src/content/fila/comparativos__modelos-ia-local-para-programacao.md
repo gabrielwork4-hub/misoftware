@@ -12,6 +12,42 @@ draft: false
 sources:
   - "https://ollama.com/library"
   - "https://huggingface.co/models?pipeline_tag=text-generation"
+faq:
+  - q: "Qual é o melhor modelo de IA local para programar?"
+    a: >-
+      Não existe melhor absoluto — existe melhor por tarefa. Um modelo menor e
+      rápido costuma vencer no autocomplete, onde latência é tudo; refatoração e
+      explicação, que exigem enxergar mais contexto, podem justificar um modelo
+      maior e mais lento. Em vez de seguir uma nota de terceiros, rode o mesmo
+      conjunto de tarefas do seu repositório em cada candidato e compare.
+  - q: "Que hardware preciso para rodar um modelo local de código?"
+    a: >-
+      Depende do tamanho do modelo e da quantização que você usar. O que define
+      se roda com folga na sua máquina é a memória disponível (sobretudo de
+      GPU) e a velocidade em tokens por segundo; variantes quantizadas, como
+      4-bit, reduzem o consumo de memória em troca de alguma precisão. Meça
+      esses dois números com a sua carga real antes de concluir que cabe.
+  - q: "Modelo local chega perto de Copilot ou Cursor na nuvem?"
+    a: >-
+      Para autocomplete e tarefas locais, um bom modelo local pode ficar bem
+      próximo e ganha em latência e privacidade. Para tarefas que exigem muito
+      contexto — entender um repositório grande de uma vez — os serviços em
+      nuvem, com modelos maiores, ainda costumam levar vantagem. A resposta
+      honesta depende da tarefa e do seu hardware, por isso o teste é no seu
+      código.
+  - q: "Posso usar a saída de um modelo local em produto comercial?"
+    a: >-
+      Só depois de conferir a licença — e ela pode inviabilizar a adoção mesmo
+      com boa qualidade. Modelos ditos abertos variam bastante em permissão de
+      uso comercial e redistribuição, então verifique os termos do modelo
+      específico antes de embarcar a saída em algo que você vende.
+  - q: "Vale a pena rodar local em vez de usar a nuvem?"
+    a: >-
+      Vale quando privacidade, custo previsível ou trabalho offline pesam mais
+      que conveniência — o código não sai da sua máquina e não há cobrança por
+      uso. A nuvem compensa quando você quer o máximo de qualidade sem gerir
+      hardware. O ganho local só aparece de verdade quando o modelo entra num
+      fluxo com testes automatizados e revisão humana.
 ---
 
 Modelos locais ajudam em autocomplete, explicação de código, geração de testes e refatoração — mas variam muito em tamanho de contexto, velocidade e aderência às convenções do seu projeto. Um comparativo útil não é uma tabela de notas de terceiros; é um método que você aplica ao seu código, no seu hardware, para as tarefas que faz todo dia.

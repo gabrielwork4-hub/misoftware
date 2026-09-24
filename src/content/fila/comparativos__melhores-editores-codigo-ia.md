@@ -12,6 +12,41 @@ draft: false
 sources:
   - "https://docs.github.com/en/copilot"
   - "https://code.visualstudio.com/docs/copilot/overview"
+faq:
+  - q: "Afinal, qual é o melhor editor de código com IA?"
+    a: >-
+      Não há um melhor absoluto — há o melhor para o seu repositório, o nível
+      de autonomia que você quer dar à IA e as regras de segurança da sua
+      equipe. Em vez de escolher pela lista de recursos, rode as suas tarefas
+      reais nos candidatos e meça quanto do resultado precisou de correção
+      manual. É esse número, no seu contexto, que decide.
+  - q: "Fico no VS Code com Copilot ou troco por Cursor ou Windsurf?"
+    a: >-
+      Depende de quanto você quer que a IA participe do fluxo. Se o seu uso é
+      autocomplete e chat pontual, um assistente dentro do VS Code como o
+      Copilot resolve sem mudar seu ambiente. Se você quer delegar edições em
+      vários arquivos e tarefas com mais autonomia, os editores dedicados,
+      construídos em torno do agente, tendem a render mais.
+  - q: "O editor com IA substitui o programador?"
+    a: >-
+      Não. A IA acelera a escrita, mas a revisão humana, os testes e o controle
+      sobre o que foi alterado continuam sendo a rede de segurança. Um bom
+      editor deixa claro o que mudou e permite revisão incremental — quem
+      responde pelo código é quem faz o merge, não a ferramenta.
+  - q: "É seguro usar essas ferramentas com código proprietário?"
+    a: >-
+      Depende da configuração e do plano. Antes da produtividade, verifique
+      como o código enviado é tratado, se há treinamento com os seus dados,
+      quais controles de organização existem e se há logs. Muitas oferecem
+      modos de maior privacidade nos planos pagos ou corporativos; para código
+      de empresa, leia os termos de tratamento de dados antes de enviar.
+  - q: "Vale pagar ou o plano gratuito resolve?"
+    a: >-
+      Comece pelo gratuito para validar o encaixe com o seu trabalho. Os planos
+      pagos liberam mais requisições e modelos mais capazes, o que compensa
+      quando o uso é diário e o retrabalho no plano grátis começa a atrapalhar.
+      Como cotas e preços mudam rápido, confirme os limites atuais no site
+      oficial antes de decidir.
 ---
 
 Não existe "o melhor editor de código com IA" em abstrato — existe o melhor para o seu repositório, o seu nível de autonomia desejado e as regras de segurança da sua equipe. Recurso chamativo não substitui contexto correto, revisão humana e integração confiável com o Git. Este comparativo é sobre **como comparar**: um método que sobrevive às versões, já que os produtos mudam a cada mês.

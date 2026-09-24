@@ -13,6 +13,43 @@ sources:
   - "https://docs.n8n.io/"
   - "https://www.make.com/en/help"
   - "https://zapier.com/help"
+faq:
+  - q: "Qual das três é a mais barata?"
+    a: >-
+      Depende do volume, não do preço de lista. Zapier cobra por tarefa
+      executada, Make por operação (cada passo conta) e o n8n self-hosted troca
+      a mensalidade pelo custo da infraestrutura que você mantém. Em volume
+      baixo o Zapier costuma sair na frente pela simplicidade; quando o número
+      de execuções cresce, o n8n auto-hospedado tende a ficar mais econômico.
+      Como preços e cotas mudam com frequência, confirme os valores atuais no
+      site oficial de cada uma.
+  - q: "Preciso saber programar para usar o n8n?"
+    a: >-
+      Não para o básico — o n8n tem construtor visual como as outras. A
+      diferença é que ele libera nós de código quando você precisa: dá para
+      usar sem programar e recorrer a JavaScript ou Python só nos pontos que
+      exigem lógica que o visual não cobre. É esse teto mais alto que justifica
+      o perfil técnico na matriz de decisão.
+  - q: "Dá para migrar de Zapier ou Make para o n8n depois?"
+    a: >-
+      Não existe migração automática entre elas — cada plataforma tem seu
+      próprio formato de fluxo, e a troca significa reconstruir as automações.
+      Por isso a escolha inicial pesa: vale começar pela plataforma que atende
+      o seu perfil por mais tempo, e não pela mais rápida de configurar hoje.
+  - q: "Qual é a melhor escolha para dados sensíveis ou LGPD?"
+    a: >-
+      O n8n, por ser a única das três que roda self-hosted — os dados são
+      processados na sua própria infraestrutura, sem sair para um serviço de
+      terceiros. Zapier e Make são exclusivamente na nuvem do fornecedor, o que
+      não impede o uso, mas exige revisar onde os dados trafegam e o que os
+      termos permitem antes de automatizar informação regulada.
+  - q: "Não sou técnico. Qual devo escolher?"
+    a: >-
+      Zapier. Ele tem o menor tempo entre ligar dois serviços e ver a automação
+      funcionando, com o maior catálogo de aplicativos prontos. Migre para Make
+      ou n8n só quando esbarrar em um limite real — fluxos com muitas
+      ramificações, volume alto ou necessidade de controlar onde os dados
+      passam.
 ---
 
 n8n, Make e Zapier automatizam tarefas, mas atendem perfis diferentes de equipe e de fluxo. A escolha certa depende de quatro variáveis: a complexidade do que você automatiza, o volume, o nível técnico de quem mantém e o quanto você precisa de controle sobre onde os dados passam. Comparar só pela contagem de integrações leva à decisão errada.

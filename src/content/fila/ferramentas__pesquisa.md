@@ -12,6 +12,34 @@ draft: false
 sources:
   - "https://scholar.google.com/"
   - "https://www.crossref.org/documentation/"
+faq:
+  - q: "Posso confiar nas respostas de assistentes de pesquisa com IA?"
+    a: >-
+      Trate-os como camada de descoberta, não como fonte final. Eles aceleram
+      achar candidatos, mas exigem links verificáveis e conferência dos trechos
+      críticos na fonte original — o modelo pode citar um documento que não
+      sustenta a afirmação, o que cria falsa confiança. Uma resposta convincente
+      sem fonte rastreável não é conhecimento, é aposta.
+  - q: "Qual é a melhor ferramenta de pesquisa técnica?"
+    a: >-
+      Nenhuma sozinha — cada uma é forte em uma camada. Buscadores e índices
+      servem à descoberta; a documentação oficial confirma o fato; repositórios
+      e artigos explicam o porquê; suas notas preservam a evidência. O erro é
+      pular etapas ou querer que uma única ferramenta faça tudo; combine-as por
+      camada.
+  - q: "Documentação oficial ou blog e fórum: no que confiar?"
+    a: >-
+      Diferencie sempre opinião, experiência relatada e especificação oficial —
+      os três aparecem misturados nos resultados. Blogs e fóruns são ótimos para
+      descobrir e entender o porquê, mas o fato se confirma na documentação
+      oficial e na versão correta. Verifique autoria, data, versão, método e
+      exemplos reproduzíveis antes de adotar uma afirmação.
+  - q: "Como organizo o que encontro para não repetir a busca?"
+    a: >-
+      Mantenha um registro simples: para cada fonte relevante, salve URL, data
+      de acesso, versão, um resumo com suas palavras e a decisão que ela
+      influenciou. Isso transforma uma busca pontual em memória reutilizável e
+      evita redescobrir semanas depois o que você já tinha lido.
 ---
 
 Pesquisa técnica eficiente combina duas habilidades que costumam brigar: descobrir rápido e verificar com cuidado. A ferramenta certa ajuda a localizar a fonte original, registrar o contexto e recuperar a evidência semanas depois — quando você já não lembra onde leu aquilo. Numa era de respostas geradas por IA, a verificação deixou de ser opcional: uma resposta convincente sem fonte rastreável não é conhecimento, é aposta.

@@ -12,6 +12,29 @@ draft: false
 sources:
   - "https://platform.openai.com/docs/guides/function-calling"
   - "https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview"
+faq:
+  - q: "Preciso saber programar para criar um agente de IA?"
+    a: >-
+      Para um agente que chama APIs e ferramentas de verdade, sim — há
+      integração e tratamento de erro envolvidos, ainda que plataformas low-code
+      permitam montar um protótipo com pouco código. Mas a parte difícil não é o
+      código: é definir limites, permissões, condição de parada e
+      observabilidade. Um agente que você não consegue revisar é um risco,
+      independente de quão pouco código tem.
+  - q: "Qual a diferença entre agente de IA e agente autônomo?"
+    a: >-
+      Autonomia é um espectro, não um interruptor. "Agente" já implica escolher
+      a próxima ação; "autônomo" costuma indicar mais liberdade e menos pontos de
+      intervenção humana. Quanto mais autonomia, maior a capacidade e maior o
+      risco de erro — por isso o caminho seguro é começar com pouca autonomia,
+      dentro de limites revisáveis, e só ampliar quando houver avaliação.
+  - q: "Todo agente de IA precisa de aprovação humana?"
+    a: >-
+      Não em cada passo, mas sim em qualquer ação irreversível, que envolva dados
+      sensíveis ou que afete outra pessoa. Comece com tarefas pequenas,
+      observáveis e reversíveis, e coloque o ponto de aprovação antes do efeito
+      externo. O primeiro objetivo não é autonomia total — é produzir um
+      resultado útil dentro de limites que alguém consiga revisar.
 ---
 
 Um agente de IA é um sistema que recebe um objetivo, interpreta o contexto, decide quais ações executar e usa ferramentas para chegar a um resultado. A diferença importante não está em parecer inteligente, mas em conseguir operar dentro de um fluxo com limites, observação e critérios de sucesso. Na prática, isso normalmente depende de chamadas de ferramentas estruturadas e de um ciclo explícito de validação, como mostram as documentações de [function calling da OpenAI](https://platform.openai.com/docs/guides/function-calling) e [tool use da Anthropic](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview).

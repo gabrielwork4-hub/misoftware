@@ -13,6 +13,40 @@ sources:
   - "https://docs.pinecone.io/guides/get-started/overview"
   - "https://platform.openai.com/docs/guides/retrieval"
   - "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+faq:
+  - q: "Como impeço o RAG de citar uma fonte que não sustenta a afirmação?"
+    a: >-
+      Peça uma resposta estruturada com afirmações e referências e valide no
+      servidor que o trecho citado está realmente entre os documentos
+      recuperados naquela consulta. Exiba a citação ao lado da frase, não só num
+      bloco no fim. Citação sem correspondência é o pior caso do RAG, porque
+      cria falsa confiança — por isso ela é verificada, não presumida.
+  - q: "O que a aplicação deve responder quando não encontra evidência?"
+    a: >-
+      Uma lacuna explícita: "não encontrei suporte suficiente", oferecendo a
+      fonte ou uma pergunta de esclarecimento. Defina um limiar de confiança
+      antes da geração e, abaixo dele, não deixe o modelo preencher o vazio. Um
+      RAG útil não é o que sempre responde — é o que corrige o caminho quando
+      não há evidência.
+  - q: "Preciso de um banco vetorial pago como o Pinecone para seguir o tutorial?"
+    a: >-
+      Não. O procedimento é agnóstico de ferramenta: o que sustenta a qualidade
+      é preparar documentos com identidade, recuperar em etapas, forçar citação
+      verificável e avaliar antes de liberar. Qualquer armazenamento vetorial
+      que você já domine serve para aprender o método; a escolha da tecnologia
+      vem depois, guiada por escala e operação.
+  - q: "Como lido quando dois documentos se contradizem?"
+    a: >-
+      Mostre a diferença e a data de cada versão, em vez de escolher em silêncio
+      a fonte com embedding mais parecido. Preserve versões ao remover
+      duplicatas — dois documentos visualmente iguais podem ter políticas
+      diferentes. Deixar o conflito visível é parte de ser auditável.
+  - q: "Como atualizo a base sem reindexar tudo de novo?"
+    a: >-
+      Guarde metadados por trecho — `document_id`, `chunk_id`, posição e versão
+      do parser — e monte uma rotina de reindexação incremental que reprocessa
+      só o que mudou. Esses mesmos metadados alimentam a citação e permitem
+      retirar uma fonte rapidamente quando ela sai de validade.
 ---
 
 RAG combina recuperação de documentos com geração de resposta, mas não transforma automaticamente um modelo em fonte confiável. A aplicação precisa provar de onde veio cada afirmação, controlar documentos desatualizados e responder com uma lacuna explícita quando a busca não sustenta a pergunta.

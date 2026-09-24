@@ -12,6 +12,33 @@ draft: false
 sources:
   - "https://support.google.com/a/users/answer/9282720"
   - "https://www.notion.so/help"
+faq:
+  - q: "Qual é o melhor app de produtividade?"
+    a: >-
+      O melhor é o que sustenta o seu sistema pessoal com pouco atrito — captura,
+      planejamento, execução, registro e revisão. A ferramenta é o suporte do
+      sistema, não o sistema em si; por isso a escolha começa mapeando as
+      funções do seu fluxo, e não elegendo o app da moda. O mesmo app pode ser
+      ótimo para um fluxo e péssimo para outro.
+  - q: "Mais ferramentas deixam a pessoa mais produtiva?"
+    a: >-
+      Ao contrário — costumam piorar. Cada novo aplicativo adiciona um lugar a
+      mais para procurar, sincronizar e manter. O problema mais comum não é
+      falta de recurso, é ter cinco ferramentas cobrindo a mesma função e
+      nenhuma sendo a fonte de verdade. Escolha uma ferramenta principal por
+      função e concentre nela.
+  - q: "Notion, Obsidian ou um gestor de tarefas — qual escolher?"
+    a: >-
+      Depende da função que você está resolvendo: workspace, notas ou gestão de
+      tarefas atendem necessidades diferentes, e forçar um a fazer tudo gera
+      atrito. Para o núcleo de notas e conhecimento, compare Obsidian vs Notion;
+      priorize captura rápida, busca eficiente, sincronização e exportação —
+      recurso avançado só conta se entra no seu dia a dia.
+  - q: "Devo migrar tudo de uma vez para uma ferramenta nova?"
+    a: >-
+      Não. Mude uma coisa por vez, defina um período de teste e observe tarefas
+      concluídas, retrabalho e sensação de controle. Migrar tudo antes de provar
+      o modelo costuma custar semanas e terminar num sistema pior que o anterior.
 ---
 
 Produtividade não melhora ao acumular aplicativos — piora. Cada nova ferramenta adiciona um lugar a mais para procurar, sincronizar e manter. A produtividade real vem de um sistema que captura, prioriza e revisa compromissos com pouco atrito, e a ferramenta é só o suporte desse sistema, não o sistema em si.
