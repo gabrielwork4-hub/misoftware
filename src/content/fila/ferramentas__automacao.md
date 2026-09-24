@@ -14,7 +14,7 @@ sources:
   - "https://zapier.com/help"
 ---
 
-Automação começa pelo processo, não pelo catálogo de conectores. A plataforma adequada é a que traduz as suas regras em etapas observáveis, trata falhas com clareza e permite que uma pessoa assuma o controle quando necessário. Escolher pela quantidade de integrações é um erro comum: o gargalo raramente é conectar dois sistemas, e sim manter o fluxo confiável quando algo dá errado.
+Automação começa pelo processo, não pelo catálogo de conectores. A ferramenta de automação adequada é a que traduz as suas regras em etapas observáveis, trata falhas com clareza e permite que uma pessoa assuma o controle quando necessário. Escolher pela quantidade de integrações é um erro comum: o gargalo raramente é conectar dois sistemas, e sim manter o fluxo confiável quando algo dá errado.
 
 ## Antes da ferramenta, o processo
 

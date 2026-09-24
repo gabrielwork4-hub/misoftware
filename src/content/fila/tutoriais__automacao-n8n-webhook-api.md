@@ -15,7 +15,7 @@ sources:
   - "https://docs.stripe.com/webhooks"
 ---
 
-Este tutorial desenha um fluxo em que um webhook recebe um evento, valida a entrada, evita duplicação e chama uma API de teste. O exemplo não deve usar um endpoint de produção até que assinatura, autenticação, limites e recuperação tenham sido verificados.
+Este tutorial desenha uma automação no n8n em que um webhook recebe um evento, valida a entrada, evita duplicação e chama uma API de teste. O exemplo não deve usar um endpoint de produção até que assinatura, autenticação, limites e recuperação tenham sido verificados.
 
 ## Contrato do evento
 

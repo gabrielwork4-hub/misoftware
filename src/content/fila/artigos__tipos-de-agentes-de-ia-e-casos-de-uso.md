@@ -14,7 +14,7 @@ sources:
   - "https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview"
 ---
 
-Não existe um "agente de IA" único. Existe um espectro de arquiteturas que variam pela forma como o sistema decide o próximo passo e pelo risco que essa decisão carrega. Classificar o agente por esses dois eixos — tipo de decisão e risco do ambiente — evita o erro mais comum: dar autonomia a uma tarefa que um workflow determinístico resolveria com menos custo e menos superfície de falha.
+Não existe um "agente de IA" único: existem tipos de agentes de IA que variam pela forma como o sistema decide o próximo passo e pelo risco que essa decisão carrega. Classificar o agente por esses dois eixos — tipo de decisão e risco do ambiente — evita o erro mais comum: dar autonomia a uma tarefa que um workflow determinístico resolveria com menos custo e menos superfície de falha.
 
 Antes de escolher um tipo, vale confirmar o conceito base: um agente recebe um objetivo, interpreta contexto, escolhe uma ação, usa ferramentas e observa o resultado. Se essa definição ainda não está clara, comece por [o que são agentes de IA](/artigos/o-que-sao-agentes-de-ia/).
 
