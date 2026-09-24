@@ -13,6 +13,39 @@ sources:
   - "https://docs.github.com/en/get-started/using-git/about-git"
   - "https://12factor.net/"
   - "https://owasp.org/www-project-top-ten/"
+faq:
+  - q: "O que são ferramentas de IA?"
+    a: >-
+      "Ferramenta de IA" é um guarda-chuva para categorias bem diferentes: chat,
+      APIs de modelos, modelos locais, sistemas de RAG, agentes e copilotos de
+      código. Cada tipo resolve uma etapa distinta do trabalho e tem critérios
+      próprios de avaliação — por isso não faz sentido compará-los como se
+      fossem a mesma coisa.
+  - q: "Quais são as melhores ferramentas de IA?"
+    a: >-
+      Não existe "melhor" no vácuo — uma ferramenta é adequada para um cenário,
+      não em abstrato. Em vez de seguir listas de moda, defina a tarefa e as
+      restrições (dados, integrações, orçamento) e use uma matriz de critérios
+      com um piloto real para decidir.
+  - q: "Existem ferramentas de IA gratuitas?"
+    a: >-
+      Sim. Muitas ferramentas oferecem plano gratuito com limites de uso, e há
+      modelos abertos que rodam localmente sem assinatura (você paga apenas pelo
+      hardware). Avalie se o gratuito atende ao volume e aos requisitos de dados
+      antes de adotar.
+  - q: "Como escolher uma ferramenta de IA?"
+    a: >-
+      Comece pelo problema, não pela ferramenta. Registre a tarefa difícil de
+      hoje e as restrições, monte uma matriz (aderência, integração, dados,
+      custo total, reversibilidade) com nota e evidência, e rode um piloto
+      curto testando também o pior caminho: exportação, indisponibilidade e
+      cancelamento.
+  - q: "Ferramentas de IA são seguras para dados sensíveis?"
+    a: >-
+      Depende de como cada ferramenta trata os dados enviados. Verifique quem
+      acessa, retém e pode exportar as informações, e evite enviar dados
+      sensíveis sem entender a política. Para cenários críticos, considere
+      modelos locais ou planos com garantias contratuais.
 ---
 
 Escolher ferramentas de IA e de trabalho técnico não é montar uma coleção de assinaturas. É desenhar um sistema de trabalho em que cada produto — do editor com IA ao orquestrador de automação — resolve uma etapa concreta, conversa com os demais e pode ser substituído sem interromper a operação.

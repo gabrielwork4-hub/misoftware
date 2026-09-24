@@ -78,6 +78,40 @@ h3,
   margin-bottom: 1.25rem;
 }
 
+/* Subtítulos internos (### no markdown) */
+.prose-editorial h3 {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a; /* slate-900 */
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Listas — a preflight do Tailwind zera marcadores; restauramos aqui */
+.prose-editorial ul,
+.prose-editorial ol {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: var(--color-slate-700, #334155);
+  margin: 0 0 1.25rem;
+  padding-left: 1.5rem;
+}
+.prose-editorial ul {
+  list-style: disc;
+}
+.prose-editorial ol {
+  list-style: decimal;
+}
+.prose-editorial li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+.prose-editorial li::marker {
+  color: var(--color-brand-500);
+}
+
 /* Tabelas editoriais — separação visual clara (zebra, cabeçalho e bordas) */
 .prose-editorial table {
   width: 100%;

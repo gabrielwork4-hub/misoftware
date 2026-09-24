@@ -13,6 +13,37 @@ sources:
   - "https://12factor.net/"
   - "https://martinfowler.com/articles/practical-test-pyramid.html"
   - "https://docs.github.com/en/get-started/using-git/about-git"
+faq:
+  - q: "O que é desenvolvimento de software?"
+    a: >-
+      É o conjunto de decisões e etapas para transformar um problema em software
+      confiável: entender o requisito, modelar dados, escolher arquitetura,
+      escrever código, testar, entregar e observar. Não é só "programar" — é
+      conduzir esse ciclo de forma proporcional ao risco de cada mudança.
+  - q: "Quais são as etapas do processo de desenvolvimento de software?"
+    a: >-
+      Em linhas gerais: requisito e critério de aceite, arquitetura e
+      trade-offs, contrato de dados, implementação pequena e revisável, testes
+      proporcionais ao risco, deploy reproduzível, observabilidade (logs e
+      métricas) e feedback para evolução. A profundidade de cada etapa varia
+      conforme o impacto da mudança.
+  - q: "O que é o ciclo de vida de desenvolvimento de software (SDLC)?"
+    a: >-
+      É a visão do software como um ciclo contínuo — do requisito à operação e
+      evolução — em vez de um projeto com início e fim. A ideia é que cada
+      entrega gera aprendizado e observação que retroalimentam a próxima, em
+      vez de "terminar" o software.
+  - q: "Preciso seguir todas as etapas em toda mudança?"
+    a: >-
+      Não. Uma correção de texto e uma alteração em pagamentos não merecem o
+      mesmo nível de controle. O objetivo é tornar a decisão proporcional e
+      explícita: quanto maior o risco de falha, mais rigor em testes, revisão e
+      recuperação.
+  - q: "Quais áreas fazem parte do desenvolvimento de software?"
+    a: >-
+      As principais frentes são arquitetura, front-end, back-end, DevOps e
+      qualidade. Cada uma tem uma trilha própria neste silo — escolha pela
+      decisão que está bloqueando o seu trabalho agora.
 ---
 
 Desenvolvimento de software é um sistema de decisões: entender o problema, modelar dados, escolher arquitetura, escrever código, testar, entregar e observar. Quando essas etapas ficam separadas, o time descobre tarde que uma decisão aparentemente local criou custo de manutenção, risco operacional ou dificuldade de recuperação.

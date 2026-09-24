@@ -12,6 +12,39 @@ draft: false
 sources:
   - "https://docs.n8n.io/"
   - "https://docs.n8n.io/hosting/"
+faq:
+  - q: "O que é o n8n?"
+    a: >-
+      O n8n é uma plataforma de automação que combina uma interface visual de
+      arrastar-e-conectar com a possibilidade de escrever código quando o
+      problema exige. Seu diferencial é o self-hosting: você pode rodá-lo na
+      própria infraestrutura e manter o controle de onde os dados são
+      processados.
+  - q: "O n8n é gratuito?"
+    a: >-
+      Sim, a versão self-hosted (você mesmo hospeda) é de código aberto e pode
+      ser usada gratuitamente. Há também um plano em nuvem pago, que evita o
+      trabalho de operar a infraestrutura, e recursos voltados a empresas. Os
+      valores e o licenciamento mudam com frequência; confirme na documentação
+      oficial.
+  - q: "Qual a diferença entre o n8n cloud e o self-hosted?"
+    a: >-
+      No n8n cloud, a plataforma é gerenciada por eles: menos esforço
+      operacional, em troca de menos controle sobre os dados. No self-hosted,
+      você assume credenciais, upgrades, backups e monitoramento como software
+      de produção — ganha controle total, mas precisa ter capacidade de
+      infraestrutura.
+  - q: "Preciso saber programar para usar o n8n?"
+    a: >-
+      Para começar, não: dá para montar fluxos conectando blocos visualmente.
+      Programação entra nos casos mais avançados, quando você usa expressões ou
+      nós de código para cobrir o que o construtor visual não alcança.
+  - q: "n8n, Make ou Zapier: qual escolher?"
+    a: >-
+      Depende do seu caso. O n8n se destaca quando você quer self-hosting,
+      controle de dados e fluxos complexos; alternativas totalmente gerenciadas
+      costumam exigir menos esforço em cenários simples. Veja o quadro completo
+      em n8n vs Make vs Zapier.
 ---
 
 O n8n é uma plataforma de automação que combina interface visual, uma ampla biblioteca de nós de integração e a possibilidade de executar lógica personalizada em código. Seu diferencial mais forte é a opção de **self-hosting**: você pode rodar a plataforma na sua própria infraestrutura e manter o controle sobre onde os dados são processados — algo que as alternativas totalmente gerenciadas não oferecem. Isso o torna especialmente interessante para equipes técnicas com exigências de privacidade ou fluxos complexos.

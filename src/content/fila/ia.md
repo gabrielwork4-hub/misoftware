@@ -13,6 +13,38 @@ sources:
   - "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
   - "https://platform.openai.com/docs/guides/function-calling"
   - "https://www.nist.gov/itl/ai-risk-management-framework"
+faq:
+  - q: "O que é inteligência artificial?"
+    a: >-
+      Inteligência artificial é a área que cria sistemas capazes de executar
+      tarefas que normalmente exigiriam raciocínio humano — como interpretar
+      linguagem, classificar informação ou gerar texto e imagens. No trabalho
+      técnico, o que importa não é a definição, e sim qual tarefa concreta ela
+      resolve melhor que uma regra fixa.
+  - q: "Como começar a usar IA no trabalho?"
+    a: >-
+      Comece pela tarefa, não pela ferramenta: descreva a entrada, a saída
+      esperada, o erro aceitável e quem revisa. Depois escolha o menor nível de
+      automação capaz de entregar o resultado e rode um piloto pequeno,
+      reversível e mensurável antes de ampliar.
+  - q: "Preciso saber programar para usar IA?"
+    a: >-
+      Para usar, não: a maioria das ferramentas de chat e dos assistentes
+      funciona sem código. Programação passa a importar quando você integra IA a
+      sistemas, cria agentes ou monta avaliações — aí entra a parte de
+      engenharia.
+  - q: "Existe inteligência artificial gratuita?"
+    a: >-
+      Sim. Várias ferramentas de chat têm plano gratuito com limites, e há
+      modelos abertos que você pode rodar localmente sem custo de assinatura
+      (pagando só o hardware). Veja o hub de modelos de linguagem e o de IA
+      local para comparar as opções.
+  - q: "IA é segura para dados da empresa?"
+    a: >-
+      Depende de como o serviço trata seus dados. Não envie segredos ou dados
+      pessoais sem entender a política de retenção e uso; para casos sensíveis,
+      avalie modelos locais ou planos com garantias contratuais. Trate
+      privacidade e permissões como parte do desenho, não como detalhe.
 ---
 
 Saber como usar inteligência artificial no trabalho técnico não começa pela escolha de um modelo. Começa pela tarefa: qual entrada chega, que saída é considerada boa, qual erro é aceitável e quem responde quando a saída estiver errada. A partir daí, você escolhe o menor nível de automação capaz de entregar o resultado.

@@ -13,6 +13,39 @@ sources:
   - "https://platform.openai.com/docs/guides/function-calling"
   - "https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview"
   - "https://www.nist.gov/itl/ai-risk-management-framework"
+faq:
+  - q: "O que são agentes de IA?"
+    a: >-
+      Um agente de IA é um sistema que interpreta um objetivo, escolhe uma
+      próxima ação, usa ferramentas dentro de limites definidos e observa o
+      resultado para decidir se continua, para ou pede ajuda. O que o
+      caracteriza é esse ciclo de decisão — não uma resposta mais longa.
+      Aprofunde no guia sobre o que são agentes de IA.
+  - q: "Qual a diferença entre um agente de IA e um chatbot?"
+    a: >-
+      Um chatbot responde dentro de uma conversa; um agente escolhe entre ações
+      e ferramentas para atingir um objetivo. O chatbot te dá uma resposta; o
+      agente executa passos (consultar um sistema, chamar uma função) e decide o
+      próximo com base no que observou.
+  - q: "Como criar um agente de IA?"
+    a: >-
+      Comece pelo menor agente possível: um objetivo observável, uma única
+      ferramenta reversível, um formato de saída e uma condição de parada clara.
+      Só amplie a autonomia depois de testar casos normais e adversos. O passo a
+      passo está no tutorial de criação de agente com ferramentas.
+  - q: "Preciso saber programar para criar um agente de IA?"
+    a: >-
+      Para protótipos simples, frameworks e plataformas low-code reduzem a
+      necessidade de código. Mas agentes de produção — com ferramentas,
+      permissões, avaliação e observabilidade — exigem programação e decisões de
+      arquitetura que continuam sendo trabalho de quem constrói.
+  - q: "Agentes de IA são seguros?"
+    a: >-
+      São seguros na medida em que você os limita. Use permissões mínimas,
+      credenciais separadas e aprovação humana para ações externas ou
+      irreversíveis, além de limites de passos, tempo e custo. Antes de aumentar
+      a autonomia, prove que o agente pode ser interrompido, corrigido e
+      revertido.
 ---
 
 Um agente de IA é útil quando precisa interpretar um objetivo, escolher uma ação e usar ferramentas dentro de limites definidos. Ele não é apenas um chatbot com uma resposta mais longa. A diferença está no ciclo de decisão: o sistema recebe contexto, escolhe um próximo passo, executa uma ferramenta, observa o resultado e decide se deve continuar, parar ou pedir ajuda.
