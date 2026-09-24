@@ -27,3 +27,6 @@ pnpm-debug.log*
 .vscode/*
 !.vscode/extensions.json
 .idea/
+
+# Claude Code — override local pessoal (permissões etc.)
+.claude/settings.local.json
