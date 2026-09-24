@@ -43,6 +43,8 @@ Descreva a tarefa em uma frase operacional: “classificar solicitações de sup
 
 Se as regras são estáveis e a saída é determinística, uma integração ou função convencional costuma ser mais simples. Use IA quando interpretação, linguagem ou variação tornam regras fixas caras de manter. Use um agente somente quando o sistema realmente precisa escolher entre ações e ferramentas.
 
+Definida a tarefa, aí sim vem a escolha do modelo — família, preço por token, janela de contexto e aberto vs. fechado. Compare as opções no hub de [modelos de linguagem](/ia/modelos-de-linguagem/).
+
 ## Quatro trilhas para problemas diferentes
 
 ### Agentes de IA
