@@ -27,6 +27,8 @@
   --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+  /* Marca — wordmark do logo (guia de identidade) */
+  --font-brand: 'Poppins', 'Inter', system-ui, sans-serif;
 }
 
 /* Refinamentos tipográficos para estética de publicação */
