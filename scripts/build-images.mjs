@@ -27,6 +27,7 @@ const DIRS = [
   'silos',
   'hubs',
   'ferramentas',
+  'ferramentas/modelos',
   'autores',
   'artigos',
   'institucional',
@@ -245,6 +246,38 @@ for (const t of tools) {
   console.log(`✓ Logo oficial gerado: ${t.id}.webp`);
 }
 
+// 2b. Generate LLM model logos (monogram cards) -> ferramentas/modelos/<slug>.webp
+const models = [
+  { id: 'modelos/openai-gpt', name: 'OpenAI GPT', color: '#10a37f', desc: 'GPT-6 · série o', mark: 'GPT' },
+  { id: 'modelos/anthropic-claude', name: 'Anthropic Claude', color: '#d97757', desc: 'Opus · Sonnet · Haiku', mark: 'Cl' },
+  { id: 'modelos/google-gemini', name: 'Google Gemini', color: '#4e88f5', desc: 'Família Gemini 3', mark: 'G' },
+  { id: 'modelos/meta-llama', name: 'Meta Llama', color: '#0866ff', desc: 'Open weights · MoE', mark: 'Ll' },
+  { id: 'modelos/mistral', name: 'Mistral AI', color: '#ff7000', desc: 'Aberto · Apache 2.0', mark: 'M' },
+  { id: 'modelos/deepseek', name: 'DeepSeek', color: '#4d6bfe', desc: 'V4 · MIT', mark: 'DS' },
+  { id: 'modelos/qwen', name: 'Alibaba Qwen', color: '#7b5cff', desc: 'Aberto + fechado', mark: 'Q' },
+  { id: 'modelos/xai-grok', name: 'xAI Grok', color: '#e5e7eb', desc: 'Grok 4.7', mark: 'Gr' },
+  { id: 'modelos/cohere-command', name: 'Cohere Command', color: '#ff7759', desc: 'Aberto · Apache 2.0', mark: 'Co' },
+  { id: 'modelos/amazon-nova', name: 'Amazon Nova', color: '#ff9900', desc: 'AWS Bedrock', mark: 'N' },
+  { id: 'modelos/google-gemma', name: 'Google Gemma', color: '#4e88f5', desc: 'Aberto · Apache 2.0', mark: 'Gm' },
+  { id: 'modelos/microsoft-phi', name: 'Microsoft Phi', color: '#0078d4', desc: 'SLM · MIT', mark: 'φ' },
+];
+
+for (const m of models) {
+  const ms = m.mark.length <= 1 ? 66 : m.mark.length === 2 ? 52 : 40;
+  const svg = `<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+    <rect width="256" height="256" rx="48" fill="#0d1117"/>
+    <rect x="8" y="8" width="240" height="240" rx="40" fill="none" stroke="${m.color}" stroke-width="2.5" stroke-opacity="0.35"/>
+    <circle cx="128" cy="105" r="54" fill="${m.color}" fill-opacity="0.12"/>
+    <text x="128" y="105" font-family="'JetBrains Mono', Consolas, monospace" font-size="${ms}" font-weight="800" fill="${m.color}" text-anchor="middle" dominant-baseline="central">${escapeXml(m.mark)}</text>
+    <text x="128" y="196" font-family="'Segoe UI', Arial, sans-serif" font-size="17" font-weight="700" fill="#f8fafc" text-anchor="middle">${escapeXml(m.name)}</text>
+    <text x="128" y="220" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">${escapeXml(m.desc)}</text>
+  </svg>`;
+
+  const out = path.join(PUBLIC_IMG, `ferramentas/${m.id}.webp`);
+  await sharp(Buffer.from(svg)).webp({ quality: 90 }).toFile(out);
+  console.log(`✓ Logo de modelo gerado: ${m.id}.webp`);
+}
+
 // 3. Generate Author Avatars
 const authors = [
   {
@@ -253,13 +286,6 @@ const authors = [
     role: 'Product Owner & AI Specialist',
     initials: 'GB',
     bg: '#0048d1',
-  },
-  {
-    id: 'redacao',
-    name: 'Redação misoftware',
-    role: 'Equipe Editorial Técnica',
-    initials: 'MS',
-    bg: '#1e293b',
   },
 ];
 
