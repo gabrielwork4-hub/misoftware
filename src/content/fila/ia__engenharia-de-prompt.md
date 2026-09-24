@@ -30,11 +30,11 @@ Antes de escrever, registre a tarefa, o leitor da saída e o critério de aceita
 
 Um prompt que pede “analise este texto” não define qualidade. Um contrato melhor informa o objetivo, o público, os campos esperados, as evidências que devem ser preservadas e o que fazer quando o texto não tiver dados suficientes.
 
-## Técnicas e seus limites
+## Técnicas: escolha por problema, meça o efeito
 
-Few-shot pode esclarecer o formato, mas exemplos ruins também ensinam o comportamento errado. Decomposição ajuda tarefas com etapas distintas, mas aumenta custo e pontos de falha. Saída estruturada facilita validação, porém não garante que os valores estejam corretos.
+Existe um repertório — estrutura, exemplos, decomposição, cadeia de raciocínio, saída verificável —, mas nenhuma técnica é boa em si. Cada uma resolve um tipo de problema e cobra um custo (contexto, latência, pontos de falha); a mesma que ajuda numa tarefa atrapalha em outra. A decisão não é aplicar todas, e sim escolher pela tarefa e confirmar que o erro caiu.
 
-Escolha a técnica por problema e meça o efeito. As orientações oficiais de [prompt engineering da OpenAI](https://platform.openai.com/docs/guides/prompt-engineering) e da [Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) devem ser conferidas para recursos específicos do modelo usado.
+O catálogo — quando usar cada uma, com exemplos e contraexemplos — está no guia de [técnicas de engenharia de prompt com exemplos](/artigos/tecnicas-de-engenharia-de-prompt-com-exemplos/). Para recursos específicos do modelo, confira as orientações oficiais da [OpenAI](https://platform.openai.com/docs/guides/prompt-engineering) e da [Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview). A regra de decisão é sempre a mesma: se a técnica não reduziu erro no seu conjunto de casos, é só custo.
 
 ## Avalie com casos reais
 
@@ -42,9 +42,9 @@ Nenhuma técnica se sustenta sem avaliação. Antes de alterar um prompt, monte 
 
 O protocolo completo — o que registrar a cada execução, como comparar versões e quando bloquear uma liberação — está no guia de [como avaliar prompts em produção](/artigos/como-avaliar-prompts-em-producao/).
 
-## Raciocínio e saída estruturada
+## O formato não garante a verdade
 
-Tarefas complexas podem se beneficiar de etapas intermediárias, validações ou ferramentas, mas pedir mais texto de raciocínio não resolve uma especificação vaga. Quando a aplicação precisa de dados confiáveis, prefira campos definidos, validação no código e uma resposta de recusa quando a evidência não existir.
+Nenhuma técnica de raciocínio ou de saída estruturada conserta uma especificação vaga: pedir mais texto de raciocínio não substitui dizer o que a tarefa espera, e um schema válido não torna os valores corretos. Quando a aplicação precisa de dados confiáveis, defina campos, valide no código e preveja uma resposta de recusa para quando a evidência não existir.
 
 Não trate a saída do modelo como verdade só porque ela segue o formato. O schema valida estrutura; a revisão de conteúdo valida significado.
 
