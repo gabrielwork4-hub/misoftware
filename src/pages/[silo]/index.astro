@@ -15,9 +15,10 @@ export async function getStaticPaths() {
 const { silo } = Astro.props;
 
 const articles = (await getPublishedArticles()).filter((a) => a.data.silo === silo.slug);
+const siloCover = `/images/silos/${silo.slug}.webp`;
 ---
 
-<BaseLayout title={silo.label} description={silo.description}>
+<BaseLayout title={silo.label} description={silo.description} image={siloCover}>
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <nav class="text-xs font-mono text-slate-400 mb-6" aria-label="Trilha de navegação">
       <a href="/" class="hover:text-brand-600">Início</a>
@@ -25,11 +26,26 @@ const articles = (await getPublishedArticles()).filter((a) => a.data.silo === si
       <span class="text-slate-600 capitalize">{silo.slug}</span>
     </nav>
 
-    <header class="max-w-3xl mb-12">
-      <div class="text-xs font-mono text-brand-700 font-bold uppercase tracking-wider mb-2">Página-pilar</div>
-      <h1 class="text-4xl sm:text-5xl font-serif text-slate-950 tracking-tight leading-tight">{silo.label}</h1>
-      <p class="text-lg text-slate-600 font-serif leading-relaxed mt-4">{silo.description}</p>
-    </header>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12 pb-10 border-b border-slate-200">
+      <header class="lg:col-span-7">
+        <div class="text-xs font-mono text-brand-700 font-bold uppercase tracking-wider mb-2">Página-pilar do Silo</div>
+        <h1 class="text-4xl sm:text-5xl font-serif text-slate-950 tracking-tight leading-tight">{silo.label}</h1>
+        <p class="text-lg text-slate-600 font-serif leading-relaxed mt-4">{silo.description}</p>
+      </header>
+      <div class="lg:col-span-5">
+        <div class="relative aspect-video w-full rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm bg-slate-950">
+          <img
+            src={siloCover}
+            alt={silo.label}
+            width="1200"
+            height="675"
+            loading="eager"
+            fetchpriority="high"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
 
     {
       articles.length > 0 ? (

@@ -15,11 +15,22 @@ import { SILOS } from '@/consts';
       {
         SILOS.map((silo, i) => (
           <a
-            class="relative p-4 rounded-xl border border-slate-200/90 bg-slate-50/50 hover:bg-white hover:border-brand-200 hover:shadow-md transition-all flex items-center gap-3.5 group"
+            class="relative p-4 rounded-xl border border-slate-200/90 bg-slate-50/50 hover:bg-white hover:border-brand-200 hover:shadow-md transition-all flex items-center gap-3.5 group overflow-hidden"
             href={`/${silo.slug}/`}
           >
-            <div class="w-12 h-12 rounded-lg bg-slate-900 flex-shrink-0 flex items-center justify-center text-white font-mono font-bold shadow-xs">
-              {String(i + 1).padStart(2, '0')}
+            <div class="w-12 h-12 rounded-lg bg-slate-900 flex-shrink-0 relative overflow-hidden flex items-center justify-center text-white font-mono font-bold shadow-xs">
+              <img
+                src={`/images/silos/${silo.slug}.webp`}
+                alt={silo.label}
+                width="48"
+                height="48"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-300"
+              />
+              <span class="absolute inset-0 bg-black/40 flex items-center justify-center font-mono text-xs font-bold text-white">
+                {String(i + 1).padStart(2, '0')}
+              </span>
             </div>
             <div class="min-w-0">
               <span class="text-[10px] font-mono font-semibold text-brand-600 uppercase tracking-wide">Silo</span>

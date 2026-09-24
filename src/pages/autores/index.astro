@@ -35,13 +35,20 @@ const initialsOf = (name: string) =>
               href={`/autores/${autor.id}/`}
               class="flex items-center gap-4 p-4 rounded-xl border border-slate-200/90 bg-white hover:shadow-md hover:border-brand-200 transition-all"
             >
-              {autor.data.avatar ? (
-                <Image src={autor.data.avatar} alt={autor.data.name} width={56} height={56} class="w-14 h-14 rounded-full object-cover border border-slate-200" />
-              ) : (
-                <span class="w-14 h-14 rounded-full bg-brand-50 text-brand-700 font-mono font-bold flex items-center justify-center border border-brand-100 shrink-0">
+              <div class="w-14 h-14 rounded-full overflow-hidden bg-slate-900 border border-slate-200 shrink-0 shadow-2xs">
+                <img
+                  src={`/images/autores/${autor.id}.webp`}
+                  alt={autor.data.name}
+                  width="56"
+                  height="56"
+                  loading="lazy"
+                  class="w-full h-full object-cover"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                />
+                <span class="hidden w-full h-full bg-brand-50 text-brand-700 font-mono font-bold items-center justify-center border border-brand-100">
                   {initialsOf(autor.data.name)}
                 </span>
-              )}
+              </div>
               <div>
                 <div class="font-serif text-lg font-semibold text-slate-900">{autor.data.name}</div>
                 <div class="text-xs font-mono text-slate-500">{autor.data.role}</div>

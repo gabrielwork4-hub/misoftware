@@ -29,8 +29,20 @@ const tools = (await getCollection('ferramentas', ({ data }) => !data.draft)).so
           >
             <div>
               <div class="flex items-center justify-between mb-4">
-                <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center border border-brand-100 font-mono font-bold">
-                  {tool.data.name.slice(0, 1)}
+                <div class="w-11 h-11 rounded-xl overflow-hidden bg-slate-900 border border-slate-800 flex items-center justify-center shadow-xs">
+                  <img
+                    src={`/images/ferramentas/${tool.id}.webp`}
+                    alt={tool.data.name}
+                    width="44"
+                    height="44"
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-full object-cover"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  />
+                  <div class="hidden w-full h-full items-center justify-center font-mono font-bold text-brand-400 bg-brand-950">
+                    {tool.data.name.slice(0, 1)}
+                  </div>
                 </div>
                 {tool.data.rating && (
                   <span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-brand-50 text-brand-700 border border-brand-100/60">

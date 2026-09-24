@@ -43,6 +43,7 @@ const ferramentas = defineCollection({
       url: z.string().url().optional(),
       logo: z.string().optional(),
       featured: z.boolean().default(false),
+      coverImage: z.string().optional(),
       draft: z.boolean().default(false),
     }),
 });
@@ -59,6 +60,7 @@ const fila = defineCollection({
     kind: z.enum(['artigo', 'hub', 'tutorial', 'comparativo', 'estudo-de-caso', 'ferramenta', 'pilar']),
     canonicalPath: z.string(),
     primaryKeyword: z.string(),
+    coverImage: z.string().optional(),
     sources: z.array(z.string()).default([]),
     draft: z.boolean().default(true),
   }),

@@ -54,13 +54,18 @@ if (data.sameAs.length > 0) personSchema.sameAs = data.sameAs;
     </nav>
 
     <header class="flex flex-col sm:flex-row items-start gap-6 mb-10">
-      {
-        data.avatar ? (
-          <Image src={data.avatar} alt={data.name} width={96} height={96} class="w-24 h-24 rounded-full object-cover border border-slate-200" />
-        ) : (
-          <div class="w-24 h-24 rounded-full bg-brand-50 text-brand-700 font-mono font-bold text-2xl flex items-center justify-center border border-brand-100 shrink-0">{initials}</div>
-        )
-      }
+      <div class="w-24 h-24 rounded-full overflow-hidden border border-slate-200 bg-slate-900 shrink-0 shadow-xs">
+        <img
+          src={`/images/autores/${autor.id}.webp`}
+          alt={data.name}
+          width="96"
+          height="96"
+          loading="eager"
+          class="w-full h-full object-cover"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <div class="hidden w-full h-full bg-brand-50 text-brand-700 font-mono font-bold text-2xl items-center justify-center border border-brand-100">{initials}</div>
+      </div>
       <div>
         <div class="text-xs font-mono text-brand-700 font-bold uppercase tracking-wider mb-1">{data.role}</div>
         <h1 class="text-4xl sm:text-5xl font-serif text-slate-950 tracking-tight leading-tight">{data.name}</h1>
