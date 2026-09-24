@@ -19,6 +19,24 @@ const OUT = resolve(__dirname, '../public/og-default.png');
 const W = 1200;
 const H = 630;
 
+/** Monograma "M" da marca sobre tile navy arredondado (mesma composição do favicon). */
+const logoTile = (s) => `<svg x="0" y="0" width="${s}" height="${s}" viewBox="0 0 32 32">
+    <rect width="32" height="32" rx="7" fill="#06101d"/>
+    <svg x="6" y="6" width="20" height="20" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="oa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f72f5"/><stop offset="1" stop-color="#1a4fc8"/></linearGradient>
+        <linearGradient id="obl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3579f7"/><stop offset="1" stop-color="#2160e8"/></linearGradient>
+        <linearGradient id="obd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#173fa0"/><stop offset="1" stop-color="#0c2b7e"/></linearGradient>
+        <linearGradient id="ocl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#18abf3"/><stop offset="1" stop-color="#0a86dd"/></linearGradient>
+      </defs>
+      <polygon points="8,86 24,86 42,20 26,20" fill="url(#oa)"/>
+      <polygon points="31,86 43,86 63,14 51,14" fill="url(#obl)"/>
+      <polygon points="43,86 51,86 71,14 63,14" fill="url(#obd)"/>
+      <polygon points="80,16 60,86 73,86" fill="#173fa0"/>
+      <polygon points="80,16 73,86 93,86" fill="url(#ocl)"/>
+    </svg>
+  </svg>`;
+
 const svg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <radialGradient id="glow" cx="82%" cy="12%" r="75%">
@@ -34,8 +52,7 @@ const svg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http
 
   <!-- Lockup da marca -->
   <g transform="translate(80,86)">
-    <rect width="84" height="84" rx="18" fill="#0062d2"/>
-    <text x="42" y="57" font-family="Consolas, 'Courier New', monospace" font-size="40" font-weight="700" fill="#ffffff" text-anchor="middle">m/</text>
+    ${logoTile(84)}
     <text x="108" y="57" font-family="'Segoe UI', Arial, sans-serif" font-size="42" font-weight="700" fill="#ffffff">misoftware</text>
   </g>
 
