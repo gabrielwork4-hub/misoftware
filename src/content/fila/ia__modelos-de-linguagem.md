@@ -16,6 +16,9 @@ sources:
   - "https://docs.mistral.ai/getting-started/models/models_overview/"
   - "https://api-docs.deepseek.com/quick_start/pricing"
   - "https://www.alibabacloud.com/blog/alibaba-unveils-qwen3-8-max-its-largest-and-most-capable-flagship-model-to-date_603420"
+  - "https://docs.x.ai/docs/models"
+  - "https://docs.cohere.com/docs/models"
+  - "https://aws.amazon.com/bedrock/pricing/"
 draft: false
 ---
 
@@ -32,23 +35,27 @@ Quatro variáveis decidem quase toda escolha prática:
 
 ## Comparação das principais famílias
 
-Preços de entrada/saída por 1 milhão de tokens, do modelo *flagship* de cada família. As quatro primeiras são as fechadas de fronteira; as três últimas, os principais desafiantes open-weight. **Verificado em 24/09/2026 nas páginas oficiais** — preços e modelos mudam rápido; confirme na fonte antes de decidir.
+Preços de entrada/saída por 1 milhão de tokens, do modelo *flagship* de cada família. As fechadas de fronteira aparecem primeiro; depois, as principais desafiantes abertas e regionais. **Verificado em 24/09/2026 nas páginas oficiais** — preços e modelos mudam rápido; confirme na fonte antes de decidir.
 
 | Família | Criador | Flagship | Contexto | Preço in / out (US$/1M) | Aberto? |
 |---|---|---|---|---|---|
 | [GPT](/ferramentas/modelos/openai-gpt/) | OpenAI | GPT-6 Astra | grande | 10 / 50 | Não |
 | [Claude](/ferramentas/modelos/anthropic-claude/) | Anthropic | Opus 5.5 | 1M | 4 / 20 | Não |
 | [Gemini](/ferramentas/modelos/google-gemini/) | Google | Gemini 3.1 Pro | 1M | 2 / 12¹ | Não |
+| [Grok](/ferramentas/modelos/xai-grok/) | xAI | Grok 4.7 | 500k | 2 / 6⁶ | Não |
+| [Nova](/ferramentas/modelos/amazon-nova/) | Amazon | Nova Premier | 1M | 1,20 / 4,80 | Não |
 | [Llama](/ferramentas/modelos/meta-llama/) | Meta | Llama 4 | até 10M² | self-host³ | Sim |
 | [Mistral](/ferramentas/modelos/mistral/) | Mistral AI | Mistral Large 3 | ver card | 0,5 / 1,5 | Sim |
 | [DeepSeek](/ferramentas/modelos/deepseek/) | DeepSeek | V4-Pro | 1M | 0,66 / 1,98⁴ | Sim |
 | [Qwen](/ferramentas/modelos/qwen/) | Alibaba | Qwen3.8-Max | até 1M | API⁵ | Parcial⁵ |
+| [Command](/ferramentas/modelos/cohere-command/) | Cohere | Command A+ | 128k | self-host³ | Sim |
 
 ¹ Gemini 3.1 Pro cobra por faixa de contexto: US$ 2/1M (entrada até 200k) e US$ 4/1M acima; saída US$ 12/1M (até 200k) e US$ 18/1M acima.
 ² Llama 4 Scout anuncia janela de até 10M tokens.
-³ Modelos abertos (Llama, Mistral) não têm preço de licença: o custo por token depende do provedor de inferência ou do seu próprio hardware. A API paga da Mistral Large custa US$ 0,5/1,5.
+³ Modelos abertos (Llama, Mistral, Cohere Command) não têm preço de licença: o custo depende do provedor de inferência ou do seu próprio hardware. A API paga da Mistral Large custa US$ 0,5/1,5.
 ⁴ DeepSeek: preço fora de pico; no horário de pico é o dobro.
 ⁵ Qwen3.8-Max (fechado) é acessado pela API da Alibaba Cloud; a linha 3.6 é aberta e gratuita para self-host — por isso "Parcial".
+⁶ Grok 4.7 sobe para US$ 4/12 acima de 200k tokens de contexto.
 
 ## As famílias, uma a uma
 
@@ -61,6 +68,9 @@ Cada família tem sua página com lançamento, preços por tier, característica
 - **[Mistral AI](/ferramentas/modelos/mistral/):** a desenvolvedora europeia com a estratégia mais aberta — generalistas sob Apache 2.0/MIT, do compacto Ministral ao Large 3.
 - **[DeepSeek](/ferramentas/modelos/deepseek/):** modelos abertos (MIT) com raciocínio embutido e a melhor relação capacidade/custo em código, por API baratíssima ou self-host.
 - **[Alibaba — Qwen](/ferramentas/modelos/qwen/):** combina flagship fechado (Qwen3.8-Max) e linha aberta (3.6), forte em multimodal e multilíngue.
+- **[xAI — Grok](/ferramentas/modelos/xai-grok/):** flagship fechado (Grok 4.7) com integração ao X e acesso a dados em tempo real.
+- **[Amazon Nova](/ferramentas/modelos/amazon-nova/):** os modelos próprios da AWS, multimodais e focados em preço/desempenho dentro do Bedrock.
+- **[Cohere — Command](/ferramentas/modelos/cohere-command/):** foco empresarial (RAG, multilíngue), com o flagship Command A+ aberto sob Apache 2.0.
 
 ## Como escolher sem se prender à moda
 
