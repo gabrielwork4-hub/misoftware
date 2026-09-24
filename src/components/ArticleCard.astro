@@ -25,17 +25,26 @@ const initials = authorName
   .slice(0, 2)
   .join('')
   .toUpperCase();
+
+const coverSrc = data.coverImage ?? `/images/artigos/${entry.id}.webp`;
 ---
 
 <article
   class="relative bg-white rounded-xl border border-slate-200/90 overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col group"
 >
-  <div class="relative h-48 w-full overflow-hidden bg-slate-900">
-    <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-brand-800 via-brand-700 to-charcoal">
-      <span class="font-mono text-white/40 text-4xl font-bold tracking-tight">m/</span>
-    </div>
+  <div class="relative aspect-video w-full overflow-hidden bg-slate-950">
+    <img
+      src={coverSrc}
+      alt={data.title}
+      width="600"
+      height="338"
+      loading="lazy"
+      decoding="async"
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40"></div>
     <div class="absolute top-3 left-3">
-      <span class="text-[10px] font-mono font-semibold bg-brand-600/90 backdrop-blur-xs text-white px-2.5 py-0.5 rounded-md uppercase">
+      <span class="text-[10px] font-mono font-semibold bg-brand-600/90 backdrop-blur-xs text-white px-2.5 py-0.5 rounded-md uppercase shadow-xs">
         {data.category}
       </span>
     </div>

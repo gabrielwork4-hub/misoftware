@@ -21,9 +21,10 @@ const kindLabel = {
   ferramenta: 'Ferramenta',
 }[data.kind ?? 'artigo'] ?? 'Conteúdo';
 const sourceUrls = (data.sources ?? []).map((source) => typeof source === 'string' ? source : source.url);
+const coverImage = data.coverImage ?? `/images/artigos/${entry.id}.webp`;
 ---
 
-<BaseLayout title={data.title} description={data.description} type="article" author={authorName} authorUrl={`/autores/${authorSlug}/`} authorSameAs={author?.data.sameAs} authorEntity={author?.data.entity} publishedTime={data.pubDate.toISOString()} noindex={data.draft === true}>
+<BaseLayout title={data.title} description={data.description} type="article" author={authorName} authorUrl={`/autores/${authorSlug}/`} authorSameAs={author?.data.sameAs} authorEntity={author?.data.entity} image={coverImage} publishedTime={data.pubDate.toISOString()} noindex={data.draft === true}>
   <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <nav class="text-xs font-mono text-slate-400 mb-6" aria-label="Trilha de navegação">
       <a href="/" class="hover:text-brand-600">Início</a>
@@ -41,6 +42,20 @@ const sourceUrls = (data.sources ?? []).map((source) => typeof source === 'strin
         <a href={`/autores/${authorSlug}/`} rel="author" class="hover:text-brand-600">{authorName}</a>
         <span>•</span>
         <time datetime={data.pubDate.toISOString()}>{dateLabel}</time>
+      </div>
+
+      <div class="pt-6">
+        <div class="relative aspect-video w-full max-w-4xl mx-auto rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm bg-slate-950">
+          <img
+            src={coverImage}
+            alt={data.title}
+            width="1200"
+            height="675"
+            loading="eager"
+            fetchpriority="high"
+            class="w-full h-full object-cover"
+          />
+        </div>
       </div>
     </header>
 

@@ -10,6 +10,7 @@ const { featured } = Astro.props;
 const href = featured ? articleHref(featured) : '#artigos';
 const featuredAuthor = featured ? await getEntry(featured.data.author) : undefined;
 const featuredAuthorName = featuredAuthor?.data.name ?? 'Redação misoftware';
+const featuredCover = featured?.data.coverImage ?? (featured ? `/images/artigos/${featured.id}.webp` : '/images/hero/hero-editorial.webp');
 ---
 
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-12 lg:py-16">
@@ -59,10 +60,16 @@ const featuredAuthorName = featuredAuthor?.data.name ?? 'Redação misoftware';
       featured && (
         <div class="lg:col-span-6">
           <article class="relative bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
-            <div class="relative h-64 sm:h-72 w-full overflow-hidden bg-slate-900">
-              <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-brand-800 via-brand-700 to-charcoal">
-                <span class="font-mono text-white/30 text-6xl font-bold">m/</span>
-              </div>
+            <div class="relative aspect-video w-full overflow-hidden bg-slate-950">
+              <img
+                src={featuredCover}
+                alt={featured.data.title}
+                width="1200"
+                height="675"
+                loading="eager"
+                fetchpriority="high"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div class="absolute top-4 left-4">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[11px] font-mono font-semibold uppercase tracking-wider shadow-sm">
