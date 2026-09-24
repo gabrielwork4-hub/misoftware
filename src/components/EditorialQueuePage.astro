@@ -1,6 +1,7 @@
 ---
 import { render, getEntry } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import Faq from '@/components/Faq.astro';
 
 const { entry } = Astro.props;
 const { data } = entry;
@@ -21,10 +22,11 @@ const kindLabel = {
   ferramenta: 'Ferramenta',
 }[data.kind ?? 'artigo'] ?? 'Conteúdo';
 const sourceUrls = (data.sources ?? []).map((source) => typeof source === 'string' ? source : source.url);
+const faq = data.faq ?? [];
 const coverImage = data.coverImage ?? `/images/artigos/${entry.id}.webp`;
 ---
 
-<BaseLayout title={data.title} description={data.description} type="article" author={authorName} authorUrl={`/autores/${authorSlug}/`} authorSameAs={author?.data.sameAs} authorEntity={author?.data.entity} image={coverImage} publishedTime={data.pubDate.toISOString()} noindex={data.draft === true}>
+<BaseLayout title={data.title} description={data.description} type="article" author={authorName} authorUrl={`/autores/${authorSlug}/`} authorSameAs={author?.data.sameAs} authorEntity={author?.data.entity} image={coverImage} publishedTime={data.pubDate.toISOString()} faq={faq} noindex={data.draft === true}>
   <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <nav class="text-xs font-mono text-slate-400 mb-6" aria-label="Trilha de navegação">
       <a href="/" class="hover:text-brand-600">Início</a>
@@ -62,6 +64,8 @@ const coverImage = data.coverImage ?? `/images/artigos/${entry.id}.webp`;
     <div class="prose-editorial mx-auto mt-12 font-serif text-slate-800 text-lg leading-relaxed [&_h2]:font-sans [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-slate-900 [&_h2]:mt-10 [&_h2]:mb-4 [&_a]:text-brand-600 [&_a]:underline [&_a]:underline-offset-4">
       <Content />
     </div>
+
+    <Faq items={faq} />
 
     {sourceUrls.length > 0 && (
       <aside class="max-w-3xl mx-auto mt-12 pt-6 border-t border-slate-200">

@@ -16,6 +16,8 @@ interface Props {
   authorSameAs?: string[];
   /** Tipo de entidade do autor no schema */
   authorEntity?: 'Person' | 'Organization';
+  /** Perguntas frequentes — geram um nó FAQPage no JSON-LD */
+  faq?: { q: string; a: string }[];
   noindex?: boolean;
 }
 
@@ -30,6 +32,7 @@ const {
   authorUrl,
   authorSameAs = [],
   authorEntity = 'Person',
+  faq = [],
   noindex = false,
 } = Astro.props;
 
@@ -117,6 +120,20 @@ if (segments.length > 0) {
       position: i + 1,
       name: c.name,
       item: new URL(c.path, Astro.site ?? SITE.url).toString(),
+    })),
+  });
+}
+
+// FAQPage — quando a página declara perguntas frequentes (ARQUITETURA §9/GEO).
+// Reforça a extração por AI Overviews/PAA mesmo sem rich result tradicional.
+if (faq.length > 0) {
+  schema.push({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
     })),
   });
 }

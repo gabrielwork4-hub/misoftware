@@ -62,6 +62,8 @@ const fila = defineCollection({
     primaryKeyword: z.string(),
     coverImage: z.string().optional(),
     sources: z.array(z.string()).default([]),
+    /** Perguntas frequentes — render visível + schema FAQPage. Opcional. */
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
     draft: z.boolean().default(true),
   }),
 });

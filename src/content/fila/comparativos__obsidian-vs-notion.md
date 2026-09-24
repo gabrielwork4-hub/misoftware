@@ -12,6 +12,45 @@ draft: false
 sources:
   - "https://help.obsidian.md/"
   - "https://www.notion.so/help"
+faq:
+  - q: "Qual é melhor, Obsidian ou Notion?"
+    a: >-
+      Não existe "melhor" absoluto — depende do uso. Obsidian é melhor para
+      conhecimento pessoal, privacidade e trabalho offline; Notion é melhor
+      para colaboração em equipe e bases de dados operacionais. Se você
+      trabalha sozinho e valoriza controle dos dados, vá de Obsidian; se o
+      foco é time e estrutura compartilhada, Notion.
+  - q: "Obsidian e Notion são gratuitos?"
+    a: >-
+      Ambos têm uso gratuito. O Obsidian é grátis para uso pessoal — recursos
+      oficiais de sincronização e publicação são pagos à parte, e uso
+      comercial exige licença. O Notion tem plano gratuito com limites, e
+      planos pagos para equipes. Os valores mudam com frequência; confirme no
+      site oficial de cada um.
+  - q: "Dá para usar Obsidian e Notion juntos?"
+    a: >-
+      Sim, e é uma combinação comum: Obsidian para o pensamento e as notas
+      pessoais, Notion para o trabalho colaborativo da equipe. O único cuidado
+      é definir qual dos dois é a "fonte de verdade" de cada tipo de
+      informação, para não duplicar e se perder.
+  - q: "Obsidian funciona offline? E o Notion?"
+    a: >-
+      O Obsidian funciona 100% offline por padrão — seus arquivos ficam na sua
+      máquina. O Notion é feito para a nuvem: tem acesso offline limitado, mas
+      depende de conexão para a maioria das funções e para sincronizar.
+  - q: "Dá para migrar do Notion para o Obsidian?"
+    a: >-
+      Sim. O Notion permite exportar suas páginas em Markdown, que é justamente
+      o formato nativo do Obsidian. A migração de texto costuma ser tranquila;
+      o que exige ajuste manual são bancos de dados relacionais e visões
+      (kanban, calendário), que não têm equivalente direto no Obsidian.
+  - q: "Qual é mais privado e seguro?"
+    a: >-
+      Em privacidade, o Obsidian leva vantagem por design: como os arquivos
+      ficam locais, você controla onde eles estão e quem acessa. No Notion,
+      seus dados ficam nos servidores da plataforma — o que traz comodidade e
+      colaboração, mas significa confiar a segurança e as políticas de dados a
+      um terceiro.
 ---
 
 Obsidian e Notion resolvem "onde guardo o que sei?" de formas fundamentalmente diferentes. Não é uma disputa de recursos — é uma escolha de paradigma. Obsidian aposta em arquivos locais conectados; Notion, num workspace online com bancos de dados e colaboração. Entender essa diferença de base decide a comparação melhor que qualquer lista de funcionalidades.
