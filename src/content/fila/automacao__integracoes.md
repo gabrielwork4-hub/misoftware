@@ -2,7 +2,7 @@
 title: "Integrações de sistemas: APIs, eventos e webhooks"
 description: "Aprenda a projetar integrações com contratos, autenticação, retries, idempotência, filas, observabilidade e recuperação."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Automação"
 silo: automacao
 kind: "hub"

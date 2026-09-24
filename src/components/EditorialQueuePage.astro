@@ -1,10 +1,13 @@
 ---
-import { render } from 'astro:content';
+import { render, getEntry } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
 const { entry } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
+const author = await getEntry(data.author);
+const authorName = author?.data.name ?? 'Gabriel Barboza';
+const authorSlug = author?.id ?? 'gabriel-barboza';
 const dateLabel = new Intl.DateTimeFormat('pt-BR', {
   day: '2-digit', month: 'long', year: 'numeric',
 }).format(data.pubDate);
@@ -20,7 +23,7 @@ const kindLabel = {
 const sourceUrls = (data.sources ?? []).map((source) => typeof source === 'string' ? source : source.url);
 ---
 
-<BaseLayout title={data.title} description={data.description} type="article" author="Redação misoftware" publishedTime={data.pubDate.toISOString()} noindex={data.draft === true}>
+<BaseLayout title={data.title} description={data.description} type="article" author={authorName} authorUrl={`/autores/${authorSlug}/`} authorSameAs={author?.data.sameAs} authorEntity={author?.data.entity} publishedTime={data.pubDate.toISOString()} noindex={data.draft === true}>
   <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <nav class="text-xs font-mono text-slate-400 mb-6" aria-label="Trilha de navegação">
       <a href="/" class="hover:text-brand-600">Início</a>
@@ -35,7 +38,7 @@ const sourceUrls = (data.sources ?? []).map((source) => typeof source === 'strin
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal tracking-tight text-slate-950 leading-tight">{data.title}</h1>
       <p class="text-lg sm:text-xl text-slate-600 font-serif leading-relaxed">{data.description}</p>
       <div class="flex items-center justify-center gap-3 text-xs font-mono text-slate-500 pt-2">
-        <a href="/autores/redacao/" rel="author" class="hover:text-brand-600">Redação misoftware</a>
+        <a href={`/autores/${authorSlug}/`} rel="author" class="hover:text-brand-600">{authorName}</a>
         <span>•</span>
         <time datetime={data.pubDate.toISOString()}>{dateLabel}</time>
       </div>

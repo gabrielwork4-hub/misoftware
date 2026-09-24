@@ -2,7 +2,7 @@
 title: "Qualidade de Software: testes e revisão prática"
 description: "Qualidade como decisão de risco, não etapa final: critérios de aceite observáveis, testes proporcionais ao impacto, revisão de código e integração contínua."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
 silo: desenvolvimento
 kind: "hub"

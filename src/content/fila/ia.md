@@ -2,7 +2,7 @@
 title: "Como usar inteligência artificial no trabalho técnico"
 description: "Guia prático de como usar inteligência artificial no trabalho técnico: agentes, IA local, RAG e engenharia de prompt com método, avaliação e segurança."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "IA & Modelos"
 silo: ia
 kind: "pilar"

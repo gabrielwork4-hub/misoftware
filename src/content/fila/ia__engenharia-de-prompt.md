@@ -2,7 +2,7 @@
 title: "Engenharia de prompt: trilha prática e técnica"
 description: "Aprenda a especificar, testar e manter prompts para tarefas técnicas com contexto, restrições, exemplos, formato e critérios de aceitação."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "IA & Modelos"
 silo: ia
 kind: "hub"

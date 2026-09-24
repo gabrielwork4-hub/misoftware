@@ -2,7 +2,7 @@
 title: "Automação n8n com webhook e API: tutorial completo"
 description: "Integre webhook e API no n8n com contrato, validação, autenticação, idempotência, retries e testes de falha."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Automação"
 silo: automacao
 kind: "tutorial"

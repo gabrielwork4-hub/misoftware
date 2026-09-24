@@ -2,7 +2,7 @@
 title: "Agentes de IA: guia para entender, construir e avaliar"
 description: "Entenda quando um agente faz sentido, como limitar suas ferramentas e qual trilha seguir para construir e operar agentes confiáveis."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "IA & Modelos"
 silo: ia
 kind: "hub"

@@ -2,7 +2,7 @@
 title: "Ferramentas de pesquisa técnica: encontre fontes confiáveis"
 description: "Ferramentas e práticas para pesquisar documentação, artigos e código com verificação — descobrir rápido, confirmar na fonte original e preservar a evidência para depois."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Ferramentas"
 silo: ferramentas
 kind: "hub"

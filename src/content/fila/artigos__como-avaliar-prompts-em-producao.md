@@ -2,7 +2,7 @@
 title: "Como avaliar prompts de IA em produção"
 description: "Monte uma avaliação contínua de prompts com dataset, métricas, versionamento, custo, segurança e revisão humana."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Engenharia de Prompt"
 silo: ia
 kind: "artigo"

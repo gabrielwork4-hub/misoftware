@@ -2,7 +2,7 @@
 title: "RAG com fontes verificáveis: como construir respostas auditáveis"
 description: "Tutorial para recuperar documentos, citar evidências e reduzir respostas sem suporte em aplicações com RAG."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "IA & Modelos"
 silo: ia
 kind: "tutorial"

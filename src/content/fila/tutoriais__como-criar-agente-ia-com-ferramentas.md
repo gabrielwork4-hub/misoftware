@@ -2,7 +2,7 @@
 title: "Como criar um agente de IA com ferramentas"
 description: "Projete um agente pequeno com objetivo, ferramenta reversível, permissões mínimas, condição de parada e avaliação."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "IA & Modelos"
 silo: ia
 kind: "tutorial"

@@ -2,7 +2,7 @@
 title: "Automação com n8n: workflows e integrações"
 description: "Aprenda a avaliar e operar workflows no n8n com triggers, APIs, webhooks, IA, credenciais, tratamento de erro e governança."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Automação"
 silo: automacao
 kind: "hub"

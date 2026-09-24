@@ -2,7 +2,7 @@
 title: "RAG: recuperação aumentada por geração com fontes confiáveis"
 description: "Hub sobre RAG: quando usar, os componentes do sistema, onde ele falha e como evoluir da prova de conceito para uma operação com citações auditáveis."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "IA & Modelos"
 silo: ia
 kind: "hub"

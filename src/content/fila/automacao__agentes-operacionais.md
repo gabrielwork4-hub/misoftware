@@ -2,7 +2,7 @@
 title: "Agentes Operacionais: IA em workflows com controle"
 description: "Quando usar agentes operacionais em processos reais, como limitar permissões e ferramentas, e como aumentar autonomia sem perder rastreabilidade e rollback."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Automação"
 silo: automacao
 kind: "hub"

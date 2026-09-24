@@ -2,7 +2,7 @@
 title: "Como avaliamos ferramentas de IA: metodologia de review"
 description: "A metodologia transparente por trás das nossas reviews de ferramentas de IA: tarefas representativas, critérios explícitos, evidências registradas e limites declarados."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Ferramentas"
 silo: ferramentas
 kind: "artigo"

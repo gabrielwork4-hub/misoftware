@@ -2,7 +2,7 @@
 title: "Primeiro workflow no n8n: tutorial do zero"
 description: "Crie um workflow pequeno no n8n com trigger, transformação, validação, saída observável e tratamento de falhas."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Automação"
 silo: automacao
 kind: "tutorial"

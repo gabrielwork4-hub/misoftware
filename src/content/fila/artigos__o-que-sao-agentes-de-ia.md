@@ -2,7 +2,7 @@
 title: "Agentes de IA: o que são, como funcionam e quando usar"
 description: "Entenda agentes de IA, seus componentes, limites e critérios para decidir quando usar um agente, um workflow ou uma automação comum."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "IA & Modelos"
 silo: ia
 kind: "artigo"

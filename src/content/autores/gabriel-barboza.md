@@ -5,7 +5,7 @@ entity: "Person"
 bio: "Product Owner atuando na interseção entre marketing digital e IA. Escreve sobre tecnologia aplicada com foco no que gera resultado prático."
 sameAs:
   - "https://www.linkedin.com/in/gabriel-barboza-growth/"
-org: "IdealTrends"
+org: "Gabriel Barboza"
 draft: false
 ---
 

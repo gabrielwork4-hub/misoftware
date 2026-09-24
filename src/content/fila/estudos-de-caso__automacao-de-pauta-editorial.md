@@ -2,7 +2,7 @@
 title: "Estudo de caso: automação de pauta editorial"
 description: "Como estruturamos descoberta, briefing, geração, revisão e publicação com automação assistida por IA — preservando julgamento humano nas decisões que importam."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Automação"
 silo: automacao
 kind: "estudo-de-caso"

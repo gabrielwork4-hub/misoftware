@@ -2,7 +2,7 @@
 title: "Arquitetura de software: decisões, padrões e trade-offs"
 description: "Aprenda a tomar decisões de arquitetura por contexto, registrar alternativas e desenhar sistemas que possam evoluir e ser operados."
 pubDate: "2026-09-22"
-author: "redacao"
+author: "gabriel-barboza"
 category: "Desenvolvimento"
 silo: desenvolvimento
 kind: "hub"
