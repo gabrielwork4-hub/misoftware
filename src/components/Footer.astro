@@ -1,5 +1,6 @@
 ---
 import { SITE, SOCIAL } from '@/consts';
+import Logo from '@/components/Logo.astro';
 
 const year = new Date().getFullYear();
 
@@ -40,8 +41,8 @@ const columns = [
       <!-- Marca & manifesto -->
       <div class="lg:col-span-2 space-y-4">
         <div class="flex items-center gap-2">
-          <div class="w-7 h-7 rounded-md bg-brand-600 flex items-center justify-center text-white font-mono font-bold text-sm">m/</div>
-          <span class="font-bold tracking-tight text-slate-900 text-lg">{SITE.name}</span>
+          <Logo class="w-7 h-7" title={SITE.name} />
+          <span class="font-brand font-semibold tracking-tight text-slate-900 text-lg">{SITE.name}</span>
         </div>
         <p class="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-sm">
           Tecnologia aplicada de um jeito prático e verificável. Inteligência artificial,

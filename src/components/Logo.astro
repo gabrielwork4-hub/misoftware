@@ -1,0 +1,42 @@
+---
+/**
+ * Monograma "M" da marca misoftware — três barras paralelogramas com facetas
+ * (fita dobrada) em degradê azul→sky. Vetorial, escala de 16px a 512px.
+ * Derivado do guia de identidade visual (Imagem do Codex, 24/09/2026).
+ */
+interface Props {
+  class?: string;
+  title?: string;
+}
+const { class: className, title = 'misoftware' } = Astro.props;
+// ids únicos por instância para não colidir quando houver mais de um logo na página
+const uid = Math.random().toString(36).slice(2, 8);
+---
+
+<svg
+  class={className}
+  viewBox="0 0 100 100"
+  role="img"
+  aria-label={title}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <linearGradient id={`a-${uid}`} x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f72f5" /><stop offset="1" stop-color="#1a4fc8" />
+    </linearGradient>
+    <linearGradient id={`bl-${uid}`} x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3579f7" /><stop offset="1" stop-color="#2160e8" />
+    </linearGradient>
+    <linearGradient id={`bd-${uid}`} x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#173fa0" /><stop offset="1" stop-color="#0c2b7e" />
+    </linearGradient>
+    <linearGradient id={`cl-${uid}`} x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#18abf3" /><stop offset="1" stop-color="#0a86dd" />
+    </linearGradient>
+  </defs>
+  <polygon points="8,86 24,86 42,20 26,20" fill={`url(#a-${uid})`} />
+  <polygon points="31,86 43,86 63,14 51,14" fill={`url(#bl-${uid})`} />
+  <polygon points="43,86 51,86 71,14 63,14" fill={`url(#bd-${uid})`} />
+  <polygon points="80,16 60,86 73,86" fill="#173fa0" />
+  <polygon points="80,16 73,86 93,86" fill={`url(#cl-${uid})`} />
+</svg>
