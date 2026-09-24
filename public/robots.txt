@@ -1,4 +1,23 @@
+# robots.txt — misoftware
+# Publicação editorial de tecnologia aplicada. Conteúdo aberto para
+# indexação por buscadores e por motores de resposta (IA).
+
+# Buscadores e crawlers gerais
 User-agent: *
 Allow: /
+Disallow: /pagefind/
 
+# Motores de resposta / IA — acesso explícito ao conteúdo
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: PerplexityBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+
+# Índice curado para LLMs em /llms.txt
 Sitemap: https://www.misoftware.com.br/sitemap-index.xml
