@@ -10,8 +10,9 @@ canonicalPath: "/estudos-de-caso/automacao-de-pauta-editorial/"
 primaryKeyword: "automação de pauta editorial"
 draft: false
 sources:
+  - "https://www.science.org/doi/10.1126/science.adh2586"
+  - "https://arxiv.org/abs/2510.18774"
   - "https://developers.google.com/search/docs/fundamentals/using-gen-ai-content"
-  - "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
   - "https://docs.n8n.io/"
 ---
 
@@ -46,9 +47,13 @@ Esses guardrails não são preferência estética — são a resposta ao que o G
 
 Essa divisão é a mesma discutida em [automação assistida por IA vs agentes autônomos](/artigos/automacao-assistida-por-ia-vs-agentes-autonomos/): a IA atua em etapas delimitadas; a decisão de publicar é humana.
 
-## O que o setor observa
+## O que a evidência mostra
 
-Relatos de mercado sobre fluxos com human-in-the-loop apontam reduções expressivas no tempo de produção — da ordem de 60% a 80% no rascunho de conteúdo longo — liberando a equipe para apuração, análise e curadoria. Tratamos esses números como **referência externa, não como promessa nossa**: o ganho real depende do domínio, da qualidade do brief e do peso da revisão. O padrão que se repete nesses relatos é o mesmo que adotamos: a aceleração vem da geração assistida, mas a confiabilidade vem dos *review gates* obrigatórios e da conexão do modelo a dados verificados — não de tirar a pessoa do circuito.
+O ganho de produtividade da geração assistida é real e mensurável. Um experimento controlado do MIT com 453 profissionais, publicado na *Science*, mediu o efeito da IA generativa em tarefas de escrita: o tempo caiu cerca de **40%** e a qualidade avaliada **subiu 18%** — com o maior ganho justamente entre quem tinha menos experiência. Não é promessa de fornecedor; é evidência de que a IA acelera o rascunho quando bem usada.
+
+O risco, porém, também está documentado — e não é o que se imagina. Um levantamento de 186 mil artigos de 1.500 jornais dos EUA (2025) estimou que cerca de **9%** do conteúdo já é parcial ou totalmente gerado por IA, mas que **apenas ~5% dos casos divulgam** esse uso. O problema central não é a IA escrever; é a ausência de rastreabilidade e transparência. É exatamente por isso que registramos autor, revisor, fonte e data em cada etapa.
+
+Tratamos qualquer número de produtividade como **referência externa, não como promessa nossa** — o ganho real depende do domínio, da qualidade do brief e do peso da revisão. Pesquisas de mercado (Salesforce, HubSpot) indicam adoção acima de 85% entre times de marketing, mas adoção não é confiabilidade: a aceleração vem da geração assistida; a confiabilidade vem dos *review gates* obrigatórios e da conexão do modelo a dados verificados — não de tirar a pessoa do circuito.
 
 ## O que medir
 
