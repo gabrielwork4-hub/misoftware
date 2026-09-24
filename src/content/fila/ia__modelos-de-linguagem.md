@@ -19,6 +19,8 @@ sources:
   - "https://docs.x.ai/docs/models"
   - "https://docs.cohere.com/docs/models"
   - "https://aws.amazon.com/bedrock/pricing/"
+  - "https://ai.google.dev/gemma/docs/core"
+  - "https://azure.microsoft.com/en-us/products/phi"
 draft: false
 ---
 
@@ -49,13 +51,16 @@ Preços de entrada/saída por 1 milhão de tokens, do modelo *flagship* de cada 
 | [DeepSeek](/ferramentas/modelos/deepseek/) | DeepSeek | V4-Pro | 1M | 0,66 / 1,98⁴ | Sim |
 | [Qwen](/ferramentas/modelos/qwen/) | Alibaba | Qwen3.8-Max | até 1M | API⁵ | Parcial⁵ |
 | [Command](/ferramentas/modelos/cohere-command/) | Cohere | Command A+ | 128k | self-host³ | Sim |
+| [Gemma](/ferramentas/modelos/google-gemma/) | Google | Gemma 4 (31B) | até 256k | self-host³ | Sim |
+| [Phi](/ferramentas/modelos/microsoft-phi/) | Microsoft | Phi-4 | até 128k⁷ | self-host³ | Sim |
 
 ¹ Gemini 3.1 Pro cobra por faixa de contexto: US$ 2/1M (entrada até 200k) e US$ 4/1M acima; saída US$ 12/1M (até 200k) e US$ 18/1M acima.
 ² Llama 4 Scout anuncia janela de até 10M tokens.
-³ Modelos abertos (Llama, Mistral, Cohere Command) não têm preço de licença: o custo depende do provedor de inferência ou do seu próprio hardware. A API paga da Mistral Large custa US$ 0,5/1,5.
+³ Modelos abertos (Llama, Mistral, Cohere Command, Gemma, Phi) não têm preço de licença: o custo depende do provedor de inferência ou do seu próprio hardware.
 ⁴ DeepSeek: preço fora de pico; no horário de pico é o dobro.
 ⁵ Qwen3.8-Max (fechado) é acessado pela API da Alibaba Cloud; a linha 3.6 é aberta e gratuita para self-host — por isso "Parcial".
 ⁶ Grok 4.7 sobe para US$ 4/12 acima de 200k tokens de contexto.
+⁷ Phi: contexto de até 128k na linha Phi-3; confira o valor por modelo no card da Phi-4.
 
 ## As famílias, uma a uma
 
@@ -71,6 +76,8 @@ Cada família tem sua página com lançamento, preços por tier, característica
 - **[xAI — Grok](/ferramentas/modelos/xai-grok/):** flagship fechado (Grok 4.7) com integração ao X e acesso a dados em tempo real.
 - **[Amazon Nova](/ferramentas/modelos/amazon-nova/):** os modelos próprios da AWS, multimodais e focados em preço/desempenho dentro do Bedrock.
 - **[Cohere — Command](/ferramentas/modelos/cohere-command/):** foco empresarial (RAG, multilíngue), com o flagship Command A+ aberto sob Apache 2.0.
+- **[Google — Gemma](/ferramentas/modelos/google-gemma/):** os modelos abertos do Google (2B a 31B), compactos e multimodais, feitos para rodar localmente.
+- **[Microsoft — Phi](/ferramentas/modelos/microsoft-phi/):** *small language models* abertos (MIT) que priorizam raciocínio eficiente em hardware modesto e no edge.
 
 ## Como escolher sem se prender à moda
 
