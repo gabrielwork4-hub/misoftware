@@ -12,6 +12,47 @@ draft: false
 sources:
   - "https://cursor.com"
   - "https://codeium.com/windsurf"
+faq:
+  - q: "Qual é melhor, Cursor ou Windsurf?"
+    a: >-
+      Não há um vencedor universal — os dois são muito parecidos e a resposta
+      depende do seu repositório e do seu jeito de trabalhar. O que decide é
+      qual recupera melhor o contexto do seu código e exige menos correção
+      manual. A recomendação prática é rodar um piloto curto com as mesmas
+      tarefas nos dois e medir quanto do resultado você precisou ajustar.
+  - q: "Cursor e Windsurf são gratuitos?"
+    a: >-
+      Os dois têm plano gratuito com limites de uso, e planos pagos que liberam
+      mais requisições e modelos mais avançados. Como preços, cotas e modelos
+      mudam rápido nesse mercado, confirme os valores atuais no site oficial de
+      cada um antes de decidir.
+  - q: "Minhas extensões e configurações do VS Code funcionam neles?"
+    a: >-
+      Na maioria dos casos, sim. Cursor e Windsurf são construídos sobre a base
+      do VS Code, então importam suas extensões, temas e atalhos e mantêm um
+      ambiente familiar. Vale testar as extensões que você mais usa, porque uma
+      ou outra pode ter comportamento diferente.
+  - q: "Vale trocar o VS Code + Copilot por Cursor ou Windsurf?"
+    a: >-
+      Depende de quanto você usa fluxos com agente. Cursor e Windsurf vão além
+      do autocomplete: editam vários arquivos, entendem o repositório e
+      executam tarefas com mais autonomia. Se o seu uso é sugestão de linha a
+      linha, o Copilot resolve; se você quer delegar mudanças maiores com
+      contexto do projeto, os editores dedicados tendem a render mais.
+  - q: "Meu código-fonte fica seguro? É usado para treinar os modelos?"
+    a: >-
+      As duas ferramentas oferecem modos com maior privacidade — como retenção
+      zero e a opção de não usar seu código para treinamento — geralmente nos
+      planos pagos ou corporativos. As políticas variam e mudam; para uso em
+      empresa, leia os termos de tratamento de dados no site oficial antes de
+      enviar código proprietário.
+  - q: "Existe alternativa ao Cursor e ao Windsurf?"
+    a: >-
+      Sim. Além de VS Code com GitHub Copilot, há opções como Trae, Zed,
+      Continue e assistentes por linha de comando. A escolha segue o mesmo
+      critério: teste com as suas tarefas reais e compare quanto de correção
+      manual cada um exige. Veja o panorama em melhores editores de código com
+      IA.
 ---
 
 Cursor (da Anysphere) e Windsurf (da Codeium) disputam o mesmo espaço: editores de código com IA construídos sobre a base do VS Code, com chat consciente do repositório, edição em múltiplos arquivos e fluxos com agente. São muito parecidos na superfície — por isso a decisão não deve partir da lista de recursos, e sim de como cada um se comporta no **seu** repositório, no seu modo de trabalhar.

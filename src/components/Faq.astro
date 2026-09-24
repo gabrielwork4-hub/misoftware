@@ -1,0 +1,36 @@
+---
+/**
+ * Bloco de Perguntas Frequentes — render visível.
+ * O schema FAQPage (JSON-LD) é emitido pelo BaseHead a partir do mesmo `faq`.
+ * Respostas sempre visíveis (não colapsadas) para máxima extração por
+ * AI Overviews / PAA e leitura sem clique.
+ */
+interface Props {
+  items: { q: string; a: string }[];
+}
+const { items } = Astro.props;
+---
+
+{items.length > 0 && (
+  <section
+    class="max-w-3xl mx-auto mt-12 pt-8 border-t border-slate-200"
+    aria-labelledby="faq-heading"
+  >
+    <h2
+      id="faq-heading"
+      class="font-sans text-2xl font-semibold text-slate-900 mb-6"
+    >
+      Perguntas frequentes
+    </h2>
+    <dl class="space-y-6">
+      {items.map((item) => (
+        <div class="border-l-2 border-brand-200 pl-4">
+          <dt class="font-sans text-lg font-semibold text-slate-900 mb-1.5">
+            {item.q}
+          </dt>
+          <dd class="font-serif text-slate-700 leading-relaxed">{item.a}</dd>
+        </div>
+      ))}
+    </dl>
+  </section>
+)}
