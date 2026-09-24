@@ -13,6 +13,9 @@ sources:
   - "https://developers.openai.com/api/docs/pricing"
   - "https://ai.google.dev/gemini-api/docs/pricing"
   - "https://ai.meta.com/blog/llama-4-multimodal-intelligence/"
+  - "https://docs.mistral.ai/getting-started/models/models_overview/"
+  - "https://api-docs.deepseek.com/quick_start/pricing"
+  - "https://www.alibabacloud.com/blog/alibaba-unveils-qwen3-8-max-its-largest-and-most-capable-flagship-model-to-date_603420"
 draft: false
 ---
 
@@ -27,19 +30,25 @@ Quatro variáveis decidem quase toda escolha prática:
 - **Modalidades** — só texto, ou também imagem, áudio e vídeo.
 - **Aberto vs. fechado** — modelo fechado roda só via API do fornecedor; modelo aberto (*open weights*) pode ser baixado e executado localmente, o que muda o cálculo de custo e privacidade (ver [IA local](/ia/ia-local/)).
 
-## Comparação das famílias de fronteira
+## Comparação das principais famílias
 
-Preços de entrada/saída por 1 milhão de tokens, do modelo *flagship* de cada família. **Verificado em 24/09/2026 nas páginas oficiais** — preços e modelos mudam rápido; confirme na fonte antes de decidir.
+Preços de entrada/saída por 1 milhão de tokens, do modelo *flagship* de cada família. As quatro primeiras são as fechadas de fronteira; as três últimas, os principais desafiantes open-weight. **Verificado em 24/09/2026 nas páginas oficiais** — preços e modelos mudam rápido; confirme na fonte antes de decidir.
 
-| Família | Criador | Flagship atual | Contexto | Preço in / out (US$/1M) | Aberto? |
+| Família | Criador | Flagship | Contexto | Preço in / out (US$/1M) | Aberto? |
 |---|---|---|---|---|---|
-| [GPT](/ferramentas/modelos/openai-gpt/) | OpenAI | GPT-6 Astra | grande (não detalhado) | 10 / 50 | Não |
+| [GPT](/ferramentas/modelos/openai-gpt/) | OpenAI | GPT-6 Astra | grande | 10 / 50 | Não |
 | [Claude](/ferramentas/modelos/anthropic-claude/) | Anthropic | Opus 5.5 | 1M | 4 / 20 | Não |
 | [Gemini](/ferramentas/modelos/google-gemini/) | Google | Gemini 3.1 Pro | 1M | 2 / 12¹ | Não |
-| [Llama](/ferramentas/modelos/meta-llama/) | Meta | Llama 4 (Scout/Maverick) | até 10M² | Sim (open weights) |
+| [Llama](/ferramentas/modelos/meta-llama/) | Meta | Llama 4 | até 10M² | self-host³ | Sim |
+| [Mistral](/ferramentas/modelos/mistral/) | Mistral AI | Mistral Large 3 | ver card | 0,5 / 1,5 | Sim |
+| [DeepSeek](/ferramentas/modelos/deepseek/) | DeepSeek | V4-Pro | 1M | 0,66 / 1,98⁴ | Sim |
+| [Qwen](/ferramentas/modelos/qwen/) | Alibaba | Qwen3.8-Max | até 1M | API⁵ | Parcial⁵ |
 
 ¹ Gemini 3.1 Pro cobra por faixa de contexto: US$ 2/1M (entrada até 200k) e US$ 4/1M acima; saída US$ 12/1M (até 200k) e US$ 18/1M acima.
-² Llama 4 Scout anuncia janela de até 10M tokens. Sendo aberto, não tem preço de licença — o custo por token depende do provedor de inferência ou do seu próprio hardware.
+² Llama 4 Scout anuncia janela de até 10M tokens.
+³ Modelos abertos (Llama, Mistral) não têm preço de licença: o custo por token depende do provedor de inferência ou do seu próprio hardware. A API paga da Mistral Large custa US$ 0,5/1,5.
+⁴ DeepSeek: preço fora de pico; no horário de pico é o dobro.
+⁵ Qwen3.8-Max (fechado) é acessado pela API da Alibaba Cloud; a linha 3.6 é aberta e gratuita para self-host — por isso "Parcial".
 
 ## As famílias, uma a uma
 
@@ -48,7 +57,10 @@ Cada família tem sua página com lançamento, preços por tier, característica
 - **[OpenAI — GPT](/ferramentas/modelos/openai-gpt/):** a linha GPT-6 (Astra/Sol/Luna) mais os modelos de raciocínio da série o. Ecossistema mais amplo e integrado ao ChatGPT.
 - **[Anthropic — Claude](/ferramentas/modelos/anthropic-claude/):** Opus 5.5, Sonnet 5 e Haiku 4.5. Forte em código, trabalho agêntico longo e seguir instruções com fidelidade.
 - **[Google — Gemini](/ferramentas/modelos/google-gemini/):** família Gemini 3, com contexto de 1M e tiers Flash de baixo custo, integrada ao Google Cloud e ao Workspace.
-- **[Meta — Llama](/ferramentas/modelos/meta-llama/):** a única família aberta do grupo. Baixe os pesos e rode no seu ambiente quando privacidade ou custo em escala pesam mais que ter o topo absoluto.
+- **[Meta — Llama](/ferramentas/modelos/meta-llama/):** família aberta (open weights) com arquitetura MoE e contexto de até 10M. Baixe os pesos e rode no seu ambiente quando privacidade ou custo em escala pesam mais que o topo absoluto.
+- **[Mistral AI](/ferramentas/modelos/mistral/):** a desenvolvedora europeia com a estratégia mais aberta — generalistas sob Apache 2.0/MIT, do compacto Ministral ao Large 3.
+- **[DeepSeek](/ferramentas/modelos/deepseek/):** modelos abertos (MIT) com raciocínio embutido e a melhor relação capacidade/custo em código, por API baratíssima ou self-host.
+- **[Alibaba — Qwen](/ferramentas/modelos/qwen/):** combina flagship fechado (Qwen3.8-Max) e linha aberta (3.6), forte em multimodal e multilíngue.
 
 ## Como escolher sem se prender à moda
 
