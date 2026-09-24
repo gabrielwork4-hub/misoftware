@@ -640,9 +640,23 @@ for (const file of filaFiles) {
 
     <!-- Tag da Categoria Editorial Limpa -->
     <g transform="translate(80, 80)">
-      <rect width="40" height="40" rx="10" fill="${theme.accent}"/>
-      <text x="20" y="27" font-family="'JetBrains Mono', Consolas, monospace" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">m/</text>
-      
+      <svg x="0" y="0" width="40" height="40" viewBox="0 0 32 32">
+        <rect width="32" height="32" rx="7" fill="#06101d"/>
+        <svg x="6" y="6" width="20" height="20" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="mkA-${slug}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f72f5"/><stop offset="1" stop-color="#1a4fc8"/></linearGradient>
+            <linearGradient id="mkBl-${slug}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3579f7"/><stop offset="1" stop-color="#2160e8"/></linearGradient>
+            <linearGradient id="mkBd-${slug}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#173fa0"/><stop offset="1" stop-color="#0c2b7e"/></linearGradient>
+            <linearGradient id="mkCl-${slug}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#18abf3"/><stop offset="1" stop-color="#0a86dd"/></linearGradient>
+          </defs>
+          <polygon points="8,86 24,86 42,20 26,20" fill="url(#mkA-${slug})"/>
+          <polygon points="31,86 43,86 63,14 51,14" fill="url(#mkBl-${slug})"/>
+          <polygon points="43,86 51,86 71,14 63,14" fill="url(#mkBd-${slug})"/>
+          <polygon points="80,16 60,86 73,86" fill="#173fa0"/>
+          <polygon points="80,16 73,86 93,86" fill="url(#mkCl-${slug})"/>
+        </svg>
+      </svg>
+
       <rect x="54" y="5" width="240" height="30" rx="8" fill="${theme.badgeBg}" stroke="${theme.accent}" stroke-width="1"/>
       <text x="68" y="25" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="${theme.accentLight}" letter-spacing="1">${escapeXml(theme.label)}</text>
     </g>
