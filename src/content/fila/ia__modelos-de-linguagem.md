@@ -22,6 +22,41 @@ sources:
   - "https://ai.google.dev/gemma/docs/core"
   - "https://azure.microsoft.com/en-us/products/phi"
 draft: false
+faq:
+  - q: "Qual é o melhor modelo de linguagem hoje?"
+    a: >-
+      Não existe "melhor LLM" em abstrato — existe o melhor para a sua tarefa e
+      o seu orçamento. Classificar chamados em alto volume e redigir um parecer
+      jurídico pedem tiers diferentes. A tabela desta página é uma fotografia
+      para comparar preço, contexto e abertura; a decisão vem de rodar os seus
+      casos reais e escolher o tier mais barato que passa nos seus testes.
+  - q: "O modelo mais caro é sempre o melhor?"
+    a: >-
+      Não. Os tiers intermediários (linhas "mini", "flash" ou equivalentes)
+      resolvem a maioria das tarefas de alto volume por uma fração do custo do
+      flagship. Suba de tier só quando um caso concreto reprovar no seu conjunto
+      de testes — pagar pelo topo "por garantia" costuma ser desperdício.
+  - q: "Devo usar um modelo aberto ou fechado?"
+    a: >-
+      Modelo fechado roda só via API do fornecedor e costuma entregar o topo de
+      capacidade sem você gerir infraestrutura. Modelo aberto (open weights)
+      pode ser baixado e executado no seu ambiente, o que muda o cálculo a favor
+      de privacidade e de custo em escala. Se o dado é sensível ou o volume é
+      enorme, um aberto rodando em IA local pode sair melhor que qualquer API.
+  - q: "Preciso de uma janela de contexto de 1 milhão de tokens?"
+    a: >-
+      Quase nunca. A maioria das tarefas cabe com folga em janelas bem menores,
+      e contexto gigante custa mais caro por chamada. Quando a aplicação precisa
+      responder com base em muitos documentos, montar um RAG que envia só os
+      trechos relevantes costuma sair melhor e mais barato do que despejar tudo
+      num contexto enorme.
+  - q: "Posso confiar nos preços desta tabela?"
+    a: >-
+      Trate-os como referência verificada na data indicada, não como cotação
+      em tempo real — preços e modelos mudam rápido nesse mercado, com faixas
+      por volume de contexto e horários de pico em alguns fornecedores. Antes de
+      fechar orçamento, confirme o valor atual na página oficial do modelo
+      escolhido.
 ---
 
 Modelos de linguagem (LLMs, de *large language models*) são sistemas treinados para prever texto e, a partir disso, executar tarefas como escrever, resumir, classificar, programar e raciocinar em várias etapas. Escolher um LLM não é procurar "o melhor" em abstrato — é casar a tarefa, o orçamento por token, a janela de contexto e as restrições de privacidade com o modelo certo. Esta página mapeia o ecossistema por família e mantém uma comparação verificada em fonte oficial.

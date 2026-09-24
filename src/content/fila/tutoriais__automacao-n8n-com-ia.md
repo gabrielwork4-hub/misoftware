@@ -13,6 +13,41 @@ sources:
   - "https://docs.n8n.io/advanced-ai/"
   - "https://docs.n8n.io/"
   - "https://platform.openai.com/docs/guides/structured-outputs"
+faq:
+  - q: "Preciso saber programar para montar este workflow?"
+    a: >-
+      Não para a estrutura básica — o n8n é visual e a chamada de IA vira um nó
+      configurável. Você escreve o prompt em linguagem natural e monta a
+      validação com condições. Alguma expressão ajuda a checar campos, mas o
+      grosso do tutorial se resolve ligando nós e definindo regras, sem código
+      de verdade.
+  - q: "Posso deixar a IA agir sozinha, sem aprovação humana?"
+    a: >-
+      Não neste ponto, e é proposital: aqui a IA só classifica e produz uma
+      saída estruturada, sem enviar mensagens nem alterar dados. Casos ambíguos
+      ou de baixa confiança viram tarefa de revisão. Só avance para uma etapa
+      automática — ou para agentes operacionais — depois que a etapa de IA já
+      tiver avaliação e limites claros, e nunca com ação irreversível.
+  - q: "Qual modelo de IA devo usar no n8n?"
+    a: >-
+      Qualquer um que o nó suporte e que ofereça saída estruturada resolve o
+      exemplo. Comece pelo tier mais barato que passa nos seus casos de teste e
+      só suba de modelo se a qualidade reprovar — classificar chamado é tarefa
+      de alto volume, onde o flagship raramente se justifica. Registre modelo e
+      versão para conseguir reproduzir o resultado.
+  - q: "Como controlo o custo da IA no workflow?"
+    a: >-
+      Valide e limite a entrada antes de chamar o modelo (rejeite texto vazio e
+      corte tamanho máximo), use o tier mais barato adequado e registre
+      tokens/custo por execução. Defina um limite de custo e trate o estouro
+      como um caso de falha a ser testado, não como surpresa em produção.
+  - q: "E se o modelo devolver algo fora do formato esperado?"
+    a: >-
+      Não tente corrigir silenciosamente. Se a saída não passa no schema —
+      categoria fora do conjunto, confiança fora de 0 a 1, campo faltando —
+      registre a falha e mande para revisão ou para uma rota de erro. Schema
+      reduz erro de formato, mas não prova que a classificação está certa; a
+      validação de significado é responsabilidade do workflow.
 ---
 
 Este tutorial adiciona IA a uma única etapa de um workflow n8n para classificar uma solicitação e produzir uma saída estruturada. A IA não enviará mensagens nem alterará dados: uma etapa posterior valida o resultado e encaminha casos ambíguos para aprovação humana.

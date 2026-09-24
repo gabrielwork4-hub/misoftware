@@ -13,6 +13,42 @@ sources:
   - "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/"
   - "https://docs.n8n.io/integrations/"
   - "https://docs.stripe.com/webhooks"
+faq:
+  - q: "Qual a diferença entre a URL de teste e a de produção do webhook?"
+    a: >-
+      A URL de teste serve para desenvolver e inspecionar o payload recebido com
+      uma ferramenta controlada, sem tocar em dados reais. Só troque pela URL de
+      produção depois de verificar assinatura, autenticação, limites e
+      recuperação — e depois de executar os cenários de falha. Publicar antes
+      disso é o erro mais comum e o mais caro.
+  - q: "Como garanto que o mesmo evento não seja processado duas vezes?"
+    a: >-
+      Use a chave de idempotência: consulte um armazenamento pela `id` estável
+      do evento e, se ele já foi concluído, devolva uma resposta segura sem
+      chamar a API de novo. A chave só funciona se o efeito externo também a
+      respeitar ou se você registrar o estado antes de executá-lo — teste
+      justamente o caso em que a API responde sucesso mas a confirmação se perde
+      antes de salvar.
+  - q: "Preciso validar a assinatura do webhook mesmo em ambiente de teste?"
+    a: >-
+      Sim. Um evento não está autenticado só porque chegou ao endpoint —
+      qualquer um que descubra a URL pode enviar dados. Valide assinatura,
+      timestamp ou segredo conforme o contrato do produtor desde o teste, e não
+      registre o segredo nem o payload completo quando houver dado pessoal.
+  - q: "Quantas vezes devo tentar de novo quando a API falha?"
+    a: >-
+      Poucas, com backoff e um teto definido — retry limitado resolve falha
+      transitória sem virar tempestade de tentativas. Erros permanentes (como
+      validação ou credencial inválida) não devem ser repetidos; mande-os para
+      uma rota de erro com alerta. Defina o destino dos eventos que continuam
+      falhando e um procedimento de replay com a mesma proteção de idempotência.
+  - q: "Já posso usar este workflow em produção?"
+    a: >-
+      Só depois de executar de verdade os cenários de falha — timeout, resposta
+      5xx, credencial inválida, evento duplicado, payload malformado — e
+      confirmar o status observado, o log gerado, o alerta e a ação do
+      responsável em cada um. Enquanto esses testes não rodarem, mantenha o
+      endpoint de teste.
 ---
 
 Este tutorial desenha uma automação no n8n em que um webhook recebe um evento, valida a entrada, evita duplicação e chama uma API de teste. O exemplo não deve usar um endpoint de produção até que assinatura, autenticação, limites e recuperação tenham sido verificados.

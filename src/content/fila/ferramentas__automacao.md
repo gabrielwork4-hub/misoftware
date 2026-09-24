@@ -12,6 +12,35 @@ draft: false
 sources:
   - "https://docs.n8n.io/"
   - "https://zapier.com/help"
+faq:
+  - q: "Qual é a melhor ferramenta de automação?"
+    a: >-
+      Não há uma melhor para todos os casos — há a que traduz o seu processo em
+      etapas observáveis, trata falhas com clareza e cabe no perfil de quem vai
+      mantê-la. Um fluxo simples e não técnico pede uma coisa; alto volume, com
+      código e controle de dados, pede outra. Comece pela complexidade do seu
+      processo e por quem o mantém, não pela plataforma.
+  - q: "Por que não escolher pela quantidade de integrações?"
+    a: >-
+      Porque o gargalo raramente é conectar dois sistemas — é manter o fluxo
+      confiável quando algo dá errado. Uma plataforma com catálogo enorme mas
+      logs pobres, retries frágeis e sem idempotência custa mais caro na
+      operação do que uma com menos conectores e boa observabilidade. Avalie
+      tratamento de falha e recuperação antes do número de conectores.
+  - q: "Preciso saber programar para automatizar processos?"
+    a: >-
+      Não para fluxos conhecidos: plataformas no-code/low-code cobrem a maior
+      parte e aproximam quem não programa. Código entra quando há regras
+      complexas ou alto volume, e muitas equipes combinam os dois — a lógica
+      crítica em módulos testáveis, o resto no construtor visual. O nível
+      técnico necessário é consequência do processo, não um pré-requisito.
+  - q: "Quando automatizar um processo NÃO vale a pena?"
+    a: >-
+      Quando o processo ainda não está bem compreendido. Nenhuma plataforma
+      conserta um processo confuso — ela só faz o erro acontecer mais rápido e
+      em escala. Mapeie o processo e desenhe o workflow antes de comparar
+      ferramentas; automação sem governança e caminho de recuperação transforma
+      uma falha pequena em investigação manual longa.
 ---
 
 Automação começa pelo processo, não pelo catálogo de conectores. A ferramenta de automação adequada é a que traduz as suas regras em etapas observáveis, trata falhas com clareza e permite que uma pessoa assuma o controle quando necessário. Escolher pela quantidade de integrações é um erro comum: o gargalo raramente é conectar dois sistemas, e sim manter o fluxo confiável quando algo dá errado.
