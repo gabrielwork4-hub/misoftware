@@ -15,6 +15,34 @@ sources:
   - "https://docs.astro.build/en/guides/content-collections/"
   - "https://docs.astro.build/en/guides/integrations-guide/sitemap/"
   - "https://docs.astro.build/en/guides/rss/"
+faq:
+  - q: "O que é o Astro?"
+    a: >-
+      É um framework web focado em sites de conteúdo. Por padrão ele entrega
+      HTML com pouco ou nenhum JavaScript e só "hidrata" os componentes
+      interativos que você marca (o modelo de islands), o que resulta em
+      páginas rápidas e fáceis de indexar.
+  - q: "O Astro é bom para site editorial ou blog?"
+    a: >-
+      Sim — é um dos seus usos centrais. Content collections tipadas validam o
+      conteúdo no build, e o framework já tem suporte a SEO, sitemap, RSS e
+      otimização de imagens, que é exatamente o que um site editorial precisa.
+  - q: "Preciso saber React para usar o Astro?"
+    a: >-
+      Não. O Astro tem sua própria sintaxe de componente (arquivos .astro) que
+      lembra HTML com um bloco de script. React, Vue, Svelte e outros são
+      opcionais, usados só quando você precisa de interatividade específica.
+  - q: "Astro é melhor que WordPress ou Next.js para conteúdo?"
+    a: >-
+      Depende do objetivo. O Astro se destaca em sites de conteúdo estáticos e
+      rápidos, com controle total do código; o WordPress entrega um CMS pronto
+      com painel; o Next.js é mais voltado a aplicações interativas. Escolha
+      pelo tipo de projeto, não pela moda.
+  - q: "O Astro é gratuito?"
+    a: >-
+      Sim. O Astro é de código aberto (licença MIT) e gratuito. Você paga apenas
+      pela hospedagem — e há planos gratuitos que atendem bem a um site
+      editorial de porte inicial.
 ---
 
 Um site editorial precisa transformar um arquivo de conteúdo em uma experiência publicável, rastreável e fácil de manter. Neste tutorial, o objetivo não é apenas renderizar Markdown: é usar o Astro para criar um pequeno sistema com collections tipadas, layout consistente, SEO técnico, busca e uma rotina de publicação verificável.

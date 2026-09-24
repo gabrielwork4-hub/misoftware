@@ -12,6 +12,36 @@ draft: false
 sources:
   - "https://docs.n8n.io/getting-started/"
   - "https://docs.n8n.io/flow-logic/error-handling/"
+faq:
+  - q: "Preciso saber programar para criar meu primeiro workflow no n8n?"
+    a: >-
+      Não para o básico. Você monta o fluxo conectando nós visualmente. Algum
+      conhecimento de expressões e de JSON ajuda a validar e transformar dados,
+      mas não é pré-requisito para este primeiro workflow.
+  - q: "Preciso instalar o n8n para começar?"
+    a: >-
+      Você precisa de uma instância de teste — pode ser o n8n cloud (com
+      período de avaliação) ou uma instalação local, inclusive via Docker. Use
+      sempre credenciais de teste e dados de exemplo, nunca dados de produção
+      nas primeiras execuções.
+  - q: "Qual é o erro mais comum no primeiro workflow?"
+    a: >-
+      Testar só o "caminho feliz". O workflow parece funcionar com a entrada
+      perfeita e quebra na primeira exceção. Antes de publicar, provoque uma
+      falha (retire um campo, force um valor inesperado) e confirme que ela
+      aparece como falha, gera alerta e pode ser reexecutada sem duplicar
+      efeito.
+  - q: "Como testo um workflow sem afetar dados reais?"
+    a: >-
+      Use um trigger manual com uma entrada de exemplo e mantenha o fluxo sem
+      efeitos externos (não enviar mensagens, não cobrar serviços, não alterar
+      produção). Inspecione a execução válida e a inválida e registre entrada,
+      saída e erro sem incluir segredos.
+  - q: "O que fazer depois do primeiro workflow?"
+    a: >-
+      Avance para o tutorial de webhook e API no n8n e para o hub de n8n. Só
+      conecte sistemas reais quando o caminho de erro e o reprocessamento
+      estiverem documentados.
 ---
 
 Este tutorial cria seu primeiro workflow no n8n: um fluxo pequeno para receber uma entrada de teste, validar os campos, transformar um valor e produzir uma saída que possa ser conferida. O objetivo é aprender o ciclo de execução e recuperação; não conectar um processo crítico no primeiro dia.
