@@ -13,6 +13,36 @@ sources:
   - "https://docs.n8n.io/"
   - "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods"
   - "https://owasp.org/www-project-api-security/"
+faq:
+  - q: "O que é automação de processos?"
+    a: >-
+      É usar software para executar, de ponta a ponta, um processo que antes
+      dependia de trabalho manual repetitivo — recebendo um evento, aplicando
+      regras e produzindo um resultado. Boa automação começa pelo desenho do
+      processo (entrada, exceções, responsável), não pela ferramenta.
+  - q: "Quais são exemplos de automação de processos?"
+    a: >-
+      Triagem e encaminhamento de solicitações, sincronização de dados entre
+      sistemas, disparo de notificações a partir de um evento, geração de
+      relatórios recorrentes e integração de formulários com um CRM. O padrão é
+      sempre o mesmo: um gatilho, uma transformação e uma saída verificável.
+  - q: "Qual a diferença entre automação de processos e RPA?"
+    a: >-
+      RPA (automação robótica de processos) é um tipo de automação que imita os
+      cliques de uma pessoa na interface dos sistemas — útil quando não há API.
+      Automação de processos é o conceito mais amplo, que inclui integrações via
+      API, webhooks e filas, geralmente mais robustas que a RPA.
+  - q: "Por onde começar a automatizar um processo?"
+    a: >-
+      Mapeie o processo primeiro: evento de entrada, dados necessários, regras,
+      quem executa e qual evidência mostra que terminou certo. Depois escolha um
+      recorte pequeno, frequente e reversível para o primeiro piloto — deixando
+      de fora ações financeiras e irreversíveis.
+  - q: "Quais ferramentas usar para automação de processos?"
+    a: >-
+      Plataformas como o n8n aceleram integrações e protótipos, mas a ferramenta
+      não substitui o desenho do fluxo. Compare as opções no hub de automação
+      com n8n e avalie os critérios antes de escolher.
 ---
 
 Automação de processos bem-feita começa pelo próprio processo, não pela ferramenta. Antes de criar um workflow, descreva o evento de entrada, a transformação, a saída, as exceções, o responsável e o que deve acontecer quando uma dependência estiver indisponível. Esse desenho evita automatizar uma etapa isolada e transferir o trabalho manual para a correção de falhas.

@@ -1,6 +1,8 @@
 ---
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ArticleCard from '@/components/ArticleCard.astro';
+import Faq from '@/components/Faq.astro';
 import { getPublishedArticles } from '@/lib/articles';
 import { SILOS } from '@/consts';
 
@@ -16,9 +18,18 @@ const { silo } = Astro.props;
 
 const articles = (await getPublishedArticles()).filter((a) => a.data.silo === silo.slug);
 const siloCover = `/images/silos/${silo.slug}.webp`;
+
+// Corpo do pilar (kind: pilar) — a prosa vive na coleção `fila` e antes não
+// era renderizada. Também alimenta a FAQ (FAQPage) e as fontes.
+const pillar = (
+  await getCollection('fila', ({ data }) => data.kind === 'pilar' && data.canonicalPath === `/${silo.slug}/`)
+)[0];
+const PillarBody = pillar ? (await render(pillar)).Content : null;
+const faq = pillar?.data.faq ?? [];
+const sourceUrls = pillar?.data.sources ?? [];
 ---
 
-<BaseLayout title={silo.label} description={silo.description} image={siloCover}>
+<BaseLayout title={silo.label} description={silo.description} image={siloCover} type="article" faq={faq}>
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <nav class="text-xs font-mono text-slate-400 mb-6" aria-label="Trilha de navegação">
       <a href="/" class="hover:text-brand-600">Início</a>
@@ -47,14 +58,30 @@ const siloCover = `/images/silos/${silo.slug}.webp`;
       </div>
     </div>
 
-    {
-      articles.length > 0 ? (
+    {PillarBody && (
+      <div class="prose-editorial mx-auto mb-14 font-serif text-slate-800 text-lg leading-relaxed [&_h2]:font-sans [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-slate-900 [&_h2]:mt-10 [&_h2]:mb-4 [&_a]:text-brand-600 [&_a]:underline [&_a]:underline-offset-4">
+        <PillarBody />
+      </div>
+    )}
+
+    {articles.length > 0 && (
+      <>
+        <h2 class="font-sans text-2xl font-semibold text-slate-900 mb-6">Explore o silo</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
           {articles.map((entry) => <ArticleCard entry={entry} />)}
         </div>
-      ) : (
-        <p class="text-slate-500 font-serif text-lg">Conteúdo em produção para este silo. Volte em breve.</p>
-      )
-    }
+      </>
+    )}
+
+    <Faq items={faq} />
+
+    {sourceUrls.length > 0 && (
+      <aside class="max-w-3xl mx-auto mt-12 pt-6 border-t border-slate-200">
+        <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 mb-3">Fontes</h2>
+        <ul class="space-y-1.5 text-sm">
+          {sourceUrls.map((url) => <li><a href={url} class="text-brand-600 underline underline-offset-4" rel="nofollow noopener" target="_blank">{url}</a></li>)}
+        </ul>
+      </aside>
+    )}
   </section>
 </BaseLayout>

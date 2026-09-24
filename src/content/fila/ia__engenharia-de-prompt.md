@@ -12,6 +12,38 @@ draft: false
 sources:
   - "https://platform.openai.com/docs/guides/prompt-engineering"
   - "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"
+faq:
+  - q: "O que é engenharia de prompt?"
+    a: >-
+      É a disciplina de transformar uma tarefa em uma especificação que o modelo
+      consiga executar e que uma pessoa consiga avaliar — com contexto,
+      instruções, restrições, exemplos, formato e critério de aceitação. O
+      objetivo não é achar a frase mágica, e sim reduzir ambiguidade e manter o
+      comportamento quando os dados ou o modelo mudam. Veja os fundamentos no
+      guia dedicado.
+  - q: "Engenharia de prompt ainda vale a pena com modelos cada vez melhores?"
+    a: >-
+      Sim. Modelos melhores reduzem a necessidade de "truques", mas não
+      eliminam a de especificar bem a tarefa: o que é uma boa saída, o que deve
+      ser recusado e como validar o resultado. Isso é especificação de produto,
+      e continua sendo trabalho humano.
+  - q: "Preciso saber programar para fazer engenharia de prompt?"
+    a: >-
+      Para escrever prompts, não. Mas engenharia de prompt de produção envolve
+      montar conjuntos de casos de teste, versionar prompts junto do código e
+      medir regressões — e essa parte se beneficia de conhecimento técnico.
+  - q: "Como aprender engenharia de prompt?"
+    a: >-
+      Aprende-se fazendo e medindo, não decorando frases. Uma trilha prática:
+      comece pelos fundamentos, aplique técnicas com exemplos e avance para a
+      avaliação em produção. A cada mudança, confirme com casos reais se o erro
+      realmente caiu.
+  - q: "Qual a diferença entre um prompt bom e um prompt de produção?"
+    a: >-
+      Um prompt bom acerta em um caso; um prompt de produção acerta de forma
+      consistente em casos comuns, ambíguos, incompletos e que deveriam ser
+      recusados — e tem um processo para detectar quando uma mudança piora o
+      resultado. A diferença está na avaliação, não no tamanho do texto.
 ---
 
 Engenharia de prompt é a disciplina de transformar uma tarefa em uma especificação que um modelo consiga executar e que uma pessoa consiga avaliar. O objetivo não é encontrar uma frase mágica, mas reduzir ambiguidade, definir saída, testar variações e manter o comportamento quando mudam os dados ou o modelo.
