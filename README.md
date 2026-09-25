@@ -113,6 +113,36 @@ Ver `ARQUITETURA_MISOFTWARE.md §8` para as regras de decisão e a nota de titul
 
 ---
 
+## Anúncios (AdSense)
+
+O site inclui o **script de verificação** do Google AdSense no `<head>` (via
+`src/components/BaseHead.astro`) e o arquivo `public/ads.txt`. Publisher:
+`ca-pub-9681806666572532`. **Nenhum anúncio é exibido** — apenas verificação de
+propriedade.
+
+Para exibir anúncios no futuro existe o componente `src/components/AdSlot.astro`,
+**desligado por padrão**. Ele só renderiza quando a variável de ambiente pública
+`PUBLIC_ADS_ENABLED` for `"true"`; caso contrário não emite nada.
+
+Como ativar:
+
+1. Definir a variável de ambiente no build/deploy:
+   - Local: adicionar `PUBLIC_ADS_ENABLED=true` a um arquivo `.env`.
+   - Cloudflare Pages: Settings → Environment variables → `PUBLIC_ADS_ENABLED = true`.
+2. Usar o componente onde o anúncio deve aparecer, com o `slot` criado no painel do AdSense:
+
+   ```astro
+   ---
+   import AdSlot from '@/components/AdSlot.astro';
+   ---
+   <AdSlot slot="1234567890" format="auto" />
+   ```
+
+Com `PUBLIC_ADS_ENABLED` ausente ou diferente de `"true"`, o `<AdSlot>` não gera
+`<ins class="adsbygoogle">` nem o `push`, mantendo as páginas limpas.
+
+---
+
 ## Licença
 
 Projeto privado da IdealTrends. Todos os direitos reservados.

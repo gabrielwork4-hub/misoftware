@@ -1,0 +1,44 @@
+---
+/**
+ * AdSlot — bloco de anúncio do Google AdSense, DESLIGADO por padrão.
+ *
+ * Só renderiza HTML quando a variável de ambiente pública
+ * PUBLIC_ADS_ENABLED === "true". Caso contrário, não emite NADA
+ * (nem <ins>, nem script), mantendo as páginas limpas durante a
+ * fase de verificação de propriedade.
+ *
+ * Ainda NÃO é usado em nenhuma página. Como ativar: ver README.md
+ * (seção "Anúncios (AdSense)").
+ */
+interface Props {
+  /** data-ad-slot: ID do bloco criado no painel do AdSense */
+  slot: string;
+  /** data-ad-format (ex.: "auto", "fluid", "rectangle") */
+  format?: string;
+  /** data-full-width-responsive */
+  responsive?: boolean;
+}
+
+const { slot, format = 'auto', responsive = true } = Astro.props;
+
+const enabled = import.meta.env.PUBLIC_ADS_ENABLED === 'true';
+const AD_CLIENT = 'ca-pub-9681806666572532';
+---
+
+{
+  enabled && (
+    <>
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client={AD_CLIENT}
+        data-ad-slot={slot}
+        data-ad-format={format}
+        data-full-width-responsive={responsive ? 'true' : 'false'}
+      />
+      <script is:inline>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </>
+  )
+}
