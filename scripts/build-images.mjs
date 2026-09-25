@@ -246,36 +246,53 @@ for (const t of tools) {
   console.log(`✓ Logo oficial gerado: ${t.id}.webp`);
 }
 
-// 2b. Generate LLM model logos (monogram cards) -> ferramentas/modelos/<slug>.webp
+// 2b. Generate LLM model logos -> ferramentas/modelos/<slug>.webp
+// Usa o logo oficial real de cada marca (SVG em scripts/brand-assets/), não um
+// monograma genérico. `logoColor: null` mantém as cores originais do SVG (ex.:
+// Cohere, que já vem colorido); nos demais, o mark é monocromático e ganha a
+// cor de marca para ficar legível sobre o card escuro.
+const BRAND_ASSETS_DIR = path.join(ROOT, 'scripts/brand-assets');
 const models = [
-  { id: 'modelos/openai-gpt', name: 'OpenAI GPT', color: '#10a37f', desc: 'GPT-6 · série o', mark: 'GPT' },
-  { id: 'modelos/anthropic-claude', name: 'Anthropic Claude', color: '#d97757', desc: 'Opus · Sonnet · Haiku', mark: 'Cl' },
-  { id: 'modelos/google-gemini', name: 'Google Gemini', color: '#4e88f5', desc: 'Família Gemini 3', mark: 'G' },
-  { id: 'modelos/meta-llama', name: 'Meta Llama', color: '#0866ff', desc: 'Open weights · MoE', mark: 'Ll' },
-  { id: 'modelos/mistral', name: 'Mistral AI', color: '#ff7000', desc: 'Aberto · Apache 2.0', mark: 'M' },
-  { id: 'modelos/deepseek', name: 'DeepSeek', color: '#4d6bfe', desc: 'V4 · MIT', mark: 'DS' },
-  { id: 'modelos/qwen', name: 'Alibaba Qwen', color: '#7b5cff', desc: 'Aberto + fechado', mark: 'Q' },
-  { id: 'modelos/xai-grok', name: 'xAI Grok', color: '#e5e7eb', desc: 'Grok 4.7', mark: 'Gr' },
-  { id: 'modelos/cohere-command', name: 'Cohere Command', color: '#ff7759', desc: 'Aberto · Apache 2.0', mark: 'Co' },
-  { id: 'modelos/amazon-nova', name: 'Amazon Nova', color: '#ff9900', desc: 'AWS Bedrock', mark: 'N' },
-  { id: 'modelos/google-gemma', name: 'Google Gemma', color: '#4e88f5', desc: 'Aberto · Apache 2.0', mark: 'Gm' },
-  { id: 'modelos/microsoft-phi', name: 'Microsoft Phi', color: '#0078d4', desc: 'SLM · MIT', mark: 'φ' },
+  { id: 'modelos/openai-gpt', name: 'OpenAI GPT', color: '#10a37f', desc: 'GPT-6 · série o', logo: 'openai-gpt.svg', logoColor: '#ffffff' },
+  { id: 'modelos/anthropic-claude', name: 'Anthropic Claude', color: '#d97757', desc: 'Opus · Sonnet · Haiku', logo: 'anthropic-claude.svg', logoColor: '#ffffff' },
+  { id: 'modelos/google-gemini', name: 'Google Gemini', color: '#8e75b2', desc: 'Família Gemini 3', logo: 'google-gemini.svg', logoColor: '#8e75b2' },
+  { id: 'modelos/meta-llama', name: 'Meta Llama', color: '#0467df', desc: 'Open weights · MoE', logo: 'meta-llama.svg', logoColor: '#0467df' },
+  { id: 'modelos/mistral', name: 'Mistral AI', color: '#fa520f', desc: 'Aberto · Apache 2.0', logo: 'mistral.svg', logoColor: '#fa520f' },
+  { id: 'modelos/deepseek', name: 'DeepSeek', color: '#5786fe', desc: 'V4 · MIT', logo: 'deepseek.svg', logoColor: '#5786fe' },
+  { id: 'modelos/qwen', name: 'Alibaba Qwen', color: '#6950ef', desc: 'Aberto + fechado', logo: 'qwen.svg', logoColor: '#6950ef' },
+  { id: 'modelos/xai-grok', name: 'xAI Grok', color: '#e5e7eb', desc: 'Grok 4.7', logo: 'xai-grok.svg', logoColor: '#ffffff' },
+  { id: 'modelos/cohere-command', name: 'Cohere Command', color: '#ff7759', desc: 'Aberto · Apache 2.0', logo: 'cohere-command.svg', logoColor: null },
+  { id: 'modelos/amazon-nova', name: 'Amazon Nova', color: '#ff9900', desc: 'AWS Bedrock', logo: 'amazon-nova.svg', logoColor: '#ffffff' },
+  { id: 'modelos/google-gemma', name: 'Google Gemma', color: '#4e88f5', desc: 'Aberto · Apache 2.0', logo: 'google-gemma.svg', logoColor: '#4285f4' },
+  { id: 'modelos/microsoft-phi', name: 'Microsoft Phi', color: '#0078d4', desc: 'SLM · MIT', logo: 'microsoft-phi.svg', logoColor: '#ffffff' },
 ];
 
+const MARK_SIZE = 84; // área (px, dentro do svg 256) reservada ao logo dentro do círculo
+
 for (const m of models) {
-  const ms = m.mark.length <= 1 ? 66 : m.mark.length === 2 ? 52 : 40;
-  const svg = `<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  let logoSvg = fs.readFileSync(path.join(BRAND_ASSETS_DIR, m.logo), 'utf8');
+  if (m.logoColor) {
+    logoSvg = logoSvg.replace(/<svg /, `<svg fill="${m.logoColor}" `);
+  }
+  const logoPng = await sharp(Buffer.from(logoSvg), { density: 600 })
+    .resize(MARK_SIZE, MARK_SIZE, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .png()
+    .toBuffer();
+
+  const cardSvg = `<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
     <rect width="256" height="256" rx="48" fill="#0d1117"/>
     <rect x="8" y="8" width="240" height="240" rx="40" fill="none" stroke="${m.color}" stroke-width="2.5" stroke-opacity="0.35"/>
     <circle cx="128" cy="105" r="54" fill="${m.color}" fill-opacity="0.12"/>
-    <text x="128" y="105" font-family="'JetBrains Mono', Consolas, monospace" font-size="${ms}" font-weight="800" fill="${m.color}" text-anchor="middle" dominant-baseline="central">${escapeXml(m.mark)}</text>
     <text x="128" y="196" font-family="'Segoe UI', Arial, sans-serif" font-size="17" font-weight="700" fill="#f8fafc" text-anchor="middle">${escapeXml(m.name)}</text>
     <text x="128" y="220" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">${escapeXml(m.desc)}</text>
   </svg>`;
 
   const out = path.join(PUBLIC_IMG, `ferramentas/${m.id}.webp`);
-  await sharp(Buffer.from(svg)).webp({ quality: 90 }).toFile(out);
-  console.log(`✓ Logo de modelo gerado: ${m.id}.webp`);
+  await sharp(Buffer.from(cardSvg))
+    .composite([{ input: logoPng, left: Math.round(128 - MARK_SIZE / 2), top: Math.round(105 - MARK_SIZE / 2) }])
+    .webp({ quality: 90 })
+    .toFile(out);
+  console.log(`✓ Logo oficial de modelo aplicado: ${m.id}.webp`);
 }
 
 // 3. Generate Author Avatars
