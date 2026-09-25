@@ -1,6 +1,6 @@
 ---
 title: "Cursor vs Windsurf: qual editor de código com IA escolher"
-description: "Comparação orientada a tarefas entre Cursor e Windsurf: contexto do repositório, fluxos com agente, controle sobre as mudanças e adequação a times — testado no seu código."
+description: "Comparação orientada a tarefas entre Cursor e Windsurf: contexto do repositório, fluxos com agente e controle sobre as mudanças — testado no seu código."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "Ferramentas"

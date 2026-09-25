@@ -1,6 +1,6 @@
 ---
 title: "CI/CD com GitHub Actions e Docker: guia"
-description: "Como construir um pipeline CI/CD confiável com GitHub Actions e Docker: etapas na ordem certa, cache e imagens mínimas, proteção de secrets e deploy com rollback."
+description: "Como construir um pipeline CI/CD confiável com GitHub Actions e Docker: etapas na ordem certa, imagens mínimas, secrets protegidos e deploy com rollback."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "Desenvolvimento"

@@ -1,6 +1,6 @@
 ---
 title: "Como avaliar um sistema RAG"
-description: "Como medir um sistema RAG separando recuperação e geração: montar um conjunto de avaliação, métricas como recall@k e faithfulness, e detectar a citação que não sustenta a resposta."
+description: "Como medir um sistema RAG separando recuperação e geração: monte um conjunto de avaliação, use recall@k e faithfulness e detecte citações sem suporte."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "IA & Modelos"

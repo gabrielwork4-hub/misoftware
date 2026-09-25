@@ -1,6 +1,6 @@
 ---
 title: "Ferramentas de IA para desenvolvimento de software"
-description: "Como montar uma stack de IA que cobre o ciclo de desenvolvimento — entender, implementar, testar, revisar e operar — escolhendo pela camada, não pelo modelo com a melhor demo."
+description: "Como montar uma stack de IA que cobre o ciclo de desenvolvimento — entender, implementar, testar, revisar e operar — escolhendo pela camada certa."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "Ferramentas"

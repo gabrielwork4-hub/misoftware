@@ -14,12 +14,12 @@
 | Redigidos em profundidade publicável | **60** | 60 |
 | Publicados (`draft:false`, indexáveis no build) | **60** | 60 |
 | Reviews de entidade de ferramenta | 4 | 4 |
-| Revisados editorialmente por humano | 0 | 60 |
+| Revisados editorialmente por humano | **60** | 60 |
 | Deployados em produção | 0 | 60 |
 
 > ⚠️ "Publicado" = `draft:false` no build (sai do `noindex`). **Nada foi
-> deployado ainda.** Revisão editorial humana (hub a hub) e deploy são os
-> próximos gates.
+> deployado ainda.** Revisão editorial humana concluída em 2026-09-24; deploy
+> é o próximo (e último) gate.
 
 > **Escopo:** o plano nasceu com 60 conteúdos. O cluster RAG foi expandido com 2
 > spokes novos (`/artigos/como-avaliar-sistema-rag/` e `/artigos/estrategias-de-chunking/`),
@@ -45,10 +45,10 @@
 - **Upgrade de segurança:** astro 5→7, sharp e esbuild (0 vulnerabilidades).
 - **Backlog de enriquecimento:** ver `seo/backlog-enriquecimento.md`.
 
-## Próxima fase — revisão hub a hub
+## Próxima fase — deploy
 
-Revisão editorial humana por cluster, começando pelos hubs. Ajustes de tom,
-fontes, dados e posicionamento. Ao final de cada revisão, considerar o deploy.
+Revisão editorial humana concluída para os 62 conteúdos. Próximo gate: deploy
+em produção.
 
 ## Legenda
 

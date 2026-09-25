@@ -1,6 +1,6 @@
 ---
 title: "Como escolher uma ferramenta de gestão de conhecimento"
-description: "Um framework para escolher uma ferramenta de gestão de conhecimento pelo desenho do sistema — quem cria, quem consulta, governança e portabilidade — não pela lista de recursos."
+description: "Um framework para escolher ferramenta de gestão de conhecimento pelo desenho do sistema — quem cria, quem consulta, governança e portabilidade."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "Ferramentas"

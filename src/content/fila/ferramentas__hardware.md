@@ -1,6 +1,6 @@
 ---
 title: "Hardware para IA local: como dimensionar sua máquina"
-description: "Como dimensionar CPU, GPU, memória e armazenamento para rodar modelos de IA localmente — começando pelo modelo que você quer usar, não pela ficha técnica da placa."
+description: "Como dimensionar CPU, GPU, memória e armazenamento para rodar modelos de IA localmente — começando pelo modelo que você quer usar."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "Ferramentas"

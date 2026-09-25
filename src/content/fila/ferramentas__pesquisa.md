@@ -1,6 +1,6 @@
 ---
 title: "Ferramentas de pesquisa técnica: encontre fontes confiáveis"
-description: "Ferramentas e práticas para pesquisar documentação, artigos e código com verificação — descobrir rápido, confirmar na fonte original e preservar a evidência para depois."
+description: "Ferramentas e práticas para pesquisar documentação, artigos e código com verificação — descobrir rápido e confirmar na fonte original."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "Ferramentas"

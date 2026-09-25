@@ -1,6 +1,6 @@
 ---
 title: "Workflows Operacionais: desenho, automação e controle"
-description: "Como desenhar workflows operacionais com triggers, decisões, aprovações, retries, alertas e manutenção — para automatizar sem transformar falha pequena em incidente."
+description: "Como desenhar workflows operacionais com triggers, decisões, aprovações, retries e alertas — para automatizar sem transformar falha em incidente."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "Automação"

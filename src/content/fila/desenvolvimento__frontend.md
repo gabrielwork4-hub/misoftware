@@ -1,6 +1,6 @@
 ---
 title: "Desenvolvimento Front-end: performance e arquitetura"
-description: "Front-end com foco no que importa: escolher a renderização certa, componentes com responsabilidade clara, acessibilidade e performance mensurável — não complexidade."
+description: "Front-end com foco no que importa: escolher a renderização certa, componentes com responsabilidade clara, acessibilidade e performance mensurável."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "Desenvolvimento"

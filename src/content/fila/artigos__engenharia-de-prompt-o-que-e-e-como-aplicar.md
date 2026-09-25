@@ -1,5 +1,5 @@
 ---
-title: "Engenharia de prompt: o que é e como aplicar no trabalho técnico"
+title: "Engenharia de prompt: o que é e como aplicar"
 description: "Aprenda a estruturar prompts com contexto, restrições, exemplos, formato de saída e critérios de avaliação para tarefas técnicas."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"

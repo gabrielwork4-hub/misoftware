@@ -1,6 +1,6 @@
 ---
 title: "Melhores editores de código com IA: como comparar"
-description: "Um método para avaliar editores de código com IA por contexto do repositório, controle sobre as mudanças, segurança e produtividade real — em vez de escolher pelo recurso mais chamativo."
+description: "Um método para avaliar editores de código com IA por contexto do repositório, controle sobre as mudanças, segurança e produtividade real."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "Ferramentas"

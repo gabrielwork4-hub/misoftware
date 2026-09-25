@@ -1,5 +1,5 @@
 ---
-title: "Obsidian vs Notion: qual ferramenta serve melhor ao seu conhecimento"
+title: "Obsidian vs Notion: qual ferramenta escolher"
 description: "Comparação entre Obsidian e Notion por modelo de dados, colaboração, portabilidade e privacidade — dois paradigmas diferentes, não duas versões da mesma coisa."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"

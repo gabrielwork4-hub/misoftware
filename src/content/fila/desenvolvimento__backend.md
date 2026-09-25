@@ -1,6 +1,6 @@
 ---
 title: "Desenvolvimento Back-end: APIs e serviços confiáveis"
-description: "Back-end confiável em quatro pilares: contratos claros, validação na borda, integrações idempotentes e operação observável — com os gates que evitam falha silenciosa."
+description: "Back-end confiável em quatro pilares: contratos claros, validação na borda, integrações idempotentes e operação observável."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "Desenvolvimento"

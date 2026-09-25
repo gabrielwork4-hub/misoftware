@@ -1,6 +1,6 @@
 ---
 title: "Modelos de IA local para programação: como comparar"
-description: "Um método para comparar modelos de IA local para programação por qualidade de código, contexto, hardware e licença — com tarefas reais, não benchmarks genéricos."
+description: "Um método para comparar modelos de IA local para programação por qualidade de código, contexto, hardware e licença — com tarefas reais."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "IA & Modelos"

@@ -1,6 +1,6 @@
 ---
 title: "Observabilidade para Aplicações Web: guia prático"
-description: "Logs, métricas e traces sem virar ruído: os três sinais, como definir SLOs por fluxo, alertas acionáveis e runbooks — para transformar uma falha em diagnóstico rápido."
+description: "Logs, métricas e traces sem virar ruído: os três sinais, SLOs por fluxo, alertas acionáveis e runbooks para transformar falha em diagnóstico rápido."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "Desenvolvimento"

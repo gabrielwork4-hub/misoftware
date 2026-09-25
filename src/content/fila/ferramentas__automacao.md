@@ -1,6 +1,6 @@
 ---
 title: "Ferramentas de automação: como escolher a plataforma certa"
-description: "Critérios para escolher uma plataforma de automação por complexidade do fluxo, integrações, governança e custo total — começando pelo processo, não pelo catálogo de conectores."
+description: "Critérios para escolher uma plataforma de automação por complexidade do fluxo, integrações, governança e custo total — começando pelo processo."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "Ferramentas"

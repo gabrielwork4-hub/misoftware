@@ -1,6 +1,6 @@
 ---
 title: "Validação de Dados em APIs: schemas e erros"
-description: "Como projetar validação de dados em APIs: onde validar cada regra, schemas explícitos, erros consistentes e seguros, e testes para entradas ausentes, extremas e maliciosas."
+description: "Como projetar validação de dados em APIs: onde validar cada regra, schemas explícitos, erros consistentes e testes para entradas ausentes e extremas."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "Desenvolvimento"

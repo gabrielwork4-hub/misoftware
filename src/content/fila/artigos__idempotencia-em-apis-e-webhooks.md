@@ -1,6 +1,6 @@
 ---
 title: "Idempotência em APIs e Webhooks: guia prático"
-description: "Como evitar efeitos duplicados com idempotency keys, tratamento de concorrência, retries com backoff e replay seguro — o que muda entre repetir uma leitura e repetir uma cobrança."
+description: "Como evitar efeitos duplicados com idempotency keys, concorrência, retries com backoff e replay seguro — o que muda entre repetir leitura e cobrança."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "Desenvolvimento"

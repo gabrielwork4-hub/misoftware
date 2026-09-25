@@ -1,6 +1,6 @@
 ---
 title: "DevOps: CI/CD, deploy e observabilidade"
-description: "DevOps na prática: pipeline com etapas claras, ambientes e secrets separados, deploy com rollback e observabilidade — para entregar com segurança e recuperar rápido."
+description: "DevOps na prática: pipeline com etapas claras, ambientes e secrets separados, deploy com rollback e observabilidade."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "Desenvolvimento"

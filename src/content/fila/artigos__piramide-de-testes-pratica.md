@@ -1,6 +1,6 @@
 ---
 title: "Pirâmide de Testes na Prática: guia completo"
-description: "Entenda testes unitários, de integração e E2E, e monte uma estratégia equilibrada por risco, velocidade e custo de manutenção — sem tratar a pirâmide como regra rígida."
+description: "Entenda testes unitários, de integração e E2E, e monte uma estratégia equilibrada por risco, velocidade e custo de manutenção."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "Desenvolvimento"

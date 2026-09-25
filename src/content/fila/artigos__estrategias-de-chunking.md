@@ -1,6 +1,6 @@
 ---
 title: "Estratégias de chunking para RAG"
-description: "Como dividir documentos para RAG: tamanho e sobreposição, chunking por estrutura vs tamanho fixo, o papel dos metadados e como escolher a estratégia medindo a recuperação."
+description: "Como dividir documentos para RAG: tamanho e sobreposição, chunking por estrutura vs fixo, o papel dos metadados e como escolher a estratégia certa."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "IA & Modelos"

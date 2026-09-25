@@ -1,6 +1,6 @@
 ---
 title: "Monitoramento de Workflows: métricas e alertas"
-description: "Como monitorar workflows com métricas úteis, logs correlacionados, SLOs e alertas acionáveis — para saber se executou, quanto demorou, onde falhou e como recuperar."
+description: "Como monitorar workflows com métricas úteis, logs correlacionados, SLOs e alertas acionáveis — saiba se executou, quanto demorou e onde falhou."
 pubDate: "2026-09-22"
 author: "gabriel-barboza"
 category: "Automação"

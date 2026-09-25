@@ -1,6 +1,6 @@
 ---
 title: "Modelos de linguagem (LLMs): panorama e comparação"
-description: "O que são LLMs, quem faz os principais modelos, quanto custam por token e como escolher — com uma tabela comparativa verificada em fonte oficial e uma página por família."
+description: "O que são LLMs, quem faz os principais modelos, quanto custam por token e como escolher — com tabela comparativa verificada em fonte oficial."
 pubDate: "2026-09-24"
 author: "gabriel-barboza"
 category: "IA & Modelos"
