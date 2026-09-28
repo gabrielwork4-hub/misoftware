@@ -26,6 +26,10 @@ function ranking(pathname) {
   if (first === 'comparativos' || first === 'tutoriais' || first === 'estudos-de-caso') {
     return depth === 1 ? { priority: 0.6, changefreq: 'weekly' } : { priority: 0.8, changefreq: 'monthly' };
   }
+  // Notícias: listagem muda a cada publicação; a notícia em si é folha recente
+  if (first === 'noticias') {
+    return depth === 1 ? { priority: 0.7, changefreq: 'daily' } : { priority: 0.8, changefreq: 'weekly' };
+  }
   // Artigos e diretórios de ferramentas/autores
   if (first === 'artigos' || first === 'ferramentas' || first === 'autores') {
     return depth === 1 ? { priority: 0.6, changefreq: 'weekly' } : { priority: 0.7, changefreq: 'monthly' };
