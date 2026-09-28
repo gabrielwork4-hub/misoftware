@@ -24,6 +24,7 @@ export const NAV: { label: string; href: string }[] = [
   { label: 'Automação', href: '/automacao/' },
   { label: 'Desenvolvimento', href: '/desenvolvimento/' },
   { label: 'Ferramentas', href: '/ferramentas/' },
+  { label: 'Notícias', href: '/noticias/' },
 ];
 
 /** Silos editoriais (páginas-pilar) */
