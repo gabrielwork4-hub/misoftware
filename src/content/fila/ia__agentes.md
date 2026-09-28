@@ -2,6 +2,7 @@
 title: "Agentes de IA: guia para entender, construir e avaliar"
 description: "Entenda quando um agente faz sentido, como limitar suas ferramentas e qual trilha seguir para construir e operar agentes confiáveis."
 pubDate: "2026-09-22"
+updatedDate: "2026-09-28"
 author: "gabriel-barboza"
 category: "IA & Modelos"
 silo: ia
@@ -43,9 +44,11 @@ faq:
     a: >-
       São seguros na medida em que você os limita. Use permissões mínimas,
       credenciais separadas e aprovação humana para ações externas ou
-      irreversíveis, além de limites de passos, tempo e custo. Antes de aumentar
-      a autonomia, prove que o agente pode ser interrompido, corrigido e
-      revertido.
+      irreversíveis, além de limites de passos, tempo e custo. Sempre que o
+      agente executar código ou acessar a rede, rode-o em uma sandbox com regras
+      aplicadas fora do agente, como faz o OpenShell, lançado pela NVIDIA em
+      setembro de 2026. Antes de aumentar a autonomia, prove que o agente pode
+      ser interrompido, corrigido e revertido.
 ---
 
 Um agente de IA é útil quando precisa interpretar um objetivo, escolher uma ação e usar ferramentas dentro de limites definidos. Ele não é apenas um chatbot com uma resposta mais longa. A diferença está no ciclo de decisão: o sistema recebe contexto, escolhe um próximo passo, executa uma ferramenta, observa o resultado e decide se deve continuar, parar ou pedir ajuda.
@@ -104,6 +107,14 @@ Use permissões mínimas, credenciais separadas e aprovação para ações exter
 
 O [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) pode ajudar a organizar riscos, mas o controle precisa ser traduzido para o processo concreto. Antes de aumentar autonomia, prove que o agente pode ser interrompido, corrigido e revertido.
 
+### Isolamento em tempo de execução (atualizado em setembro de 2026)
+
+Permissões declaradas no prompt ou na própria ferramenta não bastam quando o agente executa código, abre um shell ou cria subprocessos. A camada que fecha essa lacuna é o *runtime* de isolamento: o agente roda dentro de uma *sandbox* e um processo externo decide o que ele pode acessar em rede, arquivos e credenciais.
+
+Em 28/09/2026, a NVIDIA lançou o OpenShell, um *runtime* open source (Apache 2.0) com esse desenho, compatível com Codex e Claude Code segundo a empresa. Ele aplica políticas em YAML por protocolo (por exemplo, liberar leitura e bloquear escrita na mesma API), mantém chaves de API fora do alcance do agente e registra cada decisão para auditoria. Veja os detalhes em [NVIDIA OpenShell: o que muda na segurança de agentes de IA](/noticias/nvidia-openshell-seguranca-agentes-ia-lancamento/).
+
+Na prática, trate a política de acesso como código: versionada, revisada e testada junto com o agente. Isolamento limita o estrago possível, mas não substitui a avaliação da tarefa nem a aprovação humana para ações irreversíveis.
+
 ## Padrões e ferramentas de agentes
 
 Alguns conceitos aparecem repetidamente quando se sai do protótipo:
@@ -114,6 +125,7 @@ Alguns conceitos aparecem repetidamente quando se sai do protótipo:
 - **Memória:** o que o agente conserva entre passos e entre sessões — e por quanto tempo.
 - **Orquestração multiagente:** dividir um problema entre papéis com contexto e permissões próprios, quando um único agente fica ambíguo demais.
 - **Human-in-the-loop e guardrails:** aprovação humana e limites explícitos nas ações irreversíveis.
+- **Sandbox e runtime de isolamento:** executar o agente em um ambiente com rede, arquivos e credenciais controlados por fora dele, para que um erro ou uma instrução maliciosa não alcance sistemas que o agente não deveria tocar.
 
 Frameworks como o [LangChain](/ferramentas/langchain/) oferecem blocos para orquestrar esses padrões, mas a decisão de arquitetura — e os testes no seu domínio — continuam sendo seu trabalho.
 
