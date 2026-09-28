@@ -33,7 +33,9 @@ const coverImage = data.coverImage ?? `/images/artigos/${entry.id}.webp`;
     <nav class="text-xs font-mono text-slate-400 mb-6" aria-label="Trilha de navegação">
       <a href="/" class="hover:text-brand-600">Início</a>
       <span class="mx-1.5">/</span>
-      <a href={`/${data.silo}/`} class="hover:text-brand-600 capitalize">{data.silo}</a>
+      {isNews
+        ? <a href="/noticias/" class="hover:text-brand-600">Notícias</a>
+        : <a href={`/${data.silo}/`} class="hover:text-brand-600 capitalize">{data.silo}</a>}
       <span class="mx-1.5">/</span>
       <span class="text-slate-600">{kindLabel}</span>
     </nav>
