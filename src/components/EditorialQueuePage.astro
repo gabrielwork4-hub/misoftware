@@ -20,13 +20,15 @@ const kindLabel = {
   pilar: 'Página-pilar',
   artigo: 'Artigo',
   ferramenta: 'Ferramenta',
+  noticia: 'Notícia',
 }[data.kind ?? 'artigo'] ?? 'Conteúdo';
+const isNews = data.kind === 'noticia';
 const sourceUrls = (data.sources ?? []).map((source) => typeof source === 'string' ? source : source.url);
 const faq = data.faq ?? [];
 const coverImage = data.coverImage ?? `/images/artigos/${entry.id}.webp`;
 ---
 
-<BaseLayout title={data.title} description={data.description} type="article" author={authorName} authorUrl={`/autores/${authorSlug}/`} authorSameAs={author?.data.sameAs} authorEntity={author?.data.entity} image={coverImage} publishedTime={data.pubDate.toISOString()} faq={faq} noindex={data.draft === true}>
+<BaseLayout title={data.title} description={data.description} type="article" author={authorName} authorUrl={`/autores/${authorSlug}/`} authorSameAs={author?.data.sameAs} authorEntity={author?.data.entity} image={coverImage} publishedTime={data.pubDate.toISOString()} modifiedTime={data.updatedDate?.toISOString()} articleType={isNews ? 'NewsArticle' : 'BlogPosting'} isBasedOn={isNews ? sourceUrls : []} faq={faq} noindex={data.draft === true}>
   <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <nav class="text-xs font-mono text-slate-400 mb-6" aria-label="Trilha de navegação">
       <a href="/" class="hover:text-brand-600">Início</a>

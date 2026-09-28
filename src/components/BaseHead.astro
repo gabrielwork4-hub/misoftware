@@ -9,6 +9,8 @@ interface Props {
   type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
+  /** Tipo schema.org do nó de artigo (NewsArticle para /noticias/) */
+  articleType?: 'BlogPosting' | 'NewsArticle';
   author?: string;
   /** URL do perfil do autor (ex.: /autores/gabriel-barboza/) */
   authorUrl?: string;
@@ -18,6 +20,8 @@ interface Props {
   authorEntity?: 'Person' | 'Organization';
   /** Perguntas frequentes — geram um nó FAQPage no JSON-LD */
   faq?: { q: string; a: string }[];
+  /** Fontes primárias da peça — viram `isBasedOn` no nó de artigo */
+  isBasedOn?: string[];
   noindex?: boolean;
 }
 
@@ -28,11 +32,13 @@ const {
   type = 'website',
   publishedTime,
   modifiedTime,
+  articleType = 'BlogPosting',
   author = SITE.author,
   authorUrl,
   authorSameAs = [],
   authorEntity = 'Person',
   faq = [],
+  isBasedOn = [],
   noindex = false,
 } = Astro.props;
 
@@ -64,9 +70,9 @@ if (type === 'article') {
   if (authorUrl) authorNode.url = new URL(authorUrl, Astro.site ?? SITE.url).toString();
   if (authorSameAs.length > 0) authorNode.sameAs = authorSameAs;
 
-  schema.push({
+  const articleNode: Record<string, unknown> = {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
+    '@type': articleType,
     headline: title,
     description,
     image: ogImage.toString(),
@@ -80,7 +86,9 @@ if (type === 'article') {
       name: SITE.name,
       url: SITE.url,
     },
-  });
+  };
+  if (isBasedOn.length > 0) articleNode.isBasedOn = isBasedOn;
+  schema.push(articleNode);
 }
 
 // BreadcrumbList a partir do path da URL (ARQUITETURA §9) — cobre todas as
@@ -92,6 +100,7 @@ const crumbLabels: Record<string, string> = {
   ferramentas: 'Ferramentas',
   comparativos: 'Comparativos',
   'estudos-de-caso': 'Estudos de caso',
+  noticias: 'Notícias',
   autores: 'Autores',
   arquivo: 'Arquivo',
   ia: 'IA',

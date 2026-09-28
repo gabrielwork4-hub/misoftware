@@ -1,7 +1,8 @@
 ---
 name: "Anthropic Claude"
-description: "A família Claude da Anthropic — Opus 5.5, Sonnet 5, Haiku 4.5 e Fable 5.1 — com janela de 1M de tokens, preços por token, datas de lançamento e benchmarks verificados em fonte oficial."
+description: "Família Claude da Anthropic (Opus 5.5, Sonnet 5, Haiku 4.5 e Fable 5.1): preços por token, benchmarks, contexto de 1M e como funcionam os limites do Claude Code"
 pubDate: 2026-09-24
+updatedDate: 2026-09-28
 vendor: "Anthropic"
 category: "Modelos de IA"
 pricing: "Pago por token (API) + Claude.ai"
@@ -29,6 +30,14 @@ A escala vai do **Haiku** (mais rápido e barato) ao **Fable 5.1** (raciocínio 
 ## Lançamento
 
 **Claude Opus 5.5** foi anunciado em **22 de setembro de 2026**, abrindo a família Claude 5.5. Segundo a Anthropic, entrega o nível do Fable 5.1 na maior parte do trabalho e custa cerca de **40% menos** para operar que o Opus 5. Está disponível na API, no Claude.ai e nas nuvens AWS, Google Cloud e Azure.
+
+## Claude Code e disponibilidade em ferramentas de código (setembro de 2026)
+
+O **Claude Code** é o agente de código da Anthropic: roda no terminal e em IDEs (VS Code, Cursor e outros forks do VS Code, e JetBrains) e usa os modelos Claude para ler o repositório, editar arquivos e executar comandos. Nos planos **Pro** e **Max**, o uso do Claude Code e do Claude (web, desktop e celular) conta contra **o mesmo limite**, segundo a [central de ajuda da Anthropic](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan). O comando `/status` mostra quanto resta da cota.
+
+**Novidade de 25/09/2026:** ao atingir o limite de sessão de 5 horas no meio de uma tarefa, o Claude Code agora tenta encontrar um ponto de parada controlado em vez de cortar no meio de uma edição, usando uma cota pequena e fixa retirada do limite semanal. Durante a implantação, vale uma vez por semana no plano Pro e toda vez que o limite é atingido nos planos Max e Team Premium ([anúncio oficial](https://x.com/ClaudeDevs/status/2103561342057943314)). Detalhes e o que muda na prática: [Claude Code muda limite de uso de 5 horas](/noticias/claude-code-limite-de-uso-5-horas-parada-controlada/).
+
+**Opus 5.5 no GitHub Copilot:** desde 22/09/2026, o Claude Opus 5.5 está disponível no GitHub Copilot para os planos Pro+, Max, Business e Enterprise ([GitHub Changelog](https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21/)). Para comparar editores e agentes, veja [melhores editores de código com IA](/comparativos/melhores-editores-codigo-ia/).
 
 ## Benchmarks (Opus 5.5)
 

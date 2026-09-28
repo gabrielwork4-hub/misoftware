@@ -25,6 +25,7 @@ const toolSchema: Record<string, unknown> = {
   applicationCategory: data.category,
   url: new URL(`/ferramentas/${entry.id}/`, Astro.site ?? SITE.url).toString(),
 };
+if (data.updatedDate) toolSchema.dateModified = data.updatedDate.toISOString();
 if (data.vendor) toolSchema.author = { '@type': 'Organization', name: data.vendor };
 if (data.platforms.length > 0) toolSchema.operatingSystem = data.platforms.join(', ');
 if (data.url) toolSchema.sameAs = data.url;
@@ -37,7 +38,7 @@ if (typeof data.rating === 'number') {
 }
 ---
 
-<BaseLayout title={data.name} description={data.description}>
+<BaseLayout title={data.name} description={data.description} modifiedTime={data.updatedDate?.toISOString()}>
   <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <nav class="text-xs font-mono text-slate-400 mb-6" aria-label="Trilha de navegação">
       <a href="/" class="hover:text-brand-600">Início</a>
