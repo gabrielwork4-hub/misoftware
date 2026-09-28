@@ -7,7 +7,7 @@ export type ArticleEntry = CollectionEntry<'fila'>;
  * Hubs e pilares têm páginas de silo próprias; `ferramenta` vive na coleção
  * `ferramentas`. A fonte única de verdade do conteúdo é a coleção `fila`.
  */
-const READING_KINDS = new Set(['artigo', 'tutorial', 'comparativo', 'estudo-de-caso']);
+const READING_KINDS = new Set(['artigo', 'tutorial', 'comparativo', 'estudo-de-caso', 'noticia']);
 
 /** Peças editoriais publicadas (não-draft), mais recentes primeiro. */
 export async function getPublishedArticles(): Promise<ArticleEntry[]> {

@@ -12,11 +12,13 @@ interface Props {
   type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
+  articleType?: 'BlogPosting' | 'NewsArticle';
   author?: string;
   authorUrl?: string;
   authorSameAs?: string[];
   authorEntity?: 'Person' | 'Organization';
   faq?: { q: string; a: string }[];
+  isBasedOn?: string[];
   noindex?: boolean;
 }
 

@@ -13,10 +13,11 @@ const KIND_LABEL: Record<string, string> = {
   artigo: 'Guia',
   'estudo-de-caso': 'Estudo de caso',
   ferramenta: 'Ferramenta',
+  noticia: 'Notícia',
 };
 
 /** Ordem de apresentação dentro de cada silo (do mais estrutural ao mais específico). */
-const KIND_ORDER = ['pilar', 'hub', 'comparativo', 'tutorial', 'artigo', 'estudo-de-caso', 'ferramenta'];
+const KIND_ORDER = ['pilar', 'hub', 'comparativo', 'tutorial', 'artigo', 'estudo-de-caso', 'ferramenta', 'noticia'];
 
 const abs = (path: string) => new URL(path, SITE.url).href;
 
