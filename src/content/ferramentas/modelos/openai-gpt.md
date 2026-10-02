@@ -49,6 +49,7 @@ Em **29 de setembro de 2026**, no DevDay, a OpenAI lançou o **GPT-6.1 Sol** (`g
 - **GPT-6.1 Sol (29/09/2026):** novo Sol, mesmo preço por token, cache 50% mais barato. Veja a [notícia completa](/noticias/gpt-6-1-sol-lancamento-preco-o-que-muda/) ([fonte oficial](https://openai.com/index/introducing-gpt-6-1-sol/)).
 - **Ultrafast (29/09/2026):** nível de velocidade premium com até 8x mais tokens por segundo no Codex e até 6x na API. Disponível para o GPT-6 Astra (parâmetro `service_tier="ultrafast"`, US$ 60 / US$ 300 por milhão de tokens em contexto curto); para o 6.1 Sol, "em breve" ([guia oficial](https://developers.openai.com/api/docs/guides/ultrafast-mode)).
 - **Agents API com uso de computador (29/09/2026):** agentes que operam software pela interface, com infraestrutura hospedada pela OpenAI ([resumo do DevDay](https://openai.com/index/devday-2026-recap/)).
+- **Codex CLI renovado (29/09/2026):** nova versão anunciada no mesmo DevDay ([recap do DevDay 2026](https://openai.com/index/devday-2026-recap/)).
 
 ## Benchmarks (GPT-6 Astra)
 
@@ -68,7 +69,7 @@ As linhas GPT-6 e GPT-5.6 aceitam **texto e imagem** na entrada (visão), com sa
 
 ## Características de teste e limites
 
-- **Uso geral e agêntico:** a linha GPT-6 cobre a maioria das tarefas; o **GPT-6.1 Sol** é o recomendado para código e agentes, e o Astra fica para as tarefas mais difíceis, como pesquisa científica exigente.
+- **Uso geral e agêntico:** a linha GPT-6 cobre a maioria das tarefas; o **GPT-6.1 Sol** é o recomendado para código e agentes. A OpenAI ainda indica o **Astra** para as tarefas científicas mais difíceis (68,1% no Terminal-Bench Science 0.1, a maior nota entre os modelos testados).
 - **Raciocínio:** para matemática, lógica e decisões condicionais, a série o costuma render mais que os modelos GPT de mesmo preço — mas infla custo em tarefas simples.
 - **Alto volume:** os tiers **Luna** cortam o custo em uma ordem de grandeza; ideais para classificação e extração em escala.
 - **Limite:** benchmark alto não garante acerto na *sua* tarefa. Valide no seu conjunto de casos, como em [como avaliar prompts em produção](/artigos/como-avaliar-prompts-em-producao/).
