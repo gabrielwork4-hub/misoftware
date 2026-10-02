@@ -2,6 +2,7 @@
 title: "Modelos de linguagem (LLMs): panorama e comparação"
 description: "O que são LLMs, quem faz os principais modelos, quanto custam por token e como escolher — com tabela comparativa verificada em fonte oficial."
 pubDate: "2026-09-24"
+updatedDate: "2026-10-02"
 author: "gabriel-barboza"
 category: "IA & Modelos"
 silo: ia
@@ -76,9 +77,9 @@ Preços de entrada/saída por 1 milhão de tokens, do modelo *flagship* de cada 
 
 | Família | Criador | Flagship | Contexto | Preço in / out (US$/1M) | Aberto? |
 |---|---|---|---|---|---|
-| [GPT](/ferramentas/modelos/openai-gpt/) | OpenAI | GPT-6 Astra | grande | 10 / 50 | Não |
+| [GPT](/ferramentas/modelos/openai-gpt/) | OpenAI | GPT-6 Astra⁹ | grande | 10 / 50 | Não |
 | [Claude](/ferramentas/modelos/anthropic-claude/) | Anthropic | Opus 5.5 | 1M | 4 / 20 | Não |
-| [Gemini](/ferramentas/modelos/google-gemini/) | Google | Gemini 3.1 Pro | 1M | 2 / 12¹ | Não |
+| [Gemini](/ferramentas/modelos/google-gemini/) | Google | Gemini 3.1 Pro⁸ | 1M | 2 / 12¹ | Não |
 | [Grok](/ferramentas/modelos/xai-grok/) | xAI | Grok 4.7 | 500k | 2 / 6⁶ | Não |
 | [Nova](/ferramentas/modelos/amazon-nova/) | Amazon | Nova Premier | 1M | 1,20 / 4,80 | Não |
 | [Llama](/ferramentas/modelos/meta-llama/) | Meta | Llama 4 | até 10M² | self-host³ | Sim |
@@ -96,14 +97,16 @@ Preços de entrada/saída por 1 milhão de tokens, do modelo *flagship* de cada 
 ⁵ Qwen3.8-Max (fechado) é acessado pela API da Alibaba Cloud; a linha 3.6 é aberta e gratuita para self-host — por isso "Parcial".
 ⁶ Grok 4.7 sobe para US$ 4/12 acima de 200k tokens de contexto.
 ⁷ Phi: contexto de até 128k na linha Phi-3; confira o valor por modelo no card da Phi-4.
+⁸ O Google anunciou o Gemini 4 Argon em 30/09/2026 (US$ 2 / 10 no lançamento, US$ 4 / 20 depois), mas o acesso ainda é restrito; por isso o flagship disponível segue sendo o 3.1 Pro. Veja a [notícia](/noticias/gemini-4-argon-lancamento-preco-disponibilidade/).
+⁹ Em 29/09/2026 a OpenAI lançou o GPT-6.1 Sol (US$ 2 / 10, cache de entrada a US$ 0,10), o modelo recomendado para código e agentes na linha GPT-6. Veja a [notícia](/noticias/gpt-6-1-sol-lancamento-preco-o-que-muda/).
 
 ## As famílias, uma a uma
 
 Cada família tem sua página com lançamento, preços por tier, características de teste e para quem faz sentido:
 
-- **[OpenAI — GPT](/ferramentas/modelos/openai-gpt/):** a linha GPT-6 (Astra/Sol/Luna) mais os modelos de raciocínio da série o. Ecossistema mais amplo e integrado ao ChatGPT.
+- **[OpenAI — GPT](/ferramentas/modelos/openai-gpt/):** a linha GPT-6 (Astra, GPT-6.1 Sol e Luna) mais os modelos de raciocínio da série o. Ecossistema mais amplo e integrado ao ChatGPT.
 - **[Anthropic — Claude](/ferramentas/modelos/anthropic-claude/):** Opus 5.5, Sonnet 5 e Haiku 4.5. Forte em código, trabalho agêntico longo e seguir instruções com fidelidade.
-- **[Google — Gemini](/ferramentas/modelos/google-gemini/):** família Gemini 3, com contexto de 1M e tiers Flash de baixo custo, integrada ao Google Cloud e ao Workspace.
+- **[Google — Gemini](/ferramentas/modelos/google-gemini/):** família Gemini 3, com contexto de 1M e tiers Flash de baixo custo, e o Gemini 4 Argon anunciado em acesso restrito; integrada ao Google Cloud e ao Workspace.
 - **[Meta — Llama](/ferramentas/modelos/meta-llama/):** família aberta (open weights) com arquitetura MoE e contexto de até 10M. Baixe os pesos e rode no seu ambiente quando privacidade ou custo em escala pesam mais que o topo absoluto.
 - **[Mistral AI](/ferramentas/modelos/mistral/):** a desenvolvedora europeia com a estratégia mais aberta — generalistas sob Apache 2.0/MIT, do compacto Ministral ao Large 3.
 - **[DeepSeek](/ferramentas/modelos/deepseek/):** modelos abertos (MIT) com raciocínio embutido e a melhor relação capacidade/custo em código, por API baratíssima ou self-host.
