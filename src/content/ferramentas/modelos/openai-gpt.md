@@ -1,7 +1,8 @@
 ---
 name: "OpenAI GPT"
-description: "A família de modelos GPT da OpenAI — linha GPT-6 (Astra, Sol, Luna), GPT-5.6, GPT-5.5 e os modelos de raciocínio da série o — com preços por token e benchmarks verificados em fonte oficial."
+description: "A família de modelos GPT da OpenAI — linha GPT-6 (Astra, GPT-6.1 Sol, Luna), GPT-5.6, GPT-5.5 e os modelos de raciocínio da série o — com preços por token e benchmarks verificados em fonte oficial."
 pubDate: 2026-09-24
+updatedDate: 2026-10-02
 vendor: "OpenAI"
 category: "Modelos de IA"
 pricing: "Pago por token (API) + ChatGPT"
@@ -15,28 +16,39 @@ A família **GPT** da OpenAI é o conjunto de modelos de linguagem por trás do 
 
 ## Todos os modelos e preços
 
-Preços de entrada/saída por 1 milhão de tokens. **Verificado em 24/09/2026** na [pricing oficial da OpenAI](https://developers.openai.com/api/docs/pricing) — preços mudam; confirme na fonte.
+Preços por 1 milhão de tokens, nível padrão, contexto curto. **Verificado em 02/10/2026** na [pricing oficial da OpenAI](https://developers.openai.com/api/docs/pricing) — preços mudam; confirme na fonte.
 
-| Modelo | Input (US$/1M) | Output (US$/1M) | Para quê |
-|---|---|---|---|
-| GPT-6 Astra | 10 | 50 | Máxima capacidade, alinhamento |
-| GPT-6 Sol | 2 | 10 | Código e trabalho agêntico |
-| GPT-6 Luna | 0,10 | 0,50 | Alto volume, tarefas focadas |
-| GPT-5.6 Sol | 4 | 20 | Geração anterior, capaz |
-| GPT-5.6 Terra | 2 | 12 | Intermediário 5.6 |
-| GPT-5.6 Luna | 0,20 | 1,20 | Econômico 5.6 |
-| GPT-5.5 | 5 | 30 | Contexto até 272k |
-| o1 | 15 | 60 | Raciocínio (1ª geração) |
-| o1-pro | 150 | 600 | Raciocínio máximo |
-| o3 | 2 | 8 | Raciocínio custo-benefício |
-| o3-pro | 20 | 80 | Raciocínio pesado |
-| o3-mini | 1,10 | 4,40 | Raciocínio econômico |
+| Modelo | Input (US$/1M) | Input em cache (US$/1M) | Output (US$/1M) | Para quê |
+|---|---|---|---|---|
+| GPT-6 Astra | 10 | 1 | 50 | Máxima capacidade, alinhamento |
+| **GPT-6.1 Sol** | **2** | **0,10** | **10** | Código, uso de computador e trabalho agêntico (atual) |
+| GPT-6 Sol | 2 | 0,20 | 10 | Versão anterior do Sol (substituída pelo 6.1) |
+| GPT-6 Luna | 0,10 | 0,01 | 0,50 | Alto volume, tarefas focadas |
+| GPT-5.6 Sol | 4 | — | 20 | Geração anterior, capaz |
+| GPT-5.6 Terra | 2 | — | 12 | Intermediário 5.6 |
+| GPT-5.6 Luna | 0,20 | — | 1,20 | Econômico 5.6 |
+| GPT-5.5 | 5 | — | 30 | Contexto até 272k |
+| o1 | 15 | — | 60 | Raciocínio (1ª geração) |
+| o1-pro | 150 | — | 600 | Raciocínio máximo |
+| o3 | 2 | — | 8 | Raciocínio custo-benefício |
+| o3-pro | 20 | — | 80 | Raciocínio pesado |
+| o3-mini | 1,10 | — | 4,40 | Raciocínio econômico |
+
+Nos níveis **Batch** e **Flex**, os preços da linha GPT-6 caem pela metade (GPT-6.1 Sol: US$ 1 / US$ 0,05 / US$ 5). Pedidos de **contexto longo** custam o dobro na entrada (GPT-6.1 Sol: US$ 4 / US$ 0,20 / US$ 15). O traço (—) na coluna de cache indica valor não conferido nesta atualização.
 
 A nomenclatura da linha GPT-6 segue três nomes: **Astra** (capacidade máxima), **Sol** (código/agêntico) e **Luna** (alto volume, mais barato) — o mesmo padrão se repete em GPT-5.6.
 
 ## Lançamento
 
-**GPT-6 Astra** foi anunciado em **8 de setembro de 2026** como o modelo mais capaz e alinhado da OpenAI. Em **22 de setembro de 2026**, a família ganhou **GPT-6 Sol** (código e fluxos agênticos) e **GPT-6 Luna** (alto volume), a preços por token menores que os da geração GPT-5.6.
+**GPT-6 Astra** foi anunciado em **3 de setembro de 2026** como o modelo mais capaz e alinhado da OpenAI. Em **22 de setembro de 2026**, a família ganhou **GPT-6 Sol** (código e fluxos agênticos) e **GPT-6 Luna** (alto volume), a preços por token menores que os da geração GPT-5.6.
+
+Em **29 de setembro de 2026**, no DevDay, a OpenAI lançou o **GPT-6.1 Sol** (`gpt-6.1-sol`), uma atualização do GPT-6 Sol com ganhos em código agêntico, uso de computador e trabalho profissional. O preço padrão de entrada e saída não mudou, e a entrada em cache caiu pela metade, para US$ 0,10 por milhão de tokens. Segundo a OpenAI, o modelo empata com o GPT-6 Astra no DeepSWE v1.1 a cerca de um quinto do custo. Ele está na API e no ChatGPT Work e Codex (Plus, Pro, Business, Enterprise e Edu), mas ainda não no Chat. Detalhes, benchmarks e um exemplo de custo na notícia [GPT-6.1 Sol: lançamento, preço e o que muda na API](/noticias/gpt-6-1-sol-lancamento-preco-o-que-muda/).
+
+## Novidades de setembro/outubro de 2026
+
+- **GPT-6.1 Sol (29/09/2026):** novo Sol, mesmo preço por token, cache 50% mais barato. Veja a [notícia completa](/noticias/gpt-6-1-sol-lancamento-preco-o-que-muda/) ([fonte oficial](https://openai.com/index/introducing-gpt-6-1-sol/)).
+- **Ultrafast (29/09/2026):** nível de velocidade premium com até 8x mais tokens por segundo no Codex e até 6x na API. Disponível para o GPT-6 Astra (parâmetro `service_tier="ultrafast"`, US$ 60 / US$ 300 por milhão de tokens em contexto curto); para o 6.1 Sol, "em breve" ([guia oficial](https://developers.openai.com/api/docs/guides/ultrafast-mode)).
+- **Agents API com uso de computador (29/09/2026):** agentes que operam software pela interface, com infraestrutura hospedada pela OpenAI ([resumo do DevDay](https://openai.com/index/devday-2026-recap/)).
 
 ## Benchmarks (GPT-6 Astra)
 
@@ -56,7 +68,7 @@ As linhas GPT-6 e GPT-5.6 aceitam **texto e imagem** na entrada (visão), com sa
 
 ## Características de teste e limites
 
-- **Uso geral e agêntico:** a linha GPT-6 cobre a maioria das tarefas; **Sol** é o recomendado para código e agentes.
+- **Uso geral e agêntico:** a linha GPT-6 cobre a maioria das tarefas; o **GPT-6.1 Sol** é o recomendado para código e agentes, e o Astra fica para as tarefas mais difíceis, como pesquisa científica exigente.
 - **Raciocínio:** para matemática, lógica e decisões condicionais, a série o costuma render mais que os modelos GPT de mesmo preço — mas infla custo em tarefas simples.
 - **Alto volume:** os tiers **Luna** cortam o custo em uma ordem de grandeza; ideais para classificação e extração em escala.
 - **Limite:** benchmark alto não garante acerto na *sua* tarefa. Valide no seu conjunto de casos, como em [como avaliar prompts em produção](/artigos/como-avaliar-prompts-em-producao/).
