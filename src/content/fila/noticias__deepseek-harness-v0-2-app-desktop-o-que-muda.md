@@ -82,7 +82,7 @@ A gestão de plugins ganhou o botão **"Deixar o Agent criar um plugin"**. Ele a
 
 Este é o item que mais chamou atenção. A v0.2.1-alpha.1 adiciona uma **camada experimental de compatibilidade com os Mods do Claude Code**, o sistema de plugins do agente da Anthropic. As notas deixam o objetivo bem delimitado. A ideia é "verificar se as capacidades da API de Mods do Claude Code são, de forma geral, um subconjunto do que os plugins do DeepSeek Harness fazem", e não "oferecer aos usuários compatibilidade completa e prática" ([release notes](https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-alpha.1)).
 
-Em outras palavras, não conte com rodar seus Mods do Claude Code no `dsh` sem ajustes.
+Em outras palavras, não conte com rodar seus Mods do Claude Code no `dsh` sem ajustes. Para entender o que são os mods e o que muda na segurança, veja [Claude Code ganha mods: o que são e o que muda](/noticias/claude-code-mods-lancamento-o-que-muda/).
 
 ### Tarefas automatizadas viram recurso nativo
 
