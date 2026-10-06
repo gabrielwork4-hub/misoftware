@@ -26,6 +26,9 @@ interface RedirectMap {
 
 const map = redirectMap as unknown as RedirectMap;
 
+/** Nome do projeto no Cloudflare Pages (wrangler.toml). */
+const PAGES_PROJECT = 'misoftware';
+
 const goneSet = new Set(map.gone);
 const redirectByPath = new Map(map.redirects.map((r) => [r.from, r.to]));
 
@@ -60,10 +63,16 @@ export const onRequest: PagesFunction = async (context) => {
   const { request, next } = context;
   const url = new URL(request.url);
 
+  // Previews do Cloudflare Pages (<hash>.misoftware.pages.dev e
+  // <branch>.misoftware.pages.dev) não são redirecionados: sem isso, todo
+  // preview cai na produção e não dá para validar um PR antes do merge.
+  // O domínio de produção misoftware.pages.dev continua canonicalizado.
+  const isPreview = url.hostname.endsWith(`.${PAGES_PROJECT}.pages.dev`);
+
   // 1. Canonicalização de host/protocolo (salto único).
   const needsHost = url.hostname !== map.canonicalHost;
   const needsProto = url.protocol !== `${map.canonicalProtocol}:`;
-  if (needsHost || needsProto) {
+  if (!isPreview && (needsHost || needsProto)) {
     const target = new URL(url.toString());
     target.protocol = `${map.canonicalProtocol}:`;
     target.hostname = map.canonicalHost;
@@ -92,6 +101,10 @@ export const onRequest: PagesFunction = async (context) => {
     });
   }
 
-  // 4. Passa para o site estático.
-  return next();
+  // 4. Passa para o site estático. Preview nunca é indexado.
+  const response = await next();
+  if (!isPreview) return response;
+  const preview = new Response(response.body, response);
+  preview.headers.set('x-robots-tag', 'noindex, nofollow');
+  return preview;
 };
