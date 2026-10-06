@@ -11,12 +11,16 @@
  */
 
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
-import { join, relative, resolve, dirname } from 'node:path';
+import { join, relative as rel0, resolve, dirname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const CONTENT = join(ROOT, 'src/content');
 const EXTERNAL = process.argv.includes('--external');
+
+// caminhos sempre com '/', independente do sistema operacional
+const relative = (a, b) => rel0(a, b).split(sep).join('/');
+const posix = (p) => p.split(sep).join('/');
 
 const errors = [];
 const warnings = [];
@@ -43,10 +47,38 @@ const fmValue = (fm, key) => {
   return m ? m[1] : undefined;
 };
 
+/** Mesma regra do github-slugger usado pelo Astro para ids de título. */
+function slugify(text) {
+  return text
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/[*_`]/g, '')
+    .toLowerCase()
+    .trim()
+    .replace(/[^\p{L}\p{N}\p{M}\s_-]/gu, '')
+    .replace(/\s/g, '-');
+}
+const anchorCache = new Map();
+function anchorsOf(file) {
+  if (anchorCache.has(file)) return anchorCache.get(file);
+  const body = parse(file).body.replace(/```[\s\S]*?```/g, '');
+  const seen = new Map();
+  const set = new Set();
+  for (const [, h] of body.matchAll(/^#{1,6}\s+(.+?)\s*#*\s*$/gm)) {
+    const base = slugify(h);
+    const n = seen.get(base) ?? 0;
+    seen.set(base, n + 1);
+    set.add(n ? `${base}-${n}` : base);
+  }
+  anchorCache.set(file, set);
+  return set;
+}
+
 // --- 1. Mapa de rotas válidas -------------------------------------------
 const routes = new Set(['/']);
 const fila = walk(join(CONTENT, 'fila'));
 const canon = new Map();
+/** rota -> arquivo, para checar âncoras (#secao) */
+const pageFiles = new Map();
 for (const f of fila) {
   const { fm } = parse(f);
   const c = fmValue(fm, 'canonicalPath');
@@ -55,10 +87,12 @@ for (const f of fila) {
   if (canon.has(c)) err(rel, `canonicalPath duplicado de ${canon.get(c)}: ${c}`);
   canon.set(c, rel);
   routes.add(c);
+  pageFiles.set(c, f);
 }
 for (const f of walk(join(CONTENT, 'ferramentas'))) {
   const rel = relative(join(CONTENT, 'ferramentas'), f).replace(/\.mdx?$/, '');
   routes.add(`/ferramentas/${rel}/`);
+  pageFiles.set(`/ferramentas/${rel}/`, f);
 }
 for (const f of walk(join(CONTENT, 'tutoriais'))) {
   routes.add(`/tutoriais/${relative(join(CONTENT, 'tutoriais'), f).replace(/\.mdx?$/, '')}/`);
@@ -93,7 +127,7 @@ const files = [...fila, ...walk(join(CONTENT, 'ferramentas')), ...walk(join(CONT
 for (const f of files) {
   const rel = relative(ROOT, f);
   const { fm, body } = parse(f);
-  const isFila = f.includes('/fila/');
+  const isFila = posix(f).includes('/src/content/fila/');
 
   if (isFila) {
     for (const k of REQUIRED_FILA) if (!fmValue(fm, k)) err(rel, `frontmatter sem "${k}"`);
@@ -104,7 +138,7 @@ for (const f of files) {
     const c = fmValue(fm, 'canonicalPath');
     if (c) {
       const expected = c.replace(/^\/|\/$/g, '').split('/').join('__') + '.md';
-      if (!f.endsWith(`/${expected}`) && !/^\/[^/]+\/$/.test(c)) {
+      if (!posix(f).endsWith(`/${expected}`) && !/^\/[^/]+\/$/.test(c)) {
         warn(rel, `nome do arquivo não bate com canonicalPath (esperado ${expected})`);
       }
       if (kind === 'noticia' && !c.startsWith('/noticias/')) err(rel, 'notícia fora de /noticias/');
@@ -136,11 +170,8 @@ for (const f of files) {
     }
     const norm = clean.endsWith('/') ? clean : clean + '/';
     if (!routes.has(norm)) err(rel, `link interno quebrado: ${m[1]}`);
-    else if (hash && canon.has(norm)) {
-      // âncora: só confere para páginas da fila
-      const target = parse(join(ROOT, canon.get(norm))).body;
-      const slugs = [...target.matchAll(/^#{2,4}\s+(.+)$/gm)].map((h) => h[1]);
-      if (!slugs.length) warn(rel, `âncora ${m[1]} não verificável`);
+    else if (hash && pageFiles.has(norm)) {
+      if (!anchorsOf(pageFiles.get(norm)).has(decodeURIComponent(hash))) err(rel, `âncora inexistente: ${m[1]}`);
     }
   }
   for (const m of text.matchAll(/https?:\/\/[^\s)"'<>\]]+/g)) {

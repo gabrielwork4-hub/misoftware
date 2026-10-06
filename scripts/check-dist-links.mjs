@@ -4,7 +4,7 @@
  * Uso: node scripts/check-dist-links.mjs
  */
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
-import { join, relative, resolve, dirname } from 'node:path';
+import { join, relative, resolve, dirname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const DIST = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'dist');
@@ -14,7 +14,7 @@ const walk = (d) => readdirSync(d).flatMap((n) => {
 });
 const htmls = walk(DIST);
 const pages = new Set(htmls.map((f) => {
-  const r = '/' + relative(DIST, f);
+  const r = '/' + relative(DIST, f).split(sep).join('/');
   return r.endsWith('index.html') ? r.slice(0, -'index.html'.length) : r;
 }));
 const broken = new Map();
