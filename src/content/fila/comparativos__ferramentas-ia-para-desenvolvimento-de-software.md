@@ -2,6 +2,7 @@
 title: "Ferramentas de IA para desenvolvimento de software"
 description: "Como montar uma stack de IA que cobre o ciclo de desenvolvimento — entender, implementar, testar, revisar e operar — escolhendo pela camada certa."
 pubDate: "2026-09-22"
+updatedDate: "2026-10-06"
 author: "gabriel-barboza"
 category: "Ferramentas"
 silo: ferramentas
@@ -12,6 +13,7 @@ draft: false
 sources:
   - "https://platform.openai.com/docs/guides/function-calling"
   - "https://docs.github.com/en/copilot"
+  - "https://survey.stackoverflow.co/2026/ai/data"
 faq:
   - q: "Preciso de todas essas ferramentas de uma vez?"
     a: >-
@@ -40,6 +42,10 @@ faq:
       ferramenta, avalie o custo por uso contra o tempo economizado e expanda
       só quando o ganho estiver comprovado. Confirme preços e cotas no site de
       cada fornecedor, porque mudam com frequência.
+      No Stack Overflow Developer Survey 2026, 38% dos respondentes disseram
+      que a empresa limita o uso de IA e 27% que usa modelos diferentes por
+      tipo de trabalho — sinal de que medir custo por fluxo já virou parte da
+      escolha.
   - q: "Como sei se a IA está realmente ajudando e não só gerando retrabalho?"
     a: >-
       Meça com dados, não com impressão. Compare o antes e o depois em métricas
@@ -62,6 +68,24 @@ Uma stack de IA para desenvolvimento não é uma ferramenta — é um conjunto d
 | Busca / documentação | acesso ao conhecimento do projeto | verificar a resposta na fonte |
 
 Agentes ficam por último de propósito: eles só entram onde limites, permissões e rollback estejam definidos — a mesma disciplina de [automação assistida por IA vs agentes autônomos](/artigos/automacao-assistida-por-ia-vs-agentes-autonomos/).
+
+## O que os dados de adoção dizem (outubro de 2026)
+
+O [Stack Overflow Developer Survey 2026](/noticias/stack-overflow-developer-survey-2026-resultados/), publicado em 6 de outubro de 2026 com 30.903 respostas de 169 países, confirma a lógica de montar a stack por camadas:
+
+| Camada / uso | Adoção em 2026 | Fonte |
+| --- | --- | --- |
+| Assistentes ou agentes de código | 66% dos respondentes | [Survey 2026 — IA](https://survey.stackoverflow.co/2026/ai/data) |
+| Chatbots de uso geral | 63% | idem |
+| Agentes ou workflows automatizados | 26% | idem |
+| Uso diário entre quem usa assistentes de código | 73% | idem |
+
+- **Agentes de código mais usados:** Claude Code (66%) e GitHub Copilot (59%).
+- **Onde a IA é usada:** gerar código em área conhecida (69,3%), depurar e refatorar (63,8%) e escrever testes (58,1%). Operar sistemas em produção aparece em só 20% dos usos.
+- **Confiança:** 48% confiam na IA quando conseguem verificar o resultado; só 6,6% confiam para decisões importantes.
+- **Custo:** 38% das empresas já limitam o uso de IA e 27% usam modelos diferentes para tarefas diferentes.
+
+A leitura prática é a mesma desta página: a camada do editor e dos agentes de código já é padrão, enquanto agentes autônomos em produção continuam minoria. Comece pelas camadas com resultado verificável (código, testes, revisão) e só depois avance para automação de ponta a ponta. Veja os números completos e o contexto na nossa notícia sobre o [Stack Overflow Developer Survey 2026](/noticias/stack-overflow-developer-survey-2026-resultados/).
 
 ## Critérios técnicos de escolha
 

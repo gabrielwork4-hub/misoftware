@@ -2,6 +2,7 @@
 name: "DeepSeek"
 description: "A família DeepSeek — V4-Flash e V4-Pro, modelos abertos (MIT) com raciocínio embutido, contexto de 1M, preços por token entre os mais baixos do mercado e benchmarks verificados em fonte oficial."
 pubDate: 2026-09-24
+updatedDate: 2026-10-06
 vendor: "DeepSeek"
 category: "Modelos de IA"
 pricing: "Aberto (MIT) + API muito barata"
@@ -51,6 +52,25 @@ A V4 usa arquitetura eficiente com **contexto de 1M** e **raciocínio embutido**
 - **Atenção a dados:** por ser um serviço com hospedagem na China, avalie residência e retenção de dados antes de enviar informação sensível pela API — ou rode os pesos abertos no seu ambiente ([IA local](/ia/ia-local/)).
 - **Limite:** valide na sua tarefa ([como avaliar prompts em produção](/artigos/como-avaliar-prompts-em-producao/)).
 
+## DeepSeek Harness: o agente de código aberto da DeepSeek
+
+Além dos modelos, a DeepSeek mantém o **DeepSeek Harness** (`dsh`). É um *harness* de agente, ou seja, a camada que transforma um modelo em agente capaz de ler arquivos, rodar comandos e usar ferramentas. Ele tem código aberto sob licença **MIT** e uma arquitetura em que **tudo é plugin**, sobre o framework [Cordis](https://github.com/cordiverse/cordis) ([repositório oficial](https://github.com/deepseek-ai/deepseek-harness)).
+
+| Item | Situação em 06/10/2026 |
+| --- | --- |
+| Status | Prévia para desenvolvedores, com aviso de mudanças que quebram compatibilidade |
+| Última versão | v0.2.1-alpha.1 (03/10/2026, *pre-release*) |
+| App desktop | macOS e Windows desde a v0.2.0-rc.2 (29/09/2026), já com o `dsh` embutido |
+| Início rápido | `npx @deepseek-ai/dsh web` (Web UI em `127.0.0.1:3080`) |
+| Modos | Padrão, Criador, PTC e Mínimo |
+| Modelos | Conta DeepSeek, provedores como `anthropic` e `openai`, ou APIs compatíveis (OpenAI Chat Completions, OpenAI Responses, Anthropic Messages). OAuth (ex.: Codex) ainda não é suportado |
+
+Para usar os modelos V4 por meio de um gateway compatível com OpenAI, o guia oficial recomenda `compat.thinkingFormat: deepseek`. Sem isso, o nível `off` não desliga o raciocínio, que fica ativo por padrão ([guia de provedores](https://deepseek-harness.github.io/deepseek-harness/guide/providers)).
+
+**Novidades de outubro de 2026:** app desktop, quatro modos de sessão e camada experimental de compatibilidade com os Mods do Claude Code. Os detalhes estão em [DeepSeek Harness v0.2: app desktop e o que muda](/noticias/deepseek-harness-v0-2-app-desktop-o-que-muda/).
+
 ## Para quem faz sentido
 
 É a melhor relação capacidade/custo entre os modelos abertos quando o assunto é **código e raciocínio** — por API baratíssima ou self-host sob MIT. Para quem tem restrição de dados, prefira rodar os pesos localmente. Para comparar com as demais famílias, veja o hub de [modelos de linguagem](/ia/modelos-de-linguagem/).
+
+Se você quer um agente de código aberto que já vem integrado aos modelos da DeepSeek, mas também aceita outros provedores, o DeepSeek Harness é o ponto de partida. Ele ainda está em prévia, então trave versões antes de usar em produção.
