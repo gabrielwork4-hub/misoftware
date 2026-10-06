@@ -1,8 +1,8 @@
 ---
 name: "Anthropic Claude"
-description: "Família Claude da Anthropic (Opus 5.5, Sonnet 5.5, Haiku 4.5 e Fable 5.1): preços por token, benchmarks, contexto de 1M e como funcionam os limites do Claude Code"
+description: "Família Claude da Anthropic (Opus 5.5, Sonnet 5.5, Haiku 4.5, Fable 5.1): preços, benchmarks, contexto de 1M e o que muda no Claude Code com limites e mods"
 pubDate: 2026-09-24
-updatedDate: 2026-09-29
+updatedDate: 2026-10-06
 vendor: "Anthropic"
 category: "Modelos de IA"
 pricing: "Pago por token (API) + Claude.ai"
@@ -25,7 +25,7 @@ Preços de entrada/saída por 1 milhão de tokens. **Verificado em 29/09/2026** 
 | Sonnet 5.5 | 2 | 10 | 1M | 128k | Rápido e barato para tarefas bem delimitadas e código |
 | Haiku 4.5 | 1 | 5 | 200k | 64k | O mais rápido, quase-fronteira |
 
-A escala vai do **Haiku** (mais rápido e barato) ao **Fable 5.1** (raciocínio de ponta), com **Opus** e **Sonnet** no meio. Modelos anteriores (Sonnet 5, Opus 5, Opus 4.x, Sonnet 4.x) seguem disponíveis como *legacy*.
+A escala vai do **Haiku** (mais rápido e barato) ao **Fable 5.1** (raciocínio de ponta), com **Opus** e **Sonnet** no meio. Modelos anteriores (Sonnet 5, Opus 5, Opus 4.x, Sonnet 4.x) seguem disponíveis como *legacy*, com uma exceção já marcada: em **30/09/2026** a Anthropic avisou que o **Claude Sonnet 4.5** (`claude-sonnet-4-5-20250929`) será **aposentado na API em 30/11/2026**, com o `claude-sonnet-5-5` como substituto recomendado ([página de descontinuações](https://platform.claude.com/docs/en/about-claude/model-deprecations)). Quem ainda chama o Sonnet 4.5 deve revisar o [checklist de migração para o Sonnet 5.5](/noticias/claude-sonnet-5-5-lancamento-preco-o-que-muda/).
 
 ## Lançamento
 
@@ -33,15 +33,19 @@ A escala vai do **Haiku** (mais rápido e barato) ao **Fable 5.1** (raciocínio 
 
 **Claude Sonnet 5.5** foi lançado em **28 de setembro de 2026**, como segundo modelo da família Claude 5.5. Mantém o preço do Sonnet 5 (US$ 2/US$ 10 por milhão de tokens; cache: US$ 0,20 leitura e US$ 2,50 escrita), mas, segundo a Anthropic, gera respostas mais de 30% mais rápido e custa até 30% menos por tarefa por usar menos tokens. Marcou 70,6% no Terminal-Bench 4.0, acima do Opus 5.5 nesse teste, e 55,5% no CursorBench 4.0 ([anúncio oficial](https://www.anthropic.com/claude-sonnet-5-5)). O ID na API é `claude-sonnet-5-5`, e a migração tem mudanças que quebram código (`thinking: disabled` e `tool_choice` forçado passam a dar erro 400). O **Claude Haiku 5.5** foi prometido para "as próximas semanas", sem data. Detalhes, benchmarks e checklist de migração: [Claude Sonnet 5.5: lançamento, preço e o que muda](/noticias/claude-sonnet-5-5-lancamento-preco-o-que-muda/).
 
-## Claude Code e disponibilidade em ferramentas de código (setembro de 2026)
+## Claude Code e disponibilidade em ferramentas de código (setembro e outubro de 2026)
 
 O **Claude Code** é o agente de código da Anthropic: roda no terminal e em IDEs (VS Code, Cursor e outros forks do VS Code, e JetBrains) e usa os modelos Claude para ler o repositório, editar arquivos e executar comandos. Nos planos **Pro** e **Max**, o uso do Claude Code e do Claude (web, desktop e celular) conta contra **o mesmo limite**, segundo a [central de ajuda da Anthropic](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan). O comando `/status` mostra quanto resta da cota.
 
 **Novidade de 25/09/2026:** ao atingir o limite de sessão de 5 horas no meio de uma tarefa, o Claude Code agora tenta encontrar um ponto de parada controlado em vez de cortar no meio de uma edição, usando uma cota pequena e fixa retirada do limite semanal. Durante a implantação, vale uma vez por semana no plano Pro e toda vez que o limite é atingido nos planos Max e Team Premium ([anúncio oficial](https://x.com/ClaudeDevs/status/2103561342057943314)). Detalhes e o que muda na prática: [Claude Code muda limite de uso de 5 horas](/noticias/claude-code-limite-de-uso-5-horas-parada-controlada/).
 
+**Novidade de 01/10/2026 — mods:** o Claude Code passou a aceitar **mods**, plugins com funções em JavaScript ou TypeScript que rodam dentro do próprio agente e reagem a eventos como tool calls, prompts e o desenho da interface. Um mod pode reescrever um prompt, bloquear ou alterar uma chamada de ferramenta, aprovar uma permissão, remover segredos da saída de uma ferramenta e criar painéis e comandos `/` próprios. Exige o **Claude Code v2.1.287 ou superior** e vem ligado por padrão; instala-se como plugin, com `/plugin install nome@marketplace` ([anúncio oficial](https://claude.com/blog/claude-code-mods), [documentação](https://code.claude.com/docs/en/plugins/mods/overview)). Mods **não rodam em sandbox**: têm o mesmo acesso à máquina que o Claude Code, por isso a Anthropic recomenda instalar só de fontes confiáveis e auditar com `claude plugin validate`. Empresas podem bloquear mods de usuários com a opção `allowManagedModsOnly` em managed settings.
+
 **Opus 5.5 no GitHub Copilot:** desde 22/09/2026, o Claude Opus 5.5 está disponível no GitHub Copilot para os planos Pro+, Max, Business e Enterprise ([GitHub Changelog](https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21/)). Para comparar editores e agentes, veja [melhores editores de código com IA](/comparativos/melhores-editores-codigo-ia/).
 
 **Sonnet 5.5 no GitHub Copilot:** desde 28/09/2026, o Claude Sonnet 5.5 está disponível de forma geral no GitHub Copilot para os planos Pro, Pro+, Max, Business e Enterprise; em planos corporativos, o administrador precisa habilitar o modelo ([GitHub Changelog](https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot/)). No Claude Code e nos apps, o esforço padrão do Sonnet 5.5 é Medium; na API, High.
+
+**Opus 4.7 fora do GitHub Copilot:** em 02/10/2026, o GitHub descontinuou o Claude Opus 4.7 em todas as experiências do Copilot e indicou o Claude Opus 5.5 como substituto. Em planos corporativos, o administrador pode precisar habilitar o novo modelo nas políticas do Copilot ([GitHub Changelog](https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated/)).
 
 ## Benchmarks (Opus 5.5)
 
