@@ -1,12 +1,12 @@
 ---
-name: "Meta Llama"
+name: "Meta: Llama (aberto) e Muse (fechado) — modelos e preços"
 description: "Os modelos da Meta: Llama 4 de peso aberto (Scout, Maverick, Behemoth) e a família fechada Muse, com Muse Wonder a US$ 4/US$ 20 por 1M tokens. Specs verificados."
 pubDate: 2026-09-24
 updatedDate: 2026-10-13
 vendor: "Meta"
 category: "Modelos de IA"
-pricing: "Aberto (open weights) — sem custo de licença"
-platforms: ["Self-host", "Provedores de inferência", "Cloud"]
+pricing: "Llama aberto (sem custo de licença) + Muse pago por token (Meta Model API)"
+platforms: ["Self-host", "Provedores de inferência", "Cloud", "Meta Model API"]
 rating: 9.0
 url: "https://www.llama.com"
 featured: true

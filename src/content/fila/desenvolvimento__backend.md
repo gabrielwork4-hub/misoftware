@@ -39,7 +39,7 @@ O teste de contrato deve confirmar status, corpo e efeitos no armazenamento — 
 
 ## Operação desde o primeiro deploy
 
-Defina timeout, retries com limite, logs correlacionados, alertas e procedimento de recuperação antes de publicar, não depois do primeiro incidente. Os princípios do [12-Factor](https://12factor.net/) ajudam a manter o serviço portável e observável. Feche o ciclo com [observabilidade para aplicações web](/artigos/observabilidade-para-aplicacoes-web/).
+Defina timeout, retries com limite, logs correlacionados, alertas e procedimento de recuperação antes de publicar, não depois do primeiro incidente. Os princípios do [12-Factor](https://12factor.net/) ajudam a manter o serviço portável e observável, o que facilita trocar de plataforma quando necessário (veja a seção abaixo). Feche o ciclo com [observabilidade para aplicações web](/artigos/observabilidade-para-aplicacoes-web/).
 
 ## Runtime e hospedagem: escolha pensando na saída
 

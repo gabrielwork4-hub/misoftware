@@ -2,6 +2,7 @@
 name: "Alibaba Qwen"
 description: "A família Qwen da Alibaba — o flagship fechado Qwen3.8-Max e os modelos abertos da linha 3.6 — com contexto de até 1M, arquitetura MoE e benchmarks verificados em fonte oficial."
 pubDate: 2026-09-24
+updatedDate: 2026-10-12
 vendor: "Alibaba"
 category: "Modelos de IA"
 pricing: "Aberto (linha 3.6) + API (Alibaba Cloud)"
@@ -56,3 +57,5 @@ O **Qwen3.8-Max** usa **MoE esparso** (2,4T totais, mas só 95B ativos por token
 ## Para quem faz sentido
 
 Faz sentido para quem quer **flexibilidade entre aberto e fechado** na mesma família, precisa de bom desempenho multilíngue/multimodal, ou quer um modelo aberto denso (27B) que rode em hardware modesto. Para comparar com as demais famílias, veja o hub de [modelos de linguagem](/ia/modelos-de-linguagem/).
+
+O Qwen3.5-9B é a base do [Microsoft-Decision-1](/noticias/microsoft-decision-1-lancamento-preco-o-que-muda/), modelo de decisão lançado pela Microsoft em outubro de 2026.
