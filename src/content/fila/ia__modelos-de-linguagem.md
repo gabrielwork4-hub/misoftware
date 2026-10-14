@@ -2,7 +2,7 @@
 title: "Modelos de linguagem (LLMs): panorama e comparação"
 description: "O que são LLMs, quem faz os principais modelos, quanto custam por token e como escolher — com tabela comparativa verificada em fonte oficial."
 pubDate: "2026-09-24"
-updatedDate: "2026-10-02"
+updatedDate: "2026-10-13"
 author: "gabriel-barboza"
 category: "IA & Modelos"
 silo: ia
@@ -13,7 +13,9 @@ sources:
   - "https://platform.claude.com/docs/en/about-claude/models/overview"
   - "https://developers.openai.com/api/docs/pricing"
   - "https://ai.google.dev/gemini-api/docs/pricing"
+  - "https://aistudio.google.com/learn/gemini-4-argon-developer-guide"
   - "https://ai.meta.com/blog/llama-4-multimodal-intelligence/"
+  - "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/"
   - "https://docs.mistral.ai/getting-started/models/models_overview/"
   - "https://api-docs.deepseek.com/quick_start/pricing"
   - "https://www.alibabacloud.com/blog/alibaba-unveils-qwen3-8-max-its-largest-and-most-capable-flagship-model-to-date_603420"
@@ -22,6 +24,7 @@ sources:
   - "https://aws.amazon.com/bedrock/pricing/"
   - "https://ai.google.dev/gemma/docs/core"
   - "https://azure.microsoft.com/en-us/products/phi"
+  - "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-in-microsoft-foundry-for-decision-and-classific/4562742"
 draft: false
 faq:
   - q: "Qual é o melhor modelo de linguagem hoje?"
@@ -73,15 +76,16 @@ Quatro variáveis decidem quase toda escolha prática:
 
 ## Comparação das principais famílias
 
-Preços de entrada/saída por 1 milhão de tokens, do modelo *flagship* de cada família. As fechadas de fronteira aparecem primeiro; depois, as principais desafiantes abertas e regionais. **Verificado em 24/09/2026 nas páginas oficiais** — preços e modelos mudam rápido; confirme na fonte antes de decidir.
+Preços de entrada/saída por 1 milhão de tokens, do modelo *flagship* de cada família. As fechadas de fronteira aparecem primeiro; depois, as principais desafiantes abertas e regionais. **Verificado em 24/09/2026 nas páginas oficiais** (Gemini 4 Argon e a família Muse, da Meta, em 13/10/2026) — preços e modelos mudam rápido; confirme na fonte antes de decidir.
 
 | Família | Criador | Flagship | Contexto | Preço in / out (US$/1M) | Aberto? |
 |---|---|---|---|---|---|
 | [GPT](/ferramentas/modelos/openai-gpt/) | OpenAI | GPT-6 Astra⁹ | grande | 10 / 50 | Não |
 | [Claude](/ferramentas/modelos/anthropic-claude/) | Anthropic | Opus 5.5 | 1M | 4 / 20 | Não |
-| [Gemini](/ferramentas/modelos/google-gemini/) | Google | Gemini 3.1 Pro⁸ | 1M | 2 / 12¹ | Não |
+| [Gemini](/ferramentas/modelos/google-gemini/) | Google | Gemini 4 Argon⁸ | 1M¹ | 2 / 10 (até 30/11); 4 / 20 depois | Não |
 | [Grok](/ferramentas/modelos/xai-grok/) | xAI | Grok 4.7 | 500k | 2 / 6⁶ | Não |
 | [Nova](/ferramentas/modelos/amazon-nova/) | Amazon | Nova Premier | 1M | 1,20 / 4,80 | Não |
+| [Muse](/ferramentas/modelos/meta-llama/) | Meta | Muse Wonder¹⁰ | ~1M¹⁰ | 4 / 20 | Não |
 | [Llama](/ferramentas/modelos/meta-llama/) | Meta | Llama 4 | até 10M² | self-host³ | Sim |
 | [Mistral](/ferramentas/modelos/mistral/) | Mistral AI | Mistral Large 3 | ver card | 0,5 / 1,5 | Sim |
 | [DeepSeek](/ferramentas/modelos/deepseek/) | DeepSeek | V4-Pro | 1M | 0,66 / 1,98⁴ | Sim |
@@ -90,15 +94,16 @@ Preços de entrada/saída por 1 milhão de tokens, do modelo *flagship* de cada 
 | [Gemma](/ferramentas/modelos/google-gemma/) | Google | Gemma 4 (31B) | até 256k | self-host³ | Sim |
 | [Phi](/ferramentas/modelos/microsoft-phi/) | Microsoft | Phi-4 | até 128k⁷ | self-host³ | Sim |
 
-¹ Gemini 3.1 Pro cobra por faixa de contexto: US$ 2/1M (entrada até 200k) e US$ 4/1M acima; saída US$ 12/1M (até 200k) e US$ 18/1M acima.
+¹ O Gemini 4 Argon tem janela unificada de 1M tokens (entrada, raciocínio e saída), com saída padrão de 64k. O Gemini 3.1 Pro, que segue disponível, cobra por faixa de contexto: US$ 2/1M (entrada até 200k) e US$ 4/1M acima; saída US$ 12/1M (até 200k) e US$ 18/1M acima.
 ² Llama 4 Scout anuncia janela de até 10M tokens.
 ³ Modelos abertos (Llama, Mistral, Cohere Command, Gemma, Phi) não têm preço de licença: o custo depende do provedor de inferência ou do seu próprio hardware.
 ⁴ DeepSeek: preço fora de pico; no horário de pico é o dobro.
 ⁵ Qwen3.8-Max (fechado) é acessado pela API da Alibaba Cloud; a linha 3.6 é aberta e gratuita para self-host — por isso "Parcial".
 ⁶ Grok 4.7 sobe para US$ 4/12 acima de 200k tokens de contexto.
 ⁷ Phi: contexto de até 128k na linha Phi-3; confira o valor por modelo no card da Phi-4.
-⁸ O Google anunciou o Gemini 4 Argon em 30/09/2026 (US$ 2 / 10 no lançamento, US$ 4 / 20 depois), mas o acesso ainda é restrito; por isso o flagship disponível segue sendo o 3.1 Pro. Veja a [notícia](/noticias/gemini-4-argon-lancamento-preco-disponibilidade/).
+⁸ O Google abriu o Gemini 4 Argon para todos em 13/10/2026, no plano pago da API e para assinantes Pro e Ultra no app Gemini. O preço de US$ 2 / 10 vale até 30/11/2026; a partir de 1/12 passa a US$ 4 / 20. Veja a [notícia](/noticias/gemini-4-argon-lancamento-preco-disponibilidade/).
 ⁹ Em 29/09/2026 a OpenAI lançou o GPT-6.1 Sol (US$ 2 / 10, cache de entrada a US$ 0,10), o modelo recomendado para código e agentes na linha GPT-6. Veja a [notícia](/noticias/gpt-6-1-sol-lancamento-preco-o-que-muda/).
+¹⁰ Em 12/10/2026 a Meta lançou o Muse Wonder, modelo fechado disponível na Meta Model API; o Muse Wonder Full só roda no assistente Muse Code. Preço e janela de cerca de 1M tokens conforme a Meta for Developers e a VentureBeat; confirme na documentação da Meta. Veja a [notícia](/noticias/muse-wonder-meta-lancamento-preco-api/).
 
 ## As famílias, uma a uma
 
@@ -106,8 +111,8 @@ Cada família tem sua página com lançamento, preços por tier, característica
 
 - **[OpenAI — GPT](/ferramentas/modelos/openai-gpt/):** a linha GPT-6 (Astra, GPT-6.1 Sol e Luna) mais os modelos de raciocínio da série o. Ecossistema mais amplo e integrado ao ChatGPT.
 - **[Anthropic — Claude](/ferramentas/modelos/anthropic-claude/):** Opus 5.5, Sonnet 5 e Haiku 4.5. Forte em código, trabalho agêntico longo e seguir instruções com fidelidade.
-- **[Google — Gemini](/ferramentas/modelos/google-gemini/):** família Gemini 3, com contexto de 1M e tiers Flash de baixo custo, e o Gemini 4 Argon anunciado em acesso restrito; integrada ao Google Cloud e ao Workspace.
-- **[Meta — Llama](/ferramentas/modelos/meta-llama/):** família aberta (open weights) com arquitetura MoE e contexto de até 10M. Baixe os pesos e rode no seu ambiente quando privacidade ou custo em escala pesam mais que o topo absoluto.
+- **[Google — Gemini](/ferramentas/modelos/google-gemini/):** o Gemini 4 Argon, disponível desde 13/10/2026, no topo da família, com o Gemini 3.1 Pro e tiers Flash de baixo custo abaixo dele; contexto de 1M, integrada ao Google Cloud e ao Workspace.
+- **[Meta — Llama e Muse](/ferramentas/modelos/meta-llama/):** duas famílias. A **Llama** é aberta (open weights), com arquitetura MoE e contexto de até 10M: baixe os pesos e rode no seu ambiente quando privacidade ou custo em escala pesam mais que o topo absoluto. A **Muse** é fechada e paga por token, com o Muse Wonder na Meta Model API desde 12/10/2026.
 - **[Mistral AI](/ferramentas/modelos/mistral/):** a desenvolvedora europeia com a estratégia mais aberta — generalistas sob Apache 2.0/MIT, do compacto Ministral ao Large 3.
 - **[DeepSeek](/ferramentas/modelos/deepseek/):** modelos abertos (MIT) com raciocínio embutido e a melhor relação capacidade/custo em código, por API baratíssima ou self-host.
 - **[Alibaba — Qwen](/ferramentas/modelos/qwen/):** combina flagship fechado (Qwen3.8-Max) e linha aberta (3.6), forte em multimodal e multilíngue.
@@ -115,7 +120,7 @@ Cada família tem sua página com lançamento, preços por tier, característica
 - **[Amazon Nova](/ferramentas/modelos/amazon-nova/):** os modelos próprios da AWS, multimodais e focados em preço/desempenho dentro do Bedrock.
 - **[Cohere — Command](/ferramentas/modelos/cohere-command/):** foco empresarial (RAG, multilíngue), com o flagship Command A+ aberto sob Apache 2.0.
 - **[Google — Gemma](/ferramentas/modelos/google-gemma/):** os modelos abertos do Google (2B a 31B), compactos e multimodais, feitos para rodar localmente.
-- **[Microsoft — Phi](/ferramentas/modelos/microsoft-phi/):** *small language models* abertos (MIT) que priorizam raciocínio eficiente em hardware modesto e no edge.
+- **[Microsoft — Phi](/ferramentas/modelos/microsoft-phi/):** *small language models* abertos (MIT) que priorizam raciocínio eficiente em hardware modesto e no edge. Fora da linha Phi, a Microsoft lançou em 09/10/2026 o Microsoft-Decision-1, um modelo de decisão: em vez de gerar texto, escolhe entre opções fixas e devolve uma probabilidade para cada uma. Veja a [notícia](/noticias/microsoft-decision-1-lancamento-preco-o-que-muda/).
 
 ## Como escolher sem se prender à moda
 

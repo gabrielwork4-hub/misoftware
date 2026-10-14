@@ -25,4 +25,4 @@ Rodar localmente transfere para você a responsabilidade sobre o hardware: a mem
 
 ## Para quem faz sentido
 
-É a porta de entrada natural para IA local: desenvolvedores testando modelos, quem tem requisitos de privacidade e quem quer evitar custo por chamada. Para escolher bem o modelo, veja [como escolher um modelo de IA local](/artigos/como-escolher-modelo-ia-local/) e, para programação, [modelos de IA local para programação](/comparativos/modelos-ia-local-para-programacao/). É de código aberto e gratuito.
+É a porta de entrada natural para IA local: desenvolvedores testando modelos, quem tem requisitos de privacidade e quem quer evitar custo por chamada. Para escolher bem o modelo, veja [como escolher um modelo de IA local](/artigos/como-escolher-modelo-ia-local/) e, para programação, [modelos de IA local para programação](/comparativos/modelos-ia-local-para-programacao/). É de código aberto e gratuito. O Ollama é uma das peças do hub de [IA local](/ia/ia-local/), que reúne modelos, hardware e a stack para rodar IA na sua máquina.

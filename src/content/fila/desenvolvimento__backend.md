@@ -2,6 +2,7 @@
 title: "Desenvolvimento Back-end: APIs e serviços confiáveis"
 description: "Back-end confiável em quatro pilares: contratos claros, validação na borda, integrações idempotentes e operação observável."
 pubDate: "2026-09-22"
+updatedDate: "2026-10-11"
 author: "gabriel-barboza"
 category: "Desenvolvimento"
 silo: desenvolvimento
@@ -38,7 +39,19 @@ O teste de contrato deve confirmar status, corpo e efeitos no armazenamento — 
 
 ## Operação desde o primeiro deploy
 
-Defina timeout, retries com limite, logs correlacionados, alertas e procedimento de recuperação antes de publicar, não depois do primeiro incidente. Os princípios do [12-Factor](https://12factor.net/) ajudam a manter o serviço portável e observável. Feche o ciclo com [observabilidade para aplicações web](/artigos/observabilidade-para-aplicacoes-web/).
+Defina timeout, retries com limite, logs correlacionados, alertas e procedimento de recuperação antes de publicar, não depois do primeiro incidente. Os princípios do [12-Factor](https://12factor.net/) ajudam a manter o serviço portável e observável, o que facilita trocar de plataforma quando necessário (veja a seção abaixo). Feche o ciclo com [observabilidade para aplicações web](/artigos/observabilidade-para-aplicacoes-web/).
+
+## Runtime e hospedagem: escolha pensando na saída
+
+Um back-end também depende de onde ele roda. Antes de adotar um runtime ou uma plataforma serverless, responda três perguntas: quem mantém o projeto, que APIs proprietárias você vai usar e qual é o plano de saída se o serviço mudar de dono ou for encerrado.
+
+O caso mais recente é o do Deno. Em 9 de outubro de 2026, o time entrou na Cloudflare: o Deno Deploy encerra em seis meses e o runtime recebe só correções por mais um ano. Os prazos e o passo a passo de migração estão em [Deno entra na Cloudflare: o que muda no Deno Deploy](/noticias/deno-cloudflare-deno-deploy-o-que-muda/).
+
+Na prática, três cuidados reduzem esse risco:
+
+- **Prefira APIs web padrão** (`Request`, `Response`, `fetch`) na lógica de negócio e isole as APIs específicas da plataforma numa camada fina.
+- **Mantenha o deploy automatizado e reproduzível**, para trocar de destino sem refazer o pipeline do zero. Veja [CI/CD com GitHub Actions e Docker](/artigos/pipelines-cicd-github-actions-docker/).
+- **Garanta que logs e métricas viajem com a aplicação**, para comparar o comportamento antes e depois de uma migração. Veja [observabilidade para aplicações web](/artigos/observabilidade-para-aplicacoes-web/).
 
 ## Trilha deste cluster
 

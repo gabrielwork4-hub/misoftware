@@ -45,19 +45,19 @@ faq:
       editorial de porte inicial.
 ---
 
-Um site editorial precisa transformar um arquivo de conteúdo em uma experiência publicável, rastreável e fácil de manter. Neste tutorial, o objetivo não é apenas renderizar Markdown: é usar o Astro para criar um pequeno sistema com collections tipadas, layout consistente, SEO técnico, busca e uma rotina de publicação verificável.
+Um site editorial precisa transformar um arquivo de conteúdo em uma experiência publicável, rastreável e fácil de manter. Neste tutorial, o objetivo não é apenas renderizar Markdown: é usar o Astro para criar um pequeno sistema com collections tipadas, layout consistente, SEO técnico, busca e uma rotina de publicação verificável. Ele faz parte do hub de [desenvolvimento front-end](/desenvolvimento/frontend/).
 
 ## 1. Defina o contrato editorial
 
 Antes de criar componentes, liste os tipos de página e os campos obrigatórios. Um artigo pode exigir `title`, `description`, data, autor, categoria, slug e status de rascunho; uma ferramenta pode exigir URL, indicação de preço e data de revisão. O schema deve rejeitar conteúdo incompleto no build, em vez de deixar o erro aparecer somente no navegador.
 
-Organize os arquivos por intenção editorial (`artigos`, `tutoriais`, `comparativos`) e mantenha componentes fora da collection. Assim, mudar o card ou o cabeçalho não altera o conteúdo e fica mais simples testar os dois separadamente.
+Organize os arquivos por intenção editorial (`artigos`, `tutoriais`, `comparativos`) e mantenha componentes fora da collection. Assim, mudar o card ou o cabeçalho não altera o conteúdo e fica mais simples testar os dois separadamente. Se o conteúdo vier de um CMS, veja a [arquitetura de CMS headless para site editorial](/artigos/arquitetura-cms-headless-para-site-editorial/).
 
 ## 2. Configure collections e rotas
 
 Crie a collection com o schema do projeto e gere as páginas a partir de `getCollection()`. O slug deve ser determinístico: não dependa de título traduzido ou de um identificador criado em runtime. Para cada página, derive uma única URL canônica e trate o `draft` antes de gerar a rota pública.
 
-No template, componha o fluxo em ordem previsível: breadcrumbs, título, resumo, corpo, fontes, atualização e links relacionados. Um layout compartilhado evita que uma página esqueça canonical, idioma, viewport ou dados de Open Graph.
+No template, componha o fluxo em ordem previsível: breadcrumbs, título, resumo, corpo, fontes, atualização e links relacionados. Um layout compartilhado evita que uma página esqueça canonical, idioma, viewport ou dados de Open Graph. Para decidir quais rotas são geradas no build e quais respondem sob demanda, leia [renderização estática, SSR e ilhas no Astro](/artigos/renderizacao-estatica-ssr-e-ilhas-no-astro/).
 
 ## 3. Faça metadata e dados estruturados
 
@@ -73,7 +73,7 @@ Defina dimensões e texto alternativo das imagens no frontmatter. Imagens hero p
 
 ## 5. Publique e teste em ambiente limpo
 
-O pipeline mínimo deve instalar dependências com lockfile, executar validação de conteúdo, gerar o build, conferir sitemap/RSS e publicar o diretório de saída. Antes do domínio final, teste uma página de artigo, uma de tutorial, uma ferramenta, uma página 404 e um rascunho.
+O pipeline mínimo deve instalar dependências com lockfile, executar validação de conteúdo, gerar o build, conferir sitemap/RSS e publicar o diretório de saída. Antes do domínio final, teste uma página de artigo, uma de tutorial, uma ferramenta, uma página 404 e um rascunho. O guia de [CI/CD com GitHub Actions e Docker](/artigos/pipelines-cicd-github-actions-docker/) detalha cada etapa, e o hub de [DevOps](/desenvolvimento/devops/) reúne o restante da entrega.
 
 Use um checklist de falhas: link interno quebrado, canonical duplicada, data inválida, imagem ausente, script hidratado sem necessidade e URL de preview indexável. O resultado esperado é reproduzível em checkout limpo; se uma etapa depende de segredo, deixe explícito no CI e forneça uma mensagem de erro acionável.
 

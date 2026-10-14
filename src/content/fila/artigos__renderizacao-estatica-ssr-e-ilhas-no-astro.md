@@ -14,13 +14,13 @@ sources:
   - "https://docs.astro.build/en/guides/server-side-rendering/"
 ---
 
-No Astro, SSG gera HTML no build, SSR gera a resposta sob demanda e Islands adiciona JavaScript apenas aos componentes interativos. Eles não são escolhas excludentes: um site pode usar SSG para o conteúdo editorial, SSR em uma área personalizada e islands para busca ou filtros.
+No Astro, SSG gera HTML no build, SSR gera a resposta sob demanda e Islands adiciona JavaScript apenas aos componentes interativos. Eles não são escolhas excludentes: um site pode usar SSG para o conteúdo editorial, SSR em uma área personalizada e islands para busca ou filtros. Para ver essas escolhas num projeto completo, siga o tutorial [Astro para site editorial](/tutoriais/astro-para-site-editorial/); o panorama está no hub de [desenvolvimento front-end](/desenvolvimento/frontend/).
 
 ## SSG: o padrão para conteúdo previsível
 
 Na geração estática, a página é produzida antes da requisição e pode ser servida por CDN. Isso reduz dependências em runtime, simplifica cache e deixa o resultado fácil de auditar. É uma boa escolha para artigos, hubs, páginas de ferramenta e documentação que mudam por publicação.
 
-O custo aparece no build: uma alteração precisa regenerar a rota e, dependendo do deploy, invalidar o cache. Planeje webhook de rebuild ou revalidação quando o conteúdo vier de CMS. Não use SSG para esconder dados que deveriam ser personalizados por usuário.
+O custo aparece no build: uma alteração precisa regenerar a rota e, dependendo do deploy, invalidar o cache. Planeje webhook de rebuild ou revalidação quando o conteúdo vier de [CMS headless](/artigos/arquitetura-cms-headless-para-site-editorial/). Não use SSG para esconder dados que deveriam ser personalizados por usuário.
 
 ## SSR: dados no momento do acesso
 
@@ -43,4 +43,4 @@ Escolha a diretiva de hidratação conforme a necessidade: carregamento imediato
 | Busca e filtros locais | SSG + island | HTML rápido com interação pontual |
 | Conteúdo de CMS | SSG + rebuild | Publicação explícita e auditável |
 
-Comece pelo modelo mais simples que satisfaz o requisito. Meça tempo até o conteúdo, JavaScript enviado, taxa de erro e custo de execução. Só mova uma rota para SSR quando houver uma necessidade concreta, e registre a decisão no ADR do projeto.
+Comece pelo modelo mais simples que satisfaz o requisito. Meça tempo até o conteúdo, JavaScript enviado, taxa de erro e custo de execução. Só mova uma rota para SSR quando houver uma necessidade concreta, e registre a decisão no [ADR do projeto](/artigos/como-documentar-decisoes-de-arquitetura-adr/).

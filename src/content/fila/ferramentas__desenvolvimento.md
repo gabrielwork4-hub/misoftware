@@ -70,4 +70,4 @@ Mapeie o fluxo atual antes de adicionar qualquer produto. Elimine duplicidade, p
 
 ## Trilha deste cluster
 
-Aprofunde no pilar de [desenvolvimento de software](/desenvolvimento/), compare a stack de IA em [ferramentas de IA para desenvolvimento de software](/comparativos/ferramentas-ia-para-desenvolvimento-de-software/) e volte ao [diretório de ferramentas](/ferramentas/).
+Aprofunde no pilar de [desenvolvimento de software](/desenvolvimento/), compare a stack de IA em [ferramentas de IA para desenvolvimento de software](/comparativos/ferramentas-ia-para-desenvolvimento-de-software/), prototipe interfaces com [v0 by Vercel](/ferramentas/v0-vercel/) e volte ao [diretório de ferramentas](/ferramentas/).

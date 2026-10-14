@@ -1,0 +1,102 @@
+url,tipo,silo,cluster_declarado,cliques,impressoes,posicao,faixa_do_metodo,entradas_corpo,saidas_corpo
+/,home,,,4,21,8.52,4-10,1,0
+/artigos/,sistema,,,,0,,sem impressão,0,0
+/artigos/arquitetura-cms-headless-para-site-editorial/,artigo,desenvolvimento,Arquitetura,0,8,10.62,"10,5-20",4,5
+/artigos/automacao-assistida-por-ia-vs-agentes-autonomos/,artigo,automacao,Agentes operacionais,,0,,sem impressão,4,1
+/artigos/como-avaliamos-ferramentas-de-ia/,artigo,ferramentas,Reviews,,0,,sem impressão,2,5
+/artigos/como-avaliar-agentes-de-ia/,artigo,ia,Agentes,,0,,sem impressão,13,5
+/artigos/como-avaliar-prompts-em-producao/,artigo,ia,Prompt,0,2,17.5,"10,5-20",24,4
+/artigos/como-avaliar-sistema-rag/,artigo,ia,RAG,0,2,12.5,"10,5-20",3,4
+/artigos/como-documentar-decisoes-de-arquitetura-adr/,artigo,desenvolvimento,Arquitetura,0,1,84.0,50+,4,3
+/artigos/como-escolher-entre-webhook-polling-e-fila/,artigo,automacao,Integrações,,0,,sem impressão,4,4
+/artigos/como-escolher-ferramenta-de-gestao-de-conhecimento/,artigo,ferramentas,Produtividade,,0,,sem impressão,3,4
+/artigos/como-escolher-modelo-ia-local/,artigo,ia,IA local,0,2,70.0,50+,6,3
+/artigos/como-mapear-processo-antes-de-automatizar/,artigo,automacao,Workflows,0,2,42.0,21-50,4,2
+/artigos/engenharia-de-prompt-o-que-e-e-como-aplicar/,artigo,ia,Prompt,1,6,69.0,50+,3,3
+/artigos/estrategias-de-chunking/,artigo,ia,RAG,0,2,25.0,21-50,3,3
+/artigos/idempotencia-em-apis-e-webhooks/,artigo,desenvolvimento,Back-end,0,1,35.0,21-50,8,4
+/artigos/monitoramento-de-workflows-e-alertas/,artigo,automacao,Workflows,0,1,34.0,21-50,6,4
+/artigos/o-que-sao-agentes-de-ia/,artigo,ia,Agentes,0,3,57.67,50+,8,3
+/artigos/observabilidade-para-aplicacoes-web/,artigo,desenvolvimento,DevOps,0,1,27.0,21-50,8,3
+/artigos/pipelines-cicd-github-actions-docker/,artigo,desenvolvimento,DevOps,0,1,31.0,21-50,8,3
+/artigos/piramide-de-testes-pratica/,artigo,desenvolvimento,Qualidade,0,1,27.0,21-50,5,3
+/artigos/renderizacao-estatica-ssr-e-ilhas-no-astro/,artigo,desenvolvimento,Front-end,,0,,sem impressão,4,4
+/artigos/revisao-de-codigo-com-ia-sem-perder-controle/,artigo,desenvolvimento,Qualidade,0,1,47.0,21-50,14,4
+/artigos/tecnicas-de-engenharia-de-prompt-com-exemplos/,artigo,ia,Prompt,0,1,4.0,4-10,3,3
+/artigos/tipos-de-agentes-de-ia-e-casos-de-uso/,artigo,ia,Agentes,0,7,81.43,50+,3,5
+/artigos/validacao-de-dados-em-apis/,artigo,desenvolvimento,Back-end,0,2,17.5,"10,5-20",1,3
+/artigos/webhooks-o-que-sao-e-como-projetar/,artigo,automacao,Integrações,0,2,72.5,50+,4,3
+/automacao/,pilar,automacao,Automação,,0,,sem impressão,4,4
+/automacao/agentes-operacionais/,hub,automacao,Agentes operacionais,,0,,sem impressão,8,6
+/automacao/integracoes/,hub,automacao,Integrações,0,1,6.0,4-10,5,7
+/automacao/n8n/,hub,automacao,n8n,0,2,74.0,50+,5,6
+/automacao/workflows/,hub,automacao,Workflows,0,1,8.0,4-10,8,7
+/autores/,sistema,,,0,2,9.0,4-10,0,0
+/autores/gabriel-barboza/,autor,,,,0,,sem impressão,0,0
+/comparativos/,sistema,,,,0,,sem impressão,0,0
+/comparativos/cursor-vs-windsurf/,comparativo,ferramentas,Ferramentas de dev,0,2,23.0,21-50,4,4
+/comparativos/ferramentas-ia-para-desenvolvimento-de-software/,comparativo,ferramentas,Ferramentas de IA,0,1,36.0,21-50,10,8
+/comparativos/melhores-editores-codigo-ia/,comparativo,ferramentas,Ferramentas de IA,0,2,27.0,21-50,10,4
+/comparativos/modelos-ia-local-para-programacao/,comparativo,ia,IA local,0,2,18.5,"10,5-20",4,4
+/comparativos/n8n-vs-make-vs-zapier/,comparativo,ferramentas,Ferramentas de automação,0,1,29.0,21-50,3,4
+/comparativos/obsidian-vs-notion/,comparativo,ferramentas,Produtividade,0,3,13.67,"10,5-20",2,2
+/contato/,sistema,,,1,11,4.45,4-10,3,1
+/desenvolvimento/,pilar,desenvolvimento,Desenvolvimento,0,2,2.0,1-3,6,5
+/desenvolvimento/arquitetura/,hub,desenvolvimento,Arquitetura,0,20,74.4,50+,3,6
+/desenvolvimento/backend/,hub,desenvolvimento,Back-end,,0,,sem impressão,5,7
+/desenvolvimento/devops/,hub,desenvolvimento,DevOps,,0,,sem impressão,7,4
+/desenvolvimento/frontend/,hub,desenvolvimento,Front-end,,0,,sem impressão,4,4
+/desenvolvimento/qualidade/,hub,desenvolvimento,Qualidade,0,3,10.0,4-10,6,4
+/estudos-de-caso/automacao-de-pauta-editorial/,estudo-de-caso,automacao,Workflows,0,2,41.0,21-50,2,5
+/ferramentas/,pilar,ferramentas,Ferramentas,0,9,3.22,4-10,8,6
+/ferramentas/automacao/,hub,ferramentas,Ferramentas de automação,,0,,sem impressão,3,8
+/ferramentas/cursor/,ferramenta,ferramentas,Ferramentas de IA,,0,,sem impressão,2,4
+/ferramentas/desenvolvimento/,hub,ferramentas,Ferramentas de dev,0,46,78.67,50+,4,10
+/ferramentas/hardware/,hub,ferramentas,Hardware,,0,,sem impressão,6,4
+/ferramentas/ia-generativa/,hub,ferramentas,Ferramentas de IA,0,6,36.67,21-50,5,9
+/ferramentas/langchain/,ferramenta,ferramentas,Agentes,0,3,74.67,50+,2,3
+/ferramentas/modelos/amazon-nova/,ferramenta,ferramentas,Modelos de linguagem,0,4,37.5,21-50,1,2
+/ferramentas/modelos/anthropic-claude/,ferramenta,ferramentas,Modelos de linguagem,,0,,sem impressão,7,7
+/ferramentas/modelos/cohere-command/,ferramenta,ferramentas,Modelos de linguagem,0,2,24.0,21-50,1,3
+/ferramentas/modelos/deepseek/,ferramenta,ferramentas,Modelos de linguagem,0,3,12.67,"10,5-20",2,4
+/ferramentas/modelos/google-gemini/,ferramenta,ferramentas,Modelos de linguagem,0,8,48.62,21-50,3,4
+/ferramentas/modelos/google-gemma/,ferramenta,ferramentas,Modelos de linguagem,0,2,26.0,21-50,1,5
+/ferramentas/modelos/meta-llama/,ferramenta,ferramentas,Modelos de linguagem,0,4,13.25,"10,5-20",2,5
+/ferramentas/modelos/microsoft-phi/,ferramenta,ferramentas,Modelos de linguagem,0,1,24.0,21-50,2,6
+/ferramentas/modelos/mistral/,ferramenta,ferramentas,Modelos de linguagem,0,3,11.0,"10,5-20",1,3
+/ferramentas/modelos/openai-gpt/,ferramenta,ferramentas,Modelos de linguagem,,0,,sem impressão,3,4
+/ferramentas/modelos/qwen/,ferramenta,ferramentas,Modelos de linguagem,0,2,12.5,"10,5-20",2,4
+/ferramentas/modelos/xai-grok/,ferramenta,ferramentas,Modelos de linguagem,0,2,16.5,"10,5-20",1,2
+/ferramentas/n8n/,ferramenta,ferramentas,Ferramentas de automação,,0,,sem impressão,3,4
+/ferramentas/ollama/,ferramenta,ferramentas,IA local,0,1,9.0,4-10,6,4
+/ferramentas/pesquisa/,hub,ferramentas,Pesquisa,0,3,9.0,4-10,2,3
+/ferramentas/produtividade/,hub,ferramentas,Produtividade,1,3,7.0,4-10,3,3
+/ferramentas/v0-vercel/,ferramenta,ferramentas,Ferramentas de dev,,0,,sem impressão,2,3
+/ia/,pilar,ia,IA & Modelos,0,7,3.57,4-10,6,6
+/ia/agentes/,hub,ia,Agentes,0,21,30.71,21-50,11,8
+/ia/engenharia-de-prompt/,hub,ia,Prompt,0,1,9.0,4-10,8,4
+/ia/ia-local/,hub,ia,IA local,,0,,sem impressão,14,5
+/ia/modelos-de-linguagem/,hub,ia,Modelos de linguagem,0,2,21.5,21-50,15,21
+/ia/rag/,hub,ia,RAG,,0,,sem impressão,7,6
+/noticias/,sistema,,,0,2,7.0,4-10,0,0
+/noticias/claude-code-limite-de-uso-5-horas-parada-controlada/,noticia,ferramentas,Notícias,0,8,8.75,4-10,4,5
+/noticias/claude-code-mods-lancamento-o-que-muda/,noticia,ferramentas,Notícias,,0,,sem impressão,2,4
+/noticias/claude-sonnet-5-5-lancamento-preco-o-que-muda/,noticia,ferramentas,Notícias,0,1,9.0,4-10,1,5
+/noticias/deepseek-harness-v0-2-app-desktop-o-que-muda/,noticia,ia,Notícias,,0,,sem impressão,2,7
+/noticias/deno-cloudflare-deno-deploy-o-que-muda/,noticia,desenvolvimento,Notícias,,0,,sem impressão,1,6
+/noticias/gemini-4-argon-lancamento-preco-disponibilidade/,noticia,ia,Notícias,0,6,8.67,4-10,2,7
+/noticias/gpt-6-1-sol-lancamento-preco-o-que-muda/,noticia,ia,Notícias,0,22,7.36,4-10,2,6
+/noticias/microsoft-decision-1-lancamento-preco-o-que-muda/,noticia,ia,Notícias,,0,,sem impressão,3,6
+/noticias/muse-wonder-meta-lancamento-preco-api/,noticia,ia,Notícias,,0,,sem impressão,3,6
+/noticias/nvidia-openshell-seguranca-agentes-ia-lancamento/,noticia,ia,Notícias,0,6,4.33,4-10,2,6
+/noticias/stack-overflow-developer-survey-2026-resultados/,noticia,ferramentas,Notícias,,0,,sem impressão,1,8
+/politica-editorial/,sistema,,,,0,,sem impressão,2,1
+/privacidade/,sistema,,,0,2,6.0,4-10,0,2
+/sobre/,sistema,,,0,6,3.83,4-10,0,2
+/tutoriais/,sistema,,,,0,,sem impressão,0,0
+/tutoriais/astro-para-site-editorial/,tutorial,desenvolvimento,Front-end,0,2,3.0,1-3,4,5
+/tutoriais/automacao-n8n-com-ia/,tutorial,automacao,n8n,,0,,sem impressão,1,3
+/tutoriais/automacao-n8n-webhook-api/,tutorial,automacao,n8n,0,3,35.33,21-50,5,4
+/tutoriais/como-criar-agente-ia-com-ferramentas/,tutorial,ia,Agentes,0,2,39.0,21-50,6,4
+/tutoriais/n8n-primeiro-workflow/,tutorial,automacao,n8n,0,2,15.5,"10,5-20",7,2
+/tutoriais/rag-com-fontes-verificaveis/,tutorial,ia,RAG,,0,,sem impressão,3,4

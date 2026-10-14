@@ -51,7 +51,7 @@ Uma integração confiável é um contrato entre sistemas, com entrada conhecida
 
 ## Escolha o transporte
 
-Webhooks notificam quando um evento acontece e reduzem consultas desnecessárias, mas o consumidor precisa responder rápido, validar a origem e registrar o evento. Polling é mais simples quando o produtor não oferece eventos, mas exige intervalo, paginação e controle de duplicação. Filas e brokers de mensagem (como RabbitMQ, Amazon SQS ou Apache Kafka) ajudam a desacoplar produtores e consumidores e absorver picos, ao custo de mais operação e consistência eventual.
+[Webhooks](/artigos/webhooks-o-que-sao-e-como-projetar/) notificam quando um evento acontece e reduzem consultas desnecessárias, mas o consumidor precisa responder rápido, validar a origem e registrar o evento. Polling é mais simples quando o produtor não oferece eventos, mas exige intervalo, paginação e controle de duplicação. Filas e brokers de mensagem (como RabbitMQ, Amazon SQS ou Apache Kafka) ajudam a desacoplar produtores e consumidores e absorver picos, ao custo de mais operação e consistência eventual.
 
 O guia de [webhook, polling ou fila](/artigos/como-escolher-entre-webhook-polling-e-fila/) detalha a decisão por latência, volume, disponibilidade e necessidade de replay.
 
@@ -103,4 +103,4 @@ O [n8n](/automacao/n8n/) pode orquestrar integrações visuais; código e filas 
 
 ## Próximo passo
 
-Mapeie uma integração real, escolha o transporte pela necessidade e escreva o contrato antes de configurar a ferramenta. Depois avance para [monitoramento de workflows](/artigos/monitoramento-de-workflows-e-alertas/) e para o guia de [idempotência](/artigos/idempotencia-em-apis-e-webhooks/).
+Mapeie uma integração real, escolha o transporte pela necessidade e escreva o contrato antes de configurar a ferramenta. Depois avance para [monitoramento de workflows](/artigos/monitoramento-de-workflows-e-alertas/) e para o guia de [idempotência](/artigos/idempotencia-em-apis-e-webhooks/). Volte ao pilar de [automação](/automacao/).

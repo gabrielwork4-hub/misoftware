@@ -127,4 +127,4 @@ O [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) pode orie
 
 ## Próximo passo
 
-Depois de executar este agente em ambiente controlado, avance para [tipos de agentes](/artigos/tipos-de-agentes-de-ia-e-casos-de-uso/), [avaliação](/artigos/como-avaliar-agentes-de-ia/) e [agentes operacionais](/automacao/agentes-operacionais/). Não aumente ferramentas ou autonomia antes de entender as falhas do menor protótipo.
+Depois de executar este agente em ambiente controlado, avance para [tipos de agentes](/artigos/tipos-de-agentes-de-ia-e-casos-de-uso/), [avaliação](/artigos/como-avaliar-agentes-de-ia/) e [agentes operacionais](/automacao/agentes-operacionais/). Não aumente ferramentas ou autonomia antes de entender as falhas do menor protótipo. Para o panorama do tema, veja o hub de [agentes de IA](/ia/agentes/).

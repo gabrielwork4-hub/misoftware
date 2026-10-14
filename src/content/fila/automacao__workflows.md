@@ -84,4 +84,4 @@ Defina explicitamente timeout, política de retry, destino para eventos que falh
 - Credenciais, versões e contratos de integração são revisados?
 - O processo real mudou desde o último teste do fluxo?
 
-Um workflow operacional é um sistema vivo: nasce de um processo estável, ganha observabilidade e é revisado quando o processo muda. Automatizar é o começo do trabalho, não o fim.
+Um workflow operacional é um sistema vivo: nasce de um processo estável, ganha observabilidade e é revisado quando o processo muda. Automatizar é o começo do trabalho, não o fim. Volte ao pilar de [automação](/automacao/).

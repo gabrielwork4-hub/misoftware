@@ -92,4 +92,4 @@ Também revise dados sensíveis, instruções conflitantes e tentativas de injet
 2. aplique [técnicas com exemplos](/artigos/tecnicas-de-engenharia-de-prompt-com-exemplos/);
 3. avance para [avaliação em produção](/artigos/como-avaliar-prompts-em-producao/).
 
-O resultado esperado não é um prompt maior. É uma tarefa mais bem especificada, com comportamento observável e um processo para detectar regressões.
+O resultado esperado não é um prompt maior. É uma tarefa mais bem especificada, com comportamento observável e um processo para detectar regressões. Volte ao pilar de [IA aplicada](/ia/).

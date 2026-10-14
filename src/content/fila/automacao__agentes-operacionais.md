@@ -44,4 +44,4 @@ O [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) ajuda a o
 
 ## Trilha deste cluster
 
-Entenda o conceito em [agentes de IA](/ia/agentes/), decida a abordagem com [automação assistida vs agentes autônomos](/artigos/automacao-assistida-por-ia-vs-agentes-autonomos/), meça com [como avaliar agentes de IA](/artigos/como-avaliar-agentes-de-ia/) e ancore tudo em [workflows operacionais](/automacao/workflows/) com [monitoramento](/artigos/monitoramento-de-workflows-e-alertas/). Antes de aumentar a autonomia, prove que o agente pode ser interrompido, corrigido e revertido.
+Entenda o conceito em [agentes de IA](/ia/agentes/), decida a abordagem com [automação assistida vs agentes autônomos](/artigos/automacao-assistida-por-ia-vs-agentes-autonomos/), meça com [como avaliar agentes de IA](/artigos/como-avaliar-agentes-de-ia/) e ancore tudo em [workflows operacionais](/automacao/workflows/) com [monitoramento](/artigos/monitoramento-de-workflows-e-alertas/). Antes de aumentar a autonomia, prove que o agente pode ser interrompido, corrigido e revertido. Volte ao pilar de [automação](/automacao/).

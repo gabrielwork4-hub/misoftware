@@ -97,4 +97,4 @@ Não substitua o processo inteiro de uma vez. Comece com **uma tarefa repetitiva
 
 ## Próximo passo
 
-Escolha o editor com [melhores editores de código com IA](/comparativos/melhores-editores-codigo-ia/) e [Cursor vs Windsurf](/comparativos/cursor-vs-windsurf/); organize a stack completa no hub de [ferramentas para desenvolvimento](/ferramentas/desenvolvimento/).
+Escolha o editor com [melhores editores de código com IA](/comparativos/melhores-editores-codigo-ia/) e [Cursor vs Windsurf](/comparativos/cursor-vs-windsurf/); organize a stack completa no hub de [ferramentas para desenvolvimento](/ferramentas/desenvolvimento/). As demais opções de IA para o trabalho técnico estão no hub de [ferramentas de IA generativa](/ferramentas/ia-generativa/).

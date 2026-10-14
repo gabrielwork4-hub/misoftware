@@ -67,4 +67,4 @@ Execute casos de sucesso, entrada incompleta, evento duplicado, timeout, credenc
 
 ## Próximo passo
 
-Comece pelo [primeiro workflow](/tutoriais/n8n-primeiro-workflow/), depois avance para IA, webhooks e integração. Só compare plataformas no [review do n8n](/ferramentas/n8n/) depois de definir a tarefa, o custo e a responsabilidade de operação.
+Comece pelo [primeiro workflow](/tutoriais/n8n-primeiro-workflow/), depois avance para IA, webhooks e integração. Só compare plataformas no [review do n8n](/ferramentas/n8n/) depois de definir a tarefa, o custo e a responsabilidade de operação. Volte ao pilar de [automação](/automacao/).

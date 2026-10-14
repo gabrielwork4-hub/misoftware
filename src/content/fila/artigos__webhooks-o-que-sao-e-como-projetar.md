@@ -75,4 +75,4 @@ O exemplo é ilustrativo: o formato real deve seguir o contrato do provedor. O p
 5. É possível reprocessar sem duplicar efeitos?
 6. O contrato possui versão e documentação?
 
-Para implementar o fluxo, veja o [tutorial de webhook e API no n8n](/tutoriais/automacao-n8n-webhook-api/). Para escolher o transporte, consulte [webhook, polling ou fila](/artigos/como-escolher-entre-webhook-polling-e-fila/).
+Para implementar o fluxo, veja o [tutorial de webhook e API no n8n](/tutoriais/automacao-n8n-webhook-api/). Para escolher o transporte, consulte [webhook, polling ou fila](/artigos/como-escolher-entre-webhook-polling-e-fila/). O panorama do tema está no hub de [integrações de sistemas](/automacao/integracoes/).
