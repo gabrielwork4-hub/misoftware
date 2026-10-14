@@ -4,6 +4,26 @@
 
 **Como ler os termos.** *Pilar* é a página-mãe de um assunto (`/ia/`, `/automacao/`, `/desenvolvimento/`, `/ferramentas/`). *Hub* é a página de curadoria de um tema dentro do pilar. *Página de apoio* é o artigo, tutorial, comparativo ou ferramenta que pertence a um hub. *Cluster* é o conjunto hub + páginas de apoio. *Link de texto* é o link que alguém escreveu dentro do conteúdo; o oposto são os links automáticos do layout (menu, rodapé, trilha de navegação e cartões de listagem).
 
+## Atualização: prioridade 1 aplicada (14/10/2026, mesmo dia)
+
+**As quatro correções da prioridade 1 (seção 6, A a D) foram aplicadas em 24 páginas e todas as lacunas que elas cobriam fecharam.** Refiz o build e a análise depois das edições. As seções 1 e 2 abaixo descrevem o estado **antes** das correções; a planilha CSV mostra o estado **depois**.
+
+| Verificação | Antes | Depois |
+|---|---|---|
+| Links de texto no site | 467 | 507 |
+| Páginas sem nenhum link de texto de saída | 5 | **0** |
+| Página de apoio → seu hub, no texto | 40 de 54 | **54 de 54** |
+| Hub → suas páginas de apoio, no texto | 3 falhas | **0** |
+| Hub → seu pilar, no texto | 12 de 20 | **20 de 20** |
+| Links de texto recebidos pelo pilar Automação | 0 | 4 |
+| Links de texto recebidos pelo pilar IA / Desenvolvimento | 3 / 5 | 6 / 6 |
+| Páginas com menos de 3 links de saída | 14 de 90 | 6 de 90 |
+| `como-avaliar-prompts-em-producao`: entradas / saídas | 24 / 0 | 24 / 4 |
+| Tutorial → página da ferramenta | 0 de 6 | 1 de 6 (RAG → LangChain) |
+| Links quebrados | 0 | 0 |
+
+**O que não mudou e continua na lista:** página de apoio → pilar no texto (2 de 55), as pontes entre pilares (seção 2.6), os tutoriais de n8n e agentes sem link para a ferramenta, os 8 itens fora do pilar Ferramentas e as notícias com 1 entrada. Cada link entrou na frase onde o assunto aparece, no padrão que o hub de back-end já usa ("Volte ao pilar de …"). **Leitura:** a correção de caminho de volta foi mecânica, mas o texto de cada inserção é editorial; vale uma leitura sua das 24 páginas antes de publicar.
+
 ## Resumo
 
 **A parte técnica está limpa; o que falta é linkagem escrita no texto.** Nenhum link quebrado, nenhum link para página removida, sitemap e canonical corretos. Mas dos 2.852 links internos do site, só 467 (16%) foram escritos dentro dos conteúdos. Nesses textos, o pilar aponta para todos os hubs, mas o caminho de volta quase não existe: **só 2 de 55 páginas de apoio linkam o pilar no texto**, e **só 12 de 20 hubs**.
@@ -165,7 +185,7 @@ Cada item depende de uma escolha sua; não implementei nenhum.
 
 ## 6. O que fazer
 
-Prioridade 1 (caminho de volta e páginas sem saída), do mais para o menos decisivo. As sugestões de destino vêm da coluna "Relações obrigatórias" do documento de 18/09.
+**Prioridade 1 (A a D) já aplicada; ver a atualização no topo.** Mantive a lista abaixo como registro do que foi feito. Prioridade 1 era o caminho de volta e as páginas sem saída, do mais para o menos decisivo. As sugestões de destino vêm da coluna "Relações obrigatórias" do documento de 18/09.
 
 **A. As 5 páginas sem nenhum link de texto**
 
