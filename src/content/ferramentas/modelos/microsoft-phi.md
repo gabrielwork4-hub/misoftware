@@ -2,6 +2,7 @@
 name: "Microsoft Phi"
 description: "A família Phi da Microsoft — small language models (SLMs) abertos sob MIT, como Phi-4, Phi-4-mini e Phi-4-multimodal, feitos para raciocínio eficiente em hardware modesto. Specs verificados em fonte oficial."
 pubDate: 2026-09-24
+updatedDate: 2026-10-12
 vendor: "Microsoft"
 category: "Modelos de IA"
 pricing: "Aberto (MIT) — sem custo de licença"
@@ -47,3 +48,22 @@ O foco é **eficiência**: modelos pequenos, com contexto até 128k na linha Phi
 ## Para quem faz sentido
 
 Faz sentido para **edge, dispositivos e aplicações locais** onde custo, latência e privacidade importam mais que a capacidade máxima — e para quem já usa Azure. Combine com [hardware para IA local](/ferramentas/hardware/). Para comparar com as demais famílias, veja o hub de [modelos de linguagem](/ia/modelos-de-linguagem/).
+
+## Novidades de outubro/2026: Microsoft-Decision-1 (fora da linha Phi)
+
+Em **9 de outubro de 2026** a Microsoft lançou o **Microsoft-Decision-1**, um *decision model*: em vez de gerar texto, ele recebe uma pergunta e uma lista fechada de opções e devolve uma probabilidade calibrada para cada opção, em JSON. **Ele não faz parte da família Phi.**
+
+| | Phi-4 (família) | Microsoft-Decision-1 |
+| --- | --- | --- |
+| Função | gerar texto (SLM) | escolher entre opções fixas |
+| Base | arquitetura própria | Qwen3.5-9B (Alibaba), pós-treinado |
+| Pesos | abertos (MIT) | não divulgados |
+| Contexto | conferir no card de cada modelo | 32.768 tokens |
+| Preço | gratuito para rodar local | US$ 0,042 por 1M tokens de entrada; saída sem custo |
+| Status | disponível | prévia pública no Foundry; também no OpenRouter |
+
+**Verificado em 12/10/2026** no [blog do Microsoft Foundry](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-in-microsoft-foundry-for-decision-and-classific/4562742), no [card do modelo](https://ai.azure.com/catalog/models/Microsoft-Decision-1) e no [Command Line](https://commandline.microsoft.com/microsoft-decision-1-model-foundry/).
+
+Pelos números da Microsoft, o Decision-1 tem 83,5% de acurácia média em 36 benchmarks e latência mediana de 85 ms. Ele serve para classificação, roteamento, papel de juiz e guardrails em [agentes](/ia/agentes/); não serve para gerar texto, resumir ou traduzir. Se o seu caso é rodar um modelo pequeno **local**, a resposta continua sendo o Phi; se é tomar milhares de decisões fechadas por minuto na nuvem, vale testar o Decision-1.
+
+Detalhes, benchmarks e o que ainda não está confirmado: [Microsoft-Decision-1: lançamento, preço e o que muda](/noticias/microsoft-decision-1-lancamento-preco-o-que-muda/).
