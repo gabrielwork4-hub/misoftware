@@ -24,6 +24,7 @@ sources:
   - "https://aws.amazon.com/bedrock/pricing/"
   - "https://ai.google.dev/gemma/docs/core"
   - "https://azure.microsoft.com/en-us/products/phi"
+  - "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-in-microsoft-foundry-for-decision-and-classific/4562742"
 draft: false
 faq:
   - q: "Qual é o melhor modelo de linguagem hoje?"
@@ -119,7 +120,7 @@ Cada família tem sua página com lançamento, preços por tier, característica
 - **[Amazon Nova](/ferramentas/modelos/amazon-nova/):** os modelos próprios da AWS, multimodais e focados em preço/desempenho dentro do Bedrock.
 - **[Cohere — Command](/ferramentas/modelos/cohere-command/):** foco empresarial (RAG, multilíngue), com o flagship Command A+ aberto sob Apache 2.0.
 - **[Google — Gemma](/ferramentas/modelos/google-gemma/):** os modelos abertos do Google (2B a 31B), compactos e multimodais, feitos para rodar localmente.
-- **[Microsoft — Phi](/ferramentas/modelos/microsoft-phi/):** *small language models* abertos (MIT) que priorizam raciocínio eficiente em hardware modesto e no edge.
+- **[Microsoft — Phi](/ferramentas/modelos/microsoft-phi/):** *small language models* abertos (MIT) que priorizam raciocínio eficiente em hardware modesto e no edge. Fora da linha Phi, a Microsoft lançou em 09/10/2026 o Microsoft-Decision-1, um modelo de decisão: em vez de gerar texto, escolhe entre opções fixas e devolve uma probabilidade para cada uma. Veja a [notícia](/noticias/microsoft-decision-1-lancamento-preco-o-que-muda/).
 
 ## Como escolher sem se prender à moda
 
