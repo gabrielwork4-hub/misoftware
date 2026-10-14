@@ -15,7 +15,7 @@ sources:
   - "https://www.nist.gov/itl/ai-risk-management-framework"
 ---
 
-Um prompt que parece bom em três exemplos pode falhar quando muda o idioma, o formato do dado ou a intenção do usuário. Em produção, a avaliação deve comparar versões do prompt contra casos reais, medir a saída e registrar custo, latência e riscos.
+Um prompt que parece bom em três exemplos pode falhar quando muda o idioma, o formato do dado ou a intenção do usuário. Em produção, a avaliação deve comparar versões do prompt contra casos reais, medir a saída e registrar custo, latência e riscos. Para a base do assunto, veja [engenharia de prompt: o que é e como aplicar](/artigos/engenharia-de-prompt-o-que-e-e-como-aplicar/) e o hub de [engenharia de prompt](/ia/engenharia-de-prompt/).
 
 ## Monte o dataset certo
 
@@ -31,13 +31,13 @@ Não confunda fluência com correção. Para fatos importantes, use referência 
 
 ## Versione e compare
 
-Trate prompt como código: nomeie versões, descreva a mudança e guarde o resultado da suíte. Rode a versão atual e a candidata no mesmo conjunto, com parâmetros e modelo registrados. Uma melhoria média pode esconder regressão em um segmento; compare por intenção, idioma, cliente e nível de risco.
+Trate prompt como código: nomeie versões, descreva a mudança e guarde o resultado da suíte. Rode a versão atual e a candidata no mesmo conjunto, com parâmetros e modelo registrados. Uma melhoria média pode esconder regressão em um segmento; compare por intenção, idioma, cliente e nível de risco. As versões candidatas podem vir das [técnicas de engenharia de prompt com exemplos](/artigos/tecnicas-de-engenharia-de-prompt-com-exemplos/).
 
 Faça rollout gradual quando a aplicação permitir. Mantenha uma forma de voltar ao prompt anterior e registre qual versão gerou cada resposta. Não edite um prompt em produção sem deixar o motivo e o horário da mudança.
 
 ## Observe segurança e deriva
 
-Monitore entradas que tentam sobrescrever instruções, pedir dados fora da permissão ou induzir o modelo a chamar uma ferramenta perigosa. Delimite conteúdo externo, valide saídas no servidor e mantenha a decisão final fora do texto livre quando houver efeito operacional.
+Monitore entradas que tentam sobrescrever instruções, pedir dados fora da permissão ou induzir o modelo a chamar uma ferramenta perigosa. Delimite conteúdo externo, valide saídas no servidor e mantenha a decisão final fora do texto livre quando houver efeito operacional. Se o prompt alimenta um agente, veja também [como avaliar agentes de IA](/artigos/como-avaliar-agentes-de-ia/).
 
 Reavalie quando mudar modelo, fonte, idioma, política ou formato de entrada. A distribuição de perguntas também muda com o tempo; uma suíte fixa não substitui amostras recentes e revisão de incidentes.
 

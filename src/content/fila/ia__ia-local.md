@@ -102,4 +102,4 @@ Proteja a API local, não exponha portas sem autenticação e trate prompts e do
 
 ## Próximo passo
 
-Comece pelo guia de [como escolher um modelo local](/artigos/como-escolher-modelo-ia-local/), compare cenários de programação e consulte o hub de [hardware para IA local](/ferramentas/hardware/). A decisão correta é a que atende sua tarefa com qualidade suficiente e custo operacional que a equipe consegue sustentar.
+Comece pelo guia de [como escolher um modelo local](/artigos/como-escolher-modelo-ia-local/), compare cenários de programação e consulte o hub de [hardware para IA local](/ferramentas/hardware/). A decisão correta é a que atende sua tarefa com qualidade suficiente e custo operacional que a equipe consegue sustentar. Volte ao pilar de [IA aplicada](/ia/).

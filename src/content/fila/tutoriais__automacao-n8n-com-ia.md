@@ -139,4 +139,4 @@ Para cada falha, registre se houve retry, fallback, alerta e encaminhamento huma
 
 ## Próximo passo
 
-Depois deste experimento, avance para [agentes operacionais](/automacao/agentes-operacionais/) somente se a etapa de IA já tiver avaliação e limites claros. Para fundamentos, consulte a [engenharia de prompt](/ia/engenharia-de-prompt/).
+Depois deste experimento, avance para [agentes operacionais](/automacao/agentes-operacionais/) somente se a etapa de IA já tiver avaliação e limites claros. Para fundamentos, consulte a [engenharia de prompt](/ia/engenharia-de-prompt/). Os demais tutoriais da trilha estão no hub de [automação com n8n](/automacao/n8n/).

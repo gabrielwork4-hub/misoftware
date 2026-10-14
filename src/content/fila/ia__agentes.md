@@ -137,4 +137,4 @@ Frameworks como o [LangChain](/ferramentas/langchain/) oferecem blocos para orqu
 4. use o guia de [avaliação de agentes](/artigos/como-avaliar-agentes-de-ia/);
 5. avalie aplicações em [agentes operacionais](/automacao/agentes-operacionais/).
 
-O próximo passo não é aumentar o número de agentes. É escolher uma tarefa reversível, testar casos normais e adversos e registrar evidências suficientes para decidir se a autonomia adicional vale o risco.
+O próximo passo não é aumentar o número de agentes. É escolher uma tarefa reversível, testar casos normais e adversos e registrar evidências suficientes para decidir se a autonomia adicional vale o risco. Volte ao pilar de [IA aplicada](/ia/).

@@ -25,4 +25,4 @@ O código gerado é um ponto de partida, não um produto final. Revise acessibil
 
 ## Para quem faz sentido
 
-Vale para desenvolvedores e times de produto que usam React/Tailwind e querem encurtar o caminho da ideia ao protótipo. Trate a saída como rascunho a ser revisado, não como código final. Para o contexto de renderização e arquitetura de front-end, veja [SSG, SSR e Islands no Astro](/artigos/renderizacao-estatica-ssr-e-ilhas-no-astro/).
+Vale para desenvolvedores e times de produto que usam React/Tailwind e querem encurtar o caminho da ideia ao protótipo. Trate a saída como rascunho a ser revisado, não como código final. Para o contexto de renderização e arquitetura de front-end, veja [SSG, SSR e Islands no Astro](/artigos/renderizacao-estatica-ssr-e-ilhas-no-astro/). Para ver o v0 ao lado de outras ferramentas de desenvolvimento, veja o hub de [ferramentas para desenvolvimento](/ferramentas/desenvolvimento/).

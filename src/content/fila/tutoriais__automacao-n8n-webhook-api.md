@@ -117,4 +117,4 @@ Provoque timeout, resposta 5xx, credencial inválida e evento duplicado. Em cada
 
 ## Próximo passo
 
-Compare esta implementação com o guia de [webhooks](/artigos/webhooks-o-que-sao-e-como-projetar/), [idempotência](/artigos/idempotencia-em-apis-e-webhooks/) e o [hub de integrações](/automacao/integracoes/). O tutorial só deve ser promovido depois que o endpoint de teste e os cenários de falha forem executados.
+Compare esta implementação com o guia de [webhooks](/artigos/webhooks-o-que-sao-e-como-projetar/), [idempotência](/artigos/idempotencia-em-apis-e-webhooks/) e o [hub de integrações](/automacao/integracoes/). O tutorial só deve ser promovido depois que o endpoint de teste e os cenários de falha forem executados. Os demais tutoriais da trilha estão no hub de [automação com n8n](/automacao/n8n/).

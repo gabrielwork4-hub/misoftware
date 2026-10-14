@@ -79,4 +79,4 @@ Escolha um caso de uso mensurável, monte exemplos de teste e defina o erro acei
 
 ## Trilha deste cluster
 
-Entenda os fundamentos em [IA aplicada](/ia/), rode modelos na sua máquina com [Ollama](/ferramentas/ollama/) e [como escolher um modelo de IA local](/artigos/como-escolher-modelo-ia-local/), e gere interfaces com [v0 by Vercel](/ferramentas/v0-vercel/). Volte ao [diretório de ferramentas](/ferramentas/).
+Entenda os fundamentos em [IA aplicada](/ia/), escreva código com IA no [Cursor](/ferramentas/cursor/), rode modelos na sua máquina com [Ollama](/ferramentas/ollama/) e [como escolher um modelo de IA local](/artigos/como-escolher-modelo-ia-local/), e gere interfaces com [v0 by Vercel](/ferramentas/v0-vercel/). Volte ao [diretório de ferramentas](/ferramentas/).

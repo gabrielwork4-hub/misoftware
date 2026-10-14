@@ -14,11 +14,11 @@ sources:
   - "https://martinfowler.com/articles/architectural-decision-records.html"
 ---
 
-Um Architectural Decision Record (ADR) registra por que uma decisão foi tomada, quais alternativas foram consideradas e que consequências foram aceitas. O documento não tenta prever tudo: ele preserva o contexto que se perde quando pessoas, requisitos ou tecnologias mudam.
+Um Architectural Decision Record (ADR) registra por que uma decisão foi tomada, quais alternativas foram consideradas e que consequências foram aceitas. O documento não tenta prever tudo: ele preserva o contexto que se perde quando pessoas, requisitos ou tecnologias mudam. O registro faz parte do hub de [arquitetura de software](/desenvolvimento/arquitetura/).
 
 ## Quando criar um ADR
 
-Registre uma decisão quando ela limitar o futuro do sistema, exigir investimento relevante ou for difícil de reverter. Escolher um banco, separar um serviço, adotar um CMS headless ou definir um contrato de eventos são exemplos melhores do que decisões triviais de implementação.
+Registre uma decisão quando ela limitar o futuro do sistema, exigir investimento relevante ou for difícil de reverter. Escolher um banco, separar um serviço, adotar um [CMS headless](/artigos/arquitetura-cms-headless-para-site-editorial/) ou definir um contrato de eventos são exemplos melhores do que decisões triviais de implementação.
 
 Crie o registro perto do momento da decisão, durante a discussão. Um ADR escrito meses depois tende a racionalizar o resultado e omitir alternativas reais. O status deve dizer se a decisão está proposta, aceita, substituída ou rejeitada.
 
@@ -52,7 +52,7 @@ O contexto explica o problema e as restrições, não apenas a solução. A deci
 
 Um ADR não é um contrato imutável. Se o contexto mudar, escreva um novo documento que aponte para o anterior e marque o status antigo como substituído. Não edite o histórico para apagar uma escolha que fazia sentido no momento; a cadeia de decisões é parte da documentação.
 
-Mantenha os arquivos próximos ao código ou em um repositório versionado, use nomes sequenciais e ligue cada ADR a issues, pull requests e métricas relevantes. O link entre decisão e evidência evita que a documentação vire opinião solta.
+Mantenha os arquivos próximos ao código ou em um repositório versionado, use nomes sequenciais e ligue cada ADR a issues, pull requests e métricas relevantes. O link entre decisão e evidência evita que a documentação vire opinião solta. Para ligar cada decisão a critérios de aceite e testes, veja o hub de [qualidade de software](/desenvolvimento/qualidade/).
 
 ## Critérios de qualidade
 

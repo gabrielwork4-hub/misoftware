@@ -49,13 +49,13 @@ faq:
       retirar uma fonte rapidamente quando ela sai de validade.
 ---
 
-RAG combina recuperação de documentos com geração de resposta, mas não transforma automaticamente um modelo em fonte confiável. A aplicação precisa provar de onde veio cada afirmação, controlar documentos desatualizados e responder com uma lacuna explícita quando a busca não sustenta a pergunta.
+[RAG](/ia/rag/) combina recuperação de documentos com geração de resposta, mas não transforma automaticamente um modelo em fonte confiável. A aplicação precisa provar de onde veio cada afirmação, controlar documentos desatualizados e responder com uma lacuna explícita quando a busca não sustenta a pergunta.
 
 ## 1. Prepare documentos com identidade
 
 Comece definindo quais fontes são autorizadas e quem pode atualizá-las. Extraia o texto preservando título, seção, URL, data de validade, idioma e permissões. Remova duplicatas sem apagar a versão: dois documentos visualmente iguais podem ter políticas diferentes.
 
-Divida o conteúdo em trechos que mantenham uma ideia completa. Um chunk muito curto perde contexto; um muito longo traz ruído e aumenta custo. Guarde `document_id`, `chunk_id`, posição no documento e uma versão do parser. Esses metadados serão usados na citação e para reindexar somente o que mudou.
+Divida o conteúdo em trechos que mantenham uma ideia completa. Um chunk muito curto perde contexto; um muito longo traz ruído e aumenta custo. O artigo sobre [estratégias de chunking](/artigos/estrategias-de-chunking/) compara as opções. Guarde `document_id`, `chunk_id`, posição no documento e uma versão do parser. Esses metadados serão usados na citação e para reindexar somente o que mudou.
 
 ## 2. Monte a recuperação em etapas
 
@@ -71,7 +71,7 @@ Quando documentos discordarem, mostre a diferença e a data de cada versão. Nun
 
 ## 4. Avalie antes de liberar
 
-Monte um conjunto de perguntas reais com resposta esperada, documentos relevantes e trechos que não deveriam ser usados. Meça recuperação do documento correto, precisão da citação, cobertura das afirmações, taxa de “sem evidência” e latência. Inclua casos de documento conflitante, prompt injection no texto recuperado, pergunta fora do escopo e documento expirado.
+Monte um conjunto de perguntas reais com resposta esperada, documentos relevantes e trechos que não deveriam ser usados. Meça recuperação do documento correto, precisão da citação, cobertura das afirmações, taxa de “sem evidência” e latência. Inclua casos de documento conflitante, prompt injection no texto recuperado, pergunta fora do escopo e documento expirado. As métricas e o método completo estão em [como avaliar um sistema RAG](/artigos/como-avaliar-sistema-rag/).
 
 Registre versão do índice, modelo, prompt, filtros, IDs recuperados e decisão final. Isso permite reproduzir uma resposta e comparar uma troca de chunking ou modelo sem confundir melhoria de geração com melhoria de busca.
 
@@ -79,4 +79,4 @@ Registre versão do índice, modelo, prompt, filtros, IDs recuperados e decisão
 
 Crie uma rotina de reindexação incremental, monitore falhas de ingestão e ofereça uma forma de retirar uma fonte rapidamente. Faça revisão humana para respostas de alto impacto. Antes de publicar, confirme que (1) toda afirmação factual tem suporte ou é marcada como incerta, (2) links abrem a fonte correta, (3) permissões são aplicadas no retrieval e na exibição e (4) o comportamento fora do escopo está coberto por teste.
 
-Um RAG útil não é o que sempre responde; é o que ajuda o usuário a verificar, corrige o caminho quando não encontra evidência e deixa um rastro suficiente para auditoria.
+Um RAG útil não é o que sempre responde; é o que ajuda o usuário a verificar, corrige o caminho quando não encontra evidência e deixa um rastro suficiente para auditoria. Para montar o pipeline com um framework, veja o [LangChain](/ferramentas/langchain/).

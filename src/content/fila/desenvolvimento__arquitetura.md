@@ -73,4 +73,4 @@ Pergunte antes da implementação: onde estão os dados? Como detectar degradaç
 
 ## Próximo passo
 
-Escolha uma decisão atual, desenhe alternativas e registre um ADR. Depois avance para [CMS headless](/artigos/arquitetura-cms-headless-para-site-editorial/) e para as trilhas de [back-end](/desenvolvimento/backend/), [DevOps](/desenvolvimento/devops/) e [qualidade](/desenvolvimento/qualidade/). Arquitetura é uma hipótese que deve ser observada e revisada, não uma cerimônia encerrada no primeiro diagrama.
+Escolha uma decisão atual, desenhe alternativas e registre um ADR. Depois avance para [CMS headless](/artigos/arquitetura-cms-headless-para-site-editorial/) e para as trilhas de [back-end](/desenvolvimento/backend/), [DevOps](/desenvolvimento/devops/) e [qualidade](/desenvolvimento/qualidade/). Arquitetura é uma hipótese que deve ser observada e revisada, não uma cerimônia encerrada no primeiro diagrama. Volte ao pilar de [desenvolvimento de software](/desenvolvimento/).

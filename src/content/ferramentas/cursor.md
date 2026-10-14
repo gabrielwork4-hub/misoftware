@@ -25,4 +25,4 @@ A produtividade vem com responsabilidade. Trate o código enviado à ferramenta 
 
 ## Para quem faz sentido
 
-Vale para quem quer IA profundamente integrada ao fluxo de código e aceita adotar um editor dedicado. Se você prefere adicionar IA ao seu editor atual, compare as abordagens em [melhores editores de código com IA](/comparativos/melhores-editores-codigo-ia/) e na disputa direta [Cursor vs Windsurf](/comparativos/cursor-vs-windsurf/).
+Vale para quem quer IA profundamente integrada ao fluxo de código e aceita adotar um editor dedicado. Se você prefere adicionar IA ao seu editor atual, compare as abordagens em [melhores editores de código com IA](/comparativos/melhores-editores-codigo-ia/) e na disputa direta [Cursor vs Windsurf](/comparativos/cursor-vs-windsurf/). Para ver o Cursor ao lado de outras ferramentas de IA para programar, veja o hub de [ferramentas de IA generativa](/ferramentas/ia-generativa/).

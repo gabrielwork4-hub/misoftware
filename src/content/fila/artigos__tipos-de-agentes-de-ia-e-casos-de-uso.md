@@ -46,4 +46,4 @@ Independentemente da categoria, o desenho mínimo declara permissões, orçament
 
 ## Próximo passo
 
-Definido o tipo, o passo seguinte é medir se ele é confiável: use o guia de [como avaliar agentes de IA](/artigos/como-avaliar-agentes-de-ia/) para montar uma suíte com casos normais e adversos, e siga o [tutorial de criação de agente com ferramentas](/tutoriais/como-criar-agente-ia-com-ferramentas/) para um primeiro protótipo reversível. Para aplicações operacionais, veja [agentes operacionais](/automacao/agentes-operacionais/).
+Definido o tipo, o passo seguinte é medir se ele é confiável: use o guia de [como avaliar agentes de IA](/artigos/como-avaliar-agentes-de-ia/) para montar uma suíte com casos normais e adversos, e siga o [tutorial de criação de agente com ferramentas](/tutoriais/como-criar-agente-ia-com-ferramentas/) para um primeiro protótipo reversível. Para aplicações operacionais, veja [agentes operacionais](/automacao/agentes-operacionais/). O panorama do tema está no hub de [agentes de IA](/ia/agentes/).
